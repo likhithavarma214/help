@@ -97,7 +97,19 @@ Clicking on the findings count will redirect you to the **Findings page** with:
 
     - **Monitor scan notifications**: Enable email notifications to stay informed about scan completion and critical findings.
 
+## Frequently Asked Questions
 
-## Conclusion
+???+ question "What is not supported for DAST auth scan?"
+    We support only Username Password flow. This method does not support 2FA/MFA enabled sites (like, OTP based login etc).
 
-Authenticated DAST scanning in AccuKnox enables comprehensive security testing of web applications with protected content. By configuring authentication parameters correctly, you can ensure thorough vulnerability detection across your entire application surface, including areas that require user login.
+???+ question "Why there can be findings count mismatch for same scan?"
+    Scans can yield inconsistent results even when the target remains unchanged. This variability is often attributed to how the application is explored, with factors like network speed impacting the traditional and AJAX spiders.
+
+    **Minor Variations**: Small differences, such as the number of requests made or variations in specific header values (like "Age" in cache alerts), are considered normal and not problematic.
+
+    This can occur even when:
+
+    - Configurations are identical.
+    - The target environment and routing are consistent.
+    - No security devices (like WAFs) are interfering.
+    - The target isn't changing due to the scan itself (e.g., storing attack payloads).
