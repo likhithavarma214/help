@@ -203,6 +203,8 @@ nav:
       - "AWS AI/ML Onboard": "how-to/aiml-aws-onboard.md"
       - "Azure AI/ML Onboard": "how-to/aiml-azure-onboard.md"
       - "GCP AI/ML Onboard": "how-to/aiml-gcp-onboard.md"
+      - "LLM Static Scans": "how-to/llm-static-scan.md"
+      - "ML Static Scans": "how-to/ml-static-scan.md"
     - "Workload Security (CWPP)":
       - "Kubernetes":
         - "Onboarding Overview": "how-to/k8s-security-onboarding.md"
@@ -250,6 +252,8 @@ nav:
       - "AWS Onboarding": "getting-started/aws-cdr.md"
       - "GCP Onboarding": "getting-started/gcp-cdr.md"
       - "Azure Onboarding": "getting-started/azure-cdr.md"
+    - "AI-DR (Detection & Response)":
+      - "Azure Onboarding": "getting-started/azure-aidr.md"
     - "SBOM": "getting-started/sbom.md"
     - "Secrets Management": "getting-started/secrets-management.md"
     - "Reports":
