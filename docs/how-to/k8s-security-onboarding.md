@@ -40,6 +40,10 @@ helm upgrade --install agents oci://public.ecr.aws/k9v9d5v2/agents-chart \
 - SPIRE: Port 443
 - Knox Gateway: Port 3000
 
+> **Note:**
+> Ports 8081 and 9090 are required post-onboarding for SPIRE-backed runtime identity and health checks.
+> (`*.accuknox.com:8081` → SPIRE Access &vert;&vert; `*.accuknox.com:9090` → SPIRE Health Check)
+
 ## K8s Misconfiguration Scanning
 
 **Deployment Mode:**

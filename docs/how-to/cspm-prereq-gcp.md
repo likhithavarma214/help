@@ -14,13 +14,15 @@ When the AccuKnox control plane is hosted in a cloud environment, scanning is pe
 **Note:**
 Make sure the Below API Library is enabled in your GCP Account for onboarding into AccuKnox SaaS:
 
-1. Compute Engine API
-2. Identity and Access Management (IAM) API
-3. Cloud Resource Manager API
-4. Cloud Functions API
-5. KMS API
-6. Kubernetes API
-7. Cloud SQL Admin API
+| **API Library Name** | **Google Cloud Link to Enable** |
+| --- | --- |
+| **Compute Engine API** | [Enable Compute Engine API](https://console.cloud.google.com/apis/library/compute.googleapis.com?authuser=3) |
+| **IAM API** | [Enable Identity and Access Management (IAM) API](https://console.cloud.google.com/apis/library/iam.googleapis.com?authuser=3) |
+| **Cloud Resource Manager API** | [Enable Cloud Resource Manager API](https://console.cloud.google.com/apis/library/cloudresourcemanager.googleapis.com?authuser=3) |
+| **Cloud Functions API** | [Enable Cloud Functions API](https://console.cloud.google.com/apis/library/cloudfunctions.googleapis.com?authuser=3) |
+| **Cloud KMS API** | [Enable Cloud Key Management Service (KMS) API](https://console.cloud.google.com/apis/library/cloudkms.googleapis.com?authuser=3) |
+| **Kubernetes Engine API** | [Enable Kubernetes Engine API](https://console.cloud.google.com/apis/library/container.googleapis.com?authuser=3) |
+| **Cloud SQL Admin API** | [Enable Cloud SQL Admin API](https://console.cloud.google.com/apis/library/sqladmin.googleapis.com?authuser=3) |
 
 For GCP there is a requirement for IAM Service Account Access.
 
