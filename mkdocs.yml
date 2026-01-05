@@ -527,7 +527,7 @@ nav:
     - "CSPM Assets Support" : "support-matrix/assets-list.md"
     - "AI/ML Support Matrix" : "support-matrix/aiml-support-matrix.md"
     - "Compliance Matrix" : "support-matrix/compliance-matrix.md"
-    - "VMs" : "support-matrix/vms.md"
+    - "VM Support Matrix" : "support-matrix/vms.md"
     - "Private Cloud" : "support-matrix/private-cloud.md"
     - "Public Cloud" : "support-matrix/public-cloud.md"
     - "Registry Scan" : "support-matrix/registry.md"
