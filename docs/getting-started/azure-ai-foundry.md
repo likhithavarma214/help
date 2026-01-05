@@ -1,11 +1,11 @@
 ---
-title: LLM Defense for Azure AI Foundry
+title: Azure APIM Automated Deployment with LLM Prompt & Response Firewall
 description: Accuknox documentation to set up LLM Defense for Azure AI Foundry
 ---
 
-# End-to-End Runtime Prompt Firewall Setup for Azure AI Foundry
+# Azure APIM Automated Deployment with LLM Prompt & Response Firewall
 
-## Objective
+The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-compatible models with **minimal onboarding effort** and **no manual APIM configuration**.
 
 All user prompts are first checked by AccuKnox LLM Defence using Azure API Management (APIM) before reaching Azure AI Foundry. This setup ensures:
 
@@ -17,30 +17,7 @@ All user prompts are first checked by AccuKnox LLM Defence using Azure API Manag
 - Secrets are securely managed in APIM.
 - Client code changes only the endpoint and API key.
 
-# Azure APIM Automated Deployment with LLM Prompt & Response Firewall
-
-This repository provides a **fully automated Azure API Management (APIM) deployment** that provisions an API and operation on an **existing APIM instance**, applies an **operation-level security policy**, and integrates **AccuKnox LLM Defence** to inspect and block unsafe prompts and model responses **at runtime**.
-
-The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-compatible models with **minimal onboarding effort** and **no manual APIM configuration**.
-
----
-
-## 📁 Repository Structure
-
-```
-├── bicep/
-│   └── apim-api.bicep          # Creates API + operation in existing APIM
-├── named-values/
-│   └── named-values.sh         # Creates APIM Named Values (secure runtime input)
-├── policies/
-│   └── policy.xml              # Operation-level APIM policy
-├── .env                        # Deployment configuration
-└── deploy.sh                   # End-to-end deployment orchestrator
-```
-
----
-
-## 🎯 What This Deployment Does
+## What This Deployment Does
 
 - Deploys an **API and operation** using Bicep
 - Applies **operation-level APIM policies**
@@ -51,9 +28,7 @@ The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-co
 - Scans model responses before returning to client
 - Blocks unsafe model outputs
 
----
-
-## 🔐 Runtime Security Flow
+## Runtime Security Flow
 
 ```
 Client
@@ -75,50 +50,31 @@ Azure API Management (APIM)
 Client Response
 ```
 
----
+## Prerequisites
 
-## 🧩 Prerequisites
+Before running this project, ensure you have:
 
-Before running this project, ensure the following prerequisites are met:
+- **An active Azure subscription** with billing enabled
+- **Azure API Management (APIM) instance**
+    - Must already exist
+    - Recommended SKU: Developer (non-production) or Premium (production)
+    - Must be reachable from Azure AI Foundry endpoints
+- **Azure AI Foundry model deployed**
+    - Accessible via an OpenAI-compatible endpoint
+    - Endpoint must support Bearer token authentication
+- **AccuKnox LLM Defence access token**
+    - Obtain from onboarding an application on the AccuKnox platform (AI/ML Security → Applications → Prompt Firewall → Add Application)
+    - Store as an APIM Named Value (do not store in code)
+- **Azure CLI installed**
+    - Version 2.50+ recommended
+    - Must be logged in (`az login`)
 
-1. **Azure Subscription**
-
-   - Active Azure subscription with billing enabled
-
-2. **Azure API Management Instance**
-
-   - APIM instance must already exist
-   - Recommended SKU: **Developer** (non-production) or **Premium** (production)
-   - The APIM instance must be reachable from Azure AI Foundry endpoints
-
-3. **Azure AI Foundry Model Deployed**
-
-   - A model must be deployed and accessible via an OpenAI-compatible endpoint
-   - The endpoint must support **Bearer token authentication**
-
-4. **AccuKnox LLM Defence Access Token**
-
-   - Valid API token obtained from onboarding an application on accuknox platform(AI/ML Security -> Applications -> Prompt Firewall -> Add Application):
-
-   - Token must be stored as an APIM Named Value (not in code)
-
-5. **Azure CLI Installed**
-
-   - Azure CLI version `2.50+` recommended
-   - Logged in using:
-
-     ```bash
-     az login
-     ```
-
----
-
-## ⚙️ Configuration (`.env`)
+## Configuration (`.env`)
 
 Create a `.env` file in the repository root.
 Each variable must be filled by the user. **Do not commit real values to source control.**
 
-### 📄 `.env` (Single-Line, Commented)
+### `.env` (Single-Line, Commented)
 
 ```env
 SUBSCRIPTION_ID=        # Azure subscription ID (example: 69e37648-d32f-46a0-a45e-e983eb816225)
@@ -138,16 +94,12 @@ OPERATION_METHOD=       # HTTP method for the operation (example: POST)
 OPERATION_URL_TEMPLATE= # Operation URL template (example: /models/chat/completions)
 ```
 
----
-
 Perfect — below is the **updated README section** with **exact line numbers called out**, so users know **precisely where to edit** in `policy.xml`.
 This is written in a **copy-paste ready, customer-safe format**.
 
 You can drop this section directly into your existing `README.md`.
 
----
-
-## ⚠️ Mandatory Policy Changes (User Action Required)
+## Mandatory Policy Changes (User Action Required)
 
 Before running the deployment, you **must update two values** in the following file:
 
@@ -157,28 +109,22 @@ policies/policy.xml
 
 These values are **environment- and deployment-specific** and **must be updated manually**.
 
----
+## Change 1: AccuKnox LLM Defence Endpoint
 
-## 🔁 Change 1: AccuKnox LLM Defence Endpoint
-
-### 📍 Lines to Update
+### Lines to Update
 
 - **Line ~45** – Prompt scan (Inbound)
 - **Line ~135** – Response scan (Outbound)
 
-> ⚠️ You must update **both occurrences**
+> You must update **both occurrences**
 
----
-
-### 🔴 Default Value (As Shipped)
+### Default Value (As Shipped)
 
 ```xml
 <set-url>https://cwpp.dev.accuknox.com/llm-defence/application-query</set-url>
 ```
 
----
-
-### ✅ Required Change
+### Required Change
 
 Replace the URL with your **AccuKnox environment-specific endpoint**:
 
@@ -186,9 +132,7 @@ Replace the URL with your **AccuKnox environment-specific endpoint**:
 https://cwpp.<your-environment>.accuknox.com/llm-defence/application-query
 ```
 
----
-
-### 📌 Environment Examples
+### Environment Examples
 
 | Environment | URL                                                             |
 | ----------- | --------------------------------------------------------------- |
@@ -196,25 +140,19 @@ https://cwpp.<your-environment>.accuknox.com/llm-defence/application-query
 | Staging     | `https://cwpp.stage.accuknox.com/llm-defence/application-query` |
 | Production  | `https://cwpp.prod.accuknox.com/llm-defence/application-query`  |
 
----
+## Change 2: Azure AI Foundry Backend URL
 
-## 🔁 Change 2: Azure AI Foundry Backend URL
-
-### 📍 Line to Update
+### Line to Update
 
 - **Line ~100** – Backend forwarding configuration
 
----
-
-### 🔴 Default Value (As Shipped)
+### Default Value (As Shipped)
 
 ```xml
 <set-backend-service base-url="https://ai-prompt-firewall-openai.services.ai.azure.com" />
 ```
 
----
-
-### ✅ Required Change
+### Required Change
 
 Replace the `base-url` with **your Azure AI Foundry / OpenAI deployment endpoint**:
 
@@ -222,36 +160,28 @@ Replace the `base-url` with **your Azure AI Foundry / OpenAI deployment endpoint
 <set-backend-service base-url="https://<your-foundry-resource>.services.ai.azure.com" />
 ```
 
----
-
-### 📌 Example
+### Example
 
 ```xml
 <set-backend-service base-url="https://my-foundry-openai.services.ai.azure.com" />
 ```
 
-> ⚠️ This URL **must exactly match** the endpoint of your deployed model and must support **Bearer token authentication**.
+> This URL **must exactly match** the endpoint of your deployed model and must support **Bearer token authentication**.
 
----
-
-## ✅ Summary of Required Policy Edits
+## Summary of Required Policy Edits
 
 | Change              | File         | Line(s)   | Description                        |
 | ------------------- | ------------ | --------- | ---------------------------------- |
 | AccuKnox endpoint   | `policy.xml` | ~45, ~135 | Set correct AccuKnox environment   |
 | Foundry backend URL | `policy.xml` | ~100      | Set your model deployment endpoint |
 
----
-
-## 🚨 Important Notes
+## Important Notes
 
 - Line numbers may vary slightly if comments are added or removed
 - Always verify both **prompt** and **response** scan URLs
 - Deployment will **fail or block traffic** if these values are incorrect
 
----
-
-## 🔐 Secrets Handling (Mandatory)
+## Secrets Handling (Mandatory)
 
 Secrets **must not** be placed in `.env`.
 
@@ -269,9 +199,7 @@ bash named-values/named-values.sh <RESOURCE_GROUP> <APIM_SERVICE_NAME>
 
 The script prompts for the token securely (input hidden).
 
----
-
-## 🚀 Deployment
+## Deployment
 
 Make the deployment script executable:
 
@@ -293,9 +221,7 @@ This will:
 - Bind the backend service
 - Enable prompt and response scanning
 
----
-
-## 🧠 Policy Behavior Summary
+## Policy Behavior Summary
 
 ### Inbound Processing
 
