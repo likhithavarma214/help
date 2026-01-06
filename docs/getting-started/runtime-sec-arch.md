@@ -62,7 +62,6 @@ These ports must be allowed through customer firewalls. **No inbound/ingress acc
 | Component | Port | Direction | Purpose |
 | :--- | :--- | :--- | :--- |
 | Agents Operator | 8081/9090 | Outbound | SPIRE access |
-| Agents Operator | 9090 | Outbound | SPIRE health check |
 | Shared Informer Agent | 3000 | Outbound | Telemetry to Knox Gateway |
 | Policy Enforcement Agent | 443 | Outbound | Policy distribution |
 

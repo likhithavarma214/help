@@ -5,6 +5,9 @@ description: Accuknox documentation to set up LLM Defense for Azure AI Foundry
 
 # Azure APIM Automated Deployment with LLM Prompt & Response Firewall
 
+!!! note "Github Repository"
+    Find all deployment scripts and configs in the [GitHub repository](https://github.com/accuknox/Azure-APIM-Integration-with-Prompt-Firewall/).
+
 The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-compatible models with **minimal onboarding effort** and **no manual APIM configuration**.
 
 All user prompts are first checked by AccuKnox LLM Defence using Azure API Management (APIM) before reaching Azure AI Foundry. This setup ensures:
@@ -186,7 +189,7 @@ This deployment requires the following **APIM Named Value**:
 | ------------------- | ------------------------------ |
 | `LLM_DEFENCE_TOKEN` | AccuKnox LLM Defence API token |
 
-The AccuKnox token is **requested securely during execution of `deploy.sh`** (input is hidden).  
+The AccuKnox token is **requested securely during execution of `deploy.sh`** (input is hidden).
 The script automatically creates or updates the required **APIM Named Value** as part of the deployment process.
 
 
