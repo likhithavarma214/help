@@ -430,7 +430,8 @@ nav:
     - "API Security": "use-cases/api-security.md"
     - "AI/ML Security":
       - "Overview": "use-cases/aiml-usecases.md"
-      - "Azure AI-DR (Detection & Response)": "use-cases/azure-aidr.md"
+      - "AI-DR (AI Detection and Response)": "use-cases/aidr.md"
+      - "Azure AI-DR": "use-cases/azure-aidr.md"
       - "Prompt Firewall": "use-cases/prompt-firewall.md"
       - "Jupyter Notebook": "use-cases/jupyter-notebook.md"
       - "ModelArmor":
