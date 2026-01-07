@@ -1,24 +1,28 @@
 ---
-title: Host Security Scans with AccuKnox
+title: Host Vulnerability & Malware Scan
 description: AccuKnox VM Security covers agent-based and agentless scanning offering continuous vulnerability and optional malware detection.
 ---
 
-# Host Security Scans with AccuKnox
+# Host Vulnerability & Malware Scan
 
-AccuKnox VM Security agent-based scanning supports **Linux and Windows**. It is designed for continuous vulnerability and optional malware detection with flexible deployment models.
+AccuKnox VM Security covers agent-based and agentless scanning offering continuous vulnerability and optional malware detection.
+
+## Agentless VM Scanning
 
 !!! tip "Getting Started"
-    Follow the guides below to set up VM security:
+    - [Agentless Cloud VM Scanning](https://help.accuknox.com/how-to/vm-security/agentless/cloud-vm-scanning/)
 
+Supports **AWS**, **GCP**, **Azure**, and **OpenShift Virtualization**. This cloud-native approach scans VM disks and metadata without requiring an agent on the VM.
+
+![alt text](image-18.png)
+
+## Agent-based VM Scanning
+
+!!! tip "Getting Started"
     - [Agent-based Linux VM Scanning](https://help.accuknox.com/how-to/vm-security/agent-based/linux/)
     - [Agent-based Windows VM Scanning](https://help.accuknox.com/how-to/vm-security/agent-based/windows/)
 
-A lightweight Omni agent runs on the VM and performs scheduled scans. Results are sent to the AccuKnox SaaS for centralized visibility.
-
-- **Linux**: Uses a systemd service and timer.
-- **Windows**: Uses a scheduled task.
-- **Malware Scanning**: Optional and disabled by default due to CPU cost. Resource usage can be capped.
-- **Air-gapped Environments**: Supported by pre-downloading binaries and vulnerability databases and installing without outbound internet access.
+For hosts that cannot be scanned agentlessly, AccuKnox provides a lightweight agent for **Linux** and **Windows**. It supports **air-gapped environments** allowing scans without outbound internet access.
 
 ![alt text](image-17.png)
 
@@ -27,8 +31,6 @@ A lightweight Omni agent runs on the VM and performs scheduled scans. Results ar
 Scans are tied to tenant-level tokens and labels for identification, grouping, and reporting. Findings are centralized in the AccuKnox console for visibility, correlation, and reporting across workloads.
 
 ![alt text](image-15.png)
-
-![alt text](image-16.png)
 
 ## Vulnerability Detection Use Cases
 

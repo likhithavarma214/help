@@ -38,7 +38,7 @@ curl https://accuknox-omni.s3.us-east-1.amazonaws.com/v0.1.2/agent-install.sh | 
 
 For environments without direct internet access, follow these steps:
 
-### 1. Download the Omni Binary
+### 1. Download the VM Scan Solution Binary
 
 Download the appropriate binary for your architecture on a machine with internet access:
 
