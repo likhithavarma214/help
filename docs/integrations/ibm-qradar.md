@@ -44,7 +44,7 @@ The integration flow enables alert forwarding from AccuKnox to IBM QRadar. Alert
 5. Configurations:
     1. Select Log Source Type - `Universal DSM`
     2. Select a Protocol - `Syslog`
-    3. Name - `Ayush Test Qradar`
+    3. Name - `Test Qradar`
     4. Log Source Identifier - `192.168.1.226` (Source IP from which Log is forwarded to Qradar)
 
     ![Configuration Details](./images/ibm-qradar/6.png)
