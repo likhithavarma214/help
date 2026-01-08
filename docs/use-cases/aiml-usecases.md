@@ -23,11 +23,19 @@ hide:
     - For list of supported platforms refer to the [**AI/ML Security Support Matrix**](https://help.accuknox.com/support-matrix/aiml-support-matrix/)
 
 <!-- TODO: Add the right icons here -->
-::cards:: cols=2
+::cards:: cols=3
 
 - title: Prompt Firewall
   image: ./icons/AIML.svg
   url: https://help.accuknox.com/use-cases/prompt-firewall/
+
+- title: AI-DR (AI Detection and Response)
+  image: ./icons/aidr.svg
+  url: https://help.accuknox.com/use-cases/aidr/
+
+- title: AI Red Teaming (ML/LLMs)
+  image: ./icons/model-safety.svg
+  url: https://help.accuknox.com/how-to/llm-static-scan/
 
 - title: Jupyter Notebook Security
   image: ./icons/jupyter.svg

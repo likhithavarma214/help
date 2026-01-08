@@ -15,10 +15,10 @@ If the environment does not support Linux v5.8+ or BPF LSM and instead uses AppA
 
 ### Resource Requirements
 
-| Node Type           | vCPU | Memory | Disk  |
-|----------------------|------|--------|-------|
-| Control Plane Node  | 2    | 4 GB   | 24 GB |
-| Worker Node         | 2    | 2 GB   | 12 GB |
+| Node Type          | vCPU  | Memory  | Disk   |
+|--------------------|-------|---------|--------|
+| Control Plane Node | 2     | 4 GB    | 24 GB  |
+| Worker Node        | 100m  | 200 MB  | ~500 MB|
 
 ### Network Requirements
 

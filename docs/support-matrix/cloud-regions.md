@@ -76,9 +76,6 @@ This page provides the complete list of supported regions across AWS, OCI, Azure
 
 === "Azure"
 
-    !!! warning "Planned Release"
-        All Azure regions are currently available in the **Development** environment only and will be promoted to Production in the **3.4 release**.
-
     | Category | Region IDs |
     | --- | --- |
     | **North America** | `eastus`, `eastus2`, `westus`, `westus2`, `centralus`, `northcentralus`, `southcentralus`, `canadacentral`, `canadaeast` |
@@ -89,9 +86,6 @@ This page provides the complete list of supported regions across AWS, OCI, Azure
     | **Africa** | `southafricanorth`, `southafricawest` |
 
 === "GCP"
-
-    !!! warning "Planned Release"
-        All Google Cloud regions are currently available in the **Development** environment only and will be promoted to Production in the **3.4 release**.
 
     | Category | Regions / Zones |
     | --- | --- |

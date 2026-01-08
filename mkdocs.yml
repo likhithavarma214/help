@@ -207,6 +207,7 @@ nav:
       - "LLM Static Scans": "how-to/llm-static-scan.md"
       - "ML Static Scans": "how-to/ml-static-scan.md"
     - "Workload Security (CWPP)":
+      - "Runtime Security Architecture": "getting-started/runtime-sec-arch.md"
       - "Kubernetes":
         - "Onboarding Overview": "how-to/k8s-security-onboarding.md"
         - "Runtime Security Prerequisites": "getting-started/cwpp-prereq.md"
@@ -278,6 +279,7 @@ nav:
     - "AI Security":
       - "Overview": "integrations/ai-overview.md"
       - "Bifrost Integration": "integrations/bifrost-integration.md"
+      - "Copilot Studio": "integrations/copilot-studio.md"
       # - "LiteLLM Prompt Firewall Integration": "integrations/litellm-prompt-firewall-integration.md"
     - "API Security":
       - "Overview": "integrations/api-overview.md"
@@ -399,6 +401,7 @@ nav:
       - "Telemetry (Sample)" :
         - "Logs" : "integrations/telemetry-logs.md"
         - "Alerts" : "integrations/telemetry-alerts.md"
+      - "IBM QRadar" : "integrations/ibm-qradar.md"
       - "Splunk" : "integrations/splunk.md"
       - "AccuKnox SplunkApp" : "integrations/accuKnox-splunk-app-installation-configuration.md"
       - "KubeArmor Splunk Integration" : "integrations/splunk_feeder_kubearmor.md"
@@ -428,7 +431,8 @@ nav:
     - "API Security": "use-cases/api-security.md"
     - "AI/ML Security":
       - "Overview": "use-cases/aiml-usecases.md"
-      - "Azure AI-DR (Detection & Response)": "use-cases/azure-aidr.md"
+      - "AI-DR (AI Detection and Response)": "use-cases/aidr.md"
+      - "Azure AI-DR": "use-cases/azure-aidr.md"
       - "Prompt Firewall": "use-cases/prompt-firewall.md"
       - "Jupyter Notebook": "use-cases/jupyter-notebook.md"
       - "ModelArmor":
@@ -495,13 +499,13 @@ nav:
       - "Mitigate Supply Chain Attacks with KnoxGuard" : "use-cases/knoxguard-supply-chain.md"
     - "VM Security":
         - "Introduction" : "use-cases/vm-overview.md"
+        - "Host Vulnerability / Malware Scan": "use-cases/vm-host-scan.md"
         - "Agentless Risk Assessment":
           - "Misconfiguration of Cloud Hosted VMs":
             - "Overview" : "use-cases/vm-misconfigurations.md"
             - "AWS Misconfigurations": "use-cases/vm-aws.md"
             - "GCP Misconfigurations": "use-cases/vm-gcp.md"
             - "Azure Misconfigurations": "use-cases/vm-azure.md"
-          - "Host Security Scan": "use-cases/vm-host-scan.md"
           - "Malware Scan": "use-cases/vm-malware-scan.md"
           - "Compliance Benchmarking & Risk Assessment": "use-cases/vm-compliance-benchmarking.md"
         - "Agent-based Detection & Remediation":

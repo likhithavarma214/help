@@ -1,414 +1,232 @@
 ---
-title: LLM Defense for Azure AI Foundry
+title: Azure APIM Automated Deployment with LLM Prompt & Response Firewall
 description: Accuknox documentation to set up LLM Defense for Azure AI Foundry
 ---
 
-# End-to-End Runtime Prompt Firewall Setup for Azure AI Foundry
+# Azure APIM Automated Deployment with LLM Prompt & Response Firewall
 
-## Objective
+!!! note "Github Repository"
+    Find all deployment scripts and configs in the [GitHub repository](https://github.com/accuknox/Azure-APIM-Integration-with-Prompt-Firewall/).
 
-Route **all user prompts** sent to Azure AI Foundry through **AccuKnox LLM Defence** first, using **Azure API Management (APIM)**, with the following guarantees:
+The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-compatible models with **minimal onboarding effort** and **no manual APIM configuration**.
 
-- Client never talks to Foundry directly
+All user prompts are first checked by AccuKnox LLM Defence using Azure API Management (APIM) before reaching Azure AI Foundry. This setup ensures:
 
-- Only the user question is sent to AccuKnox
+- Clients do not connect directly to Foundry.
+- Only the user’s question is sent to AccuKnox for scanning.
+- The full request is forwarded to Foundry if approved.
+- Requests are blocked if AccuKnox marks them unsafe.
+- Foundry only receives allowed requests.
+- Secrets are securely managed in APIM.
+- Client code changes only the endpoint and API key.
 
-- Full payload is preserved for Foundry
+## What This Deployment Does
 
-- Requests are blocked if AccuKnox returns BLOCK
+- Deploys an **API and operation** using Bicep
+- Applies **operation-level APIM policies**
+- Extracts user prompts from request payloads
+- Scans prompts using **AccuKnox LLM Defence**
+- Blocks unsafe prompts before model execution
+- Forwards safe requests to **Azure AI Foundry**
+- Scans model responses before returning to client
+- Blocks unsafe model outputs
 
-- Foundry is called only if allowed
-
-- Secrets are stored securely in APIM
-
-- Client code remains unchanged except endpoint + key
-
-## Final Runtime Flow
+## Runtime Security Flow
 
 ```
 Client
   |
-  | POST /foundry/models/chat/completions
-  | Authorization: Bearer <CLIENT_TOKEN>
-  | (full LLM payload)
+  | POST /models/chat/completions
+  | Authorization: Bearer <Foundry API Key>
   |
 Azure API Management (APIM)
   |
-  |──► AUTHENTICATION (Inbound – fail fast)
-  |     - Read Authorization header
-  |     - Strip "Bearer "
-  |     - Compare token with {{AI_FOUNDRY_API_KEY}}
-  |     - If mismatch / missing → 401 Unauthorized
+  |-- Extract Prompt
+  |-- AccuKnox LLM Defence (Prompt Scan)
+  |-- BLOCK if unsafe
   |
-  |──► PRESERVE REQUEST
-  |     - Preserve full original request body
+  |-- Forward to Azure AI Foundry
   |
-  |──► PROMPT EXTRACTION
-  |     - Extract messages[0].content only
+  |-- AccuKnox LLM Defence (Response Scan)
+  |-- BLOCK if unsafe
   |
-  |──► PROMPT SECURITY CHECK
-  |     - POST to AccuKnox LLM Defence
-  |       {
-  |         "query_type": "prompt",
-  |         "content": "<user prompt>"
-  |       }
-  |
-  |──► PROMPT DECISION
-  |     - If BLOCK → 403 (Foundry NOT called)
-  |     - If ALLOW / MONITOR → continue
-  |
-  |──► BACKEND INVOCATION
-  |     - Forward ORIGINAL payload (unchanged)
-  |     - Replace Authorization header with
-  |       Bearer {{AI_FOUNDRY_API_KEY}}
-  |
-  v
-Azure AI Foundry
-  |
-  |──► MODEL INFERENCE
-  |     - Full LLM payload processed
-  |
-  |──► RESPONSE RETURNED
-  |
-  v
-Azure API Management (APIM)
-  |
-  |──► RESPONSE PRESERVATION
-  |     - Preserve full Foundry response
-  |
-  |──► RESPONSE EXTRACTION
-  |     - Extract choices[0].message.content
-  |
-  |──► RESPONSE SECURITY CHECK
-  |     - POST to AccuKnox LLM Defence
-  |       {
-  |         "query_type": "response",
-  |         "content": "<model output>",
-  |         "session_id": "<prompt session id>"
-  |       }
-  |
-  |──► RESPONSE DECISION
-  |     - If BLOCK → 403 (response suppressed)
-  |     - If ALLOW / MONITOR → return response
-  |
-  v
-Client
+Client Response
 ```
 
 ## Prerequisites
 
-- Azure API Management instance (Developer / Premium recommended)
+Before running this project, ensure you have:
 
-- Azure AI Foundry model deployed
+- **An active Azure subscription** with billing enabled
+- **Azure API Management (APIM) instance**
+    - Must already exist
+    - Recommended SKU: Developer (non-production) or Premium (production)
+    - Must be reachable from Azure AI Foundry endpoints
+- **Azure AI Foundry model deployed**
+    - Accessible via an OpenAI-compatible endpoint
+    - Endpoint must support Bearer token authentication
+- **AccuKnox LLM Defence access token**
+    - Obtain from onboarding an application on the AccuKnox platform (AI/ML Security → Applications → Prompt Firewall → Add Application)
+    - Store as an APIM Named Value (do not store in code)
+- **Azure CLI installed**
+    - Version 2.50+ recommended
+    - Must be logged in (`az login`)
 
-- Working Foundry inference curl:
+## Configuration (`.env`)
 
-```
-POST https://ai-prompt-firewall-openai.services.ai.azure.com/models/chat/completions
-```
+Create a `.env` file in the repository root.
+Each variable must be filled by the user. **Do not commit real values to source control.**
 
-- AccuKnox LLM Defence API access + bearer token
+### `.env` (Single-Line, Commented)
 
-- APIM Product with subscription enabled
+```env
+SUBSCRIPTION_ID=        # Azure subscription ID (example: 69e37648-d32f-46a0-a45e-e983eb816225)
+RESOURCE_GROUP=         # Existing resource group name (example: ai-runtime-firewall-test)
+LOCATION=               # Azure region, wrap in quotes if needed (example: "East US")
 
-## STEP 1 — Create Backends in APIM
+APIM_SERVICE_NAME=      # Existing API Management service name (example: prompt-firewall-apim)
 
-### 1.1 Foundry Backend
+API_ID=                 # Unique API identifier, no spaces (example: foundry-proxy-api)
+API_DISPLAY_NAME=       # Display name shown in APIM, use quotes (example: "Foundry Proxy API")
+API_PATH=               # Public base path for the API (example: foundry)
 
-APIM → Backends → Add
 
-| Field        | Value                                                     |
-| ------------ | --------------------------------------------------------- |
-| Name         | `foundry-backend`                                         |
-| Backend type | HTTP                                                      |
-| URL          | `https://ai-prompt-firewall-openai.services.ai.azure.com` |
-| TLS          | Enabled                                                   |
-
-!!! note
-    Do not include `/models` or `/chat`
-
-### 1.2 AccuKnox LLM Defence Backend
-
-APIM → Backends → Add
-
-| Field        | Value                                |
-| ------------ | ------------------------------------ |
-| Name         | `llm-defence-backend`                |
-| Backend type | HTTP                                 |
-| URL          | `https://cwpp.<domain>.accuknox.com` |
-| TLS          | Enabled                              |
-
-## STEP 2 — Store Secrets Securely (Named Values)
-
-APIM → Named values → Add
-
-### 2.1 Foundry API Key
-
-| Field  | Value                |
-| ------ | -------------------- |
-| Name   | `AI_FOUNDRY_API_KEY` |
-| Value  | `<foundry-api-key>`  |
-| Secret |   Enabled            |
-
-### 2.2 AccuKnox Defence Token
-
-| Field  | Value                       |
-| ------ | --------------------------- |
-| Name   | `LLM_DEFENCE_TOKEN`         |
-| Value  | `<Enter Application Token>` |
-| Secret |   Enabled                   |
-
-#### In order to get “LLM_DEFENCE_TOKEN“
-
-1.Login to platform.
-
-2.Go to AI/ML Security → Applications-> Prompt Firewall
-
-3.Click on Add Application. Enter Application name and tags. Click on add.
-
-![](images/az-ai-foundry/az-ai-foundry-0.png)
-
-4.Copy the generated LLM_DEFENCE_TOKEN.
-
-![](images/az-ai-foundry/az-ai-foundry-1.png)
-
-## STEP 3 — Create a New API (Separate)
-
-APIM → APIs → Add API → HTTP
-
-| Field           | Value                |
-| --------------- | -------------------- |
-| Display name    | Foundry Models Proxy |
-| Name            | foundry-models-proxy |
-| URL scheme      | HTTPS                |
-| API URL suffix  | `foundry`            |
-| Web service URL | _(leave empty)_      |
-
-This exposes:
-
-```
-https://<apim-name>.azure-api.net/foundry
-```
-## STEP 4 — Create Operation (Matches Foundry API)
-
-APIM → APIs → Foundry Models Proxy → Add operation
-
-| Field        | Value                      |
-| ------------ | -------------------------- |
-| Display name | Chat Completions           |
-| Name         | chat-completions           |
-| Method       | POST                       |
-| URL          | `/models/chat/completions` |
-
-!!! note
-    Do not include query params here
-
-## STEP 5 — Attach API to Product (Mandatory)
-
-APIM → Products → Starter / Unlimited
-
-- Add Foundry Models Proxy
-
-- Ensure product has an active subscription
-
-!!! note
-    Clients will use the APIM subscription key
-
-## STEP 6 — API Policy (CORE LOGIC)
-
-Apply at:
-
-    APIM → APIs → Foundry Models Proxy → All operations → Policies
-
-### FINAL PRODUCTION POLICY (READY TO PASTE)
-
-``` xml
-<policies>
-    <inbound>
-        <base />
-        <!-- 🔐 AUTHENTICATION -->
-        <set-variable name="clientBearer" value="@{
-                        var auth = context.Request.Headers.GetValueOrDefault("Authorization", "");
-                        return auth.StartsWith("Bearer ")
-                            ? auth.Substring(7)
-                            : "";
-                        }" />
-        <choose>
-            <when condition="@(
-            string.IsNullOrEmpty((string)context.Variables["clientBearer"]) ||
-            (string)context.Variables["clientBearer"] != "{{AI_FOUNDRY_API_KEY}}"
-            )">
-                <return-response>
-                    <set-status code="401" reason="Unauthorized" />
-                    <set-header name="Content-Type" exists-action="override">
-                        <value>application/json</value>
-                    </set-header>
-                    <set-body>{
-                    "error": "Invalid or missing bearer token"
-                }</set-body>
-                </return-response>
-            </when>
-        </choose>
-        <!-- Preserve original request body -->
-        <set-variable name="originalBody" value="@(context.Request.Body.As<string>(preserveContent: true))" />
-        <!-- Extract user prompt -->
-        <set-variable name="userPrompt" value="@{
-                    var body = context.Request.Body.As<JObject>(preserveContent: true);
-                    return (string)body["messages"]?[0]?["content"];
-                  }" />
-        <!-- Call AccuKnox LLM Defence (PROMPT scan) -->
-        <send-request mode="new" response-variable-name="llmDefenceResponse" timeout="10" ignore-error="false">
-            <set-url>https://cwpp.airindia.accuknox.com/llm-defence/application-query</set-url>
-            <set-method>POST</set-method>
-            <set-header name="Content-Type" exists-action="override">
-                <value>application/json</value>
-            </set-header>
-            <set-header name="Authorization" exists-action="override">
-                <value>Bearer {{LLM_DEFENCE_TOKEN}}</value>
-            </set-header>
-            <set-body>@{
-          return new JObject(
-            new JProperty("query_type", "prompt"),
-            new JProperty("content", (string)context.Variables["userPrompt"])
-          ).ToString();
-        }</set-body>
-        </send-request>
-        <!-- Parse defence response -->
-        <set-variable name="defenceResult" value="@(((IResponse)context.Variables["llmDefenceResponse"])
-                          .Body.As<JObject>())" />
-        <!-- Store session_id for response correlation -->
-        <set-variable name="defenceSessionId" value="@(((JObject)context.Variables["defenceResult"])
-                          ["session_id"]?.ToString())" />
-        <!-- Block if prompt is unsafe -->
-        <choose>
-            <when condition="@(
-        ((JObject)context.Variables["defenceResult"])
-          ["query_status"]?.ToString() == "BLOCK"
-      )">
-                <return-response>
-                    <set-status code="403" reason="Blocked by LLM Defence" />
-                    <set-header name="Content-Type" exists-action="override">
-                        <value>application/json</value>
-                    </set-header>
-                    <set-body>{
-              "error": "Prompt blocked by LLM Defence",
-              "severity": "@(((JObject)context.Variables["defenceResult"])["overall_severity"])",
-              "reason": "@(((JObject)context.Variables["defenceResult"])["description"])"
-            }</set-body>
-                </return-response>
-            </when>
-        </choose>
-        <!-- Forward request to Foundry -->
-        <set-backend-service backend-id="foundry-backend" />
-        <set-header name="Authorization" exists-action="override">
-            <value>Bearer {{AI_FOUNDRY_API_KEY}}</value>
-        </set-header>
-        <set-header name="Content-Type" exists-action="override">
-            <value>application/json</value>
-        </set-header>
-    </inbound>
-    <backend>
-        <base />
-    </backend>
-    <outbound>
-        <base />
-        <!-- Preserve model response -->
-        <set-variable name="modelResponse" value="@(context.Response.Body.As<JObject>(preserveContent: true))" />
-        <!-- Extract assistant content -->
-        <set-variable name="assistantContent" value="@(
-                    (string)((JObject)context.Variables["modelResponse"])
-                      ["choices"]?[0]?["message"]?["content"]
-                  )" />
-        <!-- Call AccuKnox LLM Defence (RESPONSE scan) -->
-        <send-request mode="new" response-variable-name="llmDefenceResponseScan" timeout="10" ignore-error="false">
-            <set-url>https://cwpp.airindia.accuknox.com/llm-defence/application-query</set-url>
-            <set-method>POST</set-method>
-            <set-header name="Content-Type" exists-action="override">
-                <value>application/json</value>
-            </set-header>
-            <set-header name="Authorization" exists-action="override">
-                <value>Bearer {{LLM_DEFENCE_TOKEN}}</value>
-            </set-header>
-            <set-body>@{
-          return new JObject(
-            new JProperty("query_type", "response"),
-            new JProperty("content", (string)context.Variables["assistantContent"]),
-            new JProperty("session_id", (string)context.Variables["defenceSessionId"])
-          ).ToString();
-        }</set-body>
-        </send-request>
-        <!-- Parse response scan -->
-        <set-variable name="responseDefenceResult" value="@(((IResponse)context.Variables["llmDefenceResponseScan"])
-                          .Body.As<JObject>())" />
-        <!-- Block if response is unsafe -->
-        <choose>
-            <when condition="@(
-        ((JObject)context.Variables["responseDefenceResult"])
-          ["query_status"]?.ToString() == "BLOCK"
-      )">
-                <return-response>
-                    <set-status code="403" reason="Response blocked by LLM Defence" />
-                    <set-header name="Content-Type" exists-action="override">
-                        <value>application/json</value>
-                    </set-header>
-                    <set-body>{
-              "error": "Model response blocked by LLM Defence",
-              "session_id": "@(context.Variables["defenceSessionId"])"
-            }</set-body>
-                </return-response>
-            </when>
-        </choose>
-    </outbound>
-    <on-error>
-        <base />
-    </on-error>
-</policies>
+OPERATION_ID=           # Unique operation identifier (example: chat-completions)
+OPERATION_DISPLAY_NAME= # Operation display name, use quotes (example: "Chat Completions")
+OPERATION_METHOD=       # HTTP method for the operation (example: POST)
+OPERATION_URL_TEMPLATE= # Operation URL template (example: /models/chat/completions)
 ```
 
-## STEP 7 — Client Usage
+## Mandatory Policy Changes (User Action Required)
 
-Client → APIM (NOT Foundry)
+Before running the deployment, you **must update two values** in the following file:
 
-``` sh
-curl -X POST \
-  "https://<apim-name>.azure-api.net/foundry/models/chat/completions?api-version=2024-05-01-preview" \
-  -H "Content-Type: application/json" \
-  -H "Bearer: AI_FOUNDRY_API_KEY" \
-  -d '{
-    "messages": [
-      { "role": "user", "content": "I am going to Paris, what should I see?" }
-    ],
-    "model": "mistral-medium-2505",
-    "max_tokens": 2048,
-    "temperature": 0.8,
-    "top_p": 0.1
-  }'
+```
+policies/policy.xml
 ```
 
-## Behavior Summary
+These values are **environment- and deployment-specific** and **must be updated manually**.
 
-| Scenario                   | Result                       |
-| -------------------------- | ---------------------------- |
-| AccuKnox returns `BLOCK`   | ❌ 403, Foundry not called    |
-| AccuKnox returns `ALLOW`   | ✅ Request forwarded          |
-| AccuKnox returns `MONITOR` | ✅ Request forwarded          |
-| Defence API down           | ❌ Fail-closed (configurable) |
-| Client sees Foundry key    | ❌ Never                      |
+## Change 1: AccuKnox LLM Defence Endpoint
 
-### Extensible By Design
+### Lines to Update
 
-This architecture supports:
+- **Line ~45** – Prompt scan (Inbound)
+- **Line ~135** – Response scan (Outbound)
 
-- Monitor-only mode
+> You must update **both occurrences**
 
-- Severity thresholds
+### Default Value (As Shipped)
 
-- Multi-message extraction
+```xml
+<set-url>https://cwpp.dev.accuknox.com/llm-defence/application-query</set-url>
+```
 
-- Async / shadow scanning
+### Required Change
 
-- Policy fragments
+Replace the URL with your **AccuKnox environment-specific endpoint**:
 
-- Tenant-aware routing
+```text
+https://cwpp.<your-environment>.accuknox.com/llm-defence/application-query
+```
 
-- Prompt + response logging
+### Environment Examples
+
+| Environment | URL                                                             |
+| ----------- | --------------------------------------------------------------- |
+| Development | `https://cwpp.dev.accuknox.com/llm-defence/application-query`   |
+| Staging     | `https://cwpp.stage.accuknox.com/llm-defence/application-query` |
+| Production  | `https://cwpp.prod.accuknox.com/llm-defence/application-query`  |
+
+## Change 2: Azure AI Foundry Backend URL
+
+### Line to Update
+
+- **Line ~100** – Backend forwarding configuration
+
+### Default Value (As Shipped)
+
+```xml
+<set-backend-service base-url="https://ai-prompt-firewall-openai.services.ai.azure.com" />
+```
+
+### Required Change
+
+Replace the `base-url` with **your Azure AI Foundry / OpenAI deployment endpoint**:
+
+```xml
+<set-backend-service base-url="https://<your-foundry-resource>.services.ai.azure.com" />
+```
+
+### Example
+
+```xml
+<set-backend-service base-url="https://my-foundry-openai.services.ai.azure.com" />
+```
+
+> This URL **must exactly match** the endpoint of your deployed model and must support **Bearer token authentication**.
+
+## Summary of Required Policy Edits
+
+| Change              | File         | Line(s)   | Description                        |
+| ------------------- | ------------ | --------- | ---------------------------------- |
+| AccuKnox endpoint   | `policy.xml` | ~45, ~135 | Set correct AccuKnox environment   |
+| Foundry backend URL | `policy.xml` | ~100      | Set your model deployment endpoint |
+
+## Important Notes
+
+- Line numbers may vary slightly if comments are added or removed
+- Always verify both **prompt** and **response** scan URLs
+- Deployment will **fail or block traffic** if these values are incorrect
+
+## Secrets Handling (Mandatory)
+
+Secrets **must not** be placed in `.env` or committed to source control.
+
+This deployment requires the following **APIM Named Value**:
+
+| Name                | Purpose                        |
+| ------------------- | ------------------------------ |
+| `LLM_DEFENCE_TOKEN` | AccuKnox LLM Defence API token |
+
+The AccuKnox token is **requested securely during execution of `deploy.sh`** (input is hidden).
+The script automatically creates or updates the required **APIM Named Value** as part of the deployment process.
+
+
+## Deployment
+
+Make the deployment script executable:
+
+```bash
+chmod +x deploy.sh
+```
+
+Run the deployment:
+
+```bash
+./deploy.sh
+```
+
+This will:
+
+- Set the Azure subscription
+- Deploy the API and operation via Bicep
+- Apply the operation-level policy
+- Bind the backend service
+- Enable prompt and response scanning
+
+## Policy Behavior Summary
+
+### Inbound Processing
+
+- Extracts and validates `Authorization: Bearer` token
+- Extracts `messages[0].content` from request body
+- Calls AccuKnox LLM Defence (prompt scan)
+- Blocks unsafe prompts (`403 Forbidden`)
+- Forwards safe requests to Azure AI Foundry
+
+### Outbound Processing
+
+- Extracts model response content
+- Calls AccuKnox LLM Defence (response scan)
+- Blocks unsafe responses before returning to client

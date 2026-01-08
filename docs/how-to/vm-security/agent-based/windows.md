@@ -5,7 +5,7 @@ description: Comprehensive guide for Agent-based Vulnerability and Malware Scann
 
 # Agent-Based VM Scanning for Windows
 
-This guide provides step-by-step instructions to onboard Windows Virtual Machines (VMs) for agent-based vulnerability and malware scanning using the AccuKnox Omni agent.
+This guide provides step-by-step instructions to onboard Windows Virtual Machines (VMs) for agent-based vulnerability and malware scanning using the AccuKnox VM Scan Solution agent.
 
 ## Prerequisites
 
@@ -79,9 +79,9 @@ New-Item -ItemType Directory -Path "C:\ProgramData\Accuknox\Omni" -Force
 Move-Item -Path .\database\msrc\ -Destination "C:\ProgramData\Accuknox\Omni" -Force
 ```
 
-### 4. Install Omni Agent
+### 4. Install VM Scan Solution Agent
 
-Move the Omni executable to the installation directory:
+Move the VM Scan Solution executable to the installation directory:
 
 ```powershell
 New-Item -ItemType Directory -Path "C:\Program Files\AccuKnox\Omni\" -Force

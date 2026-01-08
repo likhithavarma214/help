@@ -30,7 +30,7 @@ AccuKnox cloud security tools support seamless discovery, policy enforcement, an
 <!-- > The above table is based on the [Trivy documentation: Supported OS](https://trivy.dev/docs/latest/guide/coverage/os/#supported-os). -->
 
 !!! info "Note"
-    Malware scanning is independent of distrubution.
+    Malware scanning is independent of distribution.
 
 ---
 

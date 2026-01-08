@@ -1,54 +1,44 @@
 ---
-title: Running Host Security Scans with AccuKnox Tooling Host Security Scan
-description: AccuKnox integrates with Nessus, Masscan, and Zeek to identify issues in on-premise hosts, enhancing overall security and compliance.
+title: Host Vulnerability & Malware Scan
+description: AccuKnox VM Security covers agent-based and agentless scanning offering continuous vulnerability and optional malware detection.
 ---
 
-# Running Host Security Scans with AccuKnox Tooling
+# Host Vulnerability & Malware Scan
 
-AccuKnox provides host scanning capabilities through an integration with tools like Nessus
+AccuKnox VM Security covers agent-based and agentless scanning offering continuous vulnerability and optional malware detection.
 
-Nessus is a remote security scanning tool for vulnerability scanning by Tenable. IT Administration teams are using it to scan for vulnerabilities in the workstations and servers, routers, and switches which are planted all over the network both in LAN as well as WAN. It is also leveraged by professionals for Penetration Testing and compliance.
+## Agentless VM Scanning
 
-Nessus is a very advanced tool for mainly highlighting the server's configuration level, software level issues, and missing security patches. For network devices, it lists any configuration issues, outdated practices, or patches required for improving security.
+!!! tip "Getting Started"
+    - [Agentless Cloud VM Scanning](https://help.accuknox.com/how-to/vm-security/agentless/cloud-vm-scanning/)
 
-By integrating Nessus with AccuKnox, the following additional security capabilities are unlocked:
+Supports **AWS**, **GCP**, **Azure**, and **OpenShift Virtualization**. This cloud-native approach scans VM disks and metadata without requiring an agent on the VM.
 
-- Asset discovery of On-Prem Hosts And Network Devices
+![alt text](image-18.png)
 
-- Penetration Testing Reconnaissance
+## Agent-based VM Scanning
 
-- Active Directory (AD) Checks
+!!! tip "Getting Started"
+    - [Agent-based Linux VM Scanning](https://help.accuknox.com/how-to/vm-security/agent-based/linux/)
+    - [Agent-based Windows VM Scanning](https://help.accuknox.com/how-to/vm-security/agent-based/windows/)
 
-- Unsupported OS and Third-Party Software reports
+For hosts that cannot be scanned agentlessly, AccuKnox provides a lightweight agent for **Linux** and **Windows**. It supports **air-gapped environments** allowing scans without outbound internet access.
 
-- Network Infrastructure and Database Configuration Audits
+![alt text](image-17.png)
 
-- External Attack Surface Discovery
+## Centralized Visibility
 
-- Malware Scan
+Scans are tied to tenant-level tokens and labels for identification, grouping, and reporting. Findings are centralized in the AccuKnox console for visibility, correlation, and reporting across workloads.
 
-- Automation and Remediation
+![alt text](image-15.png)
 
-- Alerting and Reporting
+## Vulnerability Detection Use Cases
 
-Thus, the integration allows AccuKnox to perform a deep scan of the On-Prem environment and provide a richer risk assessment, both for the Hosts and the Network infrastructure. This integrates seamlessly into the platform along with the findings that AccuKnox provides out of the box for the Cloud Accounts and Workloads.
-
-Pre-requisite for Integration: [Host Scan -](https://help.accuknox.com/use-cases/host-sec/#pre-requisites-for-nessus-integration)
-
-## Use-Cases
+AccuKnox performs deep scans of the host environment to provide rich risk assessment for both hosts and network infrastructure, detecting critical vulnerabilities and misconfigurations.
 
 ### **Apache Log4j**
 
-The CVE-2021-44228 RCE vulnerability - affecting Apache's Log4j library, versions 2.0-beta9 to 2.14.1 - exists in the action the Java Naming and Directory Interface (JNDI) takes to resolve variables. According to the [CVE-2021-44228 listing](https://nvd.nist.gov/vuln/detail/CVE-2021-44228 "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"), affected versions of Log4j contain JNDI features - such as message lookup substitution - that "do not protect against adversary-controlled LDAP [Lightweight Directory Access Protocol] and other JNDI related endpoints."
-
-!!!info "note"
-    The Apache [Log4j version 2.16.0 security update](https://logging.apache.org/log4j/2.x/security.html "https://logging.apache.org/log4j/2.x/security.html") that addresses the [CVE-2021-45046](https://nvd.nist.gov/vuln/detail/CVE-2021-45046 "https://nvd.nist.gov/vuln/detail/CVE-2021-45046") vulnerability disables JNDI.
-
-#### Impact
-
-An adversary can exploit CVE-2021-44228 by submitting a specially crafted request to a vulnerable system that causes that system to execute arbitrary code. The request allows the adversary to take full control over the system. The adversary can then steal information, launch ransomware, or conduct other malicious activity.
-
-AccuKnox Host Scan detects critical vulnerabilities like Apache Log4j and provides remediation steps to remediate the critical findings
+The CVE-2021-44228 RCE vulnerability affects Apache's Log4j library. An adversary can exploit this by submitting a specially crafted request to a vulnerable system to execute arbitrary code. AccuKnox Host Scan detects critical vulnerabilities like Apache Log4j and provides steps to remediate them.
 
 ![image-20241219-082057.png](./images/vm-host-scan/1.png)
 
@@ -60,15 +50,7 @@ Upgrading the package to the latest supported version will remediate the vulnera
 
 ### **Microsoft RDP RCE (CVE-2019-0708)**
 
-A remote code execution vulnerability exists in Remote Desktop Services -- formerly known as Terminal Services -- when an unauthenticated attacker connects to the target system using RDP and sends specially crafted requests. This vulnerability is pre-authentication and requires no user interaction. An attacker who successfully exploited this vulnerability could execute arbitrary code on the target system. An attacker could then install programs; view, change, or delete data; or create new accounts with full user rights.
-
-To exploit this vulnerability, an attacker would need to send a specially crafted request to the target systems Remote Desktop Service via RDP.
-
-#### Impact
-
-The remote host is affected by a remote code execution vulnerability in Remote Desktop Protocol (RDP). An unauthenticated, remote attacker can exploit this, via a series of specially crafted requests, to execute arbitrary code.
-
-AccuKnox Detects the Microsoft RDP RCE and provides descriptive solutions to help organizations patch the critical vulnerability
+A remote code execution vulnerability exists in Remote Desktop Services. An attacker who successfully exploited this vulnerability could execute arbitrary code on the target system. AccuKnox detects the Microsoft RDP RCE and provides descriptive solutions to help organizations patch the critical vulnerability.
 
 ![image-20241219-082748.png](./images/vm-host-scan/3.png)
 
@@ -80,22 +62,12 @@ Microsoft has released a set of patches for OS having CVE-2019-0708, Installing 
 
 ### **MS11-020: Vulnerability in SMB Server**
 
-The remote host is affected by a vulnerability in the SMB server that may allow an attacker to execute arbitrary code or perform a denial of service against the remote host. This vulnerability depends on access to a Windows file share but does not necessarily require credentials.
-
-#### Impact
-
-It is possible to execute arbitrary code on the remote Windows host due to flaws in its SMB implementation.
-
-AccuKnox scans the host to identify vulnerabilities related to outdated components, packages, operating systems, file systems, and more. It also provides detailed remediation steps to address these security issues effectively.
+The remote host is affected by a vulnerability in the SMB server that may allow an attacker to execute arbitrary code or perform a denial of service against the remote host. AccuKnox scans the host to identify vulnerabilities related to outdated components, packages, operating systems, file systems, and more.
 
 ![image-20241219-083527.png](./images/vm-host-scan/5.png)
 
 #### Solution
 
-Microsoft has released the security patches which need to be installed to remediate the security issues
-
-To remediate this:
-
-Users can create tickets from AccuKnox Saas UI with the required details of the findings
+Microsoft has released the security patches which need to be installed to remediate the security issues. To remediate this, users can create tickets from AccuKnox Saas UI with the details of the findings.
 
 ![image-20241219-083552.png](./images/vm-host-scan/6.png)
