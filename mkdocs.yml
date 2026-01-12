@@ -279,7 +279,8 @@ nav:
     - "AI Security":
       - "Overview": "integrations/ai-overview.md"
       - "Bifrost Integration": "integrations/bifrost-integration.md"
-      - "Copilot Studio": "integrations/copilot-studio.md"
+      - "Copilot Studio Asset Visibility": "integrations/copilot-studio.md"
+      - "Power Apps Integration": "integrations/powerapps-integration.md"
       # - "LiteLLM Prompt Firewall Integration": "integrations/litellm-prompt-firewall-integration.md"
     - "API Security":
       - "Overview": "integrations/api-overview.md"
@@ -544,6 +545,7 @@ nav:
     - "Enterprise Architecture" : "getting-started/accuknox-arch.md"
     - "Deployment Models": "getting-started/deployment-models.md"
     - "Multi-Tenancy Support": "resources/multitenancy.md"
+    # - "Sample Reports": "resources/sample-reports.md"
     - "Asset Onboarding Deck": "https://docs.google.com/presentation/d/e/2PACX-1vSNns23fmwfVgaoBIvR1fL7fk_Be6GYUJLwRticjlm4cBvIAqzxm4IF7RV7qsV00KrrRFGDjOIVG0Q2/pub?start=false&loop=false&delayms=3000"
     - "Compliance Baseline Data": "resources/compliance-baseline-data.md"
     # - "Data Usage Policy": "resources/data-usage-policy.md"  # ADD THESE BACK IN LATER
