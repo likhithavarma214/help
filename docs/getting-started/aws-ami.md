@@ -7,6 +7,9 @@ description: Steps to install AccuKnox Control Plane using AWS AMI
 
 This guide details the steps to install the AccuKnox Control Plane using an AWS AMI.
 
+!!! note
+    The AccuKnox team will send you the AMI download URL.
+
 ## Import the AMI to S3 Bucket
 
 Use the following command to import the AMI:

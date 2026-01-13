@@ -390,6 +390,14 @@ hide:
 ??? "**9. Does AccuKnox support backup and auditing in isolated deployments?**"
     Yes. Customers should configure **backup and snapshot procedures** in coordination with AccuKnox SRE/DevOps. In isolated deployments, customers are responsible for setting up monitoring and audit workflows, while AccuKnox provides guidance and support.
 
+??? "**10. In which regions is AccuKnox deployed in?**"
+    AccuKnox is deployed in the following regions:
+
+    - **US (Americas)**: [app.accuknox.com](https://app.accuknox.com)
+    - **Europe**: [app.eu.accuknox.com](https://app.eu.accuknox.com)
+    - **Middle East**: [app.me.accuknox.com](https://app.me.accuknox.com)
+    - **India**: [app.in.accuknox.com](https://app.in.accuknox.com)
+
 ## Pricing & Billing
 
 ??? "**1. What is AccuKnox’s licensing model?**"

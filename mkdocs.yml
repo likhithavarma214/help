@@ -390,6 +390,7 @@ nav:
         - "AccuKnox": "integrations/nutanix-accuknox.md"
         - "KubeArmor": "integrations/nutanix-kubearmor.md"
       - "Spectro Cloud": "integrations/spectrocloud.md"
+    - "Serverless Security": "integrations/serverless.md"
     - "MCP Server": "integrations/mcp-server.md"
     - "Ticketing" :
       - "Ticket Templates" : "integrations/ticket-template.md"
@@ -431,6 +432,7 @@ nav:
       - "Vulnerability Management": "use-cases/vulnerability.md"
     - "CDR (Cloud Detection and Response)": "use-cases/cdr.md"
     - "API Security": "use-cases/api-security.md"
+    - "Serverless Security": "use-cases/serverless-security.md"
     - "AI/ML Security":
       - "Overview": "use-cases/aiml-usecases.md"
       - "AI-DR (AI Detection and Response)": "use-cases/aidr.md"
