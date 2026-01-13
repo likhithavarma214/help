@@ -50,7 +50,7 @@ Through AccuKnox platform, you can generate various security and compliance repo
 
   <div class="card disabled">
     <div class="card-content">
-      <h3>ZAP Scan</h3>
+      <h3>DAST Scan</h3>
       <p>Sample Report will be available soon</p>
     </div>
   </div>
