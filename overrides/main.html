@@ -1,22 +1,23 @@
 {#
-  Template overrides for Material for MkDocs
-  
-  This base template extends the Material theme's base template
-  and adds a custom banner at the top of all pages using the
-  'announce' block, which is the recommended way to add announcements
-  in Material for MkDocs.
-  
-  The announce block appears before the header and is ideal for
-  site-wide announcements, banners, or important notices.
+Template overrides for Material for MkDocs
+
+This base template extends the Material theme's base template
+and adds a custom banner at the top of all pages using the
+'announce' block, which is the recommended way to add announcements
+in Material for MkDocs.
+
+The announce block appears before the header and is ideal for
+site-wide announcements, banners, or important notices.
 #}
 
 {% extends "base.html" %}
 
 {#
-  Override the announce block to include our custom banner.
-  The announce block is designed for announcement bars and appears
-  at the very top of the page, before the header.
+Override the announce block to include our custom banner.
+The announce block is designed for announcement bars and appears
+at the very top of the page, before the header.
 #}
 {% block announce %}
-  {% include "partials/banner.html" %}
+{% include "partials/banner.html" %}
 {% endblock %}
+
