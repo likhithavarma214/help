@@ -201,7 +201,6 @@ nav:
     - "AI/ML Security (AI-SPM)":
       - "Overview": "how-to/aiml-overview.md"
       - "Prompt Firewall Onboard": "use-cases/llm-defense-app-onboard.md"
-      - "Azure AI Foundry": "getting-started/azure-ai-foundry.md"
       - "AWS AI/ML Onboard": "how-to/aiml-aws-onboard.md"
       - "Azure AI/ML Onboard": "how-to/aiml-azure-onboard.md"
       - "GCP AI/ML Onboard": "how-to/aiml-gcp-onboard.md"
@@ -282,6 +281,9 @@ nav:
       - "Bifrost Integration": "integrations/bifrost-integration.md"
       - "Copilot Studio Asset Visibility": "integrations/copilot-studio.md"
       - "Power Apps Integration": "integrations/powerapps-integration.md"
+      - "APIM":
+        - "Azure APIM": "getting-started/azure-ai-foundry.md"
+        - "AWS APIM": "how-to/aws-apim.md"
       # - "LiteLLM Prompt Firewall Integration": "integrations/litellm-prompt-firewall-integration.md"
     - "API Security":
       - "Overview": "integrations/api-overview.md"

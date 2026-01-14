@@ -10,67 +10,37 @@ description: Accuknox documentation to set up LLM Defense for Azure AI Foundry
 
 The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-compatible models with **minimal onboarding effort** and **no manual APIM configuration**.
 
-All user prompts are first checked by AccuKnox LLM Defence using Azure API Management (APIM) before reaching Azure AI Foundry. This setup ensures:
+## How It Works
 
-- Clients do not connect directly to Foundry.
-- Only the user’s question is sent to AccuKnox for scanning.
-- The full request is forwarded to Foundry if approved.
-- Requests are blocked if AccuKnox marks them unsafe.
-- Foundry only receives allowed requests.
-- Secrets are securely managed in APIM.
-- Client code changes only the endpoint and API key.
+**Security Flow:**
 
-## What This Deployment Does
+- All user prompts are scanned by AccuKnox LLM Defence via Azure API Management (APIM) before reaching Azure AI Foundry.
+- Unsafe prompts or responses are blocked; only approved requests and responses reach the client and Foundry.
+- Clients never connect directly to Foundry; only the endpoint and API key need to be updated in client code.
+- Secrets are managed securely in APIM.
 
-- Deploys an **API and operation** using Bicep
-- Applies **operation-level APIM policies**
-- Extracts user prompts from request payloads
-- Scans prompts using **AccuKnox LLM Defence**
-- Blocks unsafe prompts before model execution
-- Forwards safe requests to **Azure AI Foundry**
-- Scans model responses before returning to client
-- Blocks unsafe model outputs
+**Deployment Actions:**
+
+- Deploys API and operation using Bicep.
+- Applies APIM policies for prompt and response scanning.
+- Extracts and scans user prompts and model responses.
+- Forwards only safe requests to Azure AI Foundry and safe responses to clients.
 
 ## Runtime Security Flow
 
-```
-Client
-  |
-  | POST /models/chat/completions
-  | Authorization: Bearer <Foundry API Key>
-  |
-Azure API Management (APIM)
-  |
-  |-- Extract Prompt
-  |-- AccuKnox LLM Defence (Prompt Scan)
-  |-- BLOCK if unsafe
-  |
-  |-- Forward to Azure AI Foundry
-  |
-  |-- AccuKnox LLM Defence (Response Scan)
-  |-- BLOCK if unsafe
-  |
-Client Response
-```
+![alt text](image-19.png)
 
 ## Prerequisites
 
 Before running this project, ensure you have:
 
-- **An active Azure subscription** with billing enabled
-- **Azure API Management (APIM) instance**
-    - Must already exist
-    - Recommended SKU: Developer (non-production) or Premium (production)
-    - Must be reachable from Azure AI Foundry endpoints
-- **Azure AI Foundry model deployed**
-    - Accessible via an OpenAI-compatible endpoint
-    - Endpoint must support Bearer token authentication
-- **AccuKnox LLM Defence access token**
-    - Obtain from onboarding an application on the AccuKnox platform (AI/ML Security → Applications → Prompt Firewall → Add Application)
-    - Store as an APIM Named Value (do not store in code)
-- **Azure CLI installed**
-    - Version 2.50+ recommended
-    - Must be logged in (`az login`)
+| Requirement                              | Details                                                                                                                                                                                                                  |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Azure Subscription**                    | Active subscription with billing enabled.                                                                                                                                                                                |
+| **Azure API Management (APIM) Instance**  | Must already exist.<br>Recommended SKU: Developer (non-production) or Premium (production).<br>Must be reachable from Azure AI Foundry endpoints.                                                                        |
+| **Azure AI Foundry Model**                | Model deployed and accessible via an OpenAI-compatible endpoint.<br>Endpoint must support Bearer token authentication.                                                                                                   |
+| **AccuKnox LLM Defence Access Token**     | Obtain from onboarding an application on the AccuKnox platform:<br>AI/ML Security → Applications → Prompt Firewall → Add Application.<br>Store as an APIM Named Value (do not store in code).                            |
+| **Azure CLI**                             | Version 2.50+ recommended.<br>Must be installed and logged in (`az login`).                                                                                                                                              |
 
 ## Configuration (`.env`)
 
@@ -191,7 +161,6 @@ This deployment requires the following **APIM Named Value**:
 
 The AccuKnox token is **requested securely during execution of `deploy.sh`** (input is hidden).
 The script automatically creates or updates the required **APIM Named Value** as part of the deployment process.
-
 
 ## Deployment
 
