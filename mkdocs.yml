@@ -279,7 +279,8 @@ nav:
     - "AI Security":
       - "Overview": "integrations/ai-overview.md"
       - "Bifrost Integration": "integrations/bifrost-integration.md"
-      - "Copilot Studio Asset Visibility": "integrations/copilot-studio.md"
+      - "Azure Copilot Studio": "integrations/copilot-studio.md"
+      - "BedRock AgentCore": "integrations/bedrock-agentcore.md"
       - "Power Apps Integration": "integrations/powerapps-integration.md"
       - "APIM":
         - "Azure APIM": "getting-started/azure-ai-foundry.md"
