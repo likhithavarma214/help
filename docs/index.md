@@ -112,7 +112,6 @@ hide:
   /* Hover effects for side cards to invite interaction */
   .card-left:hover, .card-right:hover {
       opacity: 0.8;
-      z-index: 3; /* bring to front on hover maybe? Or just highlight */
   }
 
   /* SECTION 2: EXPLORER */
@@ -160,9 +159,23 @@ hide:
     transition: all 0.2s;
   }
 
+  /* Ensure tab icons transition smoothly and are visible when active */
+  .tab-btn img {
+    transition: filter 0.2s ease, opacity 0.2s ease;
+    width: 18px;
+    height: 18px;
+    opacity: 0.9;
+  }
+
   .tab-btn.active {
     background-color: #0f172a; /* Dark active state */
     color: white;
+  }
+
+  /* Make icons white when tab is active for visibility on dark background */
+  .tab-btn.active img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
   }
 
   .tab-btn:hover:not(.active) {
@@ -553,6 +566,9 @@ hide:
       <div class="module-item" data-cat="workloads" style="display:none;" onclick="selectModule('cwpp', this)">
          <img src="assets/icons/shield.svg" alt="Runtime Protection" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Runtime Protection (CWPP)
       </div>
+      <div class="module-item" data-cat="workloads" style="display:none;" onclick="selectModule('vmsec', this)">
+         <img src="assets/icons/host.svg" alt="VM Security" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> VM Security
+      </div>
       <div class="module-item" data-cat="workloads" style="display:none;" onclick="selectModule('kiem', this)">
          <img src="assets/icons/user_check.svg" alt="K8s Identity" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> K8s Identity &amp; Entitlements (KIEM)
       </div>
@@ -592,7 +608,7 @@ hide:
                 Embeds security practices into DevOps, automating security testing and compliance throughout the SDLC from build to runtime environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/shield.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/BK7cWRys/devsecops.png"  alt="DevSecOps" />
             </div>
             <a href="/use-cases/aspm/" class="learn-more-link">Learn more about DevSecOps &rarr;</a>
         </div>
@@ -611,7 +627,7 @@ hide:
                 Comprehensive API security monitoring and protection to detect vulnerabilities, prevent attacks, and ensure secure API communications.
             </div>
              <div class="module-visual-placeholder">
-                 <img src="assets/icons/api.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/gMFBs4PY/api-security.png"  alt="API Security" />
             </div>
             <a href="/use-cases/api-security/" class="learn-more-link">Learn more about API Security &rarr;</a>
         </div>
@@ -630,7 +646,7 @@ hide:
                 Identifies cloud misconfigurations, ensures compliance, and continuously monitors security across multi-cloud environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/cloud.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/bgXz8vdH/cspm.png"  alt="Cloud Security (CSPM)" />
             </div>
             <a href="/use-cases/cspm/" class="learn-more-link">Learn more about Cloud Security &rarr;</a>
         </div>
@@ -649,7 +665,7 @@ hide:
                 Detect and remediate threats on AWS, GCP, and Azure, focusing on high-signal security events.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/cdr.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/bRqcHdx1/CDR.png"  alt="Cloud Detection & Response (CDR)" />
             </div>
             <a href="/getting-started/aws-cdr/" class="learn-more-link">Learn more about Detection & Response &rarr;</a>
         </div>
@@ -668,7 +684,7 @@ hide:
                 Secure storage and management of sensitive credentials, API keys, and secrets using encryption and access controls.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/key.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/Tx3YXD9m/secrets-manger.png"  alt="Secrets Manager" />
             </div>
             <a href="/getting-started/secrets-management/" class="learn-more-link">Learn more about Secrets Manager &rarr;</a>
         </div>
@@ -687,9 +703,27 @@ hide:
                 Protects cloud workloads by detecting threats, vulnerabilities, and misconfigurations in real time.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/shield.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/5xhxXL6W/cwpp.png"  alt="Runtime Protection (CWPP)" />
             </div>
             <a href="/use-cases/cwpp/" class="learn-more-link">Learn more about Runtime Protection &rarr;</a>
+        </div>
+
+        <!-- VM Security -->
+        <div id="vmsec" class="module-detail-block" style="display:none;">
+            <div class="content-header">
+                <a href="https://help.accuknox.com/how-to/vm-security/agentless/cloud-vm-scanning/" class="action-btn">Agentless — Cloud VM Scanning</a>
+                <a href="https://help.accuknox.com/how-to/vm-security/agent-based/linux/" class="action-btn">Agent-Based — Linux</a>
+            </div>
+            <div class="module-detail-title">
+                VM Security
+            </div>
+            <div class="module-description">
+                Protect virtual machines across Windows and Linux operating systems with vulnerability management, hardening, and runtime protection.
+            </div>
+            <div class="module-visual-placeholder">
+                 <img src="https://help.accuknox.com/use-cases/image-15.png" alt="VM Security" />
+            </div>
+            <a href="https://help.accuknox.com/use-cases/vm-overview/" class="learn-more-link">Learn more about VM Security &rarr;</a>
         </div>
 
         <!-- KIEM -->
@@ -706,7 +740,7 @@ hide:
                 Enforces IAM controls and entitlement policies across Kubernetes clusters to prevent privilege escalation.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/user_check.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/4gnBwVcg/kiem.png"  alt="KIEM" />
             </div>
             <a href="/use-cases/kiem/" class="learn-more-link">Learn more about K8s Identity &rarr;</a>
         </div>
@@ -725,7 +759,7 @@ hide:
                 Continuously monitors Kubernetes clusters to identify and remediate misconfigurations and vulnerabilities.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/wheel.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/tPpD34VL/kspm.png"  alt="KSPM" />
             </div>
             <a href="/use-cases/kspm/" class="learn-more-link">Learn more about K8s Posture &rarr;</a>
         </div>
@@ -744,7 +778,7 @@ hide:
                 AI-SPM capability that detects cloud misconfigurations and monitors AI and ML models with continuous intelligence.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/ai.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/7dRHmKDs/aiml-sec.png"  alt="AI/ML Security" />
             </div>
             <a href="/use-cases/aiml-usecases/" class="learn-more-link">Learn more about AI/ML Security &rarr;</a>
         </div>
@@ -763,7 +797,7 @@ hide:
                 Unified visibility into security posture, risk, and compliance across multi-cloud and Kubernetes environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/compliance.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/6cL1q1J7/compliance.png"  alt="Continuous Compliance" />
             </div>
             <a href="/use-cases/compliance/" class="learn-more-link">Learn more about Compliance &rarr;</a>
         </div>
@@ -782,7 +816,7 @@ hide:
                 Secure air-gapped deployment of the CNAPP platform designed to meet federal and regulated environment requirements.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/icons/onprem.svg" width="48" height="48" alt="" />
+                 <img src="https://i.ibb.co/B2n4BDNk/onprem.png"  alt="On-Prem Deployment" />
             </div>
             <a href="/getting-started/on-prem-installation-guide/" class="learn-more-link">Learn more about On-Prem &rarr;</a>
         </div>
@@ -794,7 +828,7 @@ hide:
 
 <!-- SECTION 3: POPULAR USE CASES -->
 <section class="use-cases-section">
-  <div class="section-heading-3" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 40px;">Popular Use Cases</div>
+  <div class="section-heading-3" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 40px;">Important Links</div>
   <div class="use-cases-grid">
     <!-- Card 1 -->
     <div class="use-case-card">
