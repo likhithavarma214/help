@@ -299,12 +299,12 @@ hide:
   }
 
   .action-btn {
-    background: #2563eb;
-    border: 1px solid #2563eb;
+    background-color: #2563eb !important;
+    border: 1px solid #2563eb !important;
     padding: 8px 16px;
     border-radius: 6px;
     font-size: 0.85rem;
-    color: white;
+    color: white !important;
     cursor: pointer;
     text-decoration: none;
     display: inline-flex;
@@ -313,21 +313,20 @@ hide:
     font-weight: 500;
     transition: all 0.2s ease;
   }
-  /* Remove old first-child override so all look the same */
+  /* Ensure all buttons look the same, overriding any previous first-child logic */
   .action-btn:first-child {
-      background: #2563eb;
-      color: white;
-      border-color: #2563eb;
-      font-weight: 500;
+      background-color: #2563eb !important;
+      color: white !important;
+      border-color: #2563eb !important;
   }
   .action-btn::after {
       content: "→";
       transition: transform 0.2s;
   }
   .action-btn:hover {
-      background: #1d4ed8;
-      border-color: #1d4ed8;
-      color: white;
+      background-color: #1d4ed8 !important;
+      border-color: #1d4ed8 !important;
+      color: white !important;
   }
   .action-btn:hover::after {
       transform: translateX(3px);
@@ -672,9 +671,9 @@ hide:
         <!-- DevSecOps -->
         <div id="devsecops" class="module-detail-block">
             <div class="content-header">
-                <a href="/how-to/aspm-overview/" class="action-btn">Getting Started</a>
-                <a href="/integrations/cicd-overview/" class="action-btn">Integrations</a>
-                <a href="/use-cases/aspm/" class="action-btn">Use Case</a>
+                <a href="/how-to/aspm-overview/" class="action-btn" target="_blank">Getting Started</a>
+                <a href="/integrations/cicd-overview/" class="action-btn" target="_blank">Integrations</a>
+                <a href="/use-cases/aspm/" class="action-btn" target="_blank">Use Case</a>
             </div>
             <div class="module-detail-title">
                 DevSecOps (ASPM) <span class="agentless-badge">Agentless</span>
@@ -691,8 +690,8 @@ hide:
         <!-- API -->
         <div id="api" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/integrations/api-overview/" class="action-btn">Integrations</a>
-                <a href="/use-cases/api-security/" class="action-btn">Use Case</a>
+                <a href="/integrations/api-overview/" class="action-btn" target="_blank">Integrations</a>
+                <a href="/use-cases/api-security/" class="action-btn" target="_blank">Use Case</a>
             </div>
             <div class="module-detail-title">
                 API Security
@@ -709,8 +708,8 @@ hide:
         <!-- CSPM -->
         <div id="cspm" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/how-to/high-level-onboarding/" class="action-btn">Getting Started</a>
-                <a href="/use-cases/cspm/" class="action-btn">Use Case</a>
+                <a href="/how-to/high-level-onboarding/" class="action-btn" target="_blank">Getting Started</a>
+                <a href="/use-cases/cspm/" class="action-btn" target="_blank">Use Case</a>
             </div>
             <div class="module-detail-title">
                 Cloud Security (CSPM) <span class="agentless-badge">Agentless</span>
@@ -727,9 +726,9 @@ hide:
         <!-- CDR -->
         <div id="cdr" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/getting-started/aws-cdr/" class="action-btn">Getting Started</a>
-                <a href="/getting-started/cdr-setup/" class="action-btn">Redemediation Setup</a>
-                <a href="/use-cases/cdr/" class="action-btn">Use Case</a>
+                <a href="/getting-started/aws-cdr/" class="action-btn" target="_blank">Getting Started</a>
+                <a href="/getting-started/cdr-setup/" class="action-btn" target="_blank">Redemediation Setup</a>
+                <a href="/use-cases/cdr/" class="action-btn" target="_blank">Use Case</a>
             </div>
             <div class="module-detail-title">
                 Cloud Detection & Response (CDR)
@@ -746,7 +745,7 @@ hide:
         <!-- Secrets -->
         <div id="secrets" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/getting-started/secrets-management/" class="action-btn">Getting Started</a>
+                <a href="/getting-started/secrets-management/" class="action-btn" target="_blank">Getting Started</a>
             </div>
             <div class="module-detail-title">
                 Secrets Manager
@@ -763,8 +762,8 @@ hide:
         <!-- CWPP -->
         <div id="cwpp" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/getting-started/runtime-sec-arch/" class="action-btn">Getting Started</a>
-                <a href="/use-cases/cwpp/" class="action-btn">Use Case</a>
+                <a href="/getting-started/runtime-sec-arch/" class="action-btn" target="_blank">Getting Started</a>
+                <a href="/use-cases/cwpp/" class="action-btn" target="_blank">Use Case</a>
             </div>
             <div class="module-detail-title">
                 Runtime Protection (CWPP)
@@ -781,9 +780,9 @@ hide:
         <!-- VM Security -->
         <div id="vmsec" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/how-to/vm-security/agent-based/linux/" class="action-btn">Windows/Linux</a>
-                <a href="/how-to/vm-security/agentless/cloud-vm-scanning/" class="action-btn">Cloud VMs (Agentless)</a>
-                <a href="/how-to/vm-onboard-deboard-docker/" class="action-btn">Onboarding</a>
+                <a href="/how-to/vm-security/agent-based/linux/" class="action-btn" target="_blank">Windows/Linux</a>
+                <a href="/how-to/vm-security/agentless/cloud-vm-scanning/" class="action-btn" target="_blank">Cloud VMs (Agentless)</a>
+                <a href="/how-to/vm-onboard-deboard-docker/" class="action-btn" target="_blank">Onboarding</a>
             </div>
             <div class="module-detail-title">
                 VM Security
@@ -802,9 +801,9 @@ hide:
         <div id="kspm" class="module-detail-block" style="display:none;">
             <div class="content-header">
 
-                <a href="/how-to/registry-overview/" class="action-btn">Registry Scanning</a>
-                <a href="/use-cases/kspm/" class="action-btn">Use Case</a>
-                <a href="/use-cases/kiem/" class="action-btn">K8s Identity & Entitlements (KIEM)</a>
+                <a href="/how-to/registry-overview/" class="action-btn" target="_blank">Registry Scanning</a>
+                <a href="/use-cases/kspm/" class="action-btn" target="_blank">Use Case</a>
+                <a href="/use-cases/kiem/" class="action-btn" target="_blank">K8s Identity & Entitlements (KIEM)</a>
             </div>
             <div class="module-detail-title">
                 Kubernetes Security Posture (KSPM)
@@ -821,10 +820,10 @@ hide:
         <!-- Prompt Firewall -->
         <div id="prompt-firewall" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/use-cases/prompt-firewall/" class="action-btn">Overview</a>
-                <a href="/use-cases/llm-defense-app-onboard/" class="action-btn">Defense App Onboard</a>
-                <a href="/use-cases/subprompts-categories/" class="action-btn">Subprompts Categories</a>
-                <a href="/integrations/ai-overview/" class="action-btn">Integrations</a>
+                <a href="/use-cases/prompt-firewall/" class="action-btn" target="_blank">Overview</a>
+                <a href="/use-cases/llm-defense-app-onboard/" class="action-btn" target="_blank">Defense App Onboard</a>
+                <a href="/use-cases/subprompts-categories/" class="action-btn" target="_blank">Subprompts Categories</a>
+                <a href="/integrations/ai-overview/" class="action-btn" target="_blank">Integrations</a>
             </div>
             <div class="module-detail-title">
                 Prompt Firewall
@@ -836,16 +835,16 @@ hide:
                  <img src="assets/images/homepage/aiml-sec.png"  alt="Prompt Firewall" />
             </div>
 
-            <a href="/integrations/ai-overview/" class="action-btn">Integrations</a>
+            <a href="/integrations/ai-overview/" class="action-btn" target="_blank">Integrations</a>
             <a href="/use-cases/prompt-firewall/" class="learn-more-link">Learn more about Prompt Firewall &rarr;</a>
         </div>
 
         <!-- Red Teaming -->
         <div id="red-teaming" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/how-to/llm-static-scan/" class="action-btn">LLM Static Scan</a>
-                <a href="/how-to/ml-static-scan/" class="action-btn">ML Static Scan</a>
-                <a href="/how-to/aiml-aws-onboard/" class="action-btn">Cloud Onboarding</a>
+                <a href="/how-to/llm-static-scan/" class="action-btn" target="_blank">LLM Static Scan</a>
+                <a href="/how-to/ml-static-scan/" class="action-btn" target="_blank">ML Static Scan</a>
+                <a href="/how-to/aiml-aws-onboard/" class="action-btn" target="_blank">Cloud Onboarding</a>
             </div>
             <div class="module-detail-title">
                 Red Teaming
@@ -862,8 +861,8 @@ hide:
         <!-- AI-DR -->
         <div id="ai-dr" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/use-cases/aidr/" class="action-btn">AI-DR Use Cases</a>
-                 <a href="/support-matrix/aiml-support-matrix/" class="action-btn">Support Matrix</a>
+                <a href="/use-cases/aidr/" class="action-btn" target="_blank">AI-DR Use Cases</a>
+                 <a href="/support-matrix/aiml-support-matrix/" class="action-btn" target="_blank">Support Matrix</a>
             </div>
             <div class="module-detail-title">
                 AI Detection & Response (AI-DR)
@@ -880,7 +879,7 @@ hide:
         <!-- ModelArmor -->
         <div id="model-armor" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/use-cases/modelarmor/" class="action-btn">ModelArmor Use Cases</a>
+                <a href="/use-cases/modelarmor/" class="action-btn" target="_blank">ModelArmor Use Cases</a>
 
             </div>
             <div class="module-detail-title">
@@ -898,9 +897,9 @@ hide:
         <!-- Compliance -->
         <div id="comp" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="https://accuknox.com/compliance" class="action-btn">Compliance Support Matrix</a>
-                <a href="/resources/compliance-baseline-data/" class="action-btn">Compliance Baseline Data</a>
-                <a href="/how-to/cis-benchmarking/" class="action-btn">CIS Benchmarking</a>
+                <a href="https://accuknox.com/compliance" class="action-btn" target="_blank">Compliance Support Matrix</a>
+                <a href="/resources/compliance-baseline-data/" class="action-btn" target="_blank">Compliance Baseline Data</a>
+                <a href="/how-to/cis-benchmarking/" class="action-btn" target="_blank">CIS Benchmarking</a>
             </div>
             <div class="module-detail-title">
                 Continuous Compliance <span class="agentless-badge">Agentless</span>
@@ -917,11 +916,11 @@ hide:
         <!-- On-Prem -->
         <div id="onprem-install" class="module-detail-block" style="display:none;">
             <div class="content-header">
-                <a href="/getting-started/on-prem-overview/" class="action-btn">Overview</a>
-                <a href="/getting-started/on-prem-installation-guide/" class="action-btn">Installation Guide</a>
-                <a href="/getting-started/on-prem-single-node-installation/" class="action-btn">Single Node Installation</a>
-                <a href="/getting-started/security-on-openshift/" class="action-btn">Security on OpenShift</a>
-                <a href="/getting-started/aws-ami/" class="action-btn">AWS AMI</a>
+                <a href="/getting-started/on-prem-overview/" class="action-btn" target="_blank">Overview</a>
+                <a href="/getting-started/on-prem-installation-guide/" class="action-btn" target="_blank">Installation Guide</a>
+                <a href="/getting-started/on-prem-single-node-installation/" class="action-btn" target="_blank">Single Node Installation</a>
+                <a href="/getting-started/security-on-openshift/" class="action-btn" target="_blank">Security on OpenShift</a>
+                <a href="/getting-started/aws-ami/" class="action-btn" target="_blank">AWS AMI</a>
             </div>
             <div class="module-detail-title">
                 On-Prem Deployment <span class="agentless-badge">Agentless</span>
