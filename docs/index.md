@@ -682,7 +682,7 @@ hide:
                 Embeds security practices into DevOps, automating security testing and compliance throughout the SDLC from build to runtime environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="assets/images/homepage/devsecops.png"  alt="DevSecOps" />
+                 <img src="https://accuknox.com/wp-content/uploads/ASPM2-dashboard-home.webp"  alt="DevSecOps" />
             </div>
             <a href="/use-cases/aspm/" class="learn-more-link">Learn more about DevSecOps &rarr;</a>
         </div>
