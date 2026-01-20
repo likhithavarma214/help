@@ -490,27 +490,27 @@ hide:
   <div class="carousel-container" id="heroCarousel">
       <!-- Item 1 (Left) -->
       <div class="carousel-card card-left" onclick="rotateCarousel('left')">
-         <img src="https://i.ibb.co/WNRCVKdV/1.png" alt="Carousel Image 1" style="border-radius: 8px;">
+         <img src="assets/images/homepage/1.png" alt="Carousel Image 1" style="border-radius: 8px;">
       </div>
 
       <!-- Item 2 (Center) -->
       <div class="carousel-card card-center" onclick="/* Center click */">
-          <img src="https://i.ibb.co/MxmkQNVm/2.png" alt="Carousel Image 2" style=" border-radius: 8px;">
+          <img src="assets/images/homepage/2.png" alt="Carousel Image 2" style=" border-radius: 8px;">
       </div>
 
       <!-- Item 3 (Right) -->
       <div class="carousel-card card-right" onclick="rotateCarousel('right')">
-          <img src="https://i.ibb.co/8nmZpBZh/3.png" alt="Carousel Image 3" style=" border-radius: 8px;">
+          <img src="assets/images/homepage/3.png" alt="Carousel Image 3" style=" border-radius: 8px;">
       </div>
 
       <!-- Item 4 (Hidden) -->
       <div class="carousel-card" onclick="/* hidden */">
-        <img src="https://i.ibb.co/ZpwLD896/4.png" alt="Carousel Image 4" style=" border-radius: 8px;">
+        <img src="assets/images/homepage/4.png" alt="Carousel Image 4" style=" border-radius: 8px;">
       </div>
 
        <!-- Item 5 (Hidden) -->
       <div class="carousel-card" onclick="/* hidden */">
-        <img src="https://i.ibb.co/xSw1QpYD/5.png" alt="Carousel Image 5" style=" border-radius: 8px;">
+        <img src="assets/images/homepage/5.png" alt="Carousel Image 5" style=" border-radius: 8px;">
       </div>
 
   </div>
@@ -608,7 +608,7 @@ hide:
                 Embeds security practices into DevOps, automating security testing and compliance throughout the SDLC from build to runtime environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/BK7cWRys/devsecops.png"  alt="DevSecOps" />
+                 <img src="assets/images/homepage/devsecops.png"  alt="DevSecOps" />
             </div>
             <a href="/use-cases/aspm/" class="learn-more-link">Learn more about DevSecOps &rarr;</a>
         </div>
@@ -627,7 +627,7 @@ hide:
                 Comprehensive API security monitoring and protection to detect vulnerabilities, prevent attacks, and ensure secure API communications.
             </div>
              <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/gMFBs4PY/api-security.png"  alt="API Security" />
+                 <img src="assets/images/homepage/api-security.png"  alt="API Security" />
             </div>
             <a href="/use-cases/api-security/" class="learn-more-link">Learn more about API Security &rarr;</a>
         </div>
@@ -646,7 +646,7 @@ hide:
                 Identifies cloud misconfigurations, ensures compliance, and continuously monitors security across multi-cloud environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/bgXz8vdH/cspm.png"  alt="Cloud Security (CSPM)" />
+                 <img src="assets/images/homepage/cspm.png"  alt="Cloud Security (CSPM)" />
             </div>
             <a href="/use-cases/cspm/" class="learn-more-link">Learn more about Cloud Security &rarr;</a>
         </div>
@@ -665,7 +665,7 @@ hide:
                 Detect and remediate threats on AWS, GCP, and Azure, focusing on high-signal security events.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/bRqcHdx1/CDR.png"  alt="Cloud Detection & Response (CDR)" />
+                 <img src="assets/images/homepage/CDR.png"  alt="Cloud Detection & Response (CDR)" />
             </div>
             <a href="/getting-started/aws-cdr/" class="learn-more-link">Learn more about Detection & Response &rarr;</a>
         </div>
@@ -684,7 +684,7 @@ hide:
                 Secure storage and management of sensitive credentials, API keys, and secrets using encryption and access controls.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/Tx3YXD9m/secrets-manger.png"  alt="Secrets Manager" />
+                 <img src="assets/images/homepage/secrets-manger.png"  alt="Secrets Manager" />
             </div>
             <a href="/getting-started/secrets-management/" class="learn-more-link">Learn more about Secrets Manager &rarr;</a>
         </div>
@@ -703,7 +703,7 @@ hide:
                 Protects cloud workloads by detecting threats, vulnerabilities, and misconfigurations in real time.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/5xhxXL6W/cwpp.png"  alt="Runtime Protection (CWPP)" />
+                 <img src="assets/images/homepage/cwpp.png"  alt="Runtime Protection (CWPP)" />
             </div>
             <a href="/use-cases/cwpp/" class="learn-more-link">Learn more about Runtime Protection &rarr;</a>
         </div>
@@ -740,7 +740,7 @@ hide:
                 Enforces IAM controls and entitlement policies across Kubernetes clusters to prevent privilege escalation.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/4gnBwVcg/kiem.png"  alt="KIEM" />
+                 <img src="assets/images/homepage/kiem.png"  alt="KIEM" />
             </div>
             <a href="/use-cases/kiem/" class="learn-more-link">Learn more about K8s Identity &rarr;</a>
         </div>
@@ -759,7 +759,7 @@ hide:
                 Continuously monitors Kubernetes clusters to identify and remediate misconfigurations and vulnerabilities.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/tPpD34VL/kspm.png"  alt="KSPM" />
+                 <img src="assets/images/homepage/kspm.png"  alt="KSPM" />
             </div>
             <a href="/use-cases/kspm/" class="learn-more-link">Learn more about K8s Posture &rarr;</a>
         </div>
@@ -778,7 +778,7 @@ hide:
                 AI-SPM capability that detects cloud misconfigurations and monitors AI and ML models with continuous intelligence.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/7dRHmKDs/aiml-sec.png"  alt="AI/ML Security" />
+                 <img src="assets/images/homepage/aiml-sec.png"  alt="AI/ML Security" />
             </div>
             <a href="/use-cases/aiml-usecases/" class="learn-more-link">Learn more about AI/ML Security &rarr;</a>
         </div>
@@ -797,7 +797,7 @@ hide:
                 Unified visibility into security posture, risk, and compliance across multi-cloud and Kubernetes environments.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/6cL1q1J7/compliance.png"  alt="Continuous Compliance" />
+                 <img src="assets/images/homepage/compliance.png"  alt="Continuous Compliance" />
             </div>
             <a href="/use-cases/compliance/" class="learn-more-link">Learn more about Compliance &rarr;</a>
         </div>
@@ -816,7 +816,7 @@ hide:
                 Secure air-gapped deployment of the CNAPP platform designed to meet federal and regulated environment requirements.
             </div>
             <div class="module-visual-placeholder">
-                 <img src="https://i.ibb.co/B2n4BDNk/onprem.png"  alt="On-Prem Deployment" />
+                 <img src="assets/images/homepage/onprem.png"  alt="On-Prem Deployment" />
             </div>
             <a href="/getting-started/on-prem-installation-guide/" class="learn-more-link">Learn more about On-Prem &rarr;</a>
         </div>
