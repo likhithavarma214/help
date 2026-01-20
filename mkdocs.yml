@@ -118,9 +118,6 @@ plugins:
       separator: '[\s\-\.]+'
       lang:
         - en
-  - redirects:
-        redirect_maps:
-            'index.md': 'introduction/home.md'
 # Customization
 extra_css:
 - "assets/stylesheets/style.css"
@@ -166,7 +163,7 @@ pages:
 
 
 nav:
-  - "Home": "introduction/home.md"
+  - "Home": "index.md"
   - "Getting Started":
     - "Getting Started": "how-to/index.md"
     - "Administrator's Guide": "how-to/administrators-guide.md"
