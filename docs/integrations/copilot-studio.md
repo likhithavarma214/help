@@ -25,6 +25,10 @@ description: Steps to integrate AccuKnox with Copilot Studio (CP Studio) for enh
 
 - Go to API permissions for the registered application.
 - Add permissions for Microsoft Graph.
+
+!!! note "Detailed Steps"
+    Refer to [Azure AI/ML Onboarding](https://help.accuknox.com/how-to/azure-onboarding/#rapid-onboarding-via-azure) **Steps 1 to 9** here for a more detailed guide with screenshots.
+
 - Add the following Application permissions:
     - Application.Read.All
     - AuditLog.Read.All
@@ -52,25 +56,8 @@ description: Steps to integrate AccuKnox with Copilot Studio (CP Studio) for enh
 
 ### 2.2 Assign Security Role
 
+!!! note "Detailed Steps"
+    Refer to [Azure AI/ML Onboarding](https://help.accuknox.com/how-to/azure-onboarding/#rapid-onboarding-via-azure) **Steps 12 to 17** here for a more detailed guide with screenshots.
+
 - Assign the Service Reader role (or another required role based on access needs).
 - Save the changes.
-
-## 3. Copilot Studio (CP Studio) Configuration
-
-### 3.1 Get Environment URL
-
-- Open Copilot Studio.
-- Navigate to Settings → Session details.
-- Copy the Environment URL.
-
-![Copilot Studio Logo](./images/copilot-studio/5.png)
-
-### 3.2 Integrate with AccuKnox
-
-- Open the AccuKnox Console.
-- Enter the following details to finalize the integration:
-    - **Application (Client) ID**
-    - **Client Secret**
-    - **Tenant ID**
-    - **Environment URL**
-- Save the configuration to complete the integration process.

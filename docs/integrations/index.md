@@ -26,7 +26,7 @@ hide:
   image: ./icons/k8s-mgmt.svg
   url: /integrations/rafay-accuknox/
 - title: Serverless Security
-  image: ./icons/serverless.png
+  image: ./icons/serverless.svg
   url: /integrations/serverless/
 - title: Ticketing
   image: ./icons/ticketing.svg
