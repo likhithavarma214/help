@@ -7,11 +7,9 @@ description: Steps to integrate AccuKnox with Copilot Studio (CP Studio) for enh
 
 ![Copilot Studio Logo](./images/copilot-studio/1.png)
 
-## 1. Azure Portal Configuration
+## 1. Azure Portal Configuration (Registering App & API Permissions)
 
-### 1.1 Register the Application
-
-- Log in to the Azure Portal.
+<!-- - Log in to the Azure Portal.
 - Navigate to Microsoft Entra ID → App registrations.
 - Register a new application.
 - Capture and save the following details:
@@ -19,9 +17,7 @@ description: Steps to integrate AccuKnox with Copilot Studio (CP Studio) for enh
     - Tenant ID
     - Client Secret (created under Certificates & secrets)
 
-![Copilot Studio Logo](./images/copilot-studio/2.png)
-
-### 1.2 Configure API Permissions
+![Copilot Studio Logo](./images/copilot-studio/2.png) -->
 
 - Go to API permissions for the registered application.
 - Add permissions for Microsoft Graph.
@@ -35,16 +31,11 @@ description: Steps to integrate AccuKnox with Copilot Studio (CP Studio) for enh
     - AuditLogsQuery-CRM.Read.All
     - AuditLogsQuery.Read.All
 
-![Copilot Studio Logo](./images/copilot-studio/3.png)
+<!-- ![Copilot Studio Logo](./images/copilot-studio/3.png) -->
 
-- Now, select `Grant Admin Consent` for Default Directory and say Yes to confirm.
+- Now, select `Grant Admin Consent` for Default Directory and say Yes to confirm. Confirm that all permissions show a Granted status.
 
 ![img](https://help.accuknox.com/how-to/images/azure5-3.png)
-
-### 1.3 Grant Admin Consent
-
-- After adding the permissions, click Grant admin consent.
-- Confirm that all permissions show a Granted status.
 
 ## 2. Power Platform Configuration
 
