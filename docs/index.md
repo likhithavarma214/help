@@ -199,6 +199,7 @@ hide:
   }
 
   .tab-btn {
+    position: relative; /* Added for badges */
     background: transparent;
     border: none;
     padding: 6px 10px; /* reduced padding */
@@ -213,6 +214,37 @@ hide:
     transition: all 0.18s;
     white-space: nowrap;
     min-width: 0; /* allow tight shrink */
+  }
+
+  /* Badge Styles */
+  .tab-badge {
+    position: absolute;
+    top: -6px;
+    right: -2px;
+    font-size: 0.55rem;
+    padding: 1px 5px;
+    border-radius: 6px;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+  }
+
+  .badge-new {
+    background-color: #ef4444; /* Red */
+    color: white;
+  }
+
+  /* Star styling: simple Unicode character or just color highlight */
+  .badge-star {
+    background-color: #fbbf24; /* Amber */
+    color: #78350f;
+  }
+
+  .badge-standards {
+    background-color: #3b82f6; /* Blue */
+    color: white;
   }
 
   /* Ensure tab icons transition smoothly and are visible when active */
@@ -599,13 +631,16 @@ hide:
         <img src="assets/icons/workloads.svg" alt="Secure Workloads" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure Workloads
     </button>
     <button class="tab-btn" onclick="selectCategory('ai', this)">
+        <span class="tab-badge badge-new">NEW</span>
         <img src="assets/icons/ai.svg" alt="Secure AI" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure AI
     </button>
-    <button class="tab-btn" onclick="selectCategory('compliance', this)">
-        <img src="assets/icons/compliance.svg" alt="Compliance" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Compliance
-    </button>
     <button class="tab-btn" onclick="selectCategory('onprem', this)">
-        <img src="assets/icons/onprem.svg" alt="On-Prem" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> On-Prem
+        <span class="tab-badge badge-star">★★★</span>
+        <img src="assets/icons/onprem.svg" alt="Secure On-Premise" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure On-Premise
+    </button>
+    <button class="tab-btn" onclick="selectCategory('compliance', this)">
+        <span class="tab-badge badge-standards">45+</span>
+        <img src="assets/icons/compliance.svg" alt="Compliance" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Compliance
     </button>
   </div>
 
