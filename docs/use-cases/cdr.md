@@ -117,8 +117,9 @@ To enable the "Response" component of CDR, ensure your remediation pipeline (CI/
 
 Track the effectiveness of your policies in the **Alerts Dashboard**.
 
-1. Navigate to **CDR → Alerts**
-2. Filter by **Severity: Critical**
-3. Locate the specific alert (e.g., "GCP Storage Bucket Open to Public")
+1. Navigate to the sidebar, **Alerts → See All Alerts**
+2. Filter by **CDR** from the dropdown menu
+3. Locate the specific alert, you can search the alerts for matching string (e.g., "GCP Storage Bucket Open to Public")
 4. Check the status to confirm if the **Auto-Remediation** action was successfully triggered and the issue is resolved.
-![alt text](image-14.png)
+
+![alt text](image-19.png)
