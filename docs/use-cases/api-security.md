@@ -95,3 +95,33 @@ AccuKnox displays four types of findings:
 Each finding includes request, response, and occurrence details.
 
 ![alt text](image-11.png)
+
+## 7. Rate Limiting Granularity
+
+??? note "Supported Rate Limiting Scopes"
+    AccuKnox enforces limits via the `RateLimitPolicy` custom resource, offering three levels of granularity:
+
+    ### 1. Per User/IP per Endpoint
+    * **Scope:** Limits requests to specific endpoints for a single identity (User or IP).
+    * **Use Case:** Prevent abuse of resource-intensive endpoints (e.g., `POST /login`, `POST /checkout`).
+
+    ### 2. Per User/IP Global Quota
+    * **Scope:** Limits total requests across the entire application for a single identity.
+    * **Use Case:** Prevent "noisy neighbor" scenarios where one user degrades service performance.
+
+    ### 3. Global Service Limit
+    * **Scope:** Limits total ingress traffic for the entire service.
+    * **Use Case:** Protect infrastructure from volumetric attacks (DDoS) or sudden traffic spikes.
+
+    ---
+
+    ### Configuration Parameters
+
+    | Parameter | Description |
+    | :--- | :--- |
+    | **Subject** | Target specific **Users** (via ID/Claim) or **IP Addresses**. |
+    | **Scope** | Apply to specific paths (e.g., `/api/v1/orders`) or globally. |
+    | **Action** | Configure violation handling: **Block** (temporary/permanent) or **Alert** (log only). |
+
+    !!! info "Attribution Policy"
+        User identification relies on an **Attribution Policy** to map requests to identities (e.g., JWT claims, headers).
