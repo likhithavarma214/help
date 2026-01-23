@@ -549,34 +549,27 @@ hide:
   }
 </style>
 
-<!-- SECTION 1: HERO -->
 <section class="hero-section">
   <div class="hero-title">Welcome to AccuKnox Help Center</div>
   <div class="hero-subtitle">Explore our comprehensive documentation and resources for cloud-native security</div>
 
-  <!-- Carousel Container -->
   <div class="carousel-container" id="heroCarousel">
-      <!-- Item 1 (Left) -->
       <div class="carousel-card card-left" onclick="rotateCarousel('left')">
          <img src="assets/images/homepage/1.png" alt="Carousel Image 1" style="border-radius: 8px;">
       </div>
 
-      <!-- Item 2 (Center) -->
       <div class="carousel-card card-center" onclick="/* Center click */">
           <img src="assets/images/homepage/2.png" alt="Carousel Image 2" style=" border-radius: 8px;">
       </div>
 
-      <!-- Item 3 (Right) -->
       <div class="carousel-card card-right" onclick="rotateCarousel('right')">
           <img src="assets/images/homepage/3.png" alt="Carousel Image 3" style=" border-radius: 8px;">
       </div>
 
-      <!-- Item 4 (Hidden) -->
       <div class="carousel-card" onclick="/* hidden */">
         <img src="assets/images/homepage/4.png" alt="Carousel Image 4" style=" border-radius: 8px;">
       </div>
 
-       <!-- Item 5 (Hidden) -->
       <div class="carousel-card" onclick="/* hidden */">
         <img src="assets/images/homepage/5.png" alt="Carousel Image 5" style=" border-radius: 8px;">
       </div>
@@ -584,7 +577,6 @@ hide:
   </div>
 </section>
 
-<!-- SECTION 2: EXPLORE MODULES -->
 <section class="explorer-section">
   <div class="explorer-title" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 25px;">AccuKnox Docs — Secure Assets at Scale</div>
 
@@ -611,15 +603,12 @@ hide:
 
   <div class="modules-container">
     <div class="modules-sidebar" id="modulesList">
-      <!-- CODE -->
       <div class="module-item active" data-cat="code" onclick="selectModule('devsecops', this)">
          <img src="assets/icons/shield.svg" alt="DevSecOps" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> DevSecOps (ASPM)
       </div>
       <div class="module-item" data-cat="code" onclick="selectModule('api', this)">
          <img src="assets/icons/api.svg" alt="API Security" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> API Security
       </div>
-
-      <!-- CLOUD -->
       <div class="module-item" data-cat="cloud" style="display:none;" onclick="selectModule('cspm', this)">
          <img src="assets/icons/cloud.svg" alt="Cloud Security" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Cloud Security (CSPM)
       </div>
@@ -629,8 +618,6 @@ hide:
       <div class="module-item" data-cat="cloud" style="display:none;" onclick="selectModule('secrets', this)">
          <img src="assets/icons/key.svg" alt="Secrets Manager" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Secrets Manager
       </div>
-
-      <!-- WORKLOADS -->
       <div class="module-item" data-cat="workloads" style="display:none;" onclick="selectModule('cwpp', this)">
          <img src="assets/icons/shield.svg" alt="Runtime Protection" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Runtime Protection (CWPP)
       </div>
@@ -640,8 +627,6 @@ hide:
       <div class="module-item" data-cat="workloads" style="display:none;" onclick="selectModule('kspm', this)">
          <img src="assets/icons/wheel.svg" alt="Kubernetes Security Posture" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Kubernetes Security Posture (KSPM)
       </div>
-
-      <!-- AI -->
       <div class="module-item" data-cat="ai" style="display:none;" onclick="selectModule('prompt-firewall', this)">
          <img src="assets/icons/ai.svg" alt="Prompt Firewall" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Prompt Firewall
       </div>
@@ -654,21 +639,14 @@ hide:
       <div class="module-item" data-cat="ai" style="display:none;" onclick="selectModule('model-armor', this)">
          <img src="assets/icons/ai.svg" alt="ModelArmor" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> ModelArmor
       </div>
-
-      <!-- COMPLIANCE -->
       <div class="module-item" data-cat="compliance" style="display:none;" onclick="selectModule('comp', this)">
          <img src="assets/icons/compliance.svg" alt="Continuous Compliance" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> Continuous Compliance
       </div>
-
-       <!-- ONPREM -->
       <div class="module-item" data-cat="onprem" style="display:none;" onclick="selectModule('onprem-install', this)">
          <img src="assets/icons/onprem.svg" alt="On-Prem Deployment" width="18" height="18" style="vertical-align:middle; margin-right:6px;" /> On-Prem Deployment
       </div>
     </div>
-
     <div class="modules-content" id="moduleDetail">
-       <!-- START CONTENT BLOCKS -->
-        <!-- DevSecOps -->
         <div id="devsecops" class="module-detail-block">
             <div class="content-header">
                 <a href="/how-to/aspm-overview/" class="action-btn" target="_blank">Getting Started</a>
@@ -686,8 +664,6 @@ hide:
             </div>
             <a href="/use-cases/aspm/" class="learn-more-link">Learn more about DevSecOps &rarr;</a>
         </div>
-
-        <!-- API -->
         <div id="api" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/integrations/api-overview/" class="action-btn" target="_blank">Integrations</a>
@@ -704,8 +680,6 @@ hide:
             </div>
             <a href="/use-cases/api-security/" class="learn-more-link">Learn more about API Security &rarr;</a>
         </div>
-
-        <!-- CSPM -->
         <div id="cspm" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/how-to/high-level-onboarding/" class="action-btn" target="_blank">Getting Started</a>
@@ -722,8 +696,6 @@ hide:
             </div>
             <a href="/use-cases/cspm/" class="learn-more-link">Learn more about Cloud Security &rarr;</a>
         </div>
-
-        <!-- CDR -->
         <div id="cdr" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/getting-started/aws-cdr/" class="action-btn" target="_blank">Getting Started</a>
@@ -741,8 +713,6 @@ hide:
             </div>
             <a href="/getting-started/aws-cdr/" class="learn-more-link">Learn more about Detection & Response &rarr;</a>
         </div>
-
-        <!-- Secrets -->
         <div id="secrets" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/getting-started/secrets-management/" class="action-btn" target="_blank">Getting Started</a>
@@ -758,8 +728,6 @@ hide:
             </div>
             <a href="/getting-started/secrets-management/" class="learn-more-link">Learn more about Secrets Manager &rarr;</a>
         </div>
-
-        <!-- CWPP -->
         <div id="cwpp" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/getting-started/runtime-sec-arch/" class="action-btn" target="_blank">Getting Started</a>
@@ -776,8 +744,6 @@ hide:
             </div>
             <a href="/use-cases/cwpp/" class="learn-more-link">Learn more about Runtime Protection &rarr;</a>
         </div>
-
-        <!-- VM Security -->
         <div id="vmsec" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/how-to/vm-security/agent-based/linux/" class="action-btn" target="_blank">Windows/Linux</a>
@@ -795,12 +761,8 @@ hide:
             </div>
             <a href="https://help.accuknox.com/use-cases/vm-overview/" class="learn-more-link">Learn more about VM Security &rarr;</a>
         </div>
-
-
-        <!-- KSPM -->
         <div id="kspm" class="module-detail-block" style="display:none;">
             <div class="content-header">
-
                 <a href="/how-to/registry-overview/" class="action-btn" target="_blank">Registry Scanning</a>
                 <a href="/use-cases/kspm/" class="action-btn" target="_blank">Use Case</a>
                 <a href="/use-cases/kiem/" class="action-btn" target="_blank">K8s Identity & Entitlements (KIEM)</a>
@@ -816,8 +778,6 @@ hide:
             </div>
             <a href="/use-cases/kspm/" class="learn-more-link">Learn more about K8s Posture &rarr;</a>
         </div>
-
-        <!-- Prompt Firewall -->
         <div id="prompt-firewall" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/use-cases/prompt-firewall/" class="action-btn" target="_blank">Overview</a>
@@ -834,12 +794,9 @@ hide:
             <div class="module-visual-placeholder">
                  <img src="assets/images/homepage/aiml-sec.png"  alt="Prompt Firewall" />
             </div>
-
             <a href="/integrations/ai-overview/" class="action-btn" target="_blank">Integrations</a>
             <a href="/use-cases/prompt-firewall/" class="learn-more-link">Learn more about Prompt Firewall &rarr;</a>
         </div>
-
-        <!-- Red Teaming -->
         <div id="red-teaming" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/how-to/llm-static-scan/" class="action-btn" target="_blank">LLM Static Scan</a>
@@ -857,8 +814,6 @@ hide:
             </div>
             <a href="/how-to/llm-static-scan/" class="learn-more-link">Learn more about Red Teaming &rarr;</a>
         </div>
-
-        <!-- AI-DR -->
         <div id="ai-dr" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/use-cases/aidr/" class="action-btn" target="_blank">AI-DR Use Cases</a>
@@ -875,12 +830,9 @@ hide:
             </div>
             <a href="/use-cases/aidr/" class="learn-more-link">Learn more about AI-DR &rarr;</a>
         </div>
-
-        <!-- ModelArmor -->
         <div id="model-armor" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/use-cases/modelarmor/" class="action-btn" target="_blank">ModelArmor Use Cases</a>
-
             </div>
             <div class="module-detail-title">
                 ModelArmor
@@ -893,8 +845,6 @@ hide:
             </div>
             <a href="/use-cases/modelarmor/" class="learn-more-link">Learn more about ModelArmor &rarr;</a>
         </div>
-
-        <!-- Compliance -->
         <div id="comp" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="https://accuknox.com/compliance" class="action-btn" target="_blank">Compliance Support Matrix</a>
@@ -912,8 +862,6 @@ hide:
             </div>
             <a href="/use-cases/compliance/" class="learn-more-link">Learn more about Compliance &rarr;</a>
         </div>
-
-        <!-- On-Prem -->
         <div id="onprem-install" class="module-detail-block" style="display:none;">
             <div class="content-header">
                 <a href="/getting-started/on-prem-overview/" class="action-btn" target="_blank">Overview</a>
@@ -933,17 +881,12 @@ hide:
             </div>
             <a href="/getting-started/on-prem-installation-guide/" class="learn-more-link">Learn more about On-Prem &rarr;</a>
         </div>
-
     </div>
-
   </div>
 </section>
-
-<!-- SECTION 3: POPULAR USE CASES -->
 <section class="use-cases-section">
   <div class="section-heading-3" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 40px;">Popular resources and guides</div>
   <div class="use-cases-grid">
-    <!-- Card 1 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -957,8 +900,6 @@ hide:
          <li><a href="/use-cases/vulnerability/" target="_blank">Vulnerability Management</a></li>
        </ul>
     </div>
-
-    <!-- Card 2 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -972,8 +913,6 @@ hide:
          <li><a href="/getting-started/aws-cdr/" target="_blank">Onboarding</a></li>
        </ul>
     </div>
-
-    <!-- Card 3 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -987,8 +926,6 @@ hide:
          <li><a href="/resources/compliance-baseline-data/" target="_blank">Compliance Baseline Data</a></li>
        </ul>
     </div>
-
-    <!-- Card 4 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -1002,8 +939,6 @@ hide:
          <li><a href="/support-matrix/private-cloud/" target="_blank">Private Cloud Support</a></li>
        </ul>
     </div>
-
-    <!-- Card 5 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -1017,8 +952,6 @@ hide:
          <li><a href="/support-matrix/registry/" target="_blank">Registry Scan Support</a></li>
        </ul>
     </div>
-
-    <!-- Card 6 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -1032,8 +965,6 @@ hide:
          <li><a href="/support-matrix/vms/" target="_blank">VM Support Matrix</a></li>
        </ul>
     </div>
-
-     <!-- Card 7 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -1047,8 +978,6 @@ hide:
          <li><a href="/resources/multitenancy/" target="_blank">Multi-Tenancy Support</a></li>
        </ul>
     </div>
-
-    <!-- Card 8 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -1062,8 +991,6 @@ hide:
           <li><a href="/resources/vulnerability-database/" target="_blank">Vulnerability DB</a></li>
        </ul>
     </div>
-
-    <!-- Card 9 -->
     <div class="use-case-card">
        <div class="use-case-header">
          <div class="use-case-icon icon-blue">
@@ -1077,12 +1004,9 @@ hide:
           <li><a href="/getting-started/kubearmor-release/" target="_blank">KubeArmor Releases</a></li>
        </ul>
     </div>
-
   </div>
   <a href="/use-cases/" class="view-all-btn">VIEW ALL USE CASES &rarr;</a>
 </section>
-
-<!-- SECTION 4 - INTEGRATION -->
 <section>
 <div class="integrations-container">
  <div class="image-container2">
@@ -1096,7 +1020,6 @@ hide:
 </div>
 </section>
 
-<!-- SECTION 5 - TECHNICAL SUPPORT -->
 <section>
   <div class="section5-container">
     <h2 class="section-heading">Technical Support</h2>
@@ -1123,7 +1046,6 @@ hide:
   </div>
 </section>
 
-<!-- SECTION 7 -->
 <section class="home-section-7">
 <h2 class="section-heading">Find Out More</h2>
 <div class="section7-nav">
@@ -1135,71 +1057,85 @@ hide:
 </section>
 
 <script>
-function selectCategory(catId, btn) {
-    // 1. Update Tabs
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+(function() {
+    // Ensure functions are available globally for onclick handlers
+    window.selectCategory = function(catId, btn) {
+        // 1. Update Tabs
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-    // 2. Filter Sidebar
-    const sidebarItems = document.querySelectorAll('.module-item');
-    let firstVisible = null;
-    sidebarItems.forEach(item => {
-        if (item.getAttribute('data-cat') === catId) {
-            item.style.display = 'flex';
-            if (!firstVisible) firstVisible = item;
-        } else {
-            item.style.display = 'none';
+        // 2. Filter Sidebar
+        const sidebarItems = document.querySelectorAll('.module-item');
+        let firstVisible = null;
+        sidebarItems.forEach(item => {
+            if (item.getAttribute('data-cat') === catId) {
+                item.style.display = 'flex';
+                if (!firstVisible) firstVisible = item;
+            } else {
+                item.style.display = 'none';
+            }
+            item.classList.remove('active');
+        });
+
+        // 3. Select first module of new category
+        if (firstVisible) {
+            firstVisible.click();
         }
-        item.classList.remove('active');
-    });
-
-    // 3. Select first module of new category
-    if (firstVisible) {
-        firstVisible.click();
     }
-}
 
-function selectModule(modId, item) {
-    // 1. Update Sidebar Active State
-    document.querySelectorAll('.module-item').forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+    window.selectModule = function(modId, item) {
+        // 1. Update Sidebar Active State
+        document.querySelectorAll('.module-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
 
-    // 2. Show Content
-    document.querySelectorAll('.module-detail-block').forEach(b => {
-        if (b.id === modId) {
-            b.style.display = 'block';
-        } else {
-            b.style.display = 'none';
+        // 2. Show Content
+        document.querySelectorAll('.module-detail-block').forEach(b => {
+            if (b.id === modId) {
+                b.style.display = 'block';
+            } else {
+                b.style.display = 'none';
+            }
+        });
+    }
+
+    window.updateCarouselDisplay = function() {
+        // No-op, dynamically queried now for safety
+    }
+
+    window.rotateCarousel = function(direction) {
+        const cards = Array.from(document.querySelectorAll('.carousel-card'));
+        if (cards.length === 0) return;
+
+        // Identify current positions
+        let leftIndex = cards.findIndex(c => c.classList.contains('card-left'));
+        let centerIndex = cards.findIndex(c => c.classList.contains('card-center'));
+        let rightIndex = cards.findIndex(c => c.classList.contains('card-right'));
+
+        // Clear classes
+        cards.forEach(c => c.classList.remove('card-left', 'card-center', 'card-right'));
+
+        // Guard against missing indices
+        if (leftIndex === -1 || centerIndex === -1 || rightIndex === -1) {
+            // Fallback reset if state is messed up
+             if (cards.length >= 3) {
+                cards[0].classList.add('card-left');
+                cards[1].classList.add('card-center');
+                cards[2].classList.add('card-right');
+             }
+             return;
         }
-    });
-}
 
-// Carousel Logic
-let carouselCards = document.querySelectorAll('.carousel-card');
-function updateCarouselDisplay() {
-    carouselCards = document.querySelectorAll('.carousel-card');
-}
-
-function rotateCarousel(direction) {
-    const cards = Array.from(document.querySelectorAll('.carousel-card'));
-    // Identify current positions
-    let leftIndex = cards.findIndex(c => c.classList.contains('card-left'));
-    let centerIndex = cards.findIndex(c => c.classList.contains('card-center'));
-    let rightIndex = cards.findIndex(c => c.classList.contains('card-right'));
-
-    // Clear classes
-    cards.forEach(c => c.classList.remove('card-left', 'card-center', 'card-right'));
-
-    if (direction === 'right') {
-        // Move Right item to Center. Center to Left. Left to Right (cycle)
-        cards[rightIndex].classList.add('card-center');
-        cards[centerIndex].classList.add('card-left');
-        cards[leftIndex].classList.add('card-right');
-    } else {
-        // Move Left item to Center. Center to Right. Right to Left
-        cards[leftIndex].classList.add('card-center');
-        cards[centerIndex].classList.add('card-right');
-        cards[rightIndex].classList.add('card-left');
+        if (direction === 'right') {
+            // Move Right item to Center. Center to Left. Left to Right (cycle)
+            cards[rightIndex].classList.add('card-center');
+            cards[centerIndex].classList.add('card-left');
+            cards[leftIndex].classList.add('card-right');
+        } else {
+            // Move Left item to Center. Center to Right. Right to Left
+            cards[leftIndex].classList.add('card-center');
+            cards[centerIndex].classList.add('card-right');
+            cards[rightIndex].classList.add('card-left');
+        }
     }
-}
+})();
 </script>
