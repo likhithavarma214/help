@@ -191,7 +191,7 @@ hide:
     -webkit-overflow-scrolling: touch;
     background: #f8fafc;
     padding: 6px;
-    border-radius: 16px;
+    border-radius: 32px;
     width: auto;
     margin-left: auto;
     margin-right: auto;
@@ -213,7 +213,7 @@ hide:
     gap: 4px; /* reduced gap between icon and text */
     transition: all 0.18s;
     white-space: nowrap;
-    min-width: fit-content;
+    min-width: 0; /* allow tight shrink */
   }
 
   /* Badge Styles */
@@ -558,7 +558,7 @@ hide:
   .section5-card-link { color: #2563eb; font-weight: 600; text-decoration: none; }
 
   .home-section-7 { padding: 40px 0; text-align: center; background: white; font-family: 'Poppins', sans-serif;}
-  .section7-nav { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+  .section7-nav { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
   .section7-link { color: #2563eb; font-weight: 700; text-decoration: none; padding-right: 20px; border-right: 1px solid #cbd5e1; }
   .section7-link:last-child { border-right: none; }
 
@@ -570,30 +570,7 @@ hide:
       text-align: center;
       margin-bottom: 10px;
   }
-  @media (max-width: 768px) {
-    .md-typeset section,
-    .md-typeset .hero-section,
-    .md-typeset .explorer-section,
-    .md-typeset .use-cases-section,
-    .integrations-container,
-    .section5-container,
-    .home-section-7 {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-    .tabs-container{
-      justify-content: flex-start;
-    }
-    .modules-content,
-    .use-case-card,
-    .section5-card{
-      padding: 20px;
-    }
-    .module-item {
-      padding: 10px;
-      min-width: fit-content;
-    }
-  }
+
   @media (max-width: 991px) {
     .modules-container { flex-direction: column; }
     .modules-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e2e8f0; display: flex; overflow-x: auto;}
@@ -601,9 +578,6 @@ hide:
     .integrations-container { flex-direction: column; text-align: center; }
     .text-container-int { margin-left: 0; margin-top: 30px; }
     .use-cases-grid { grid-template-columns: 1fr; }
-  }
-  .flex-wrap{
-    flex-wrap: wrap;
   }
 </style>
 
@@ -1187,7 +1161,7 @@ hide:
 <!-- SECTION 7 -->
 <section class="home-section-7">
 <h2 class="section-heading">Find Out More</h2>
-<div class="section7-nav flex-wrap">
+<div class="section7-nav">
     <a href="/resources/accuknox-manual/" class="section7-link" target="_blank">RESOURCES</a>
     <a href="/support-matrix/kubearmor-support-matrix/" target="_blank" class="section7-link">SUPPORT MATRIX</a>
     <a href="https://help.accuknox.com/getting-started/3.3-release/" target="_blank" class="section7-link">LATEST RELEASE NOTES</a>
