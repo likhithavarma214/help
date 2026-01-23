@@ -14,7 +14,7 @@ hide:
 
 ::cards:: cols=3
 
-- title: Cloud Accounts
+- title: Cloud Accounts AK
   image: ./icons/cloud-account.svg
   url: /how-to/cspm-prereq-aws/
 - title: Workloads
