@@ -578,7 +578,7 @@ hide:
     .integrations-container,
     .section5-container,
     .home-section-7 {
-      padding-left: 20px; 
+      padding-left: 20px;
       padding-right: 20px;
     }
     .tabs-container{
@@ -731,7 +731,7 @@ hide:
        <!-- START CONTENT BLOCKS -->
         <!-- DevSecOps -->
         <div id="devsecops" class="module-detail-block">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/how-to/aspm-overview/" class="action-btn" target="_blank">Getting Started</a>
                 <a href="/integrations/cicd-overview/" class="action-btn" target="_blank">Integrations</a>
                 <a href="/use-cases/aspm/" class="action-btn" target="_blank">Use Case</a>
@@ -750,7 +750,7 @@ hide:
 
         <!-- API -->
         <div id="api" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/integrations/api-overview/" class="action-btn" target="_blank">Integrations</a>
                 <a href="/use-cases/api-security/" class="action-btn" target="_blank">Use Case</a>
             </div>
@@ -768,7 +768,7 @@ hide:
 
         <!-- CSPM -->
         <div id="cspm" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/how-to/high-level-onboarding/" class="action-btn" target="_blank">Getting Started</a>
                 <a href="/use-cases/cspm/" class="action-btn" target="_blank">Use Case</a>
             </div>
@@ -786,7 +786,7 @@ hide:
 
         <!-- CDR -->
         <div id="cdr" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/getting-started/aws-cdr/" class="action-btn" target="_blank">Getting Started</a>
                 <a href="/getting-started/cdr-setup/" class="action-btn" target="_blank">Redemediation Setup</a>
                 <a href="/use-cases/cdr/" class="action-btn" target="_blank">Use Case</a>
@@ -805,7 +805,7 @@ hide:
 
         <!-- Secrets -->
         <div id="secrets" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/getting-started/secrets-management/" class="action-btn" target="_blank">Getting Started</a>
             </div>
             <div class="module-detail-title">
@@ -822,7 +822,7 @@ hide:
 
         <!-- CWPP -->
         <div id="cwpp" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/getting-started/runtime-sec-arch/" class="action-btn" target="_blank">Getting Started</a>
                 <a href="/use-cases/cwpp/" class="action-btn" target="_blank">Use Case</a>
             </div>
@@ -840,7 +840,7 @@ hide:
 
         <!-- VM Security -->
         <div id="vmsec" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/how-to/vm-security/agent-based/linux/" class="action-btn" target="_blank">Windows/Linux</a>
                 <a href="/how-to/vm-security/agentless/cloud-vm-scanning/" class="action-btn" target="_blank">Cloud VMs (Agentless)</a>
                 <a href="/how-to/vm-onboard-deboard-docker/" class="action-btn" target="_blank">Onboarding</a>
@@ -860,7 +860,7 @@ hide:
 
         <!-- KSPM -->
         <div id="kspm" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
 
                 <a href="/how-to/registry-overview/" class="action-btn" target="_blank">Registry Scanning</a>
                 <a href="/use-cases/kspm/" class="action-btn" target="_blank">Use Case</a>
@@ -880,7 +880,7 @@ hide:
 
         <!-- Prompt Firewall -->
         <div id="prompt-firewall" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/use-cases/prompt-firewall/" class="action-btn" target="_blank">Overview</a>
                 <a href="/use-cases/llm-defense-app-onboard/" class="action-btn" target="_blank">Defense App Onboard</a>
                 <a href="/use-cases/subprompts-categories/" class="action-btn" target="_blank">Subprompts Categories</a>
@@ -902,7 +902,7 @@ hide:
 
         <!-- Red Teaming -->
         <div id="red-teaming" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/how-to/llm-static-scan/" class="action-btn" target="_blank">LLM Static Scan</a>
                 <a href="/how-to/ml-static-scan/" class="action-btn" target="_blank">ML Static Scan</a>
                 <a href="/how-to/aiml-aws-onboard/" class="action-btn" target="_blank">Cloud Onboarding</a>
@@ -921,7 +921,7 @@ hide:
 
         <!-- AI-DR -->
         <div id="ai-dr" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/use-cases/aidr/" class="action-btn" target="_blank">AI-DR Use Cases</a>
                  <a href="/support-matrix/aiml-support-matrix/" class="action-btn" target="_blank">Support Matrix</a>
             </div>
@@ -939,7 +939,7 @@ hide:
 
         <!-- ModelArmor -->
         <div id="model-armor" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/use-cases/modelarmor/" class="action-btn" target="_blank">ModelArmor Use Cases</a>
 
             </div>
@@ -957,7 +957,7 @@ hide:
 
         <!-- Compliance -->
         <div id="comp" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="https://accuknox.com/compliance" class="action-btn" target="_blank">Compliance Support Matrix</a>
                 <a href="/resources/compliance-baseline-data/" class="action-btn" target="_blank">Compliance Baseline Data</a>
                 <a href="/how-to/cis-benchmarking/" class="action-btn" target="_blank">CIS Benchmarking</a>
@@ -976,7 +976,7 @@ hide:
 
         <!-- On-Prem -->
         <div id="onprem-install" class="module-detail-block" style="display:none;">
-            <div class="content-header flex-wrap">
+            <div class="content-header">
                 <a href="/getting-started/on-prem-overview/" class="action-btn" target="_blank">Overview</a>
                 <a href="/getting-started/on-prem-installation-guide/" class="action-btn" target="_blank">Installation Guide</a>
                 <a href="/getting-started/on-prem-single-node-installation/" class="action-btn" target="_blank">Single Node Installation</a>
