@@ -571,14 +571,6 @@ hide:
       margin-bottom: 10px;
   }
 
-  @media (max-width: 991px) {
-    .modules-container { flex-direction: column; }
-    .modules-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #e2e8f0; display: flex; overflow-x: auto;}
-    .modules-content { width: 100%; }
-    .integrations-container { flex-direction: column; text-align: center; }
-    .text-container-int { margin-left: 0; margin-top: 30px; }
-    .use-cases-grid { grid-template-columns: 1fr; }
-  }
 </style>
 
 <!-- SECTION 1: HERO -->
