@@ -593,11 +593,11 @@ hide:
     <button class="tab-btn" onclick="selectCategory('ai', this)">
         <img src="assets/icons/ai.svg" alt="Secure AI" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure AI
     </button>
+    <button class="tab-btn" onclick="selectCategory('onprem', this)">
+        <img src="assets/icons/onprem.svg" alt="On-Prem" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure On-Premise
+    </button>
     <button class="tab-btn" onclick="selectCategory('compliance', this)">
         <img src="assets/icons/compliance.svg" alt="Compliance" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Compliance
-    </button>
-    <button class="tab-btn" onclick="selectCategory('onprem', this)">
-        <img src="assets/icons/onprem.svg" alt="On-Prem" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> On-Prem
     </button>
   </div>
 

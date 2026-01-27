@@ -48,13 +48,26 @@ c. Search "SecurityAudit", Filter by Type: "AWS managed - job function" and sele
 ### Permissions for Bedrock & SageMaker
 
 * Create an **inline policy** with the following permissions:
-    * **AWS Bedrock:**
-        * `bedrock:InvokeModel`
-        * `bedrock:ListImportedModels`
-        * `bedrock:ListModelInvocationJobs`
-    * **AWS SageMaker:**
-        * `sagemaker:InvokeEndpoint`
-    * **Bedrock-AgentCore:**
+
+    === "Bedrock"
+
+        ```json
+        [
+            "bedrock:InvokeModel",
+            "bedrock:ListImportedModels",
+            "bedrock:ListModelInvocationJobs"
+        ]
+        ```
+
+    === "SageMaker"
+
+        ```json
+        [
+            "sagemaker:InvokeEndpoint"
+        ]
+        ```
+
+    === "Bedrock AgentCore"
 
         ```json
         [
@@ -72,7 +85,7 @@ c. Search "SecurityAudit", Filter by Type: "AWS managed - job function" and sele
         ]
         ```
 
-## Steps to Configure IAM User for AI Asset Scanning (AWS)
+## Configure IAM User for AI Asset Scanning (AWS)
 
 1. Navigate to **IAM > Users > Create User**.
 2. Select the AWS managed policies **ReadOnlyAccess** and **SecurityAudit** to attach to the user.
