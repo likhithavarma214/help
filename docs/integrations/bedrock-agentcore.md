@@ -3,63 +3,20 @@ title: Bedrock-Agentcore Integration
 description: Steps to integrate Bedrock-Agentcore with AccuKnox for AI asset scanning.
 ---
 
-# Integrate Bedrock-Agentcore with AccuKnox for AI Asset Scanning
+# Bedrock-Agentcore Integration for AI Asset Scanning
 
-## Permissions for AI Asset Scanning (AWS)
+## Prerequisites
 
-### General Scan Permission (Required)
+!!! note "Follow These Steps"
 
-* Create an **IAM User** and attach the following managed policies:
-    * `ReadOnly` (AWS managed -- job function)
-    * `SecurityAudit` (AWS managed -- job function)
+    Before proceeding with the integration, ensure you have completed the following prerequisites:
+    Refer to the [Pre-requisite for AWS](https://help.accuknox.com/how-to/cspm-prereq-aws/#permissions-for-ai-asset-scanning-aws) documentation for detailed steps on setting up the necessary permissions.
 
-### Permissions for Bedrock & SageMaker
+    * An AWS account with necessary permissions.
+    * An IAM user with the required policies attached for Bedrock-Agentcore access.
+    * Access Key ID and Secret Access Key for the IAM user.
 
-* Create an **inline policy** with the following permissions:
-    * **AWS Bedrock:**
-        * `bedrock:InvokeModel`
-        * `bedrock:ListImportedModels`
-        * `bedrock:ListModelInvocationJobs`
-    * **AWS SageMaker:**
-        * `sagemaker:InvokeEndpoint`
-    * **Bedrock-AgentCore:**
-
-        ```json
-        [
-            "bedrock-agentcore:GetEvaluator",
-            "bedrock-agentcore:InvokeAgentRuntime",
-            "bedrock-agentcore:ListPolicies",
-            "bedrock-agentcore:ListOnlineEvaluationConfigs",
-            "bedrock-agentcore:ListPolicyEngines",
-            "bedrock-agentcore:GetPolicyEngine",
-            "bedrock-agentcore:ListTagsForResource",
-            "bedrock-agentcore:ListActors",
-            "bedrock-agentcore:GetOnlineEvaluationConfig",
-            "bedrock-agentcore:ListEvaluators",
-            "bedrock-agentcore:GetPolicy"
-        ]
-        ```
-
-### Steps to Configure IAM User for AI Asset Scanning (AWS)
-
-1. Navigate to **IAM > Users > Create User**.
-2. Select the AWS managed policies **ReadOnlyAccess** and **SecurityAudit** to attach to the user.
-3. Go to **Add Permissions > Create inline policy**.
-    * **For AgentCore permissions**, add an additional inline policy by selecting the service **Bedrock-Agentcore**.
-    * Allow the required read and runtime actions (including `InvokeAgentRuntime`, `GetEvaluator`, `GetPolicy`, `GetPolicyEngine`, `GetOnlineEvaluationConfig`, and the corresponding `List*` actions such as `ListPolicies`, `ListPolicyEngines`, `ListEvaluators`, `ListOnlineEvaluationConfigs`, `ListActors`, and `ListTagsForResource`).
-    * Set **Resources** to **All**.
-
-        ![alt text](image-52.png)
-
-        ![alt text](image-53.png)
-
-        ![alt text](image-54.png)
-
-4. For **SageMaker Permissions**, add another set of permissions by selecting the service **SageMaker**, allowing the action **InvokeEndpoint**, and choosing **All** under resources.
-5. For **Bedrock Permissions**, select the service **Bedrock**, allow the actions **InvokeModel**, **ListImportedModels**, and **ListModelInvocationJobs**, and choose **All** under resources.
-6. Finally, review and create the policy to attach it to the IAM user.
-
-### Onboarding
+## Onboarding
 
 1. To onboard Cloud Account Navigate to **Settings > Cloud Accounts**.
 2. In the Cloud Account Page select **Add Account** option.
