@@ -37,56 +37,59 @@ c. Search "SecurityAudit", Filter by Type: "AWS managed - job function" and sele
 
 ![image](images/iam-user-4.png)
 
-## AI/ML Security Prerequisites for AWS Cloud Accounts
+## Permissions for AI Asset Scanning (AWS)
 
-Permissions for AI Asset Scanning (AWS):
+### General Scan Permission (Required)
 
-- **General Scan Permission (Required):**
-    - Create an **IAM User** and attach the following managed policies:
-        - `ReadOnly` (AWS managed – job function)
-        - `SecurityAudit` (AWS managed – job function)
+* Create an **IAM User** and attach the following managed policies:
+    * `ReadOnly` (AWS managed -- job function)
+    * `SecurityAudit` (AWS managed -- job function)
 
-- **Permissions for AI Asset Scanning:**
-    - Create an **IAM User** and attach the following managed policies:
-        - `ReadOnly` (AWS managed – job function)
-        - `SecurityAudit` (AWS managed – job function)
+### Permissions for Bedrock & SageMaker
 
-    - Create an **inline policy** with the following permissions:
+* Create an **inline policy** with the following permissions:
+    * **AWS Bedrock:**
+        * `bedrock:InvokeModel`
+        * `bedrock:ListImportedModels`
+        * `bedrock:ListModelInvocationJobs`
+    * **AWS SageMaker:**
+        * `sagemaker:InvokeEndpoint`
+    * **Bedrock-AgentCore:**
 
-        - **AWS Bedrock:**
-            - `bedrock:InvokeModel`
-            - `bedrock:ListImportedModels`
-            - `bedrock:ListModelInvocationJobs`
+        ```json
+        [
+            "bedrock-agentcore:GetEvaluator",
+            "bedrock-agentcore:InvokeAgentRuntime",
+            "bedrock-agentcore:ListPolicies",
+            "bedrock-agentcore:ListOnlineEvaluationConfigs",
+            "bedrock-agentcore:ListPolicyEngines",
+            "bedrock-agentcore:GetPolicyEngine",
+            "bedrock-agentcore:ListTagsForResource",
+            "bedrock-agentcore:ListActors",
+            "bedrock-agentcore:GetOnlineEvaluationConfig",
+            "bedrock-agentcore:ListEvaluators",
+            "bedrock-agentcore:GetPolicy"
+        ]
+        ```
 
-        - **AWS SageMaker:**
-            - `sagemaker:InvokeEndpoint`
+## Steps to Configure IAM User for AI Asset Scanning (AWS)
 
-### Steps to Configure IAM User for AI Asset Scanning (AWS)
+1. Navigate to **IAM > Users > Create User**.
+2. Select the AWS managed policies **ReadOnlyAccess** and **SecurityAudit** to attach to the user.
+3. Go to **Add Permissions > Create inline policy**.
+    * **For AgentCore permissions**, add an additional inline policy by selecting the service **Bedrock-Agentcore**.
+    * Allow the required read and runtime actions (including `InvokeAgentRuntime`, `GetEvaluator`, `GetPolicy`, `GetPolicyEngine`, `GetOnlineEvaluationConfig`, and the corresponding `List*` actions such as `ListPolicies`, `ListPolicyEngines`, `ListEvaluators`, `ListOnlineEvaluationConfigs`, `ListActors`, and `ListTagsForResource`).
+    * Set **Resources** to **All**.
 
-Navigate to **IAM > Users > Create User**.
+        ![alt text](image-52.png)
 
-![image](images/aws-ai/1.png)
+        ![alt text](image-53.png)
 
-Select the AWS managed policies **ReadOnlyAccess** and **SecurityAudit** to attach to the user.
+        ![alt text](image-54.png)
 
-![image](images/aws-ai/2.png)
-
-Go to **Add Permissions > Create inline policy**. For **Bedrock Permissions**, select the service **Bedrock**, allow the actions **InvokeModel**, **ListImportedModels**, and **ListModelInvocationJobs**, and choose **All** under resources.
-
-![image](images/aws-ai/3.png)
-![image](images/aws-ai/4.png)
-
-For **SageMaker Permissions**, add another set of permissions by selecting the service **SageMaker**, allowing the action **InvokeEndpoint**, and choosing **All** under resources.
-
-![image](images/aws-ai/5.png)
-![image](images/aws-ai/6.png)
-![image](images/aws-ai/7.png)
-
-Finally, review and create the policy to attach it to the IAM user.
-
-![image](images/aws-ai/9.png)
-![image](images/aws-ai/10.png)
-![image](images/aws-ai/11.png)
+4. For **SageMaker Permissions**, add another set of permissions by selecting the service **SageMaker**, allowing the action **InvokeEndpoint**, and choosing **All** under resources.
+5. For **Bedrock Permissions**, select the service **Bedrock**, allow the actions **InvokeModel**, **ListImportedModels**, and **ListModelInvocationJobs**, and choose **All** under resources.
+6. Finally, review and create the policy to attach it to the IAM user.
 
 - - -
 [SCHEDULE DEMO](https://www.accuknox.com/contact-us){ .md-button .md-button--primary }
