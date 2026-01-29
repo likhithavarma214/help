@@ -17,12 +17,10 @@ hide:
   }
 </style>
 
-
 !!! note "Useful Links"
     - For onboarding refer to the [**AI/ML Onboarding Guide**](https://help.accuknox.com/how-to/aiml-overview/)
     - For list of supported platforms refer to the [**AI/ML Security Support Matrix**](https://help.accuknox.com/support-matrix/aiml-support-matrix/)
 
-<!-- TODO: Add the right icons here -->
 ::cards:: cols=3
 
 - title: Prompt Firewall
@@ -48,10 +46,10 @@ hide:
 - title: MCP Security
   image: ./icons/mcp-security.svg
   url:
-
 ::/cards::
 
 ## Featured Videos
+
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: auto; font-family: Arial, sans-serif;">
 
   <!-- AI Onboarding -->
