@@ -42,10 +42,12 @@ Enter the required credentials and repository information.
 
 **For Hugging Face:**
 
-* **Token**: Your Hugging Face Access Token.
-* **Repository Name**: The name of the model repository (e.g., `bert-base-uncased`).
+* **Token**: Your Hugging Face Access Token. Generate a token with 'Read' permissions from your Hugging Face account settings. [Click here to generate a token](https://huggingface.co/settings/tokens/new?tokenType=read)
 
-![Configure Repository](image-3.png)
+    ![alt text](image-26.png)
+
+* **Repository Name**: The name of the model repository (e.g., `bert-base-uncased`).
+    ![Configure Repository](image-3.png)
 
 ### Step 3: Add Identifiers
 
