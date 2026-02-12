@@ -47,7 +47,19 @@ The **API Security** module provides deep visibility and continuous risk assessm
   url: ../integrations/api-nginx.md
   description: Protect APIs exposed via Nginx Ingress Controller
 
-- title: Nginx Server
+- title: F5
+  image: https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/F5_Networks_logo.svg/1200px-F5_Networks_logo.svg.png
+  url: ../integrations/f5.md
+  description: Secure APIs exposed via F5
+
+- title: Kong
+  image: https://upload.wikimedia.org/wikipedia/en/8/88/Kong_inc.png
+  url: ../integrations/kong.md
+  description: Secure APIs managed by Kong Gateway
+
+::/cards::
+
+<!-- - title: Nginx Server
   image: ./nginx.png
   url:
   description: Secure APIs served by Nginx web server
@@ -55,10 +67,7 @@ The **API Security** module provides deep visibility and continuous risk assessm
 - title: Azure API Management
   image: ./image-12.png
   url:
-  description: Monitor APIs managed through Azure API Management
-
-::/cards::
-
+  description: Monitor APIs managed through Azure API Management -->
 
 ## Key Capabilities
 

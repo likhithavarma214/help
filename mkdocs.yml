@@ -293,6 +293,8 @@ nav:
           - "API Sec Proxy": "integrations/api-k8s.md"
           - "Istio": "integrations/api-istio.md"
           - "Nginx Ingress": "integrations/api-nginx.md"
+          - "Kong": "integrations/kong.md"
+        - "F5": "integrations/f5.md"
     - "CDR":
       - "Remediation": "getting-started/cdr-setup.md"
     - "CI/CD":
