@@ -5,17 +5,17 @@ description: Learn how to import and manage SARIF findings in AccuKnox to consol
 
 # SARIF Findings
 
-SARIF (Static Analysis Results Interchange Format) is a standard format for the output of static analysis tools. AccuKnox supports importing findings in the SARIF format, allowing you to consolidate security results from various tools into a single platform.
+SARIF (Static Analysis Results Interchange Format) is a standard format from various tools and helps to triage the findings. AccuKnox supports importing findings in the SARIF format, allowing you to consolidate security results from various tools into a single platform.
 
 By integrating SARIF findings, you can visualize and manage security issues identified by third-party scanners alongside AccuKnox's native findings. This integration is typically set up using a workflow to ingest the SARIF files.
 
-AccuKnox supports importing SARIF findings from any tool that exports in this standard format. Some common platforms that export SARIF include:
+AccuKnox supports importing SARIF findings from any tool that produces output in SARIF format. Some common platforms that export SARIF include:
 
 - **Sonatype**
 - **Jfrog**
 - **Gitleaks**
 - **Checkmarx**
-- **Any Tool that Export SARIF**
+- **Any Other That Produces SARIF**
 
 We can import these findings and display them within the AccuKnox platform, providing a unified view of your security posture.
 

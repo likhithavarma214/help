@@ -9,64 +9,18 @@ Managing security across multiple Azure subscriptions is complex. Onboarding you
 
 ## 1. Configurations
 
-### AccuKnox Side Configuration (One-time Setup)
-
-!!! note
-    This section describes the configuration required on the AccuKnox management side (or the service provider side) to enable multi-tenant access.
-
-1.  **Navigate to Microsoft Azure Portal**:
-    Go to [portal.azure.com](https://portal.azure.com/).
-
-2.  **Create App Registration**:
-    - Search for **App registrations** in the search bar.
-      ![Search App Register](image-27.png)
-    - Click **New registration**.
-      ![Click New Register](image-28.png)
-    - Enter a **Name** for the application.
-    - Under **Supported account types**, select:
-      > Accounts in any organizational directory (Any Microsoft Entra ID tenant - Multitenant)
-    - Click **Register**.
-      ![Register App](image-29.png)
-
-3.  **Create a Certificate & Secret**:
-    - Within the newly created app, go to **Certificates & secrets**.
-    - Click **New client secret**.
-      ![Create Secret](image-30.png)
-    - Add a description and expiry, then click **Add**.
-    - **Save the Value** immediately (it will be hidden later).
-
-4.  **Create Resource Group & Assign Role**:
-    - Search for and create a new **Resource Group**.
-      ![alt text](image-31.png)
-    - Go to **Access control (IAM)** within the Resource Group.
-    - Click **Add** > **Add role assignment**.
-      ![Add Role Assignment](image-32.png)
-    - Select the Role: **Security Reader**.
-      ![Select Role](image-33.png)
-    - Assign access to **User, group, or service principal**.
-    - Select the **App created above** as a member.
-    - Review and assign.
-      ![Review and Assign](image-34.png)
-
-5.  **Note Down Required IDs**:
-    - **Object ID** of the App
-    - **Secret Value** of the App
-    - **Tenant ID** of AccuKnox (Directory ID)
-
----
-
-### User-Side Configuration
-
 AccuKnox provides a flexible way to selectively onboard your Azure environment. You can choose to onboard specific Management Groups and Subscriptions or onboard everything while excluding specific parts.
 
-#### 1. Enter Organization Details
+### Onboarding Steps from AccuKnox Control Plane
 
-In the AccuKnox portal, you will be asked to provide the following details to generate the onboarding script:
+**Step 1:** Select Microsoft Azure and choose Organization Account, then click Next to begin onboarding the Azure org.
+![alt text](image-38.png)
 
-- **Management Group ID (`management_group_id`)**: The ID of the root or parent management group you want to onboard.
-- **Context Subscription ID (`context_subscription_id`)**: The ID of the subscription where the Lighthouse definition will be stored (usually the management subscription).
+**Step 2:** Set the connection method (Terraform recommended), add a label and tag for the Azure organization, then proceed.
+![alt text](image-39.png)
 
-#### 2. Select Onboarding Mode
+**Step 3:** Enter Tenant ID, Management Group, and Subscription scope details to define what the Azure org connection will monitor.
+![alt text](image-40.png)
 
 Choose the mode that best fits your organizational structure:
 
@@ -90,11 +44,10 @@ Choose the mode that best fits your organizational structure:
     *   **Excluded Subscriptions (`excluded_subscription_ids`)**: [**Optional**]
         Specify individual Subscription IDs that you want to **skip**, even if their Management Group is being onboarded.
 
-#### 3. Search and Add IDs
+**Step 4:** Run the provided Terraform script to establish secure connectivity and complete Azure organization onboarding in the Control Plane.
+![alt text](image-41.png)
 
-Use the search bar in the portal to find and select the Management Groups and Subscriptions you want to include or exclude based on the mode selected above.
-
-#### 4. Generate & Run Terraform Script
+### 2. Generate & Run Terraform Script
 
 Once you have configured the parameters above, click **Generate Terraform**.
 
@@ -122,15 +75,13 @@ Once you have configured the parameters above, click **Generate Terraform**.
 After a successful run, the user will be able to authorize and view their accounts on the AccuKnox Portal.
 
 ---
-
 ## 2. Auto-fetch New Subscriptions
 
-When a user creates a **New Subscription**:
+Whenever a user creates a new subscription in their account, and comes under the onboarded management group, then Accuknox automatically fetches and scans that subscription. To ensure this works correctly, please follow the steps below:
 
-1.  Move the subscription to the onboarded **Management Group** (`management_group_id`).
-2.  Go to the Subscription in the Azure Portal and search for **Resource providers**.
+1.  Go to the Subscription in the Azure Portal and search for **Resource providers**.
    ![Resource Providers](image-35.png)
-3.  Ensure the following providers are enabled:
+2.  Ensure the following providers are enabled:
     - `Microsoft.ManagedServices`
     - `Microsoft.PolicyInsights`
 
@@ -141,4 +92,4 @@ After approximately **30 minutes**, the subscription will be automatically deleg
 ![User's Azure Account](image-36.png)
 
 - **AccuKnox Azure Account**
-![alt text](image-37.png)
+![AccuKnox Azure Account](image-37.png)
