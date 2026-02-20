@@ -57,6 +57,8 @@ Create an **inline policy** with the following permissions:
         "bedrock:InvokeModel",
         "bedrock:ListImportedModels",
         "bedrock:ListModelInvocationJobs"
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:ViewSubscriptions"
     ]
     ```
 
