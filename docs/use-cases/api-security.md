@@ -49,9 +49,9 @@ Collections help organize endpoints before scanning and provide logical grouping
 
 API Specifications (OpenAPI/Swagger format) can be uploaded to define the expected API structure for comparison during scans.
 
-### Method 1: Via Inventory Page
+### Method 1: Via API Specification Page
 
-1. Navigate to **API Security → Inventory**.
+1. Navigate to **API Security → Specification**.
 2. Click on the upload option.
 3. Select your OpenAPI specification file (YAML or JSON).
 4. Upload the file.

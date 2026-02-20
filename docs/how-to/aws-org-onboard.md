@@ -47,18 +47,6 @@ Select **Organization Account** as the account type.
 
 Next, select existing labels or create new ones to associate with all assets that will be discovered within this AWS Organization.
 
-### 3. Choose Account Filter Type (INCLUDE/EXCLUDE)
-
-You can now control which AWS accounts within your Organization are onboarded using the **Account Filter Type** option:
-
-- **INCLUDE**: Only the accounts you specify will be onboarded.
-- **EXCLUDE**: All accounts except those you specify will be onboarded.
-- **NONE** (default): All accounts in the Organization will be onboarded.
-
-Select the desired filter type and enter the list of AWS Account IDs as needed. If you do not specify a filter, all accounts will be included by default.
-
-![Account Filter Type](./images/aws-org-onboard/filter.png)
-
 ### 4. Enter AWS Organization Details
 
 - Log in to the **AWS Console** → go to **AWS Organizations**.
@@ -81,7 +69,19 @@ Select the desired filter type and enter the list of AWS Account IDs as needed. 
 
 ![Launch StackSet](./images/aws-org-onboard/4.png)
 
-### 6. Create the Stack in AWS
+### 6. Choose Account Filter Type (INCLUDE/EXCLUDE)
+
+You can now control which AWS accounts within your Organization are onboarded using the **Account Filter Type** option:
+
+- **INCLUDE**: Only the accounts you specify will be onboarded.
+- **EXCLUDE**: All accounts except those you specify will be onboarded.
+- **NONE** (default): All accounts in the Organization will be onboarded.
+
+Select the desired filter type and enter the list of AWS Account IDs as needed. If you do not specify a filter, all accounts will be included by default.
+
+![Account Filter Type](./images/aws-org-onboard/filter.png)
+
+### 7. Create the Stack in AWS
 
 - Scroll down, check the box:
   **"I acknowledge that AWS CloudFormation might create IAM resources..."**
@@ -89,27 +89,27 @@ Select the desired filter type and enter the list of AWS Account IDs as needed. 
 
 ![Create Stack](./images/aws-org-onboard/5.png)
 
-### 7. Wait for StackSet Deployment
+### 8. Wait for StackSet Deployment
 
 - Wait until the status shows **CREATE_COMPLETE**.
 
 ![StackSet Deployment](./images/aws-org-onboard/6.png)
 
-### 8. Copy Role ARN
+### 9. Copy Role ARN
 
 - Go to the **Outputs** tab of the StackSet.
 - Copy the value of `RoleArnInManagementAccount`.
 
 ![Copy Role ARN](./images/aws-org-onboard/7.png)
 
-### 9. Connect in AccuKnox
+### 10. Connect in AccuKnox
 
 - Paste the ARN in the **Role ARN** field.
 - Click **Connect**.
 
 ![Connect Role](./images/aws-org-onboard/8.png)
 
-### 10. Confirm Onboarding
+### 11. Confirm Onboarding
 
 - You’ll be redirected to the **Cloud Accounts** page.
 - Refresh the page to see your AWS Organization listed.
