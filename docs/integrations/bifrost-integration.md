@@ -6,6 +6,9 @@ description: Guide to integrate AccuKnox Prompt Firewall with Bifrost using a cu
 # Bifrost Integration Guide
 Learn how to integrate AccuKnox Prompt Firewall with Bifrost using a custom plugin to monitor and filter prompts and responses via the AccuKnox API.
 
+!!! note "Important"
+    Since this integration hooks into API calls, it currently **only logs and categorizes** prompts and responses (e.g., Prompt Injection, Toxic, Code) for observability. It does not actively block requests at this stage.
+
 <p align="center">
   <img src="https://i.ibb.co/NnW7Nwsz/Screenshot-2025-11-28-123545.png" alt="alt text" />
 </p>

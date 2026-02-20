@@ -54,7 +54,7 @@ The **AI Security** module provides prompt firewalling, threat detection, and ri
 
 ::cards:: cols=4
 
-- title: Bifrost AI Integration
+- title: Bifrost AI
   image: ./image-15.png
   url: ../integrations/bifrost-integration.md
   description: Monitor and secure AIs running on AWS AI Gateway
@@ -68,7 +68,7 @@ The **AI Security** module provides prompt firewalling, threat detection, and ri
   image: https://raw.githubusercontent.com/pulumi/pulumi-aws-apigateway/main/assets/logo.png
   url: ../how-to/aws-apim.md
 
-- title: LiteLLM Integration
+- title: LiteLLM
   image: ./image-16.png
   url: ../integrations/litellm.md
   description: Integrate with LiteLLM Prompt Firewall for AI security -->
