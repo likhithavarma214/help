@@ -539,7 +539,7 @@ nav:
     - "CSPM Assets Support" : "support-matrix/assets-list.md"
     - "Cloud Regions Support": "support-matrix/cloud-regions.md"
     - "AI/ML Support Matrix" : "support-matrix/aiml-support-matrix.md"
-    - "Compliance Matrix" : "support-matrix/compliance-matrix.md"
+    - "Compliance Matrix" : "https://accuknox.com/compliance"
     - "VM Support Matrix" : "support-matrix/vms.md"
     - "Private Cloud" : "support-matrix/private-cloud.md"
     - "Public Cloud" : "support-matrix/public-cloud.md"
@@ -555,6 +555,7 @@ nav:
     - "Sample Reports": "resources/sample-reports.md"
     - "Asset Onboarding Deck": "https://docs.google.com/presentation/d/e/2PACX-1vSNns23fmwfVgaoBIvR1fL7fk_Be6GYUJLwRticjlm4cBvIAqzxm4IF7RV7qsV00KrrRFGDjOIVG0Q2/pub?start=false&loop=false&delayms=3000"
     - "Compliance Baseline Data": "resources/compliance-baseline-data.md"
+    - "Essential 8 Compliance": "resources/essential-8.md"
     # - "Data Usage Policy": "resources/data-usage-policy.md"  # ADD THESE BACK IN LATER
     # - "AccuKnox Agents" : "getting-started/accuknox-agents.md"
     # - "AI Usage Policy": "resources/ai-usage-policy.md"

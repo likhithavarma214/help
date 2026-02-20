@@ -42,6 +42,16 @@ For an exhaustive list of supported compliance frameworks and cloud platforms, p
 
 ::/cards::
 
+## 🇦🇺 Essential 8
+
+::cards:: cols=3
+
+- title: Essential 8
+  image: https://www.6clicks.com/hubfs/Marketplace%20Item%20Logos/asd8-logo-square.png
+  url:
+
+::/cards::
+
 ## ✅ SOC Type 2
 
 ::cards:: cols=3
