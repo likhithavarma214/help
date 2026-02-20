@@ -48,7 +48,7 @@ For an exhaustive list of supported compliance frameworks and cloud platforms, p
 
 - title: Essential 8
   image: https://www.6clicks.com/hubfs/Marketplace%20Item%20Logos/asd8-logo-square.png
-  url:
+  url: https://accuknox.com/blog/accuknox-essential-8-compliance-zero-trust
 
 ::/cards::
 
