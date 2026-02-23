@@ -57,9 +57,7 @@ The **API Security** module provides deep visibility and continuous risk assessm
   url: ../integrations/kong.md
   description: Secure APIs managed by Kong Gateway
 
-::/cards::
-
-<!-- - title: Nginx Server
+- title: Nginx Server
   image: ./nginx.png
   url:
   description: Secure APIs served by Nginx web server
@@ -67,7 +65,11 @@ The **API Security** module provides deep visibility and continuous risk assessm
 - title: Azure API Management
   image: ./image-12.png
   url:
-  description: Monitor APIs managed through Azure API Management -->
+  description: Monitor APIs managed through Azure API Management
+
+::/cards::
+
+
 
 ## Key Capabilities
 
