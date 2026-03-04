@@ -12,6 +12,8 @@ This guide describes how to integrate Kong Gateway with AccuKnox API Security fo
 
 ## Steps
 
+![alt text](image-58.png)
+
 ### 1. Install Kong Gateway
 
 ```shell
@@ -115,7 +117,7 @@ helm upgrade --install sentryflow \
   --set config.receivers.kongGateway.enabled=true \
   --set config.receivers.kongGateway.namespace=kong \
   --set config.receivers.kongGateway.deploymentName=kong-kong \
-  --set config.receivers.kongGateway.plugin.httpEndpoint=http://sentryflow.sentryflow:8081/api/v1/events \
+  --set config.receivers.kongGateway.plugin.httpEndpoint=http://sentryflow.sentryflow.svc.cluster.local:8081/api/v1/events \
   --set config.receivers.kongGateway.plugin.timeout=10000 \
   --set config.receivers.kongGateway.plugin.keepalive=60000
 ```
