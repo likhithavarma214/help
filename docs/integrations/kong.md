@@ -1,3 +1,4 @@
+
 # Kong Gateway Integration with AccuKnox API Security
 
 This guide describes how to integrate Kong Gateway with AccuKnox API Security for API security monitoring.
@@ -26,17 +27,21 @@ helm install kong kong/kong \
   --set admin.type=NodePort
 ```
 
+
 ### 2. Deploy AccuKnox API Security (Initial - Creates ConfigMap)
 
 Deploy AccuKnox API Security with Kong receiver enabled. This creates the `sentryflow-log-plugin` ConfigMap in the 'kong' namespace containing the plugin Lua code.
 
-> **Note:** This step may show a warning about the `KongClusterPlugin` failing validation - this is expected because Kong hasn't loaded the plugin yet. The API Security components and the ConfigMap will still be created.
+> **Note:** This step may show a warning about the `KongClusterPlugin` failing validation - this is expected because Kong hasn't loaded the plugin yet. AccuKnox API Security itself and the ConfigMap will still be created.
+
+> **Note:** Minimun Required Version for AccuKnox API Security Kong integration is `v0.1.8`. Please check AccuKnox API Security [release](https://github.com/accuknox/SentryFlow/releases) Page to install latest version.
 
 ```shell
 helm upgrade --install sentryflow \
   oci://public.ecr.aws/k9v9d5v2/sentryflow-helm-charts \
   --namespace sentryflow \
   --create-namespace \
+  --version v0.1.8 \
   --set config.receivers.kongGateway.enabled=true \
   --set config.receivers.kongGateway.namespace=kong \
   --set config.receivers.kongGateway.deploymentName=kong-kong \
@@ -98,6 +103,7 @@ kubectl -n kong rollout status deployment/kong-kong
 
 ### 4. Create KongClusterPlugin
 
+
 Now that Kong has loaded the plugin, re-run the Helm chart to create the `KongClusterPlugin` resource:
 
 ```shell
@@ -105,6 +111,7 @@ helm upgrade --install sentryflow \
   oci://public.ecr.aws/k9v9d5v2/sentryflow-helm-charts \
   --namespace sentryflow \
   --create-namespace \
+  --version v0.1.8 \
   --set config.receivers.kongGateway.enabled=true \
   --set config.receivers.kongGateway.namespace=kong \
   --set config.receivers.kongGateway.deploymentName=kong-kong \
@@ -120,13 +127,13 @@ kubectl get kongclusterplugins
 ```
 
 You should see:
-
 ```
 NAME             PLUGIN-TYPE      AGE   PROGRAMMED
 sentryflow-log   sentryflow-log   Xs
 ```
 
 ### 5. Patch Discovery Engine
+
 
 Update the discovery-engine ConfigMap (`discovery-engine-sumengine`) to use AccuKnox API Security and restart the deployment.
 
@@ -141,7 +148,7 @@ data:
   app.yaml: |
     ...
     summary-engine:
-      sentryflow:
+      accuknox-api-security:
         cron-interval: 0h0m30s
         decode-jwt: true
         enabled: true
@@ -152,16 +159,16 @@ data:
         threshold: 10000
     watcher:
     ...
-      sentryflow:
+      accuknox-api-security:
         enabled: true
         event-type:
           access-log: true
           metric: false
         service:
           enabled: true
-          name: sentryflow
+          name: accuknox-api-security
           port: "8080"
-          url: "sentryflow.sentryflow"
+          url: "accuknox-api-security.sentryflow"
 ```
 
 Restart discovery-engine:
@@ -183,6 +190,7 @@ kubectl get svc
 
 ### 2. Create Ingress Resource
 
+
 Create an Ingress to route traffic through Kong to your service.
 
 ```shell
@@ -191,6 +199,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend-ingress
+  namespace: <your_namespace>
   annotations:
     konghq.com/strip-path: "true"
 spec:
@@ -222,7 +231,8 @@ curl -s http://localhost:8000/ > /dev/null
 curl -s http://localhost:8000/cart > /dev/null
 ```
 
-### 4. Verify API Security Logs
+
+### 4. Verify AccuKnox API Security Logs
 
 Check AccuKnox API Security logs to confirm it received the events.
 
@@ -231,7 +241,6 @@ kubectl -n sentryflow logs deployment/sentryflow --tail=50
 ```
 
 You should see logs indicating receipt of events:
-
 ```
 {"level":"INFO",...,"msg":"Received API Event from kong"}
 ```
