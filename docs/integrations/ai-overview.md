@@ -30,7 +30,7 @@ The **AI Security** module provides prompt firewalling, threat detection, and ri
 
 - title: SDK Integration (Python)
   image: https://media.istockphoto.com/id/1163870054/vector/sdk-icon-software-development-kit-icon.jpg?s=612x612&w=0&k=20&c=-eBNBnt5zg7i3fS_vOV8RganMSJbdDvkmvwtFlg9c2E=
-  url: ../integrations/bedrock-agentcore.md
+  url: ../use-cases/llm-defense-app-onboard.md
   description: Integrate AccuKnox SDK with your AI applications for prompt scanning and security.
 
 - title: Azure Copilot Studio

@@ -7,7 +7,7 @@ site_author: "AccuKnox"
 site_url: "https://help.accuknox.com/"
 
 # Copyright
-copyright: '<div style="margin-top: -2rem; font-size: 2em; font-weight: 500;"><a href="https://status.accuknox.com/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; color: inherit;"> <span class="twemoji" style="margin-right: 0.4rem; height: 1.25rem; width: 1.25rem;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span> AccuKnox Status</a></div> &copy; 2024 AccuKnox. All Rights Reserved.'
+copyright: '<div style="margin-top: -2rem; font-size: 2em; font-weight: 500;"><a href="https://status.accuknox.com/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; color: inherit;"> <span class="twemoji" style="margin-right: 0.4rem; height: 1.25rem; width: 1.25rem;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span> AccuKnox Status</a></div> &copy; 2026 AccuKnox. All Rights Reserved.'
 
 # Repository
 repo_name: "GitHub"
@@ -278,7 +278,7 @@ nav:
     - "Findings Lifecycle": "how-to/findings-lifecycle.md"
     - "AI Security":
       - "Overview": "integrations/ai-overview.md"
-      - "SDK Method": "use-case/llm-defense-app-onboard.md"
+      - "SDK Method": "use-cases/llm-defense-app-onboard.md"
       - "AI Gateway Method":
         - "Azure APIM": "getting-started/azure-ai-foundry.md"
         - "AWS API Gateway": "how-to/aws-apim.md"
