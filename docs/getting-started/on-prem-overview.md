@@ -1,40 +1,58 @@
 ---
 title: On-Premises Overview
 description: Overview of On-Premises Deployment for AccuKnox
+hide:
+  - toc
 ---
+
+
+<style>
+h2 {
+  color: #000025;
+  font-size: 1.5rem !important;
+}
+.nt-card .nt-card-image{
+  color: #005BFF;
+
+}
+
+ .nt-card-title {
+    text-align: -webkit-center;
+}
+</style>
 
 # On-Prem Deployment Modes
 
 ::cards:: cols=3
 
  - title: Installation Guide
-   image: ./images/on-prem/install-guide.png
+   image: ./icons/installation-guide.svg
    url: ../getting-started/on-prem-installation-guide.md
    description: Step-by-step guide for AccuKnox on-prem installation.
 
  - title: Single Node Installation
-   image: ./images/on-prem/single-node.png
+   image: ./icons/single-node-install.svg
    url: ../getting-started/on-prem-single-node-installation.md
    description: Deploy AccuKnox on a single node for quick setup.
 
  - title: Managed Installation (EKS, AKS, GKE)
-   image: ./images/on-prem/managed-cloud.png
+   image: ./icons/managed-install.svg
    url: ../getting-started/cluster-onboarding-managed.md
    description: Managed Kubernetes installation for AWS, Azure, and GCP.
 
  - title: Security on OpenShift
-   image: ./images/on-prem/openshift.png
+   image: ./icons/openshift-sec.svg
    url: ../getting-started/security-on-openshift.md
    description: Secure your OpenShift environment with AccuKnox.
 
  - title: Health Monitoring (RINC)
-   image: ./images/on-prem/health-monitoring.png
-   url: ../getting-started/health-monitoring.md
+   image: ./icons/health-monitoring.svg
+   url: ../how-to/RINC.md
    description: Monitor cluster health and runtime security (RINC).
 
  - title: AWS Control Plane Installation
-   image: ./images/on-prem/aws-control-plane.png
-   url: ../getting-started/aws-control-plane-installation.md
+   image: ./icons/control-plane.svg
+   url: ../getting-started/aws-ami.md
    description: Install AccuKnox control plane on AWS for centralized management.
 
 ::/cards::
@@ -47,25 +65,32 @@ AccuKnox onprem deployment is based on Kubernetes native architecture.
 
 ## AccuKnox OnPrem k8s components
 
-### Microservices
+=== "Microservices"
 
-Microservices implement the API logic and provide the corresponding service endpoints. AccuKnox uses Golang-based microservices for handling streaming data (such as alerts and telemetry) and Python-based microservices for other control-plane services.
+  * Golang microservices handle streaming data (alerts, telemetry).
+  * Python microservices manage control-plane services.
 
-### Databases
+=== "Databases"
 
-PostgreSQL is used as a relational database and MongoDB is used for storing JSON events such as alerts and telemetry. Ceph storage is used to keep periodic scanned reports and the Ceph storage is deployed and managed using the Rook storage operator.
+  * PostgreSQL stores relational data.
+  * MongoDB stores JSON events (alerts, telemetry).
+  * Ceph stores scanned reports, managed by Rook operator.
 
-### Secrets Management
+=== "Secrets Management"
 
-Within the on-prem setup, there are several cases where sensitive data and credentials have to be stored. Hashicorp's Vault is used to store internal (such as DB username/password) and user secrets (such as registry tokens). The authorization is managed purely using the k8s native model of service accounts. Every microservice has its service account and uses its service account token automounted by k8s to authenticate and subsequently authorize access to the secrets.
+  * Vault stores internal and user secrets.
+  * Service accounts and tokens manage authorization.
 
-### Scaling
+=== "Scaling"
 
-K8s native horizontal and vertical pod autoscaling is enabled for most microservices with upper limits for resource requirements.
+  * Horizontal and vertical pod autoscaling enabled for most microservices.
+  * Resource limits are set for scaling.
 
-### AccuKnox-Agents
+=== "AccuKnox-Agents"
 
-Agents need to be deployed in target k8s clusters and virtual machines that have to be secured at runtime and to get workload forensics. Agents use Linux native technologies such as eBPF for workload telemetry and LSMs (Linux Security Modules) for preventing attacks/unknown execution in the target workloads. The security policies are orchestrated from the AccuKnox onprem control plane. AccuKnox leverages SPIFFE/SPIRE for workload/node attestation and certificate provisioning. This ensures that the credentials are not hardcoded and automatically rotated. This also ensures that if the cluster/virtual machine has to be deboarded then the control lies with the AccuKnox control plane.
+  * Agents run in k8s clusters and VMs for runtime security and forensics.
+  * Use eBPF and LSMs for telemetry and attack prevention.
+  * SPIFFE/SPIRE handles attestation and certificate rotation.
 
 ## Onboarding Steps for AccuKnox
 
