@@ -37,7 +37,7 @@ h2 {
 
  - title: Managed Installation (EKS, AKS, GKE)
    image: ./icons/managed-install.svg
-   url: ../getting-started/cluster-onboarding-managed.md
+   url: ../getting-started/onprem-eks-aks-gke.md
    description: Managed Kubernetes installation for AWS, Azure, and GCP.
 
  - title: Security on OpenShift
