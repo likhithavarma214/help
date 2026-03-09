@@ -20,6 +20,9 @@ Explore all AccuKnox releases. Select a version to view detailed notes, improvem
 
 ::cards:: cols=4
 
+- title: v3.4
+  url: https://help.accuknox.com/getting-started/3.4-release/
+
 - title: v3.3
   url: https://help.accuknox.com/getting-started/3.3-release/
 
@@ -31,7 +34,7 @@ Explore all AccuKnox releases. Select a version to view detailed notes, improvem
 
 - title: v3.0
   url: https://help.accuknox.com/getting-started/3.0-release/
- 
+
 - title: v2.4
   url: https://help.accuknox.com/getting-started/2.4-release/
 
