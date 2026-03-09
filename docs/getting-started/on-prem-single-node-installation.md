@@ -5,78 +5,95 @@ description: Step-by-step guide for installing AccuKnox on a single node (Ubuntu
 
 # On-Prem Single Node Installation Guide
 
-!!! info "Environment"
-    Installation tested on **Ubuntu 24.04**.
+This guide provides step-by-step instructions for installing AccuKnox on a single node.
+
+!!! info "Supported Operating Systems"
+    Installation was tested on **Ubuntu 24.04** and **Rocky Linux 8**.
 
 ## Prerequisites
 
-!!! warning "Hardware Requirements"
-    **VM:** 8vCPU/32GB Memory And 256GB Storage
+### Hardware Requirements
+
+* **VM:** 8 vCPU / 32GB Memory
+* **Storage:** 256GB
+* **Required Binaries:** `tar`, `wget`
+
+!!! warning "Rocky Linux Users"
+    SELinux should be disabled or set to permissive if you are installing on Rocky Linux.
 
 ## Installation Steps
 
-### 1. Download Accuknox Installation Bundle
+### Step 1: Download the Installation Bundle
+
+Download the Accuknox bundle using `wget`:
 
 ```bash
-wget https://accuknox-onprem.s3.eu-west-2.amazonaws.com/Accuknox-cp.tar.gz
+wget https://accukno-xxxx-xxxx.xxxx.your-objectstorage.com/Accuknox-cp-v3_3.tar.gz
 ```
 
-### 2. Extract Accuknox Installation Bundle
+### Step 2: Extract the Installation Bundle
+
+Extract the downloaded file, remove the archive to free up space, and navigate to the directory:
 
 ```bash
-tar -xvf Accuknox-cp.tar.gz
+tar -xvf Accuknox-cp-v3_3.tar.gz
+rm Accuknox-cp-v3_3.tar.gz
 cd Accuknox/
 ```
 
-### 3. Extract Helm Chart
+### Step 3: Extract Helm Charts
+
+Extract the Helm charts and navigate to their directory:
 
 ```bash
-tar -xvf Helm-charts-accuknox-stable-helm-chart-v3.3-Dec-08.tar.gz
-cd Helm-charts-accuknox-stable-helm-chart-v3.3-Dec-08
+tar -xvf Helm-charts-accuknox-stable-helm-chart-v3.3-xx-xx.tar.gz
+cd Helm-charts-accuknox-stable-helm-chart-v3.3-xx-xx
 ```
 
-### 4. Install Binaries and K3s
+### Step 4: Install Dependencies
+
+Run the scripts to install the required binaries and K3s:
 
 ```bash
 ./binaries.sh
 ./airgapped_k3s.sh
 ```
 
-## Configuration
+### Step 5: Configure Deployment Values
 
-Update the following fields in `override-values.yaml`:
+Update the necessary overrides in `override-values.yaml`. For an **IP-based deployment (recommended for POC)**, update the `nginxIngressGateway` with your appropriate `<PRIVATE-IP>`:
 
-### Storage Configuration
+```yaml title="override-values.yaml"
+ingressGateway:
+  enabled: true
+nginxIngressGateway:
+  enabled: true
+  loadBalancerHost: "<PRIVATE-IP>"
+```
 
-Use the default storageclass (`local-path`) if you are deploying on k3s. Update the `StorageClass` `<storageclass>` to `local-path`.
+!!! note "SSL Configuration"
+    If you are deploying with an IP-based method, disable SSL. The override values file should be updated as follows:
 
-### Ingress Configuration
+    ```yaml title="override-values.yaml"
+    ssl:
+      selfsigned: false
+      customcerts: false
+    ```
 
-For IP-based deployment (recommended for POC):
+### Step 6: Install AccuKnox Charts
 
-
-| Parameter                     | Value            |
-| :---------------------------- | :--------------- |
-| `ingressGateway.enabled`      | `true`           |
-| `nginxIngressGateway.enabled` | `true`           |
-| `loadBalancerHost`            | `"<PRIVATE-IP>"` |
-
-### SSL Configuration
-
-If you are deploying with ip IP-based method make SSL false:
-
-| Parameter         | Value   |
-| :---------------- | :------ |
-| `ssl.selfsigned`  | `false` |
-| `ssl.customcerts` | `false` |
-
-### 5. Install AccuKnox Charts
+Execute the chart installation script:
 
 ```bash
 ./install_chart.sh
 ```
 
-## Access the UI
+### Step 7: Access the UI and Complete Setup
 
-- Open the UI (`https://<PRIVATE-IP>/`) in a browser
-- To complete sign-up, please connect to AccuKnox team
+1. Open the AccuKnox UI in your browser at: `https://<PRIVATE-IP>/`
+2. Run the following command to retrieve the verification link:
+
+    ```bash
+    kubectl logs deploy/celery -n accuknox-divy
+    ```
+3. To complete the sign-up process, please connect to the AccuKnox team.
