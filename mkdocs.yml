@@ -231,7 +231,8 @@ nav:
         - "Windows": "how-to/vm-security/agent-based/windows.md"
         - "Container Image Scanning": "how-to/vm-security/agent-based/container-image-scanning.md"
       - "Agentless":
-        - "Cloud VM Scanning": "how-to/vm-security/agentless/cloud-vm-scanning.md"
+        - "Cloud VM Scan": "how-to/vm-security/agentless/cloud-vm-scanning.md"
+        - "Azure Cloud VM Scan": "how-to/vm-security/agentless/azure-cloud-vm.md"
     - "Application Security (ASPM)":
       - "Overview": "how-to/aspm-overview.md"
       - "Baseline vs Full Scan": "how-to/dast-baseline-vs-full.md"
