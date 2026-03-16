@@ -578,11 +578,11 @@ hide:
 </section>
 
 <section class="explorer-section">
-  <div class="explorer-title" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 25px;">AccuKnox Docs — Secure Assets at Scale</div>
+  <div class="explorer-title" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 25px;">AccuKnox - Security for the AI Era</div>
 
   <div class="tabs-container" id="categoryTabs">
     <button class="tab-btn active" onclick="selectCategory('code', this)">
-        <img src="assets/icons/code.svg" alt="Secure Code" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure Code
+        <img src="assets/icons/code.svg" alt="Secure Code" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure Code & APIs
     </button>
     <button class="tab-btn" onclick="selectCategory('cloud', this)">
         <img src="assets/icons/cloud.svg" alt="Secure Cloud" width="14" height="14" style="vertical-align:text-bottom; margin-right:6px;" /> Secure Cloud
@@ -885,7 +885,7 @@ hide:
   </div>
 </section>
 <section class="use-cases-section">
-  <div class="section-heading-3" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 40px;">Popular resources and guides</div>
+  <div class="section-heading-3" style="font-size: 1.8rem; font-weight: 800; text-align: center; color: #0f172a; margin-bottom: 40px;">Popular Resources & Guides</div>
   <div class="use-cases-grid">
     <div class="use-case-card">
        <div class="use-case-header">
@@ -999,7 +999,7 @@ hide:
          <h3 class="use-case-title">Release Notes & Updates</h3>
        </div>
        <ul class="use-case-list">
-          <li><a href="/getting-started/3.3-release/" target="_blank">Latest Release (v3.3)</a></li>
+          <li><a href="/getting-started/3.4-release/" target="_blank">Latest Release (v3.4)</a></li>
           <li><a href="/getting-started/accuknox-release-notes/" target="_blank">All Release Notes</a></li>
           <li><a href="/getting-started/kubearmor-release/" target="_blank">KubeArmor Releases</a></li>
        </ul>
