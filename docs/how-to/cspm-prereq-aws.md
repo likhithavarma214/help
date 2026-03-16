@@ -55,10 +55,8 @@ Create an **inline policy** with the following permissions:
     ```json
     [
         "bedrock:InvokeModel",
-        "bedrock:ListImportedModels",
-        "bedrock:ListModelInvocationJobs"
-        "aws-marketplace:Subscribe",
-        "aws-marketplace:ViewSubscriptions"
+        "bedrock:ListTagsForResource",
+        "bedrock:InvokeAgent"
     ]
     ```
 
@@ -66,7 +64,8 @@ Create an **inline policy** with the following permissions:
 
     ```json
     [
-        "sagemaker:InvokeEndpoint"
+        "sagemaker:InvokeEndpoint",
+        "sagemaker:ListTags"
     ]
     ```
 
@@ -81,10 +80,22 @@ Create an **inline policy** with the following permissions:
         "bedrock-agentcore:ListPolicyEngines",
         "bedrock-agentcore:GetPolicyEngine",
         "bedrock-agentcore:ListTagsForResource",
-        "bedrock-agentcore:ListActors",
         "bedrock-agentcore:GetOnlineEvaluationConfig",
         "bedrock-agentcore:ListEvaluators",
-        "bedrock-agentcore:GetPolicy"
+        "bedrock-agentcore:GetPolicy",
+        "bedrock-agentcore:StopRuntimeSession"
+    ]
+    ```
+
+=== "AWS Marketplace"
+
+    !!! note
+        Required for invoking certain models (e.g., Claude Opus 4.5).
+
+    ```json
+    [
+        "aws-marketplace:Subscribe",
+        "aws-marketplace:ViewSubscriptions"
     ]
     ```
 
@@ -94,7 +105,7 @@ Create an **inline policy** with the following permissions:
 2. Select the AWS managed policies **ReadOnlyAccess** and **SecurityAudit** to attach to the user.
 3. Go to **Add Permissions > Create inline policy**.
     * **For AgentCore permissions**, add an additional inline policy by selecting the service **Bedrock-Agentcore**.
-    * Allow the required read and runtime actions (including `InvokeAgentRuntime`, `GetEvaluator`, `GetPolicy`, `GetPolicyEngine`, `GetOnlineEvaluationConfig`, and the corresponding `List*` actions such as `ListPolicies`, `ListPolicyEngines`, `ListEvaluators`, `ListOnlineEvaluationConfigs`, `ListActors`, and `ListTagsForResource`).
+    * Allow the required read and runtime actions (including `InvokeAgentRuntime`, `GetEvaluator`, `GetPolicy`, `GetPolicyEngine`, `GetOnlineEvaluationConfig`, `StopRuntimeSession`, and the corresponding `List*` actions such as `ListPolicies`, `ListPolicyEngines`, `ListEvaluators`, `ListOnlineEvaluationConfigs`, and `ListTagsForResource`).
     * Set **Resources** to **All**.
 
         ![alt text](image-52.png)
@@ -103,9 +114,10 @@ Create an **inline policy** with the following permissions:
 
         ![alt text](image-54.png)
 
-4. For **SageMaker Permissions**, add another set of permissions by selecting the service **SageMaker**, allowing the action **InvokeEndpoint**, and choosing **All** under resources.
-5. For **Bedrock Permissions**, select the service **Bedrock**, allow the actions **InvokeModel**, **ListImportedModels**, and **ListModelInvocationJobs**, and choose **All** under resources.
-6. Finally, review and create the policy to attach it to the IAM user.
+4. For **SageMaker Permissions**, add another set of permissions by selecting the service **SageMaker**, allowing the actions **InvokeEndpoint** and **ListTags**, and choosing **All** under resources.
+5. For **Bedrock Permissions**, select the service **Bedrock**, allow the actions **InvokeModel**, **ListTagsForResource**, and **InvokeAgent**, and choose **All** under resources.
+6. For **AWS Marketplace Permissions** (required for invoking certain models, e.g., Claude Opus 4.5), select the service **AWS Marketplace**, allow the actions **Subscribe** and **ViewSubscriptions**, and choose **All** under resources.
+7. Finally, review and create the policy to attach it to the IAM user.
 
 - - -
 [SCHEDULE DEMO](https://www.accuknox.com/contact-us){ .md-button .md-button--primary }
