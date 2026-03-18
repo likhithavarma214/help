@@ -16,7 +16,7 @@ This guide shows how to integrate SAST scanning into a Bitbucket Pipeline and au
 
 - Go to **Settings > Tokens** and create a new token.
 
-- Copy the Token and Tenant ID and save it for later use. For guidance on creating tokens, refer to [**Creating Tokens in AccuKnox**.](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token")
+- Copy the Token and and save it for later use. For guidance on creating tokens, refer to [**Creating Tokens in AccuKnox**.](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token")
 
 ### Step 2: Configure Bitbucket Pipeline Variables
 
@@ -30,7 +30,6 @@ This guide shows how to integrate SAST scanning into a Bitbucket Pipeline and au
 |------------------------|-------------------------------------------------------------------|--------------------|
 | `SOFT_FAIL`            | Do not return an error code if secrets are found.                | `true`             |
 | `ACCUKNOX_TOKEN`       | The token for authenticating with the CSPM panel.                | N/A (Required)     |
-| `ACCUKNOX_TENANT`      | The ID of the tenant associated with the CSPM panel.             | N/A (Required)     |
 | `ACCUKNOX_ENDPOINT`    | The URL of the CSPM panel to push the scan results to.           | N/A (Required)     |
 | `ACCUKNOX_LABEL`       | The label created in AccuKnox SaaS for associating scan results. | N/A (Required)     |
 
@@ -45,12 +44,11 @@ pipelines:
     - step:
         name: Accuknox SAST
         script:
-          - pipe: accu-knox/scan:2.0.0
+          - pipe: accu-knox/scan:2.1.0
             variables:
               SCAN_TYPE: SAST
               SOFT_FAIL: "true"
               ACCUKNOX_TOKEN: ${ACCUKNOX_TOKEN}
-              ACCUKNOX_TENANT: ${ACCUKNOX_TENANT}
               ACCUKNOX_ENDPOINT: ${ACCUKNOX_ENDPOINT}
               ACCUKNOX_LABEL: ${ACCUKNOX_LABEL}
 ```
