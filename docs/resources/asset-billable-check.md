@@ -5,15 +5,11 @@ description: "Use the AccuKnox Asset Check tool to quickly discover how many bil
 
 # Get Billable Asset Count (Multi-Cloud)
 
-## Get Total Billable Assets Secured & Priced via AccuKnox
-
-AccuKnox Cloud is priced based on the number of **billable assets** in your cloud account — things like virtual machines, Kubernetes clusters, databases, and serverless functions. Before you onboard, you and the AccuKnox team need to agree on that number.
-
-**AccuKnox Asset Check** gives you that number in under a minute. Run it once, export the report, and share it with the AccuKnox team to get an accurate quote with no surprises.
+AccuKnox Cloud is priced on **billable assets** — virtual machines, Kubernetes clusters, databases, and serverless functions. **AccuKnox Asset Check** counts them in under a minute. Run it, export the report, and share it with your AccuKnox contact to get an accurate quote.
 
 ---
 
-## Use This Tool to Get an Accurate Pricing Quote, Onboard a New Cloud, or Audit Your Inventory
+## When to Use This Tool
 
 | Getting a pricing quote | Onboarding a new cloud | Periodic spend review | Complete cloud inventory |
 |------------------------|------------------------|----------------------|-------------------------|
@@ -47,27 +43,23 @@ The tool never writes to your cloud. For safety, restrict its credentials to rea
 
 The UI automatically checks your credential permissions and shows a badge on each cloud pill — **green RO** if read-only, **orange !** if write access is detected.
 
-![alt text](image-5.png)
+![Cloud pill badges — green RO indicates read-only credentials, orange indicates write access detected](image-5.png)
 
 ---
 
 ## Install
 
-**macOS / Linux**
+=== "macOS / Linux"
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/accuknox/ak-asset-check/main/install.sh | sh
+    ```
+    Installs to `/usr/local/bin`. To change the destination: `INSTALL_DIR=~/.local/bin curl -fsSL … | sh`
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/accuknox/ak-asset-check/main/install.sh | sh
-```
-
-Installs to `/usr/local/bin`. To change the destination: `INSTALL_DIR=~/.local/bin curl -fsSL … | sh`
-
-**Windows (PowerShell)**
-
-```powershell
-iwr -useb https://raw.githubusercontent.com/accuknox/ak-asset-check/main/install.ps1 | iex
-```
-
-Installs to `%LOCALAPPDATA%\Programs\ak-asset-check` and adds it to your user `PATH`.
+=== "Windows"
+    ```powershell
+    iwr -useb https://raw.githubusercontent.com/accuknox/ak-asset-check/main/install.ps1 | iex
+    ```
+    Installs to `%LOCALAPPDATA%\Programs\ak-asset-check` and adds it to your user `PATH`.
 
 ---
 
@@ -122,9 +114,9 @@ When the scan completes, the dashboard shows:
 
 ## What to Share with AccuKnox
 
-After running a **Billable scan**, click **⬇ Report** and send the downloaded HTML file to your AccuKnox account contact. It is self-contained and opens in any browser — no login required to view it. The report includes the total billable count per cloud, a breakdown by resource type and category, and the full asset list. That is everything the AccuKnox team needs to generate an accurate pricing proposal.
+After a **Billable scan**, click **⬇ Report** and send the HTML file to your AccuKnox contact. It's self-contained (opens in any browser, no login needed) and includes the billable count per cloud, a breakdown by resource type, and the full asset list — everything needed for an accurate pricing proposal.
 
-![alt text](image-6.png)
+![Billable scan report export button in the dashboard toolbar](image-6.png)
 
 ---
 
