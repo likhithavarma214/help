@@ -1,6 +1,18 @@
 // ============================================
 // 1. ANALYTICS/TRACKING
 // ============================================
+// Reo tracking
+(function initializeReo() {
+  const REO_CLIENT_ID = "ab7a909d0af3d55";
+  const script = document.createElement("script");
+  script.src = "https://static.reo.dev/" + REO_CLIENT_ID + "/reo.js";
+  script.defer = true;
+  script.onload = function () {
+    Reo.init({ clientID: REO_CLIENT_ID });
+  };
+  document.head.appendChild(script);
+})();
+
 // Zoho Analytics/Insights tracking
 (function initializeZohoAnalytics() {
   const ZOHO_PROJECT_KEY = "d1f7c795931728405066";
