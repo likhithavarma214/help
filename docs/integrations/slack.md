@@ -1,41 +1,39 @@
 ---
 title: Slack Integration
-description: This document provides the steps to integrate Slack with AccuKnox Container Security Platform to send alert notifications to your Slack channel.
+description: Learn how to integrate Slack with AccuKnox to receive security alert notifications directly in your Slack channel.
 ---
 
 # Slack Integration
 
-To send an alert notification via Slack you must first set up the Slack notification Channel.
+Integrate Slack with AccuKnox to receive real-time security alert notifications in your Slack channels.
 
-## Integration of Slack:
+## Prerequisites
 
-### **a. Prerequisites:**
+Before you begin, ensure you have:
 
-You need a valid and active account in Slack.
-After logging into your Slack channel, you must generate a Hook URL.
+- A valid, active Slack account
+- An **Incoming Webhook URL** for your Slack workspace — follow the [Incoming Webhooks for Slack](https://slack.com/intl/en-in/help/articles/115005265063-Incoming-webhooks-for-Slack) guide to generate one
 
-**Note :** To generate Hook URL follow the steps, [Webhooks-for-Slack](https://api.slack.com/messaging/webhooks) .
+## Steps to Integrate
 
-### **b. Steps to Integrate:**
+1. Navigate to **Settings > Integrations > Slack**.
 
-- Go to Channel Integration.
-- Click integrate now on Slack.
+    ![Slack integration menu](image-59.png)
 
-![slack-integration](images/slack-int.png)
+2. Fill in the following fields:
 
-- Fill up the following fields:
+    ![Slack integration form](image-60.png)
 
-- **Integration Name:** Enter the name for the integration. You can set any name. e.g., `Container Security Alerts`
+    | Field | Description | Example |
+    |-------|-------------|---------|
+    | **Integration Name** | A display name for this integration | `Container Security Alerts` |
+    | **Hook URL** | The Incoming Webhook URL from Slack | `https://hooks.slack.com/services/T000/B000/XXXXXXX` |
+    | **Sender Name** | The name that appears as the message sender | `AccuKnox User` |
+    | **Channel Name** | The Slack channel to post alerts to | `livealertsforcontainer` |
 
-- **Hook URL:** Enter your generated slack hook URL here. e.g., `https://hooks.slack.com/services/T000/B000/XXXXXXX`
+3. Click **Test** to verify the connection. A test message (`Test message Please ignore !!`) will be posted to the configured channel.
 
-- **Sender Name:** Enter the sender name here. e.g., `AccuKnox User`
-
-- **Channel Name:** Enter your slack channel name here. e.g., ` livealertsforcontainer`
-
-- Click **Test** to check the new functionality, You will receive the test message on configured slack channel. `Test message Please ignore !!`
-
-- Click **Save** to save the Integration. You can now configure Alert Triggers for Slack Notifications.
+4. Click **Save** to complete the integration. You can now configure alert triggers to send notifications to this Slack channel.
 
 ---
 
