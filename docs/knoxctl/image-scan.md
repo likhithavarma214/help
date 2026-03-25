@@ -48,8 +48,6 @@ export AK_BASE_URL="<url>"
 export AK_TOKEN="<authToken>"
 export AK_LABEL="<label>"
 
-export AK_URL="$AK_BASE_URL/api/v1/artifact/"
-
 cat <<EOF | sudo tee /etc/systemd/system/accuknox-container-scan.service
 # This service unit is for container image scanning
 # By AccuKnox Inc
@@ -61,7 +59,7 @@ Wants=accuknox-container-scan.timer
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/knoxctl image-scan --artifactEndpoint="$AK_URL" --token="$AK_TOKEN" --label="$AK_LABEL"
+ExecStart=/usr/local/bin/knoxctl image-scan --artifactEndpoint="$AK_BASE_URL" --token="$AK_TOKEN" --label="$AK_LABEL"
 MemoryHigh=1800M
 MemoryMax=2G
 KillMode=control-group

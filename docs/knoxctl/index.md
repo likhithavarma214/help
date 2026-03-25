@@ -86,6 +86,21 @@ Latest version is `0.9.0`, released on 7th July 2025.
 - [knoxctl for Mac (Intel)](https://github.com/accuknox/accuknox-cli-v2/releases/download/v0.9.0/knoxctl_0.9.0_darwin_amd64.tar.gz)
 - [knoxctl for Mac (Apple Silicon)](https://github.com/accuknox/accuknox-cli-v2/releases/download/v0.9.0/knoxctl_0.9.0_darwin_arm64.tar.gz)
 
+### Install via APT Repository
+
+For Debian/Ubuntu-based systems, you can install `knoxctl` directly from the AccuKnox Nexus APT repository:
+
+```bash
+# 1. Add the AccuKnox Nexus APT repository
+echo "deb [arch=amd64 trusted=yes] https://nexus.accuknox.com/repository/knoxctl/ stable main" | sudo tee /etc/apt/sources.list.d/knoxctl-nexus.list
+
+# 2. Update package list
+sudo apt update
+
+# 3. Install knoxctl
+sudo apt install knoxctl
+```
+
 !!! info
     In case knoxctl update failed due to KubeArmor Policy, please run the following command before trying to upgrade
 
