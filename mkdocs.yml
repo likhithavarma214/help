@@ -237,6 +237,7 @@ nav:
     - "Application Security (ASPM)":
       - "Overview": "how-to/aspm-overview.md"
       - "Baseline vs Full Scan": "how-to/dast-baseline-vs-full.md"
+      - "DAST Unauthenticated Scan": "how-to/dast-scan-no-auth.md"
       - "DAST Authenticated Scan": "how-to/dast-authenticated-scans.md"
       - "DevSecOps" : "getting-started/devsecops.md"
       - "Github IaC Scan": "how-to/github-iac-scan.md"

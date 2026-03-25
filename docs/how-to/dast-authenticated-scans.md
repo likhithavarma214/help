@@ -1,11 +1,14 @@
 ﻿---
 title: DAST Authenticated Scan
-description: Configure authenticated scans in AccuKnox DAST to test protected content using login credentials, session indicators, and fallback URLs.
+description: Configure authenticated scans in AccuKnox DAST to test protected content behind login pages using credentials, session indicators, and a fallback URL.
 ---
 
 # DAST Authenticated Scan
 
-AccuKnox Dynamic Application Security Testing (DAST) supports authenticated scans, enabling the crawler to access and test content behind login pages. Users can toggle between authenticated and unauthenticated scan modes. The system visualises the scan state with **Logged In**, **Logged Out**, and **Fallback** indicators — preventing false negatives where crawlers fail to access protected content.
+AccuKnox Dynamic Application Security Testing (DAST) supports **authenticated scans**, enabling the crawler to access and test content behind login pages. The system visualises the session state with **Logged In**, **Logged Out**, and **Fallback** indicators — preventing false negatives where crawlers fail to reach protected content.
+
+!!! tip "Unauthenticated scans"
+    If you only need to scan publicly accessible pages without supplying credentials, see [DAST Unauthenticated Scan](dast-scan-no-auth.md).
 
 ---
 
@@ -37,10 +40,7 @@ AccuKnox Dynamic Application Security Testing (DAST) supports authenticated scan
 
 ### Authentication
 
-**Authentication** — Select **No Auth** or **Auth-based**.
-
-!!! note
-    If **No Auth** is selected, all authentication-related steps are skipped.
+**Authentication** — Select **Auth-based**.
 
 ### Login Page URL
 
