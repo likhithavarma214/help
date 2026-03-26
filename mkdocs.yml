@@ -200,7 +200,7 @@ nav:
     - "AI/ML Security (AI-SPM)":
       - "Overview": "how-to/aiml-overview.md"
       - "SaaS vs On-Prem": "how-to/aiml-saas-vs-onprem.md"
-      - "Prompt Firewall Onboard": "use-cases/llm-defense-app-onboard.md"
+      - "SDK LLM Defense": "use-cases/llm-defense-app-onboard.md"
       - "AWS AI/ML Onboard": "how-to/aiml-aws-onboard.md"
       - "Azure AI/ML Onboard": "how-to/aiml-azure-onboard.md"
       - "GCP AI/ML Onboard": "how-to/aiml-gcp-onboard.md"
@@ -246,6 +246,7 @@ nav:
       - "Overview": "how-to/registry-overview.md"
       - "ACR": "how-to/acr.md"
       - "ECR": "how-to/ecr.md"
+      - "ECR Automated Scan": "how-to/ecr-automated-scan.md"
       - "GAR": "how-to/gar.md"
       - "Harbor": "how-to/harbor.md"
       - "Dockerhub Registry": "how-to/dockerhub.md"
@@ -283,12 +284,14 @@ nav:
     - "Findings Lifecycle": "how-to/findings-lifecycle.md"
     - "AI Security":
       - "Overview": "integrations/ai-overview.md"
-      - "SDK Method": "use-cases/llm-defense-app-onboard.md"
       - "AI Gateway Method":
         - "Azure APIM": "getting-started/azure-ai-foundry.md"
         - "AWS API Gateway": "how-to/aws-apim.md"
         - "Bifrost": "integrations/bifrost-integration.md"
         - "LiteLLM": "integrations/litellm.md"
+      - "Prompt Firewall":
+        - "SDK Method": "use-cases/llm-defense-app-onboard.md"
+        - "OpenAI Browser Plugin": "integrations/openai-browser-integration.md"
       - "Azure Copilot Studio": "integrations/copilot-studio.md"
       - "BedRock AgentCore": "integrations/bedrock-agentcore.md"
       - "Power Apps": "integrations/powerapps-integration.md"

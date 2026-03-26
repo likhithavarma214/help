@@ -1,3 +1,8 @@
+---
+title: SDK Onboarding for Prompt Firewall
+description: A step-by-step guide to onboarding your application with the AccuKnox Prompt Firewall
+---
+
 # LLM Safety with Prompt Firewall
 
 This guide walks you through configuring input/output policies in AccuKnox for prompt-level security.
@@ -9,7 +14,7 @@ This guide walks you through configuring input/output policies in AccuKnox for p
     * Blocking sensitive data leaks
     * Enforcing content moderation
     * Controlling code generation
-    * Monitoring and auditing AI interactions for compliance
+    * Monitoring and auditing AI interactions for Create/Apply Policiescompliance
     * Customizing security policies to fit your organization's needs
 
     ![alt text](image-1.png)
@@ -64,6 +69,9 @@ This guide walks you through configuring input/output policies in AccuKnox for p
 | Token Limit      | User pastes a 50-page document into the prompt.                       | Ensure prompts do not exceed token limits to prevent DoS or high costs.           |
 
 ![alt text](image.png)
+
+!!! info "Need Custom Policies Tailored to Your Use Case?"
+    AccuKnox can configure custom prompt firewall policies built around your specific business requirements — regex-based pattern matching, domain-specific block lists, response filtering rules, or any other criteria your use case demands. This goes beyond the default policy templates available out of the box. See default policy types or reach out to your AccuKnox representative to discuss a custom setup.
 
 ## Step 4: Create/Apply Policies
 
