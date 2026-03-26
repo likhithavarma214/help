@@ -1,5 +1,5 @@
 ---
-title: Onboard Prompt Firewall App
+title: Onboard Prompt Firewall App (SDK Method)
 description: Learn how to onboard your application with AccuKnox Prompt Firewall using the Python SDK. This guide covers steps from application registration to scanning prompts and responses for sensitive information.
 ---
 
