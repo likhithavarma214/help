@@ -91,13 +91,18 @@ Latest version is `0.9.0`, released on 7th July 2025.
 For Debian/Ubuntu-based systems, you can install `knoxctl` directly from the AccuKnox Nexus APT repository:
 
 ```bash
-# 1. Add the AccuKnox Nexus APT repository
-echo "deb [arch=amd64 trusted=yes] https://nexus.accuknox.com/repository/knoxctl/ stable main" | sudo tee /etc/apt/sources.list.d/knoxctl-nexus.list
+# 1. Add the AccuKnox GPG key
+curl -fsSL https://nexus.accuknox.com/repository/knoxctl-keys/public.key | \
+gpg --dearmor | sudo tee /usr/share/keyrings/knoxctl.gpg > /dev/null
 
-# 2. Update package list
+# 2. Add the AccuKnox Nexus APT repository
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/knoxctl.gpg] https://nexus.accuknox.com/repository/knoxctl/ stable main" | \
+sudo tee /etc/apt/sources.list.d/knoxctl-nexus.list
+
+# 3. Update package list
 sudo apt update
 
-# 3. Install knoxctl
+# 4. Install knoxctl
 sudo apt install knoxctl
 ```
 
