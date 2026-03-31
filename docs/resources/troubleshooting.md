@@ -11,9 +11,9 @@ If the user faces any issue related to clusters, then they should provide the lo
 
 - This script collects everything needed to debug an issue in a namespace and packages it into a single .tar.gz file.
 
--Available in two formats: Shell script and Powershell Script.
+- Available in two formats: Shell script and Powershell Script.
 
--For running the script, the user should have access to their cluster and internet connectivity for directly downloading the script and executing it. If needed, we can provide the zip file for local downloads as well as per security concerns.
+- For running the script, the user should have access to their cluster and internet connectivity for directly downloading the script and executing it. If needed, we can provide the zip file for local downloads as well as per security concerns.
 
 # 1. Shell Script
 
@@ -24,6 +24,12 @@ Download the script using below command and execute it directly by passing agent
 curl -sfL https://accuknox-support-bundles.s3.amazonaws.com/support-bundle.sh | sh -s -- agents
 ```
 
+If needed to run for another namespace, adjust the command accordingly.
+
+**Example:**
+```sh
+curl -sfL https://accuknox-support-bundles.s3.amazonaws.com/support-bundle.sh | sh -s -- <namespace>
+```
 
 # 2. Powershell Script
 
