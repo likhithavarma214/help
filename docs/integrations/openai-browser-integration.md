@@ -39,7 +39,7 @@ After saving, the token is displayed once in a confirmation modal.
 
 ## Step 3: Download and install the browser plugin
 
-[Download the AccuKnox Prompt Firewall plugin (.crx)](https://promptfirewall-plugin-extension.s3.ap-south-1.amazonaws.com/ak-prompt-fw-browser-plugin.crx) and install it in your Chromium-based browser.
+[Download Chrome plugin](https://tinyurl.com/ak-chatgpt-plugin) and install it in your Chromium-based browser.
 
 To install in Chrome:
 
