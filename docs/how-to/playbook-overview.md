@@ -62,37 +62,43 @@ hide:
   <!-- Card 1 -->
   <div class="card">
     <img src="../icons/aspm-cover.png" alt="ASPM Playbook" style="width: 100%; height: auto;" />
-    <p><a href="/how-to/playbook-aspm/">ASPM Playbook</a></p>
+    <p><a href="https://accuknox.com/wp-content/uploads/ASPM-Playbook.pdf">ASPM Playbook</a></p>
   </div>
 
   <!-- Card 2 -->
   <div class="card">
     <img src="../icons/cspm-cover.png" alt="CSPM Playbook" style="width: 100%; height: auto;" />
-    <p><a href="/how-to/playbook-cspm/">CSPM Playbook</a></p>
+    <p><a href="https://accuknox.com/wp-content/uploads/CSPM-Playbook.pdf">CSPM Playbook</a></p>
   </div>
 
   <!-- Card 3 -->
   <div class="card">
     <img src="../icons/cwpp-cover.png" alt="CWPP Playbook" style="width: 100%; height: auto;" />
-    <p><a href="/how-to/playbook-cwpp/">CWPP Playbook</a></p>
+    <p><a href="https://accuknox.com/wp-content/uploads/CWPP-Playbook.pdf">CWPP Playbook</a></p>
   </div>
 
   <!-- Card 4 -->
   <div class="card">
     <img src="../icons/kspm-cover.png" alt="KSPM Playbook" style="width: 100%; height: auto;" />
-    <p><a href="/how-to/playbook-kspm/">KSPM Playbook</a></p>
+    <p><a href="https://accuknox.com/wp-content/uploads/KSPM-Playbook.pdf">KSPM Playbook</a></p>
   </div>
 
   <!-- Card 5 -->
   <div class="card">
     <img src="../icons/integration-cover.png" alt="Integrations Playbook" style="width: 100%; height: auto;" />
-    <p><a href="/how-to/playbook-integrations/">Integrations Playbook</a></p>
+    <p><a href="https://accuknox.com/wp-content/uploads/Integration-Playbook.pdf">Integrations Playbook</a></p>
   </div>
 
   <!-- Card 6 -->
   <div class="card">
     <img src="../icons/hostsec-cover.png" alt="Host Security Playbook" style="width: 100%; height: auto;" />
-    <p><a href="/how-to/playbook-hostsec">Host Security Playbook</a></p>
+    <p><a href="https://accuknox.com/wp-content/uploads/Host-Security-Playbook.pdf">Host Security Playbook</a></p>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card">
+    <img src="../icons/aisec-cover.png" alt="AI Security Playbook" style="width: 100%; height: auto;" />
+    <p><a href="https://accuknox.com/wp-content/uploads/AI-Security-Playbook.pdf">AI Security Playbook</a></p>
   </div>
 </div>
 
