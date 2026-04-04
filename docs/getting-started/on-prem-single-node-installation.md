@@ -94,6 +94,6 @@ Execute the chart installation script:
 2. Run the following command to retrieve the verification link:
 
     ```bash
-    kubectl logs deploy/celery -n accuknox-divy
+    kubectl logs deploy/celery -n accuknox-divy | grep -oP 'https://\S+'
     ```
 3. To complete the sign-up process, please connect to the AccuKnox team.
