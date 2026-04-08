@@ -38,7 +38,7 @@ This guide shows how to integrate **SAST scanning** into an **Azure DevOps Pipel
 
 | **Name**            | **Description**                                                     |
 |---------------------|---------------------------------------------------------------------|
-| **accuknoxEndpoint** | The URL of the CSPM panel to push the scan results to (e.g., `cspm.demo.accuknox.com`). |
+| **accuknoxEndpoint** | The URL of the CSPM panel to push the scan results to (e.g., `cspm.demo.accuknox.com`, `cspm.accuknox.com`). |
 | **accuknoxToken**    | Token for authenticating with the AccuKnox CSPM panel. Refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/). |
 | **accuknoxLabel**    | The label used to categorize and identify scan results in AccuKnox. Refer to [How to Create Labels](https://help.accuknox.com/how-to/how-to-create-labels). |
 
@@ -47,12 +47,23 @@ This guide shows how to integrate **SAST scanning** into an **Azure DevOps Pipel
 In your Azure repo, create/update your pipeline YAML (`azure-pipelines.yml`) and add the following task to your pipeline's steps section:
 
 ```yaml
+trigger:
+- azure-pipelines.yml
+
+
+pool:
+  name: Default
+  demands:
+    - Agent.Name -equals HPV
+
+steps:
+- checkout: self
 steps:-
-- task: AccuKnox-SAST@3.0.0
+- task: AccuKnox-SAST@3
   inputs:
-    accuknoxEndpoint: $(accuknoxEndpoint)
-    accuknoxToken: $(accuknoxToken)
-    accuknoxLabel: $(accuknoxLabel)
+    accuknoxEndpoint:'$(ACCUKNOX_ENDPOINT)'
+    accuknoxToken: '$(ACCUKNOX_TOKEN)'
+    accuknoxLabel: '$(ACCUKNOX_LABEL)'
     softFail: true
 ```
 
@@ -60,7 +71,7 @@ steps:-
 
 | **Name**             | **Description**                     | **Required** | **Default**                                                                 |
 |----------------------|-------------------------------------|--------------|------------------------------------------------------------------------------|
-| accuknoxEndpoint      | AccuKnox CSPM panel URL             | Yes          | [cspm.demo.accuknox.com](http://cspm.demo.accuknox.com/)                     |
+| accuknoxEndpoint      | AccuKnox CSPM panel URL             | Yes          | [cspm.demo.accuknox.com](http://cspm.demo.accuknox.com/) or [cspm.accuknox.com](http://cspm.accuknox.com/)                   |
 | accuknoxToken         | AccuKnox API Token                  | Yes          |                                                                              |
 | accuknoxLabel         | Label for scan results              | Yes          |                                                                              |
 | softFail              | Continue even if the scan fails     | No           | false                                                                        |

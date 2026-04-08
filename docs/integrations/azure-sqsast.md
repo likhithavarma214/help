@@ -40,9 +40,9 @@ This guide shows how to integrate **SonarQube SAST scanning** into an **Azure De
 
 | **Name**               | **Description**                                                                                                                                                           |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **accuknoxEndpoint**   | The URL of the CSPM panel to push the scan results to (e.g., `cspm.demo.accuknox.com`).                                                                                   |
-| **accuknoxToken**      | Token for authenticating with the AccuKnox CSPM panel. Refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/).                          |
-| **accuknoxLabel**      | The label used to categorize and identify scan results in AccuKnox. Refer to [How to Create Labels](https://help.accuknox.com/how-to/how-to-create-labels).              |
+| **ACCUKNOX_ENDPOINT**   | The URL of the CSPM panel to push the scan results to .                                                                                   |
+| **ACCUKNOX_TOKEN**      | Token for authenticating with the AccuKnox CSPM panel. Refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/).                          |
+| **ACCUKNOX_LABEL**      | The label used to categorize and identify scan results in AccuKnox. Refer to [How to Create Labels](https://help.accuknox.com/how-to/how-to-create-labels).              |
 | **sonarQubeUrl**       | URL of the SonarQube server.                                                                                                                                              |
 | **sonarQubeToken**     | User API token for SonarQube authentication.                                                                                                                              |
 | **sonarQubeProjectKey**| SonarQube project key.                                                                                                                                                    |
@@ -53,16 +53,28 @@ This guide shows how to integrate **SonarQube SAST scanning** into an **Azure De
 In your Azure repo, create/update your pipeline YAML (`azure-pipelines.yml`) and add the following task to your pipeline's steps section:
 
 ```yaml
+trigger:
+- azure-pipelines.yml
+
+
+pool:
+  name: Default
+  demands:
+    - Agent.Name -equals HPV
+
+steps:
+- checkout: self
 steps:-
-- task: accuknox-sq-sast@2.0.0
+- task: accuknox-sq-sast@2
   inputs:
-    sonarQubeUrl: 'https://sonarcloud.io'
-    sonarQubeToken: '$(sonarQubeToken)'
-    sonarQubeProjectKey: '<sonarQubeProjectKey>'
-    sonarQubeOrganizationId: '<sonarQubeOrganizationId>'
-    accuknoxEndpoint: '<accuknoxEndpoint>'
-    accuknoxToken: '$(accuknoxToken)'
-    accuknoxLabel: '<accuknoxLabel>'
+    sonarQubeUrl: 'https://sq.accuknox.com/'
+    sonarQubeToken: '$(SONARQUBE_TOKEN)'
+    sonarQubeProjectKey: '<SONARQUBEPROJECTKEY>'
+    accuknoxEndpoint: '$(ACCUKNOX_ENDPOINT)'
+    accuknoxToken: '$(ACCUKNOX_TOKEN)'
+    accuknoxLabel: '$(ACCUKNOX_LABEL)'
+    skipSonarQubeScan: false
+
 ```
 
 ### Inputs for AccuKnox SonarQube SAST Task
@@ -73,7 +85,7 @@ steps:-
 | `sonarQubeToken`           | Yes          | None              | SonarQube user token.                                                                                    |
 | `sonarQubeProjectKey`      | Yes          | None              | Project key of your SonarQube project.                                                                   |
 | `sonarQubeOrganizationId`  | No           | None              | Required only for SonarQube Cloud users                                                                  |
-| `accuknoxEndpoint`         | Yes          | None              | AccuKnox domain for sending DAST report. eg. `cspm.demo.accuknox.com`, `cspm.accuknox.com`               |
+| `accuknoxEndpoint`         | Yes          | None              | AccuKnox domain for sending SqSast report. eg. `cspm.demo.accuknox.com`, `cspm.accuknox.com`               |
 | `accuknoxToken`            | Yes          | None              | AccuKnox API token.                                                                                      |
 | `accuknoxLabel`            | Yes          | None              | AccuKnox label to group similar findings together.                                                       |
 | `qualityGate`              | No           | `false`           | Quality gate check to fail the build if the quality gate fails. Value should be boolean.                |

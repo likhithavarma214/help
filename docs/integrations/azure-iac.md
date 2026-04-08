@@ -39,9 +39,7 @@ Log in to AccuKnox Navigate to Settings and select Tokens to create an AccuKnox 
 
 3.  Store the following values:
 
-- `ACCUKNOX_ENDPOINT`: The AccuKnox API URL (e.g., `cspm.demo.accuknox.com`).
-
-- `ACCUKNOX_TENANT_ID`: Your AccuKnox tenant ID.
+- `ACCUKNOX_ENDPOINT`: The AccuKnox API URL .
 
 - `ACCUKNOX_TOKEN`: The AccuKnox API token for authorization.
 
@@ -52,13 +50,25 @@ Log in to AccuKnox Navigate to Settings and select Tokens to create an AccuKnox 
 Edit your Azure DevOps pipeline YAML file to include the AccuKnox IaC Scan task. Below is an example configuration:
 
 ```yaml
-- task: accuknox-iac@2.0.0
+trigger:
+- azure-pipelines.yml
+
+
+pool:
+  name: Default
+  demands:
+    - Agent.Name -equals HPV
+
+steps:
+- checkout: self
+
+- task: accuknox-iac@2
   inputs:
-    accuknoxEndpoint: "<ACCUKNOX_ENDPOINT>"
-    accuknoxToken: "<ACCUKNOX_TOKEN>"
-    accuknoxLabel: "<ACCUKNOX_LABEL>"
-    inputQuiet: true
-    inputCompact: true
+    accuknoxEndpoint: '$(ACCUKNOX_ENDPOINT)'
+    accuknoxToken: '$(ACCUKNOX_TOKEN)'
+    accuknoxLabel: '$(ACCUKNOX_LABEL)'
+    inputSoftFail: true
+
 ```
 
 ### Step 5: Execute the Pipeline
