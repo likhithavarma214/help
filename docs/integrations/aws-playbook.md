@@ -61,7 +61,7 @@ The following steps cater to users who:
 **Step 9:** Shortly after configuring a tenant for the customer, we will send them an invitation to access the SaaS platform and leverage its security features.
 
 !!! info "NOTE"
-    **The free trial subscription on the marketplace is only available to the user for a month. After one month, we will be revoking all access of the user to our Saas Platform. Hence, Before the end of the monthly subscription, we will notify the user. If user still wants to continue using the platform they can refer to case 3 & case 4.**
+    **The free trial subscription on the marketplace is only available to the user for a month. After one month, we will be revoking all access of the user to our SaaS Platform. Hence, Before the end of the monthly subscription, we will notify the user. If user still wants to continue using the platform they can refer to case 3 & case 4.**
 
 ## Case 2: Purchasing AccuKnox Subscription on AWS
 

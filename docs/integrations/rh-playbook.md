@@ -44,7 +44,7 @@ You will get an email confirmation with the product details. By clicking on "My 
 
 ![Redhat Marketplace](images/redhat-marketplace/image6.png)
 
-**Step 6:** Shortly after configuring a tenant for the customer, you will recieve an invitation to access the SaaS platform and leverage its security features.
+**Step 6:** Shortly after configuring a tenant for the customer, you will receive an invitation to access the SaaS platform and leverage its security features.
 
 !!! info "NOTE"
     **The free trial is available for 30 days. To continue using our product make sure to subscribe before the trial ends.**

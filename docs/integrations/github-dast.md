@@ -18,7 +18,7 @@ To demonstrate the benefits of incorporating AccuKnox into a CI/CD pipeline usin
 
 ### Step 1: Log in to AccuKnox
 
-Log in to AccuKnox Navigate to Settings and select Tokens to create an AccuKnox token for forwarding scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
+Log in to AccuKnox. Navigate to **Settings → Tokens** to create an AccuKnox token for forwarding scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
 
 ### Step 2: Configure GitHub Secrets
 
@@ -76,7 +76,7 @@ jobs:
 | `scan_type`          | Type of scan to perform (`baseline` or `full-scan`)                         | Optional          | `baseline`     |
 
 
-!!!info "NOTE"
+!!! info "NOTE"
      You can customize this label by updating the value in the YAML file. For more details on creating and managing labels, refer to the [How to Create Labels](https://help.accuknox.com/how-to/how-to-create-labels/) documentation.
 
 ## Initial Workflow Without AccuKnox Scan

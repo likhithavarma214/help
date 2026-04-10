@@ -1,14 +1,14 @@
 ---
-title: GCP Account onboarding
+title: GCP Account Onboarding
 description: Step-by-step guide for onboarding GCP (Google Cloud Platform) accounts to AccuKnox SaaS for automated security and compliance monitoring.
 ---
 
-# GCP Account onboarding
+# GCP Account Onboarding
 
-Here, we will see the steps to onboard a GCP cloud account to the AccuKnox SaaS platform
+Here, we will see the steps to onboard a GCP cloud account to the AccuKnox SaaS platform.
 
-**Note:**
-Make sure the Below API Library is enabled in your GCP Account for onboarding into AccuKnox SaaS:
+!!! note
+    Ensure the following API Libraries are enabled in your GCP account before onboarding to AccuKnox SaaS:
 
 1. Compute Engine API
 2. Identity and Access Management (IAM) API
@@ -54,7 +54,7 @@ For GCP there is a requirement for IAM Service Account Access.
 
 ![image](images/gcp/gcp-7.png)
 
-**Step 10:** Click “Add Another Role” Choose “Custom“ Select the created Custom Role.
+**Step 10:** Click **Add Another Role**, choose **Custom**, then select the created custom role.
 
 ![image](images/gcp/gcp-8.png)
 
@@ -62,7 +62,7 @@ For GCP there is a requirement for IAM Service Account Access.
 
 ![image](images/gcp/gcp-9.png)
 
-**Step 12:** Go to the created Service Account, click on that Service Account navigate to the “Keys“ section.
+**Step 12:** Go to the created Service Account, click on it, then navigate to the **Keys** section.
 
 ![image](images/gcp/gcp-10.png)
 

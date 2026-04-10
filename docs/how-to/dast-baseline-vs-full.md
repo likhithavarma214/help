@@ -1,3 +1,8 @@
+---
+title: DAST Baseline vs. Full Scan
+description: Understand the difference between AccuKnox DAST Baseline and Full scans — when to use passive-only health checks versus comprehensive active security audits.
+---
+
 # DAST Baseline vs. Full Scan
 
 AccuKnox provides two distinct modes for Dynamic Application Security Testing (DAST) to balance the need for speed with the depth of security coverage. Below is a breakdown of how these scans differ and when to use them.
@@ -15,7 +20,7 @@ AccuKnox provides two distinct modes for Dynamic Application Security Testing (D
 | **Risk to App**     | **None.** Safe for live production      | **High.** May impact data or stability       |
 | **Usage**           | Every build or daily CI/CD gates        | Weekly or pre-release deep-dives             |
 
-![alt text](image-43.png)
+![Baseline vs Full Scan comparison](image-43.png)
 
 ---
 
@@ -102,4 +107,4 @@ The **Full Scan** is a deep-dive assessment meant for thorough testing in enviro
 
 In the near future, we will be introducing additional scan categories to provide even more tailored security assessments:
 
-![alt text](image-42.png)
+![Upcoming DAST scan categories preview](image-42.png)

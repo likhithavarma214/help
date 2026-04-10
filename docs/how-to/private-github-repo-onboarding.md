@@ -1,15 +1,15 @@
 ---
-title: Onboarding a Private Github Repo
+title: Onboarding a Private GitHub Repository
 description: Provides the steps to onboard a private GitHub repository on AccuKnox SaaS for secure monitoring and vulnerability detection.
 ---
 
-# Onboarding a Private Github Repo
+# Onboarding a Private GitHub Repository
 
 ## Configuration
 
 ### Prerequisites
 
-For Github the IaC Scan from AccuKnox SaaS we require three prerequisites. They are as follows:
+For GitHub IaC Scans from AccuKnox SaaS we require three prerequisites. They are as follows:
 
 - Creating Fine-Grained tokens from GitHub for Private Repos only
 - Label creation
@@ -19,7 +19,7 @@ For Github the IaC Scan from AccuKnox SaaS we require three prerequisites. They 
 
 For generating the fine-grained access token from GitHub users need to do the following steps.
 
-**Step 1:** Go to the Github profile and select Settings.
+**Step 1:** Go to your GitHub profile and select **Settings**.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image2.png)
 
@@ -27,14 +27,14 @@ For generating the fine-grained access token from GitHub users need to do the fo
 
 ![private-gh-onboarding](images/private-gh-onboarding/image5.png)
 
-**Step 3:** Select the Personal Access token-> Fine-Grained Access token
+**Step 3:** Select **Personal Access Tokens → Fine-Grained Access Tokens**
 ![private-gh-onboarding](images/private-gh-onboarding/image9.png)
 
 **Step 4:** Click on the Generate new token option
 
 ![private-gh-onboarding](images/private-gh-onboarding/image15.png)
 
-**Step 5:** Please fill out the token name, description, Duration, and Repository that you need to onboard, and in the Repository permission section please select the content: Readonly
+**Step 5:** Fill out the token name, description, duration, and repository to onboard. In the **Repository permissions** section, set **Contents** to **Read-only**.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image19.png)
 
@@ -44,7 +44,7 @@ For generating the fine-grained access token from GitHub users need to do the fo
 
 ### Label Creation
 
-After Creating the Fine-grained Access token user needs to create a label from AccuKnox SaaS. For this user need to navigate to the Settings-> label Section click on Add new label and create their label
+After creating the Fine-Grained Access Token, create a label in AccuKnox SaaS by navigating to **Settings → Labels**, clicking **Add New Label**, and creating a label.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image20.png)
 
@@ -52,15 +52,15 @@ After Creating the Fine-grained Access token user needs to create a label from A
 
 After creating the token from Github and Creating the label from AccuKnox SaaS. Users can onboard the Source Code Repository by following the steps below.
 
-**Step 1:** Navigate to the Settings-> Integrations and select the Code Source Configuration
+**Step 1:** Navigate to **Settings → Integrations** and select **Code Source Configuration**.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image7.png)
 
-**Step 2:** Click on the Add Configuration button
+**Step 2:** Click **Add Configuration**.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image18.png)
 
-**Step 3:** Fill in the name select the type as Github input the Repository URL and Fine-grained Access token and click on Verify
+**Step 3:** Fill in the name, select the type as **GitHub**, enter the Repository URL and Fine-Grained Access Token, then click **Verify**.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image13.png)
 
@@ -68,7 +68,7 @@ After creating the token from Github and Creating the label from AccuKnox SaaS. 
 
 ![private-gh-onboarding](images/private-gh-onboarding/image10.png)
 
-**Step5:** Click on save to add the Source code configuration
+**Step 5:** Click **Save** to add the Source Code Configuration.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image14.png)
 
@@ -76,7 +76,7 @@ After creating the token from Github and Creating the label from AccuKnox SaaS. 
 
 To create an IaC scan for the added Source Code Configuration users need to perform the following steps.
 
-**Step 1:** Navigate to Settings-> Integrations and select IaC
+**Step 1:** Navigate to **Settings → Integrations** and select **IaC**.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image8.png)
 
@@ -94,7 +94,7 @@ To create an IaC scan for the added Source Code Configuration users need to perf
 
 ## Risk Assessment: How to check Findings?
 
-After the IaC scan is completed to see the findings users need to navigate to the Issues-> Findings section and select IaC findings in the filter to see all the findings.
+After the IaC scan is completed to see the findings users need to navigate to **Issues → Findings** and select **IaC** in the filter to see all findings.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image17.png)
 
@@ -102,7 +102,7 @@ We can filter the findings based on the Repository, Risk Factor, and so on.
 
 ## Remediation: How to fix problems? How to create tickets?
 
-To remediate any findings users will need to select the finding or group of findings From the issues-> Findings page and click Create Ticket as shown in the below screenshot.
+To remediate any findings, select the finding or group of findings from the **Issues → Findings** page and click **Create Ticket** as shown below.
 
 ![private-gh-onboarding](images/private-gh-onboarding/image12.png)
 

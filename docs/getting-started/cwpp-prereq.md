@@ -3,7 +3,9 @@ title: CWPP Pre-requisites
 description: AccuKnox CNAPP will be hosted in our cloud environment and the agents deployed on the workloads will connect with the SaaS.
 ---
 
-In SaaS model of deployment the AccuKnox CNAPP will be hosted in our cloud environment and the agents deployed on the workloads will connect with the SaaS.
+# CWPP Pre-requisites
+
+In the SaaS deployment model, AccuKnox CNAPP is hosted in the AccuKnox cloud environment and agents deployed on your workloads connect back to the SaaS platform.
 
 ![accuknox-arch](images/accuknox-architecture.png)
 
@@ -17,7 +19,7 @@ In SaaS model of deployment the AccuKnox CNAPP will be hosted in our cloud envir
 | Policy Enforcement     | Deployment      |
 | Discovery Engine Agent | Deployment      |
 
-- It is assumed that the user has some basic familiarity with Kubernetes, kubectl and helm. It also assumes that you are familiar with the AccuKnox opensource tool workflow. If you're new to AccuKnox itself, refer first to [opensource installation](./../getting-started/open-source.md)
+- It is assumed that you have basic familiarity with Kubernetes, kubectl, and Helm. If you are new to AccuKnox, refer first to the [open-source installation guide](./../getting-started/open-source.md).
 
 - It is recommended to have the following configured before onboarding:
 
@@ -30,11 +32,11 @@ In SaaS model of deployment the AccuKnox CNAPP will be hosted in our cloud envir
 | Deployments           | Resource Usage             | Ports | Connection Type  	| AccuKnox Endpoint                               |
 |-----------------------|----------------------------|------|-------------------|-------------------------------------------------|
 |KubeArmor              | CPU: 200 m, Memory: 200 Mi | -    | -			| -                                               |
-|Agents Operator        | CPU: 50 m, Memory: 50 Mi   | 8081,</br> 9090 | Outbound		| *.accuknox.com:8081 -→ SPIRE Access</br> *.accuknox.com:9090 -→ SPIRE Health Check           |
+|Agents Operator        | CPU: 50 m, Memory: 50 Mi   | 8081,</br> 9090 | Outbound		| *.accuknox.com:8081 → SPIRE Access</br> *.accuknox.com:9090 → SPIRE Health Check           |
 |Discovery Engine       | CPU: 200 m, Memory: 200 Mi | -    | -			| -                                               |
-|Shared Informer Agent  | CPU: 20 m, Memory: 50 Mi   | 3000 | Outbound		| *.accuknox.com:3000 -→ knox-gateway            |
-|Feeder Service         | CPU: 50 m, Memory: 100 Mi  | 3000 | Outbound		| *.accuknox.com:3000 -→ knox-gateway            |
-|Policy Enforcement     | CPU: 10 m, Memory: 20 Mi   | 443  | Outbound		| *.accuknox.com:443  -→ Policy Provider Service |
+|Shared Informer Agent  | CPU: 20 m, Memory: 50 Mi   | 3000 | Outbound		| *.accuknox.com:3000 → knox-gateway            |
+|Feeder Service         | CPU: 50 m, Memory: 100 Mi  | 3000 | Outbound		| *.accuknox.com:3000 → knox-gateway            |
+|Policy Enforcement     | CPU: 10 m, Memory: 20 Mi   | 443  | Outbound		| *.accuknox.com:443  → Policy Provider Service |
 
 - These ports need to be allowed through firewall.
 

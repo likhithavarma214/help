@@ -7,7 +7,7 @@ description: Guide on securely offboarding a cloud account from AccuKnox SaaS to
 
 This guide outlines the steps for offboarding a cloud account from AccuKnox SaaS.
 
-**Step 1:** Login to AccuKnox SaaS and Go to Cloud Accounts under Settings.
+**Step 1:** Log in to AccuKnox SaaS and navigate to **Cloud Accounts** under Settings.
 ![alt](./images/cloud-offboarding/1.png)
 
 **Step 2:** Select the cloud account and click “Delete” to delete the account from SaaS.

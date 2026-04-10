@@ -1,3 +1,8 @@
+---
+title: SAST Scanning with AccuKnox CircleCI Plugin
+description: Integrate Static Application Security Testing (SAST) scans into your CircleCI pipeline using the AccuKnox plugin to identify vulnerabilities in source code early.
+---
+
 # SAST Scanning Integration using AccuKnox CircleCI Plugin
 
 This guide explains how to integrate Static Application Security Testing (SAST) scans into your CircleCI CI/CD pipeline using the AccuKnox plugin. SAST helps identify vulnerabilities in source code early in the development lifecycle, enabling teams to implement secure coding practices and prevent potential exploits before deployment.

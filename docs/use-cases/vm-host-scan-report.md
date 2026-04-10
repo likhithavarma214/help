@@ -7,7 +7,7 @@ description: Learn how to generate a host vulnerability report using AccuKnox an
 
 AccuKnox's latest feature update provides new custom reporting feature capabilities that can help users get the reports customized as per their requirements.
 
-!!!info NOTE
+!!! info "Note"
     To enable this feature, customers must inform the AccuKnox Support team (<support@accuknox.com>) regarding their requirements. The Support team will configure the report template from the backend, enabling users to generate on-demand or scheduled reports.
 
 To generate an on-demand or scheduled report, users must follow the steps below for the **Host Vulnerability Report**.

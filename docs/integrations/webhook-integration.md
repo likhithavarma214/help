@@ -1,3 +1,8 @@
+---
+title: Webhook Integration Guide
+description: Configure webhooks in AccuKnox to automatically send real-time security alerts to external systems including ticketing tools, SIEMs, chat apps, and custom workflows.
+---
+
 # Webhook Integration Guide
 
 Webhooks let you automatically send real-time alerts from AccuKnox to your external systems. This is useful for integrating with ticketing tools, chat apps, SIEMs, or custom workflows—so you can automate responses or notifications when security events occur.

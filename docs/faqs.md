@@ -87,7 +87,7 @@ hide:
     ![Integrations](https://help.accuknox.com/introduction/cards/integrations-updated.png)
 
 ??? "**8. Can AccuKnox help in Monitoring?**"
-    + With Accuknox, you can create monitors for assets or group of assets to get alerts for changes observed in their Metadata (software version etc)
+    + With AccuKnox, you can create monitors for assets or group of assets to get alerts for changes observed in their Metadata (software version etc)
 
     + Our Drift detection capability is inherently doing monitoring of the compliance checks (pass/fail) that have changed between scans.
 

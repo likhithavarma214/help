@@ -13,7 +13,7 @@ This guide demonstrates how to integrate Infrastructure as Code (IaC) security i
 
 ## Steps for Integration
 
-**Step 1**: Log in to AccuKnox Navigate to Settings and select Tokens to create an AccuKnox token for forwarding scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
+**Step 1**: Log in to AccuKnox. Navigate to **Settings → Tokens** to create an AccuKnox token for forwarding scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
 
 **Step 2:** Configure GitLab CI/CD Variables. For details on configuring variables, refer to [How to Create CI/CD Variables in GitLab](https://docs.gitlab.com/ee/ci/variables/ "https://docs.gitlab.com/ee/ci/variables/").
 
@@ -56,7 +56,7 @@ Once the AccuKnox IaC scan is integrated into the CI/CD pipeline, every push tri
 
 ## **View Results in AccuKnox SaaS**
 
-**Step 1**: After the pipeline completes, navigate to the Accuknox SaaS dashboard.
+**Step 1**: After the pipeline completes, navigate to the AccuKnox SaaS dashboard.
 
 **Step 2**: Go to **Issues** > **Findings** and select **IaC Findings** to see identified vulnerabilities.
 

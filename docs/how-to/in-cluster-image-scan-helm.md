@@ -1,3 +1,8 @@
+---
+title: In-Cluster Image Scanning with Helm
+description: Deploy AccuKnox's in-cluster container image scanner using Helm to automatically detect vulnerabilities in images running within your Kubernetes environment.
+---
+
 # In-Cluster Image Scanning with Helm
 
 AccuKnox offers an in-cluster container image scanning solution designed to periodically inspect container images deployed within your Kubernetes (K8s) environment. This automated scanning process detects known vulnerabilities, promoting compliance and enhancing your cluster’s overall security. All scan results, including detailed vulnerability insights, are automatically sent to the AccuKnox Control Plane, where they can be viewed and managed through an intuitive user interface.

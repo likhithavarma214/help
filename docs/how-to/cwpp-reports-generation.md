@@ -56,7 +56,7 @@ To generate On Demand reports:
 
 ![cwpp report generation](images/cwpp-report-generation/image2.png)
 
-**Step 2**: In the Configuration user needs to provide the details about Name, Description and Cluster and NameSpace.
+**Step 2**: In the Configuration section, provide the Name, Description, Cluster, and Namespace.
 
 !!! info "NOTE"
     The cluster field drop-down will show all the clusters that are active during the report generation.

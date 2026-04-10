@@ -1,3 +1,8 @@
+---
+title: Knoxctl CLI Commands
+description: Quick reference cheatsheet for knoxctl CLI commands to interact with AccuKnox-managed Kubernetes clusters, nodes, alerts, and workloads.
+---
+
 # 📘 Knoxctl CLI Usage Cheatsheet
 
 This document provides a quick reference guide for common `knoxctl` CLI operations. These commands help you interact with AccuKnox-managed Kubernetes clusters, nodes, and alerts. Use them to efficiently filter, inspect, and debug workloads across your cloud environments.
@@ -29,5 +34,5 @@ This document provides a quick reference guide for common `knoxctl` CLI operatio
 
 ---
 
-!!!info
+!!! info
     For more help and examples, visit the official documentation at [help.accuknox.com](https://help.accuknox.com).

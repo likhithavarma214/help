@@ -46,11 +46,12 @@ hide:
 - title: Prompt Firewall Application
   image: ./icons/AIML.svg
   url: /use-cases/llm-defense-app-onboard/
-  ::/cards::
+
+::/cards::
 
 ## Supported Platforms and Use Cases
 
-!!!note "Useful Links"
+!!! note "Useful Links"
     - For list of supported platforms refer to AccuKnox's [**AI/ML Support Matrix**](https://help.accuknox.com/support-matrix/aiml-support-matrix/)
     - For use cases refer to the [**AI/ML Security Use Cases**](https://help.accuknox.com/use-cases/aiml-usecases/)
 

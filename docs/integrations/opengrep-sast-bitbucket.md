@@ -1,3 +1,8 @@
+---
+title: SAST Integration with AccuKnox in Bitbucket Pipelines
+description: Integrate Opengrep SAST scanning into Bitbucket Pipelines and automatically forward results to AccuKnox for analysis and mitigation.
+---
+
 # Integrating SAST with AccuKnox in Bitbucket Pipelines
 
 This guide shows how to integrate SAST scanning into a Bitbucket Pipeline and automatically forward results to AccuKnox for analysis and mitigation.

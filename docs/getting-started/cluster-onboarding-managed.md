@@ -17,7 +17,7 @@ We can onboard this managed cluster by following the steps shown below:
 
 ![gke-managed-cluster-onboard](images/gke-3.png)
 
-**Step 2:** Navigate to _Manage Cluster from Settings Tab_. From this page we can onboard the clusters running in various cloud platforms like GCP,AWS and Azure. We can also onboard unmanaged cluster set up locally in the on-premise environment or virtual machines. To onboard cluster select onboard now option
+**Step 2:** Navigate to _Manage Cluster from Settings Tab_. From this page we can onboard the clusters running in various cloud platforms like GCP, AWS, and Azure. We can also onboard unmanaged clusters set up locally in an on-premise environment or on virtual machines. To onboard a cluster, select **Onboard Now**.
 
 ![gke-managed-cluster-onboard](images/gke-4.png)
 
@@ -25,7 +25,7 @@ We can onboard this managed cluster by following the steps shown below:
 
 ![gke-managed-cluster-onboard](images/gke-5.png)
 
-**step 4:** Onboarded Cluster without AccuKnox agents:
+**Step 4:** Onboarded Cluster without AccuKnox agents:
 
 The onboarded cluster’s workload details will not be visible as we have not installed AccuKnox agents. So next we will be installing AccuKnox agents.
 

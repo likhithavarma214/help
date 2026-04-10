@@ -1,4 +1,5 @@
 ---
+title: KSPM Playbook
 description: KSPM playbook detailing how to implement Kubernetes security posture management with AccuKnox's zero trust CNAPP platform.
 hide:
   - toc

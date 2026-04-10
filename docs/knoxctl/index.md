@@ -1,7 +1,11 @@
 ---
+title: Knoxctl CLI
+description: Documentation for knoxctl, the AccuKnox command-line interface for managing security configurations, scanning container images, and interacting with KubeArmor.
 hide:
   - toc
 ---
+
+# Knoxctl CLI
 
 <style>
   .knox-body {

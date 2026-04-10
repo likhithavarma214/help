@@ -149,7 +149,7 @@ If the users want to change the assignee during the ticket creation that can als
 
 ![jira-cloud-integration-accuknox](./images/jira-cloud/3.png)
 
-!!!info "NOTE"
+!!! info "NOTE"
     If the user wants to set the tickets for multiple people then they will have to create multiple ticket configurations. Each configuration can be assigned to only one Assignee.
 - - -
 [SCHEDULE DEMO](https://www.accuknox.com/contact-us){ .md-button .md-button--primary }

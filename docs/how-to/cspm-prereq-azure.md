@@ -11,7 +11,7 @@ When the AccuKnox control plane is hosted in a cloud environment, scanning is pe
 
 ![image](images/azure-arch.png)
 
-For Azure Onboarding it is required to register an App and giving Security read access to that App from the Azure portal.
+For Azure Onboarding it is required to register an App and grant Security read access to that App from the Azure portal.
 
 **Step 1:** Go to your Azure Portal and search for *App registrations* and open it
 
@@ -25,7 +25,7 @@ For Azure Onboarding it is required to register an App and giving Security read 
 
 ![image](images/azure3.png)
 
-**Step 4:** Now your application is created,  save *Application ID* and *Directory ID* as they will be needed to for onboarding on AccuKnox Saas and then click on ‘Add a certificate or secret’
+**Step 4:** Now your application is created. Save the *Application ID* and *Directory ID* as they will be needed for onboarding on AccuKnox SaaS, then click on 'Add a certificate or secret'
 
 ![image](images/azure4.png)
 
@@ -33,7 +33,7 @@ For Azure Onboarding it is required to register an App and giving Security read 
 
 ![image](images/azure5.png)
 
-**Step 6:** Next, go to *API permissions* tab and click on 'Add  permission'
+**Step 6:** Next, go to *API permissions* tab and click on 'Add permission'
 
 ![image](images/azure5-0.png)
 

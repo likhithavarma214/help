@@ -1,3 +1,8 @@
+---
+title: AccuKnox DAST Integration in Jenkins (Pipeline Method)
+description: Integrate AccuKnox Dynamic Application Security Testing (DAST) into Jenkins using the pipeline script method for automated security scanning.
+---
+
 # AccuKnox DAST Integration in Jenkins (Pipeline Method)
 
 ## Prerequisites

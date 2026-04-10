@@ -1,3 +1,8 @@
+---
+title: Container Scanning with AccuKnox CircleCI Plugin
+description: Detect vulnerabilities in Docker images directly within your CircleCI CI/CD pipeline using the AccuKnox container scanning plugin.
+---
+
 # Container Scanning Integration using AccuKnox CircleCI Plugin
 
 AccuKnox’s Container Scanning capability allows you to **detect vulnerabilities in your Docker images** directly within your CI/CD pipeline. Integrating this with CircleCI helps ensure that insecure containers are flagged and addressed before deployment, significantly enhancing the security posture of your workloads.
@@ -76,7 +81,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker Image
-          command: 
+          command:
             docker build -t circleci:test -f Dockerfile .
             docker save circleci:test -o image.tar
       - persist_to_workspace:
@@ -84,7 +89,7 @@ jobs:
           paths:
           - image.tar
 
-workflows:  
+workflows:
   accuknox:
     jobs:
     - build-docker-image

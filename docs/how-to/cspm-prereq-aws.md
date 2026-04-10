@@ -11,7 +11,7 @@ When the AccuKnox control plane is hosted in a cloud environment, scanning is pe
 
 ![image](images/aws-arch.png)
 
-AWS onboarding requires creation of an IAM user. Please follow the following steps to provide a user with appropriate read access:
+AWS onboarding requires creating an IAM user. Follow these steps to provide the user with appropriate read access:
 
 **Step 1:** Navigate to IAM → Users and click on Add Users
 
@@ -108,11 +108,11 @@ Create an **inline policy** with the following permissions:
     * Allow the required read and runtime actions (including `InvokeAgentRuntime`, `GetEvaluator`, `GetPolicy`, `GetPolicyEngine`, `GetOnlineEvaluationConfig`, `StopRuntimeSession`, and the corresponding `List*` actions such as `ListPolicies`, `ListPolicyEngines`, `ListEvaluators`, `ListOnlineEvaluationConfigs`, and `ListTagsForResource`).
     * Set **Resources** to **All**.
 
-        ![alt text](image-52.png)
+        ![AgentCore IAM inline policy - Bedrock-Agentcore permissions step 1](image-52.png)
 
-        ![alt text](image-53.png)
+        ![AgentCore IAM inline policy - Bedrock-Agentcore permissions step 2](image-53.png)
 
-        ![alt text](image-54.png)
+        ![AgentCore IAM inline policy - Bedrock-Agentcore permissions step 3](image-54.png)
 
 4. For **SageMaker Permissions**, add another set of permissions by selecting the service **SageMaker**, allowing the actions **InvokeEndpoint** and **ListTags**, and choosing **All** under resources.
 5. For **Bedrock Permissions**, select the service **Bedrock**, allow the actions **InvokeModel**, **ListTagsForResource**, and **InvokeAgent**, and choose **All** under resources.

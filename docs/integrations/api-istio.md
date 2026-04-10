@@ -1,3 +1,8 @@
+---
+title: Traffic Connector for Istio
+description: Guide to integrate Istio with the AccuKnox API Security Module for API traffic monitoring and security insights across Kubernetes workloads.
+---
+
 # Traffic Connector for Istio
 
 This guide details the integration of Istio with the AccuKnox API Security Module.
@@ -270,11 +275,11 @@ kubectl logs -n sentryflow -l app=sentryflow -f
 
 ## Check the API Inventory Page
 
-Check AccuKnox's API inventory  by setting the time filter to **1hr** or **15 minutes**.
+Check AccuKnox's API inventory by setting the time filter to **1hr** or **15 minutes**.
 It can take from 30s to 1 min to get logs in SaaS.
 Check the metadata in the API for **Gateway** and **Sidecar** source.
 
-![alt text](image-55.png)
+![API endpoints appearing in AccuKnox Inventory after Istio integration](image-55.png)
 
 
 !!! tip "Next Steps"

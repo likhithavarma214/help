@@ -5,7 +5,7 @@ description: Comprehensive support matrix for AI/ML security features provided b
 
 # AI/ML Security Support Matrix
 
-Here's a list of of the AI/ML security features supported by AccuKnox. It outlines the various AI/ML frameworks, libraries, and tools that are compatible with AccuKnox's security solutions, ensuring that users can effectively secure their AI/ML workloads.
+Here is a list of AI/ML security features supported by AccuKnox. It outlines the various AI/ML frameworks, libraries, and tools that are compatible with AccuKnox's security solutions, ensuring that users can effectively secure their AI/ML workloads.
 
 !!! note "Useful Links"
     - For onboarding refer to the [**AI/ML Onboarding Guide**](https://help.accuknox.com/how-to/aiml-overview/)

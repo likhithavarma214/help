@@ -72,7 +72,7 @@ Copy the Access and Secret Access Keys for onboarding the registry on AccuKnox S
 
 ### **Steps to onboard the registry on AccuKnox SaaS**
 
-**Step 1:** Login to the AccuKnox SaaS and Navigate to Issues → Registry Scan. Click on **Add Registry**
+**Step 1:** Log in to AccuKnox SaaS and navigate to **Issues → Registry Scan**. Click **Add Registry**
 
 ![ecr-onboarding](images/ecr/ecr-11.png)
 

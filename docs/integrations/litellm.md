@@ -1,3 +1,8 @@
+---
+title: LiteLLM Integration
+description: Integrate AccuKnox LLM Defense with LiteLLM to scan prompts and responses for security threats and log AI interactions for visibility.
+---
+
 # LiteLLM Integration
 
 Follow these instructions to integrate AccuKnox LLM Defense with LiteLLM. This setup will enable scanning of prompts and responses for potential threats and logging interactions to enhance security and visibility for your LLM applications.
@@ -136,10 +141,10 @@ Follow these instructions to integrate AccuKnox LLM Defense with LiteLLM. This s
 
 ### Findings
 
-![alt text](image-56.png)
+![LiteLLM findings in AccuKnox security dashboard](image-56.png)
 
 ### Chat
 
-![alt text](image-57.png)
+![LiteLLM chat interaction monitored by AccuKnox](image-57.png)
 
 This integration secures your LLM interactions by routing them through the LiteLLM proxy with AccuKnox's defense mechanisms. You can now monitor usage, detect vulnerabilities, and ensure compliance in real-time.

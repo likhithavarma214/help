@@ -7,7 +7,7 @@ description: Learn how to view and resolve CIS Kubernetes Benchmark findings wit
 
 After the initial scan is completed, you can view the compliance results
 
-!!!info
+!!! info
     Note: **etcd should be configured for peer authentication**
 
 ## Description
@@ -16,7 +16,7 @@ etcd is a highly available key-value store used by Kubernetes deployments to sto
 
 ## Steps
 
-1. Go to Issues > Findings in Accuknox.
+1. Go to **Issues > Findings** in AccuKnox.
 
 2. Use the Findings dropdown to filter and select CIS k8s Benchmarking finding results
 
@@ -34,7 +34,7 @@ etcd is a highly available key-value store used by Kubernetes deployments to sto
 
 All peers attempting to communicate with the etcd server will require a valid client certificate for authentication
 
-!!!info
+!!! info
     Note: **Ensure that the --kubelet-certificate-authority argument is set as appropriate**
 
 ## Description
@@ -43,7 +43,7 @@ The connections from the apiserver to the kubelet are used for fetching logs for
 
 ## Steps
 
-1. Go to Issues > Findings in Accuknox.
+1. Go to **Issues > Findings** in AccuKnox.
 
 2. Use the Findings dropdown to filter and select CIS k8s Benchmarking finding results
 

@@ -19,7 +19,7 @@ Before beginning, ensure the following:
 
 #### Step 1: Generate AccuKnox API Token
 
-Log in to AccuKnox. Navigate to Settings and select Tokens to create an AccuKnox token to forward scan results to AccuKnox. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
+Log in to AccuKnox. Navigate to **Settings → Tokens** to create an AccuKnox token to forward scan results to AccuKnox. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
 
 #### Step 2: Configure Bitbucket Pipeline Variables
 
@@ -92,7 +92,7 @@ pipelines:
 
 ### View Results in AccuKnox SaaS
 
-**Step 1:** Once the scan is complete, the user can go into the AccuKnox SaaS and navigate to Issues → RegistryScan, where they can find their repository name and select it to see the associated findings
+**Step 1:** Once the scan is complete, the user can go into the AccuKnox SaaS and navigate to **Issues → Registry Scan**, where they can find their repository name and select it to see the associated findings.
 ![image-20250502-054502.png](./images/bitbucket-container-scan/2.png)
 
 **Step 2:** After clicking on the image name, the user will see the metadata for the image that was built during the workflow execution.

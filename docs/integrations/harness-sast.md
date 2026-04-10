@@ -73,7 +73,7 @@ Clone the codebase that needs to be scanned
 
 Select the infrastructure to run the scan and click on **Continue.**
 
-**Step 3:** Setup the scanner
+**Step 3:** Set up the scanner
 
 Switch to the YAML view and paste the below snippet at the end:
 

@@ -1,4 +1,6 @@
 ---
+title: Administrator's Guide
+description: Step-by-step guidance for AccuKnox administrators covering onboarding, deployment, configuration, and task-oriented references for managing the platform.
 hide:
   - toc
 ---

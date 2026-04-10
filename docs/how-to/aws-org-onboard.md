@@ -47,7 +47,7 @@ Select **Organization Account** as the account type.
 
 Next, select existing labels or create new ones to associate with all assets that will be discovered within this AWS Organization.
 
-### 4. Enter AWS Organization Details
+### 3. Enter AWS Organization Details
 
 - Log in to the **AWS Console** → go to **AWS Organizations**.
 - Copy your **Organization ID** (e.g., `r-xxxxxxxxxx`).

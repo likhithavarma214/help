@@ -1,3 +1,8 @@
+---
+title: Secret Scanning with AccuKnox CircleCI Plugin
+description: Detect hardcoded secrets and sensitive credentials in your codebase using AccuKnox Secret Scanning integrated into CircleCI pipelines.
+---
+
 # Secret Scanning Integration using AccuKnox CircleCI Plugin
 
 AccuKnox’s Secret Scanning capability is a powerful tool for **early detection of hardcoded secrets and sensitive credentials** within your codebase. Integrating this functionality into your CircleCI pipeline enforces robust security best practices and helps prevent credential leakage before your code reaches production.

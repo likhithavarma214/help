@@ -1,6 +1,6 @@
 ---
 title: CDR for GCP Setup Guide
-description: Accuknox CDR documentation for GCP
+description: AccuKnox CDR documentation for GCP
 ---
 
 # CDR for GCP Setup Guide
@@ -11,13 +11,13 @@ description: Accuknox CDR documentation for GCP
     - [Remediate Alerts](/getting-started/cdr-setup)
 
 ## **Introduction**
-AccuKnox CDR for GCP is deployed using terraform scripts, the scripts deployes the following resources:
+AccuKnox CDR for GCP is deployed using Terraform scripts. The scripts deploy the following resources:
 
 | Resource    | Purpose |
 | :-------- | :------- |
 | Log Sink | Routes Logs to a Sink |
-| Pub/Sub Topic | Recieves logs from Log Sink |
-| Pub/Sub Subscription | Consumers subscribes to the Log sent by the Log sink |
+| Pub/Sub Topic | Receives logs from Log Sink |
+| Pub/Sub Subscription | Consumers subscribe to the logs sent by the Log Sink |
 | Service Account | Service account to subscribe to the Pub/Sub subscription |
 
 In addition, the scripts will enable the following API's if they are disabled:
@@ -28,7 +28,7 @@ In addition, the scripts will enable the following API's if they are disabled:
 
 The terraform script will be provided to you by AccuKnox team in the onboarding phase.
 
-![alt text](image-18.png)
+![GCP CDR Terraform script provided during AccuKnox onboarding](image-18.png)
 
 ## **Setup**
 
@@ -37,7 +37,7 @@ To setup the integration please follow the steps below
 
 ### **Step 1: Deploy the resources**
 
-In this step we assume you that you are authenticated to GCP via CLI.
+In this step we assume you are authenticated to GCP via CLI.
 You can authenticate using this command.
 
 ```bash
@@ -48,7 +48,7 @@ Before applying the terraform scripts, please update the `terraform.tfvars` with
 
 | Variable             | Description                                               | Default Value          | Requirement |
 |----------------------|-----------------------------------------------------------|------------------------|-------------|
-| `project_id`         | GCP project ID to create the the resources in.            |                        | Mandatory   |
+| `project_id`         | GCP project ID to create the resources in.            |                        | Mandatory   |
 | `projects`           | GCP projects to monitor                                   |                        | Mandatory   |
 | `org_id`             | GCP organization ID                                       |                        | Mandatory   |
 | `region`             | Any valid GCP region (required by the Terraform provider) |                        | Mandatory   |
@@ -67,7 +67,7 @@ terraform apply
 ### **Step 2: Generate Service account keys**
 
 1. Navigate to Service Accounts under IAM & Admin > Service Accounts
-1. Click on the Service Account Email (highlited in blue)
+1. Click on the Service Account Email (highlighted in blue)
 1. Generate Keys under Keys > Add Key
 
 Save the generated keys in a safe place and transmit them as well to your AccuKnox Point of Contact to start the onboarding process

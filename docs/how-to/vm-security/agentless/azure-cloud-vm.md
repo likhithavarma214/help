@@ -9,12 +9,12 @@ Azure Virtual Machines (VMs) are on-demand, scalable, secure computing resources
 
 Protecting these VMs from threats such as misconfigurations, vulnerabilities, and malware is essential. AccuKnox Omni offers multi-platform VM scanning with agentless detection of vulnerabilities and malware to help secure cloud VMs.
 
-![alt text](image-1.png)
+![AccuKnox Omni agentless Azure VM scanning overview](image-1.png)
 
 ## Requirements
 
 - Terraform Script (AccuKnox team will provide)
-- Accuknox Platform access
+- AccuKnox Platform access
 - Artifact Label, API Token, Tenant ID, and AccuKnox Endpoint from the portal (see steps below)
 - Azure Account Access with Owner Permission
 - Terraform installed (version `~> 1.12`)
@@ -25,13 +25,13 @@ Protecting these VMs from threats such as misconfigurations, vulnerabilities, an
 
 Navigate to **Settings > Tokens > Create** to generate your token.
 
-![alt text](image-2.png)
+![Creating an artifact token in AccuKnox Settings](image-2.png)
 
 ### Step 2: Create Artifact Label
 
 Navigate to **Settings > Labels > + Label** to create a new label.
 
-![alt text](image-3.png)
+![Creating an artifact label in AccuKnox Settings](image-3.png)
 
 ### Step 3: Configure the Terraform Variables
 
@@ -63,7 +63,7 @@ omni_additional_flags = {
 
 Configure the Azure CLI using your credentials, or use the Azure Cloud Shell.
 
-![alt text](image-4.png)
+![Configuring the Azure CLI or using Azure Cloud Shell for Terraform deployment](image-4.png)
 
 ### Step 5: Prepare Terraform Files
 
@@ -91,7 +91,7 @@ Apply the planned changes to create, update, or delete infrastructure resources:
 terraform apply
 ```
 
-![alt text](image-5.png)
+![Terraform apply output for AccuKnox Azure VM scanner deployment](image-5.png)
 
 Once `terraform apply` is completed, it will take 15-20 minutes to scan your VMs hosted on Azure Cloud.
 
@@ -99,11 +99,11 @@ Once `terraform apply` is completed, it will take 15-20 minutes to scan your VMs
 
 Navigate to **AccuKnox Portal > Issues > Findings > Findings Tab > Select "Windows/Linux VM Vulnerability Findings"** to view the results.
 
-![alt text](image-6.png)
+![VM vulnerability findings displayed in AccuKnox Issues page](image-6.png)
 
 Click on any finding to view detailed information.
 
-![alt text](image-7.png)
+![Detailed view of an Azure VM vulnerability finding in AccuKnox](image-7.png)
 
 ## Troubleshooting
 

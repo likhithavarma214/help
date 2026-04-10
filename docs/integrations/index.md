@@ -1,8 +1,12 @@
 ---
-description: Explore AccuKnox’s integration capabilities with major CI/CD tools and cloud platforms to enhance security through a zero trust CNAPP framework.
+title: Integrations
+description: Explore AccuKnox's integration capabilities with major CI/CD tools and cloud platforms to enhance security through a zero trust CNAPP framework.
 hide:
   - toc
 ---
+
+# Integrations
+
 <style>
     .nt-card-title {
     text-align: -webkit-center;

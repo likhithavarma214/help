@@ -20,11 +20,12 @@ To illustrate the advantages of integrating AccuKnox into a CI/CD pipeline using
 
 ## **Steps for integration**
 
-**Step 1**: Login to AccuKnox Saas, Navigate to Settings, and select Tokens to create an AccuKnox token for forwarding scan results to Saas
+**Step 1**: Log in to AccuKnox SaaS, navigate to **Settings**, and select **Tokens** to create an AccuKnox token for forwarding scan results to SaaS.
 
 ![google-iac-integration-accuknox](images/google-build/token-creation.png)
 
-**Note**: Copy the token and create a Google Cloud secret for the token to be used as a secret in the pipeline. Also, copy the tenant ID value to be used in the Cloud Build YAML file.
+!!! note
+    Copy the token and create a Google Cloud secret for the token to be used as a secret in the pipeline. Also, copy the tenant ID value to be used in the Cloud Build YAML file.
 
 **Step 2**: To integrate AccuKnox scans into your Google cloud build, set up a ```cloudbuild.yaml``` file in your repository with the following content:
 

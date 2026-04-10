@@ -114,7 +114,7 @@ tar -czvf AccuKnox.tar.gz AccuKnox
 
 1. _If Dashboards shows no data, you need to configure the HEC on Splunk and Forward the data first, check below how to configure and [create HEC](https://docs.splunk.com/Documentation/Splunk/9.0.1/Data/UsetheHTTPEventCollector) and [forward the data]()._
 
-2. _If data is not being pushed, Login to Splunk > Setting > Data Input > Select HTTP Event Collector > Global Settings > Disable SSL if Enabled by unchecking the box._
+2. _If data is not being pushed, log in to Splunk > Setting > Data Input > Select HTTP Event Collector > Global Settings > Disable SSL if Enabled by unchecking the box._
 
 3. _We recommend restarting the Splunk Deployment after App Installation._
 
@@ -126,7 +126,7 @@ Install the AccuKnox App by downloading it from the App homepage.
 
 ### Option 3: Install from GitHub
 
-This App is available on [SplunkBase](https://apps.splunk.com/apps/id/SplunkforAccuKnox "https://apps.splunk.com/apps/id/SplunkforAccuKnox") and [Github](https://github.com/accuknox/splunk "https://github.com/accuknox/splunk"). Optionally, you can clone the GitHub repository to install the App. Please feel free to submit contributions to the App using pull requests on GitHub.
+This App is available on [SplunkBase](https://apps.splunk.com/apps/id/SplunkforAccuKnox "https://apps.splunk.com/apps/id/SplunkforAccuKnox") and [GitHub](https://github.com/accuknox/splunk "https://github.com/accuknox/splunk"). Optionally, you can clone the GitHub repository to install the App. Feel free to submit contributions to the App using pull requests on GitHub.
 
 1. Locate the Splunk Deployment done in your environment.
 

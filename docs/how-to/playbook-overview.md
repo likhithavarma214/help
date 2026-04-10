@@ -1,4 +1,5 @@
 ---
+title: AccuKnox Playbooks
 description: Overview of AccuKnox's zero trust CNAPP framework, covering key components and security features for comprehensive protection.
 hide:
   - toc

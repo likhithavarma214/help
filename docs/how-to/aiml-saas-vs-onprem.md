@@ -43,11 +43,11 @@ Two approaches are supported:
 
 ### Minimum Hardware Requirements
 
-![alt text](image-29.png)
+![Hardware prerequisites for AI/ML on-prem deployment](image-29.png)
 
 ### Architecture Overview
 
-![alt text](image-27.png)
+![AI/ML on-prem architecture overview](image-27.png)
 
 
 ## On-Prem Onboarding Steps

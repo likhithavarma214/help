@@ -101,7 +101,7 @@ In the above policy we are only allowing
 All the other process will be denied access to /opt/conjur-server/
 
 ??? "**Applying policy:**"
-    **Step 1:** We can apply this policy using AccuKnox SaaS portal by navigating to the Runtimeprotection→Policies section.
+    **Step 1:** We can apply this policy using AccuKnox SaaS portal by navigating to **Runtime Protection → Policies**.
     ![cyberark-conjur-hardening-accuknox](images/conjur-4.png)
     **Step 2:** Now select the create policy option from this screen.
     ![cyberark-conjur-hardening-accuknox](images/conjur-5.png)
@@ -133,7 +133,7 @@ root@conjur-conjur-oss-698fbf6cd5-kb62v:/opt/conjur-server#
 
 **KubeArmor logs:**
 
-We can view the log alerts by navigating to the Monitors/Logging→ logs
+We can view the log alerts by navigate to **Monitors/Logging → Logs**.
 
 ![cyberark-conjur-hardening-accuknox](images/conjur-12.png)
 
@@ -207,7 +207,7 @@ In the above policy, we are only allowing
 All the other processes will be denied access to  /opt/conjur/etc/ssl and /etc/nginx  volume Mount points
 
 ??? "**Applying Policy :**"
-    **Step 1:** We can apply this policy using AccuKnox SaaS portal by navigating to the Runtime Protection→Policies section.
+    **Step 1:** We can apply this policy using AccuKnox SaaS portal by navigating to **Runtime Protection → Policies**.
     ![cyberark-conjur-hardening-accuknox](images/conjur-13.png)
     **Step 2:** Now select the create policy option from this screen.
     ![cyberark-conjur-hardening-accuknox](images/conjur-14.png)
@@ -226,7 +226,7 @@ All the other processes will be denied access to  /opt/conjur/etc/ssl and /etc/n
 
 **After Applying Policy:**
 
-With the kubeArmor policy applied, access to the Volume mount etc/nginx will be denied. The attacker will not be able to access the secrets stored in these Volume mount points.
+With the KubeArmor policy applied, access to the Volume mount etc/nginx will be denied. The attacker will not be able to access the secrets stored in these Volume mount points.
 
 ```sh
 @LAPTOP-9Q1ERBHE:~$ kubectl exec -it -n conjur conjur-conjur-oss-698fbf6cd5-kb62v -c conjur-nginx -- bash
@@ -239,7 +239,7 @@ root@conjur-conjur-oss-698fbf6cd5-kb62v:/etc/nginx#
 ```
 **Karmor logs:**
 
-We can view the log alerts by navigating to the Monitors/Logging→ logs
+We can view the log alerts by navigate to **Monitors/Logging → Logs**.
 ![cyberark-conjur-hardening-accuknox](images/conjur-21.png)
 
 **Protecting Conjur-Postgres:**
@@ -338,7 +338,7 @@ In the above policy, we are only allowing
 All the other processes will be denied access to  ***/var/lib/postgresql/data/***  and  ***/etc/certs/***  volume Mount points
 
 ??? "**Applying Policy:**"
-    **Step 1:** We can apply this policy using AccuKnox SaaS portal by navigating to the Runtime Protection→Policies section.
+    **Step 1:** We can apply this policy using AccuKnox SaaS portal by navigating to **Runtime Protection → Policies**.
     ![cyberark-conjur-hardening-accuknox](images/conjur-22.png)
     **Step 2:** Now select the create policy option from this screen.
     ![cyberark-conjur-hardening-accuknox](images/conjur-23.png)
@@ -357,7 +357,7 @@ All the other processes will be denied access to  ***/var/lib/postgresql/data/**
 
 **After Applying Policy:**
 
-With Kubearmor policy applied the attacker will not be able to access the Volume mount points /etc/certs and /var/lib/postgresql/data which contains the sensitive data.
+With the KubeArmor policy applied, the attacker will not be able to access the Volume mount points /etc/certs and /var/lib/postgresql/data which contains the sensitive data.
 
 ```sh
 @LAPTOP-9Q1ERBHE:~$ kubectl exec -it -n conjur conjur-postgres-0 -- bash
@@ -375,7 +375,7 @@ root@conjur-postgres-0:/etc/certs#
 
 **Karmor Logs:**
 
-We can view the log alerts by navigating to the Monitors/Logging→ logs
+We can view the log alerts by navigate to **Monitors/Logging → Logs**.
 
 ![cyberark-conjur-hardening-accuknox](images/conjur-30.png)
 

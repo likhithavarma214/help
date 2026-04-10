@@ -9,13 +9,13 @@ This is a detailed guide on how to onboard clusters to the AccuKnox SaaS platfor
 
 ## Go To Manage Clusters
 
-**Step 1**: Navigate to Manage Cluster from Settings Tab: From this page we can onboard the clusters running in various cloud platforms like GCP, AWS and Azure. We can onboard locally setup clusters using an cloud option. To onboard cluster select onboard now option
+**Step 1**: Navigate to Manage Cluster from Settings Tab: From this page you can onboard clusters running in various cloud platforms like GCP, AWS, and Azure. You can also onboard locally configured clusters using the cloud option. To onboard a cluster, select **Onboard Now**.
 
-![alt text](./images/cluster-onboarding/image-1.png)
+![Navigate to Manage Clusters in AccuKnox Settings](./images/cluster-onboarding/image-1.png)
 
 **Step 2**: In this screen, give any name to the cluster that you are going to onboard now.
 
-![alt text](./images/cluster-onboarding/image-3.png)
+![Name the cluster being onboarded in AccuKnox](./images/cluster-onboarding/image-3.png)
 
 
 ## Install Necessary Agents in the Cluster via Toggles
@@ -32,7 +32,7 @@ We will install AccuKnox agents to connect the cluster to the AccuKnox SaaS. For
 
 From the UI, you can select the items that you want. Based on the toggles selected by the user, the command on to execute on the right side will change accordingly and can be copied and executed in the cluster.
 
-![alt text](./images/cluster-onboarding/image-2.png)
+![AccuKnox agent installation toggles and generated onboarding command](./images/cluster-onboarding/image-2.png)
 
 1. Runtime Visibility & Protection is selected and the command to install the AccuKnox agents is shown on the right side.
 2. Depending on which toggles you turn on for jobs the command will change accordingly.:
@@ -79,7 +79,7 @@ helm upgrade --install agents oci://public.ecr.aws/k9v9d5v2/kspm-runtime \
 
 After installing all the AccuKnox agents the cluster is onboarded successfully into the SaaS application. We can see the workload details of the onboarded cluster by Navigating to Inventory→cloud Workloads option. There all the onboarded clusters will be listed out and all the inactive ones would be grayed out. By Double clicking on the active cluster user can get a more detailed view of the cluster.
 
-![alt text](./images/cluster-onboarding/image-4.png)
+![Onboarded cluster visible in AccuKnox Inventory](./images/cluster-onboarding/image-4.png)
 
   - - -
 [SCHEDULE DEMO](https://www.accuknox.com/contact-us){ .md-button .md-button--primary }

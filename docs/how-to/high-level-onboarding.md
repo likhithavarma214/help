@@ -1,6 +1,11 @@
+---
+title: Onboarding Assets – High-Level Overview
+description: High-level overview of onboarding assets to AccuKnox, covering cloud accounts, Kubernetes clusters, VM workloads, container registries, and AI/ML environments.
+---
+
 # Onboarding Assets – High-Level Overview
 
-<img src="https://i.ibb.co/7dFjz13S/support-worklaods.png" alt="support-worklaods" border="0">
+<img src="https://i.ibb.co/7dFjz13S/support-worklaods.png" alt="Supported AccuKnox workloads overview" border="0">
 
 ## Customer Environments
 

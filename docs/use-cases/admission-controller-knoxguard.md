@@ -19,7 +19,7 @@ Registry Restrictions allow you to define rules that either restrict or whitelis
 
 Knoxguard enables you to set thresholds for the maximum number of **critical** or **high-level vulnerabilities** that an image can have. This feature will block the deployment of images with known vulnerabilities, maintaining a high security posture for your applications.
 
-!!! info note
+!!! info "Note"
     This feature is in the pipeline and will be available soon.
 
 #### 3. **Security Posture Rules**
@@ -30,10 +30,10 @@ Enforcing security policies like **privileged container restrictions** and **cap
 
 Before deploying Knoxguard in your Kubernetes environment, ensure the following prerequisite is met:
 
-- **Accuknox Agent Installation**: Install Accuknox Agents on your Kubernetes cluster. These agents facilitate SaaS integration, alerting, and enforcement.
+- **AccuKnox Agent Installation**: Install AccuKnox Agents on your Kubernetes cluster. These agents facilitate SaaS integration, alerting, and enforcement.
 
-!!! info note
-    Refer to [Cluster On-boarding](https://help.accuknox.com/how-to/cluster-onboarding/) guide for Accuknox Agents Installation.
+!!! info "Note"
+    Refer to [Cluster On-boarding](https://help.accuknox.com/how-to/cluster-onboarding/) guide for AccuKnox Agents Installation.
 
 Verify the agents' status using the following command:
 
@@ -126,7 +126,7 @@ test-priv-pod-policy   True    clusterpolicy has been updated successfully   ["k
 
 ## Policy Violation and Alerts
 
-In the event of a policy violation, Accuknox provides detailed alerts to help you understand and mitigate security issues.
+In the event of a policy violation, AccuKnox provides detailed alerts to help you understand and mitigate security issues.
 
 First, attempt to deploy a privileged pod using the following configuration:
 
@@ -161,7 +161,7 @@ knoxguard-privilege-pod-test-priv-pod-policy:
 
 Navigate to **Monitors > Alerts** in the AccuKnox dashboard. Change the alert type to **Admission Controller** to view alerts related to admission policy violations. The system provides comprehensive logging to help you quickly identify and address any security concerns.
 
-!!! info note
+!!! info "Note"
     These logs can be forwarded to SIEM tools or notification tools by setting up triggers for improved security monitoring. Refer to the guide [here](https://help.accuknox.com/integrations/splunk/ "https://help.accuknox.com/integrations/splunk/") for more details.
 
 ![image-20241023-111200.png](images/admission-controller-knoxguard/3.png)

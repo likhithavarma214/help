@@ -1,3 +1,7 @@
+---
+title: Kong Gateway Integration with AccuKnox API Security
+description: Integrate Kong Gateway with AccuKnox API Security to monitor API traffic and enforce security policies.
+---
 
 # Kong Gateway Integration with AccuKnox API Security
 
@@ -12,7 +16,7 @@ This guide describes how to integrate Kong Gateway with AccuKnox API Security fo
 
 ## Steps
 
-![alt text](image-58.png)
+![AccuKnox API Security with Kong integration workflow](image-58.png)
 
 ### 1. Install Kong Gateway
 
@@ -36,7 +40,7 @@ Deploy AccuKnox API Security with Kong receiver enabled. This creates the `sentr
 
 > **Note:** This step may show a warning about the `KongClusterPlugin` failing validation - this is expected because Kong hasn't loaded the plugin yet. AccuKnox API Security itself and the ConfigMap will still be created.
 
-> **Note:** Minimun Required Version for AccuKnox API Security Kong integration is `v0.1.8`. Please check AccuKnox API Security [release](https://github.com/accuknox/SentryFlow/releases) Page to install latest version.
+> **Note:** Minimum Required Version for AccuKnox API Security Kong integration is `v0.1.8`. Check the AccuKnox API Security [release](https://github.com/accuknox/SentryFlow/releases) page to install the latest version.
 
 ```shell
 helm upgrade --install sentryflow \

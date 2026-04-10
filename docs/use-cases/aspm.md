@@ -115,8 +115,8 @@ hide:
 - Supports self-hosted and isolated registries
 - Enterprise-grade compliance detection
 
-!!!info
-AccuKnox supports [**Integrations**](https://help.accuknox.com/integrations/jenkins-dast/ "https://help.accuknox.com/integrations/jenkins-dast/") with a wide range of tools for streamlined workflows.
+!!! info
+    AccuKnox supports [**Integrations**](https://help.accuknox.com/integrations/jenkins-dast/ "https://help.accuknox.com/integrations/jenkins-dast/") with a wide range of tools for streamlined workflows.
 
-!!!info
-For more information on our **ASPM** offerings, visit the [**AccuKnox ASPM Page**](https://www.accuknox.com/products/aspm "https://www.accuknox.com/products/aspm").
+!!! info
+    For more information on our **ASPM** offerings, visit the [**AccuKnox ASPM Page**](https://www.accuknox.com/products/aspm "https://www.accuknox.com/products/aspm").

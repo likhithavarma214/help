@@ -146,7 +146,7 @@ To fix the SQL Injection vulnerability, use prepared statements instead of conca
 
 **Step 6**: Review the Updated Results
 
-- After fixing the vulnerability, please rerun the cloud build workflow.
+- After fixing the vulnerability, rerun the cloud build workflow.
 
 - Once the workflow completes, navigate to the AccuKnox SaaS dashboard.
 

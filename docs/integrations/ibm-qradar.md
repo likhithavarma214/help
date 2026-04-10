@@ -1,3 +1,8 @@
+---
+title: IBM QRadar Integration
+description: Forward AccuKnox security alerts to IBM QRadar via webhook and Syslog for centralized SIEM monitoring and incident response.
+---
+
 # IBM QRadar Integration
 
 ## Integration Architecture

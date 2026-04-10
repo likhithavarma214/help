@@ -1,16 +1,17 @@
 ---
 title: PHP MySQL Web Application
-description: Step-by-step instructions for deploying AccuKnox's on-prem security solution for enhanced data privacy and control.
+description: Learn how to secure a PHP MySQL web application using AccuKnox CWPP runtime security capabilities.
 ---
 
+# PHP MySQL Web Application
 
-Database Management is an important part when you have a large amount of data around you. MySQL is one of the most famous open-source Relational Databases to store and handle your data. So securing the data is the main concern for any organization.
+MySQL is one of the most widely used open-source relational databases for storing and managing data. Securing that data is a critical concern for any organization.
 
 [AccuKnox](https://www.accuknox.com/)  provides runtime cloud security for your applications. In this cookbook, we will demonstrate how MySQL applications can be protected.
 ### **Prerequisites**
 
-1. Kubernetes cluster deployed on any platform. (Local , Azure, Aws, GCP)
-2. Cluster onboarded on AccuKnox Saas platform. Follow this [onboarding guide](/getting-started/cluster-onboarding)
+1. Kubernetes cluster deployed on any platform (Local, Azure, AWS, GCP).
+2. Cluster onboarded on AccuKnox SaaS platform. Follow this [onboarding guide](/getting-started/cluster-onboarding).
 
 ### **Deploy Sample PHP/MySQL Web application in Kubernetes**
 

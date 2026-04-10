@@ -3,6 +3,8 @@ title: RINC - A Getting Started Guide
 description: Introduction to RINC (short for Runtime Insights and Network Controls) and how to get started with its features on AccuKnox SaaS.
 ---
 
+# RINC - A Getting Started Guide
+
 RINC (short for "Reporting IN Cluster") is a simple and lightweight reporting tool that provides insights into the status of a Kubernetes cluster, as well as other services running within it.
 
 It includes built-in alerting capabilities, allowing users to define alerts using an expression language. RINC comes with a set of practical and sensible pre-configured alerts, which are included in the provided Helm charts. If you need to customize or extend these alerts, you can easily do so using our expression language, which is powered by the [gval](https://github.com/PaesslerAG/gval "https://github.com/PaesslerAG/gval") Go library.
@@ -59,13 +61,12 @@ RINC also supports email integration, allowing you to receive alerts via email.
 
 - [Kueue](https://kueue.sigs.k8s.io/ "https://kueue.sigs.k8s.io/") workload status report
 
-- Supports reporting jobs where the module container has succeeded but the artifact-api container has failed.
-
 ## Installation
 
 We recommend installing RINC through our provided helm charts.
 
-_Note: RINC uses MongoDB as its data store and creates a new collection called "rinc" upon launch. It is recommended that you create a separate MongoDB user with R/W access to the "rinc" collection. See the section on_ [_Minimum Required Database Permissions_](#minimum-required-database-permissions-for-rinc-to-generate-reports)_._
+!!! note
+    RINC uses MongoDB as its data store and creates a new collection called "rinc" upon launch. It is recommended that you create a separate MongoDB user with R/W access to the "rinc" collection. See the section on [Minimum Required Database Permissions](#minimum-required-database-permissions-for-rinc-to-generate-reports)._
 
 ```bash
 VERSION=0.9.0

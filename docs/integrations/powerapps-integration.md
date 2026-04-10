@@ -9,7 +9,7 @@ description: Integrating AccuKnox Prompt Firewall with Power Apps to secure LLM 
 
 This Power Apps flow places the AccuKnox Prompt Firewall proxy before and after the LLM. All prompts and model responses pass through the proxy for inspection, policy enforcement, and session tracking. The same pattern can be applied to multiple LLM calls to support multi-step and agent-based workflows.
 
-![alt text](image-48.png)
+![Power Apps flow architecture with AccuKnox Prompt Firewall proxy](image-48.png)
 
 ### How the flow works?
 

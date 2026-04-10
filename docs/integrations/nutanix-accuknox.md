@@ -66,7 +66,7 @@ export KUBECONFIG=dkp-aditya-kubeconfig.yaml
 
 ![Nutanix Installation with KubeArmor](images/d2iq/enable-ka.png)
 
-**Step 3**: Login to AccuKnox Saas > Navigate to settings and click on manage clusters
+**Step 3**: Log in to AccuKnox SaaS, navigate to **Settings**, and click **Manage Clusters**.
 
 ![Nutanix Installation with KubeArmor](images/d2iq/mng-cluster.png)
 

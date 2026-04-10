@@ -8,10 +8,10 @@ description: Step-by-step instructions for onboarding a GCP cloud account and AI
 !!! info "AI/ML Prerequisites for GCP Cloud Accounts"
     **Please review the [AI/ML Prerequisites for GCP](https://help.accuknox.com/how-to/cspm-prereq-gcp/#aiml-security-prerequisites-for-gcp-cloud-accounts) before proceeding with the onboarding process.**
 
-Here, we will see the steps to onboard a GCP cloud account to the AccuKnox SaaS platform
+Here, we will see the steps to onboard a GCP cloud account to the AccuKnox SaaS platform.
 
-**Note:**
-Make sure the Below API Library is enabled in your GCP Account for onboarding into AccuKnox SaaS:
+!!! note
+    Ensure the following API Libraries are enabled in your GCP account before onboarding to AccuKnox SaaS:
 
 1. Compute Engine API
 2. Identity and Access Management (IAM) API

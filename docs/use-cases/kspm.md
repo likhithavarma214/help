@@ -61,5 +61,5 @@ hide:
 - Delivers agentless Kubernetes security with compliance monitoring, risk management, and real-time alerting.
 - Serves as a critical security layer when integrated with Cloud Workload Protection Platforms (CWPP), offering multi-layered defense across containerized environments by providing visibility and proactive risk management.
 
-!!!info
-**For more details, refer [KSPM on AccuKnox Website](https://www.accuknox.com/products/kspm)**
+!!! info
+    **For more details, refer [KSPM on AccuKnox Website](https://www.accuknox.com/products/kspm)**

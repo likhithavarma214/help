@@ -151,13 +151,13 @@ Add a Script stage to your existing pipeline. It installs the AccuKnox ASPM scan
 
 2. To see all of your Secret Scan findings, navigate to: **AccuKnox → Issues → Findings → Secret Scan Findings**
 
-    ![alt text](image-34.png)
+    ![Secret Scan Findings dashboard in AccuKnox](image-34.png)
 
     *Secret Scan Findings Dashboard - Filtered by Label 'SPOC'*
 
 3. Click on any finding to get more details. You can also click on **Create Ticket** to generate a ticket.
 
-    ![alt text](image-35.png)
+    ![Secret scan finding detail view in AccuKnox](image-35.png)
 
 !!! question "Need Help?"
     [Let us know](https://www.accuknox.com/contact-us/) if you are seeking additional guidance in planning your cloud security program.

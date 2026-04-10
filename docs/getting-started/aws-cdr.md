@@ -1,6 +1,6 @@
 ---
 title: CDR for AWS Setup Guide
-description: Accuknox CDR for AWS documentation
+description: AccuKnox CDR for AWS documentation
 ---
 
 # CDR for AWS Setup Guide
@@ -19,7 +19,7 @@ Accuknox CDR for AWS is deployed using CloudFormation scripts, the script deploy
 | CloudTrail Trail | Provides a record of user activity and API calls within an AWS account |
 | Lambda function | Pushes CloudTrail logs to AccuKnox |
 
-If you already have an S3 bucket containing cloudTrail Trail logs we will provide you with a CloudFormation script to use the already existent bucket.
+If you already have an S3 bucket containing CloudTrail logs, AccuKnox will provide a CloudFormation script to use the existing bucket.
 
 The CloudFormation script will be provided to you by AccuKnox team in the onboarding phase.
 
@@ -42,7 +42,7 @@ Before deploying the CloudFormation scripts the following parameters are require
 The ECR repository for `AccuKnoxSIEMExporterImage` needs to be created in AWS. The image will be pushed in the next step.
 ## **Setup**
 
-To setup the integration please follow the steps below
+To set up the integration, follow the steps below
 
 ### **Step 1: Lambda docker container**
 
@@ -71,7 +71,7 @@ echo "AccuKnoxSIEMExporterImage=$AccuKnoxSIEMExporterImage"
 
 ### **Step 2: CloudFormation Script**
 
-In this step we assume that you have an AWS console access and have already stored the CloudFormation script share by AccuKnox in an S3 bucket.
+In this step we assume you have AWS Console access and have already stored the CloudFormation script shared by AccuKnox in an S3 bucket.
 
 1. Create a stack using the script that you have uploaded in the S3 bucket
 

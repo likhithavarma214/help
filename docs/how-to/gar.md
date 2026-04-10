@@ -46,12 +46,12 @@ If you like, refer to what the permissions granted by the two roles:
 
 ![gar-onboarding](images/gar/select-json.png)
 
-!!!note info
+!!! note
     The Private Key will be saved to your system automatically. We will require it for onboarding the GAR registry in AccuKnox SaaS.
 
 ## Steps to onboard the registry on AccuKnox SaaS
 
-**Step 1:** Login to the AccuKnox SaaS and Navigate to Issues → Registry Scan. Click on **Add Registry**
+**Step 1:** Log in to AccuKnox SaaS and navigate to **Issues → Registry Scan**. Click **Add Registry**.
 
 ![gar-onboarding](images/gar/add-gar.png)
 

@@ -51,5 +51,5 @@ Accuknox helps users by providing continuous compliance, asset inventory, miscon
 - Actionable remediation guidance
 - Cross-platform security management
 
-!!!info
+!!! info
     For more information on our **CSPM** offering, visit the [**AccuKnox CSPM Page**](https://www.accuknox.com/products/cspm "https://www.accuknox.com/products/cspm").

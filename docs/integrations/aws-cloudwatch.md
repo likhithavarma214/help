@@ -13,7 +13,8 @@ Navigate to Settings→Integrations. Choose **"AWS CloudWatch"** services and cl
 
 + AWS Access Key / AWS Secret Key is required for this Integration.
 
-+ **[Note]:** Please refer this link to create access keys [link](https://aws.amazon.com/)
+!!! note
+    An AWS Access Key and Secret Key are required for this integration. To create access keys, refer to the [AWS documentation](https://aws.amazon.com/).
 
 #### b. Steps to Integrate:
 
@@ -41,7 +42,7 @@ Navigate to Settings→Integrations. Choose **"AWS CloudWatch"** services and cl
 + **Save:** Click on Save for the trigger to get stored in database.
 
 #### 3. Logs Forwarding:
-+ For each Enabled Trigger, please check the AWS platform to view the logs.
++ For each Enabled Trigger, check the AWS platform to view the logs.
 + Based on Frequency (Real Time / Once in a Day / Week)
 + The Rule Engine matches the real time logs against the triggers created.
 

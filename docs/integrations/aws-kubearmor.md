@@ -37,7 +37,7 @@ Download EULA from: <a href="images/aws-kubearmor-eula.pdf" target="_blank">End 
 If kubectl does not exist, install it following the given link:
 <a href="https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html" target="_blank">AWS User Guide to Install kubectl</a>
 
-**Step 6:** Login to the EKS Cluster using the below command
+**Step 6:** Log in to the EKS Cluster using the following command:
 
 ```sh
 aws eks --region <regionname> update-kubeconfig --name <cluster-name>
@@ -94,7 +94,7 @@ namespace/ns1re1 created
 
 Follow this link to install Helm if not installed: <a href="https://docs.aws.amazon.com/eks/latest/userguide/helm.html" target="_blank">AWS User Guide to Install Helm</a>
 
-**Step 8.2:** Install kubearmor via Helm Chart
+**Step 8.2:** Install KubeArmor via Helm Chart
 
 Copy and run the command shown in Step 2 of the instructions. [Note: Remember to replace the namespace with the correct namespace as specified in the command of Step 1]
 
@@ -185,7 +185,7 @@ curl -sfL http://get.kubearmor.io/ | sudo sh -s -- -b /usr/local/bin
 [KubeArmor Demo Scenario Use Cases](https://help.accuknox.com/getting-started/open-source/#3-demo-scenario-use-cases)
 
 KubeArmor is an open-source sandbox project of AccuKnox which was donated to <a href="https://www.cncf.io/projects/kubearmor/" target="_blank">CNCF-Cloud Native Computing Foundation</a>
-To contribute to the project, access the <a href="https://github.com/kubearmor/KubeArmor" target="_blank">Github page</a>. Learn more about KubeArmor <a href="https://kubearmor.io/" target="_blank">here</a>
+To contribute to the project, access the <a href="https://github.com/kubearmor/KubeArmor" target="_blank">GitHub page</a>. Learn more about KubeArmor <a href="https://kubearmor.io/" target="_blank">here</a>
 
 - - -
 [SCHEDULE DEMO](https://www.accuknox.com/contact-us){ .md-button .md-button--primary }

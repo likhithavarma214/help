@@ -157,11 +157,11 @@ Create or edit your existing pipeline to include steps that:
 1. After the pipeline run, log in to **AccuKnox**.
 
 2. Navigate to **AccuKnox → Issues → Findings**, and select **Container Image Findings**.
-    ![alt text](image-27.png)
+    ![Container Image Findings dashboard in AccuKnox](image-27.png)
     *Container Image Findings Dashboard - Filtered by Label 'SPOC'*
 
 3. Click any finding to view more details.
-    ![alt text](image-28.png)
+    ![Container image finding detail view in AccuKnox](image-28.png)
 
 4. Use the **Create Ticket** button to raise a ticket directly from the finding.
 

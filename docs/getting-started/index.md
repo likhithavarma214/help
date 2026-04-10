@@ -1,9 +1,17 @@
+---
+title: Getting Started
+description: Explore AccuKnox's architecture, deployment models, agents, and developer security guides to get started with the platform.
+hide:
+  - toc
+---
+
 <style>
     .nt-card-title {
     text-align: -webkit-center;
 }
 </style>
 
+# Getting Started
 
 ::cards:: cols=2
 

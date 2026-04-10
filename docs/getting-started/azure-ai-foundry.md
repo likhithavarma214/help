@@ -1,6 +1,6 @@
 ---
 title: Azure APIM Automated Deployment with LLM Prompt & Response Firewall
-description: Accuknox documentation to set up LLM Defense for Azure AI Foundry
+description: AccuKnox documentation to set up LLM Defense for Azure AI Foundry
 ---
 
 # Azure APIM Automated Deployment with LLM Prompt & Response Firewall
@@ -28,7 +28,7 @@ The solution acts as a **secure proxy** in front of Azure AI Foundry / OpenAI-co
 
 ## Runtime Security Flow
 
-![alt text](image-19.png)
+![AccuKnox LLM Defence runtime security flow diagram](image-19.png)
 
 ## Prerequisites
 

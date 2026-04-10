@@ -9,7 +9,7 @@ description: Onboard VMs as control plane nodes using access keys in SystemD mod
 
 The access key method simplifies the onboarding of multiple VMs as control plane VMs. The process mirrors that of SystemD mode and Docker Container mode. Using the access key, users can onboard a VM directly from the CLI without needing to access the AccuKnox SaaS interface.
 
-Users can select either SystemD or Docker Container mode for onboarding, as the same access key works for both. Moreover, the access key provides enhanced flexibility, enabling the onboarding of multiple control plane VMs with a single key
+Users can select either SystemD or Docker Container mode for onboarding, as the same access key works for both. Moreover, the access key provides enhanced flexibility, enabling the onboarding of multiple control plane VMs with a single key.
 
 Here we will follow the `SystemD` mode of onboarding
 
@@ -27,9 +27,9 @@ Here we will follow the `SystemD` mode of onboarding
 
 ## Onboarding
 
-In the case of the Access key onboarding method User can directly onboard the VMs from the CLI
+In the case of the Access Key onboarding method, you can directly onboard VMs from the CLI.
 
-!!!info "NOTE"
+!!! info "NOTE"
     We don't need to follow AccuKnox UI for the access key method of the VM onboarding; we will be using a command to do the same from the CLI.
 
 ### Install knoxctl/accuknox-cli
@@ -72,7 +72,7 @@ As for the additional flags, here is the parameter table:
 
 The above command will emit the command to onboard worker nodes. You may also use the `--cp-node-addr` flag to specify the address that other nodes will use to connect with your cluster.
 
-!!!info "NOTE"
+!!! info "NOTE"
     The user needs to repeat the CLI onboarding command to onboard multiple control plane VMs using the access key
 
 ## Onboarding Worker Nodes

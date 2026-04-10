@@ -42,7 +42,7 @@ Access keys allow users to interact with **Cloud Workload Protection Platform (C
 
 3. CSPM/CWPP URL for the environment
 
-Please refer to Help-Doc to understand How to create [Access_Keys](https://help.accuknox.com/how-to/create-access-keys/ "https://help.accuknox.com/how-to/create-access-keys/")
+Refer to [Create Access Keys](https://help.accuknox.com/how-to/create-access-keys/ "https://help.accuknox.com/how-to/create-access-keys/") to create an access key.
 
 For the CSPM/CWPP URL, you can inspect the network tab and get the URL from there
 

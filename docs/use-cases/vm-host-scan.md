@@ -14,9 +14,7 @@ AccuKnox VM Security covers agent-based and agentless scanning offering continuo
 
 Supports **AWS**, **GCP**, **Azure**, and **OpenShift Virtualization**. This cloud-native approach scans VM disks and metadata without requiring an agent on the VM.
 
-![alt text](image-18.png)
-
-## Agent-based VM Scanning
+![Agentless cloud VM scanning in AccuKnox](image-18.png)
 
 !!! tip "Getting Started"
     - [Agent-based Linux VM Scanning](https://help.accuknox.com/how-to/vm-security/agent-based/linux/)
@@ -24,15 +22,11 @@ Supports **AWS**, **GCP**, **Azure**, and **OpenShift Virtualization**. This clo
 
 For hosts that cannot be scanned agentlessly, AccuKnox provides a lightweight agent for **Linux** and **Windows**. It supports **air-gapped environments** allowing scans without outbound internet access.
 
-![alt text](image-17.png)
-
-## Centralized Visibility
+![Agent-based VM scanning in AccuKnox](image-17.png)
 
 Scans are tied to tenant-level tokens and labels for identification, grouping, and reporting. Findings are centralized in the AccuKnox console for visibility, correlation, and reporting across workloads.
 
-![alt text](image-15.png)
-
-## Vulnerability Detection Use Cases
+![Centralized vulnerability findings across VM workloads](image-15.png)
 
 AccuKnox performs deep scans of the host environment to provide rich risk assessment for both hosts and network infrastructure, detecting critical vulnerabilities and misconfigurations.
 

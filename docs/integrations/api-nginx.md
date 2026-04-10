@@ -1,3 +1,8 @@
+---
+title: Traffic Connector for Nginx
+description: Configure Nginx Ingress as an AccuKnox API traffic connector to enable API monitoring, observability, and security insights.
+---
+
 # Traffic Connector for Nginx
 
 API Traffic Connectors enable monitoring of API traffic for observability and security insights.

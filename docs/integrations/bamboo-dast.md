@@ -6,9 +6,7 @@ description: Integrate AccuKnox DAST with Bamboo CI to automate the detection an
 # DAST with Bamboo CI (Dynamic Application Security Testing)
 Integrate AccuKnox DAST with Bamboo CI/CD to automate vulnerability scans for your web applications. Scan results are sent to AccuKnox CSPM for centralized visibility, compliance, and remediation.
 
-![alt text](image-31.png)
-
-## Prerequisites
+![AccuKnox DAST with Bamboo CI integration overview](image-31.png)
 
 !!! abstract "Before you begin"
     Ensure you have the following prerequisites ready before starting the integration:
@@ -164,13 +162,13 @@ In your Bamboo plan, add a **Script Task**. You can use the shell script below o
 
 2. Navigate to **AccuKnox → Issues → Findings**, and select **DAST Findings**.
 
-    ![alt text](image-32.png)
+    ![DAST Findings dashboard in AccuKnox filtered by label](image-32.png)
 
     *DAST Findings Dashboard - Filtered by Label 'SPOC'*
 
 3. Click any finding to view more details.
 
-    ![alt text](image-33.png)
+    ![DAST finding detail view in AccuKnox](image-33.png)
 
 4. Use the **Create Ticket** button to raise a ticket directly from the finding.
 

@@ -19,6 +19,6 @@ AccuKnox supports importing SARIF findings from any tool that produces output in
 
 We can import these findings and display them within the AccuKnox platform, providing a unified view of your security posture.
 
-![alt text](image-20.png)
+![SARIF findings unified view in AccuKnox platform](image-20.png)
 
 AccuKnox allows you to group and filter SARIF findings based on various attributes such as severity, tool name, and file location. This helps you prioritize and address security issues effectively. You also get the benefit of AccuKnox's advanced analytics, AI assisted remediation, and reporting capabilities to gain insights into your security landscape.

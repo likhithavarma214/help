@@ -9,7 +9,7 @@ WordPress-MySQL Application has the WordPress front end connecting to the MySQL 
 
 ## Observability
 
-Once the cluster with the WordPress-MySQL application is onboarded we can see the application behavior by Navigating to the Runtime Security→App Behavior section. In the screen the select cluster name and namespace in which the WordPress-MySQL application is deployed.
+Once the cluster with the WordPress-MySQL application is onboarded, you can view the application behavior by navigating to **Runtime Security → App Behavior**. In this screen, select the cluster name and namespace where the WordPress-MySQL application is deployed.
 
 **1.Network Observability**
 
@@ -34,7 +34,7 @@ Based on the application behavior currently, in the WordPress pod, the attacker 
 
 ![wordpress-mysql-security](images/word-my-5.png)
 
-we can protect this with help of hardening policies that kubearmor has discovered based on the application behavior of this WordPress-mysql application. To see and apply this hardening policy follow the below steps:
+We can protect this with the help of hardening policies that KubeArmor has discovered based on the application behavior of this WordPress-MySQL application. To view and apply this hardening policy, follow the steps below:
 
 **Step 1:**  Navigate to the Runtime Protection→ Policies and select the cluster and namespace where the WordPress-MySQL application is deployed.
 ![wordpress-mysql-security](images/word-my-5.png)

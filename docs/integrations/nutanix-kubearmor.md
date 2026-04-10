@@ -78,7 +78,7 @@ Use the following basic directory structure for your git repository:
 
 Refer to the KubeArmor Git repository for the DKP Catalog <a href="https://github.com/th3-v3ng34nc3/kubearmor/" target="_blank">**Link**</a>
 
-**Note**: Please remember to fill out the <a href="https://docs.d2iq.com/dkp/2.7/workspace-application-metadata" target="_blank">metadata.yaml</a> with the application details that will be visible on the UI.
+**Note**: Fill out the <a href="https://docs.d2iq.com/dkp/2.7/workspace-application-metadata" target="_blank">metadata.yaml</a> with the application details that will be visible on the UI.
 
 ### Enable KubeArmor from the Workspace Catalog
 
