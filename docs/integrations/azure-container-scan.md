@@ -56,44 +56,31 @@ In your Azure repo, create/update your pipeline YAML (`azure-pipelines.yml`) and
 
 ```yaml
 trigger:
-  - main
+- azure-pipelines.yml
 
-pr:
-  - main
 
 pool:
-  vmImage: ubuntu-latest
-
-variables:
-  - group: accuknox
-  - name: imageRepository
-    value: azuredevopstest
-  - name: imageTag
-    value: v1
-
+  name: Default
+  demands:
+    - Agent.Name -equals HPV
 steps:
-  - task: Docker@2
-    displayName: "Build Docker Image"
-    inputs:
-      command: build
-      Dockerfile: "**/Dockerfile"
-      repository: "$(imageRepository)"
-      tags: |
-        $(imageTag)
-  - task: accuknox-container-scan@2.0.0
-    inputs:
-      tag: $(imageTag)
-      imageName: $(imageRepository)
-      accuknoxEndpoint: "$(accuknoxEndpoint)"
-      accuknoxToken: "$(accuknoxToken)"
-      accuknoxLabel: "$(accuknoxLabel)"
+  - checkout: self  
+  - task: AccuKnox-Container-Scan@2
+  inputs:
+    imageName: 'nginx'
+    tag: 'latest'
+    accuknoxEndpoint: '$(ACCUKNOX_ENDPOINT)'
+    accuknoxToken: '$(ACCUKNOX_TOKEN))'
+    accuknoxLabel: '$(ACCUKNOX_LABEL))'
+    inputSoftFail: true
+
 ```
 
 ### Inputs for AccuKnox Container Scanning
 
 | **Name**           | **Description**                                                                                        | **Required** | **Default**                        |
 | ------------------ | ------------------------------------------------------------------------------------------------------ | ------------ | ---------------------------------- |
-| `accuknoxEndpoint` | AccuKnox CSPM panel URL                                                                                | Yes          | `cspm.demo.accuknox.com`           |
+| `accuknoxEndpoint` | AccuKnox CSPM panel URL                                                                                | Yes          | ``           |
 | `accuknoxToken`    | AccuKnox API Token                                                                                     | Yes          |                                    |
 | `accuknoxLabel`    | Label for scan results                                                                                 | Yes          |                                    |
 | `inputSoftFail`    | Continue even if the scan fails                                                                        | No           | `true`                             |

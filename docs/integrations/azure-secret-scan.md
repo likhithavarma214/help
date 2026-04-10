@@ -53,9 +53,9 @@ This guide walks you through the process of integrating AccuKnox Secret Scanning
 | `excludePaths`        | Paths to exclude from the scan.                                                                                                  | `""`               |
 | `additionalArguments` | Extra parameters for secret scanning.                                                                                            | `""`               |
 | `inputSoftFail`       | Do not return an error code if secrets are found.                                                                                | `true`             |
-| `accuknoxToken`       | The token for authenticating with the CSPM panel.                                                                                | **N/A (Required)** |
-| `accuknoxEndpoint`    | The URL of the CSPM panel to push the scan results to.                                                                           | **N/A (Required)** |
-| `accuknoxLabel`       | The label created in AccuKnox SaaS for associating scan results.                                                                 | **N/A (Required)** |
+| `ACCUKNOX_TOKEN`       | The token for authenticating with the CSPM panel.                                                                                | **N/A (Required)** |
+| `ACCUKNOX_ENDPOINT`    | The URL of the CSPM panel to push the scan results to.                                                                           | **N/A (Required)** |
+| `ACCUKNOX_LABEL`       | The label created in AccuKnox SaaS for associating scan results.                                                                 | **N/A (Required)** |
 
 
 #### Step 4: Configure Pipeline to Run Secret Scanning
@@ -65,13 +65,26 @@ This guide walks you through the process of integrating AccuKnox Secret Scanning
 2.  Add the following task to your pipeline's `steps` section:
 
 ```yaml
+trigger:
+- azure-pipelines.yml
+
+
+pool:
+  name: Default
+  demands:
+    - Agent.Name -equals HPV
+
+steps:
+- checkout: self
 steps:-
-  task: accuknox-secret-scan@1.0.2
+- checkout: self
+- task: accuknox-secret-scan@2
   inputs:
-    accuknoxEndpoint: $(accuknoxEndpoint)
-    accuknoxToken: $(accuknoxToken)
-    accuknoxLabel: $(accuknoxLabel)
+    accuknoxEndpoint: '$(ACCUKNOX_ENDPOINT)'
+    accuknoxToken: '$(ACCUKNOX_TOKEN)'
+    accuknoxLabel: '$(ACCUKNOX_LABEL)'
     inputSoftFail: true
+
 ```
 
 #### Step 5: Trigger the Pipeline
