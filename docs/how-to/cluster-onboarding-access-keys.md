@@ -5,11 +5,11 @@ description: Guide to onboarding multiple clusters using access keys, with optio
 
 # Cluster Onboarding with Access Keys
 
-Streamlining cluster onboarding is made easy with access keys, allowing users to onboard multiple clusters using the same key. Additionally, users can set expiration times for these keys and specify the number of clusters each key can onboard. This process can be performed directly from the CLI if the access key is already created, offering enhanced flexibility and convenience
+Streamlining cluster onboarding is made easy with access keys, allowing users to onboard multiple clusters using the same key. Additionally, users can set expiration times for these keys and specify the number of clusters each key can onboard. This process can be performed directly from the CLI if the access key is already created, offering enhanced flexibility and convenience.
 
 **Pre-requisite:**
 
-1. Kubernetes (managed/un-manager) cluster
+1. Kubernetes (managed/unmanaged) cluster
 
 2. AccuKnox CNAPP login access
 
@@ -31,7 +31,7 @@ The operator also manages resource limits and automatically scales agents when c
 
 ## Onboarding
 
-In the case of the Access key onboarding method, the User can directly onboard the VMs from the CLI, To Onboard a new cluster follow the below steps:
+In the case of the Access Key onboarding method, you can directly onboard clusters from the CLI. To onboard a new cluster, run the following command:
 
 ```cmd
 helm upgrade --install agents oci://public.ecr.aws/k9v9d5v2/kspm-runtime \

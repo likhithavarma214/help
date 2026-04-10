@@ -1,9 +1,9 @@
 ---
-title: Github IaC Scans
-description: This document provides the steps to perform IaC scans for Github repositories on AccuKnox SaaS.
+title: GitHub IaC Scans
+description: This document provides the steps to perform IaC scans for GitHub repositories on AccuKnox SaaS.
 ---
 
-# How to Perform Github IaC Scans
+# How to Perform GitHub IaC Scans
 
 IaC scans for GitHub are essential for identifying security vulnerabilities in your infrastructure code. By scanning your IaC, you can detect misconfigurations early, ensure compliance with security standards, and prevent potential security breaches. Integrating these scans into your CI/CD pipeline enhances your overall security posture by providing continuous monitoring and assessment.
 
@@ -11,7 +11,7 @@ IaC scans for GitHub are essential for identifying security vulnerabilities in y
 
 ### Prerequisites
 
-For Github the IaC Scan from AccuKnox SaaS we require three prerequisites. They are as follows:
+For GitHub IaC Scans from AccuKnox SaaS we require three prerequisites. They are as follows:
 
 - Creating Fine-Grained tokens from GitHub for Private Repos only
 - Label creation
@@ -21,7 +21,7 @@ For Github the IaC Scan from AccuKnox SaaS we require three prerequisites. They 
 
 For generating the fine-grained access token from GitHub users need to do the following steps.
 
-**Step 1**: Go to the Github profile and select Settings.
+**Step 1**: Go to your GitHub profile and select **Settings**.
 
 ![IaC Scan Github](images/github-iac/image2.png)
 
@@ -29,14 +29,14 @@ For generating the fine-grained access token from GitHub users need to do the fo
 
 ![IaC Scan Github](images/github-iac/image5.png)
 
-**Step 3**: Select the Personal Access token→ Fine-Grained Access token
+**Step 3**: Select **Personal Access Tokens → Fine-Grained Access Tokens**
 ![IaC Scan Github](images/github-iac/image9.png)
 
 **Step 4**: Click on the Generate new token option
 
 ![IaC Scan Github](images/github-iac/image15.png)
 
-**Step 5**: Fill out the token name, description, Duration, and Repository that you need to onboard, and in the Repository permission section select the content: Readonly
+**Step 5**: Fill out the token name, description, duration, and repository to onboard. In the **Repository permissions** section, set **Contents** to **Read-only**.
 
 ![IaC Scan Github](images/github-iac/image19.png)
 
@@ -46,9 +46,9 @@ For generating the fine-grained access token from GitHub users need to do the fo
 
 ### Label Creation
 
-After Creating the Fine-grained Access token user needs to create a label from AccuKnox SaaS. For this user need to navigate to the Settings→ label Section click on Add new label and create their label
+After creating the Fine-Grained Access Token, create a label in AccuKnox SaaS by navigating to **Settings → Labels**, clicking **Add New Label**, and creating a label.
 
-![IaC Scan Github](images/github-iac/image20.png)
+![IaC Scan GitHub](images/github-iac/image20.png)
 
 ---
 
@@ -56,7 +56,7 @@ After Creating the Fine-grained Access token user needs to create a label from A
 
 After creating the token from Github and Creating the label from AccuKnox SaaS. Users can onboard the Source Code Repository by following the steps below.
 
-**Step 1**: Navigate to the Settings→ Integrations and select the Code Source Configuration
+**Step 1**: Navigate to **Settings → Integrations** and select **Code Source Configuration**.
 
 ![IaC Scan Github](images/github-iac/image7.png)
 
@@ -64,7 +64,7 @@ After creating the token from Github and Creating the label from AccuKnox SaaS. 
 
 ![IaC Scan Github](images/github-iac/image18.png)
 
-**Step3**: Fill in the name select the type as Github input the Repository URL and Fine-grained Access token and click on Verify
+**Step3**: Fill in the name, select the type as **GitHub**, enter the Repository URL and Fine-Grained Access Token, then click **Verify**.
 
 ![IaC Scan Github](images/github-iac/image13.png)
 
@@ -81,7 +81,7 @@ After creating the token from Github and Creating the label from AccuKnox SaaS. 
 
 To create an IaC scan for the added Source Code Configuration users need to perform the following steps.
 
-**Step 1**: Navigate to Settings→ Integrations and select IaC
+**Step 1**: Navigate to **Settings → Integrations** and select **IaC**.
 
 ![IaC Scan Github](images/github-iac/image8.png)
 
@@ -98,7 +98,7 @@ To create an IaC scan for the added Source Code Configuration users need to perf
 ![IaC Scan Github](images/github-iac/image11.png)
 
 ### Risk Assessment - Check Findings
-After the IaC scan is completed to see the findings users need to navigate to the Issues→ Findings section and select IaC findings in the filter to see all the findings.
+After the IaC scan is completed to see the findings users need to navigate to **Issues → Findings** and select **IaC** in the filter.
 
 ![IaC Scan Github](images/github-iac/image17.png)
 
@@ -108,7 +108,7 @@ We can filter the findings based on the Repository, Risk Factor, and so on.
 
 ### Remediation - Fix Problems/Create Tickets
 
-To remediate any findings users will need to select the finding or group of findings From the issues→ Findings page and click Create Ticket as shown in the below screenshot.
+To remediate findings, select the finding or group of findings from **Issues → Findings** and click **Create Ticket** as shown below.
 
 ![IaC Scan Github](images/github-iac/image12.png)
 

@@ -1,4 +1,6 @@
 ---
+title: AI/ML Categories and Probes
+description: Explore the full list of AI/ML security categories and probe definitions used in AccuKnox's prompt firewall and AI detection capabilities.
 hide:
     - toc
 ---

@@ -1,3 +1,8 @@
+---
+title: ASPM Reporting Features
+description: Comprehensive guide on utilizing AccuKnox ASPM reporting features to generate, customize, and interpret application security posture reports.
+---
+
 # ASPM Reporting Features
 
 This document provides comprehensive guidance on utilizing the **Application Security Posture Management (ASPM)** reporting features within the platform. Learn how to generate, customize, and interpret your security posture reports.

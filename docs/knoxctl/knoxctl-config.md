@@ -1,4 +1,6 @@
 ---
+title: Knoxctl Configuration Setup
+description: Configure knoxctl with AccuKnox Access Keys to connect to the Control Plane and manage security policies, scanning, and workload monitoring.
 hide:
   - toc
 ---

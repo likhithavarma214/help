@@ -27,7 +27,7 @@ In the "Invite User" form, fill out the following details and hit send.
 
 ## 2. User Receives Invitation
 
-The invited user will receive containing a link to accept the invitation and set up their account if they haven't already done so.
+The invited user will receive an email containing a link to accept the invitation and set up their account if they haven't already done so.
 
 ![SSO](images/sso/4.png)
 

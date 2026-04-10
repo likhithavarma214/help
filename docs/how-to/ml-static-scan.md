@@ -44,7 +44,7 @@ Enter the required credentials and repository information.
 
 * **Token**: Your Hugging Face Access Token. Generate a token with 'Read' permissions from your Hugging Face account settings. [Click here to generate a token](https://huggingface.co/settings/tokens/new?tokenType=read)
 
-    ![alt text](image-26.png)
+    ![Generate Hugging Face read token](image-26.png)
 
 * **Repository Name**: The name of the model repository (e.g., `bert-base-uncased`).
     ![Configure Repository](image-3.png)
@@ -102,13 +102,13 @@ You will be redirected to the **ML Findings** page, which lists details such as:
 ### Group ML Scan Findings
 
 You can group findings by different parameters such as `Status`, `Location`, `Vulnerability Name`, `Risk Factor`, etc. Use the **Group By** dropdown to select your preferred grouping. This helps in organizing and prioritizing vulnerabilities effectively. The grouped view provides a consolidated look at similar issues, making it easier to assess the overall security posture of your ML assets and can easily be exported for reporting purposes.
-![alt text](image-24.png)
+![ML scan findings grouped by vulnerability parameter using the Group By dropdown](image-24.png)
 
 ### Ask AI for Remediation
 
 Click on the **Ask AI** button in the detailed pane to get AI-generated remediation steps for the identified issue. This feature leverages advanced LLM capabilities to provide actionable insights based on the specific vulnerability detected.
 
-![alt text](image-25.png)
+![AI-generated remediation steps for an ML scan finding](image-25.png)
 
 ### Detailed Finding View
 

@@ -109,7 +109,7 @@ Attach the following policy to the IAM user whose access keys will be used for d
 
 This user can deploy infrastructure but cannot manage IAM roles.
 
-## Step 3: Login to AWS CLI
+## Step 3: Log In to AWS CLI
 
 Run the following commands to configure your AWS CLI and verify identity:
 

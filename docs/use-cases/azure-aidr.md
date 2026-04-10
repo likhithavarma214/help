@@ -6,7 +6,7 @@ description: Onboarding guide for AccuKnox AI-DR for Azure with Terraform to get
 # AI Detection & Response (AI-DR) for Azure
 
 !!! note "Remediation Setup"
-    For remediation setup for AWS, Azure and GCP AI-DR please refer to the following links:
+    For remediation setup for AWS, Azure, and GCP AI-DR, refer to the following links:
 
     - [Remediate Alerts](/getting-started/cdr-setup)
 
@@ -25,7 +25,7 @@ The Terraform configuration will be provided to you by the AccuKnox team in the 
 
 ![image](https://i.ibb.co/C3YxGj11/image.png)
 
-To setup the integration please follow the steps below
+To set up the integration, follow the steps below.
 
 ## Step 1: Deploy the resources
 
@@ -134,32 +134,32 @@ onboarding process.
 
 ## Auto-Remediation for Azure OpenAI Use Case
 
-![alt text](../getting-started/image-11.png)
+![Azure AI auto-remediation overview](../getting-started/image-11.png)
 
 ### Step 1: Detection of Public Exposure
 
 AccuKnox AI-DR detects if a network or other AI asset is inadvertently made public.
-![alt text](../getting-started/image-12.png)
+![AccuKnox detecting publicly exposed AI asset](../getting-started/image-12.png)
 
 ### Step 2: Alert Generation
 
 An alert is generated in the AccuKnox console indicating the public exposure of the AI asset.
-![alt text](../getting-started/image-13.png)
+![Alert generated for public AI asset exposure](../getting-started/image-13.png)
 
 ### Step 3: Trigger and Webhook Integration
 
 A trigger is set up to initiate an automated response. The alert is forwarded using a webhook integration to the remediation workflow.
 
 See how to [**Configure and Trigger Alerts with Webhook**](https://help.accuknox.com/integrations/webhook-integration/)
-![alt text](../getting-started/image-14.png)
-![alt text](../getting-started/image-15.png)
+![Trigger and webhook configuration for alert forwarding](../getting-started/image-14.png)
+![Webhook integration setup in AccuKnox](../getting-started/image-15.png)
 
 ### Step 4: Automated Remediation
 
 An auto-remediation action is triggered via GitHub Actions (or another automation tool) to address the issue.
-![alt text](../getting-started/image-16.png)
+![Automated remediation triggered via GitHub Actions](../getting-started/image-16.png)
 
 ### Step 5: Asset Securing
 
 The asset configuration is automatically updated to make it private again, resolving the security risk.
-![alt text](../getting-started/image-17.png)
+![Asset configuration updated to private after auto-remediation](../getting-started/image-17.png)

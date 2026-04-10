@@ -1,6 +1,6 @@
 ---
 title: AccuKnox CDR Alert Remediation Setup
-description: Accuknox CDR Setup
+description: AccuKnox CDR Setup
 ---
 
 # AccuKnox CDR Alert Remediation Setup
@@ -13,7 +13,7 @@ description: Accuknox CDR Setup
     - [GCP CDR Setup](/getting-started/gcp-cdr)
 
 
-To remediate alerts the user need to provision the following:
+To remediate alerts, provision the following:
 
 ## **Step 1: Cloud Access**
 
@@ -31,9 +31,9 @@ Cloud access for the target cloud accounts needs to be provisioned as defined by
 
 You need to provision a github repository that will serve as the CDR workflow runner.
 
-The cloud access keys configured in the previous step needs to be made available as github secrets. Storing cloud access credentials as variables in the workflow is not a secure practice.
+The cloud access keys configured in the previous step need to be made available as GitHub secrets. Storing cloud access credentials as variables in the workflow is not a secure practice.
 
-The github repositry needes to have the following github action implemented
+The GitHub repository needs to have the following GitHub Action implemented
 
 ```
 {% raw %}
@@ -63,20 +63,20 @@ jobs:
 {% endraw %}
 ```
 
-The above example assumes that we are protecting AWS, GCP and Aure environments using the same repository
+The above example assumes that we are protecting AWS, GCP, and Azure environments using the same repository
 
 
-### Github Fine Grained Access Token
+### GitHub Fine-Grained Access Token
 
-A github fine grained access token is required with the following permissions:
+A GitHub fine-grained access token is required with the following permissions:
 
 - Contents (R/W)
 - Metadata (R)
 
-## **Step 3: Accuknox Integration**
+## **Step 3: AccuKnox Integration**
 
-AccuKnox will be triggering the github action configured above via webhook calls to the github apis.
-For that we need to build the webhook url.
+AccuKnox will be triggering the GitHub Action configured above via webhook calls to the GitHub APIs.
+For that we need to build the webhook URL.
 
 The webhook url can be built as follow: `https://api.github.com/repos/<github_org_name>/<github_repository_name>/dispatches`.
 where:

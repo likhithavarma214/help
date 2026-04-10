@@ -31,8 +31,7 @@ To setup the integration please follow the steps below
 
 ### Step 1: Deploy the resources
 
-In this step we assume you that you are authenticated to Azure via the `azure`
-CLI. You can authenticate using this command.
+In this step we assume you are authenticated to Azure via the `azure` CLI. You can authenticate using this command.
 
 ```bash
 az login

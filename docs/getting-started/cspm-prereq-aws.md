@@ -5,11 +5,11 @@ description: AccuKnox CNAPP will be hosted in our cloud environment and scan wil
 
 # CSPM Pre-requisite for AWS
 
-In SaaS model of deployment the AccuKnox CNAPP will be hosted in our cloud environment and scan will be done using the Cloud account Readonly Access permission.
+In the SaaS deployment model, AccuKnox CNAPP is hosted in the AccuKnox cloud environment and scans are performed using Cloud account read-only access permissions.
 
 ![image](images/accuknox-architecture.png)
 
-AWS onboarding requires creation of an IAM user. Please follow the following steps to provide a user with appropriate read access:
+AWS onboarding requires creating an IAM user. Follow these steps to provide the user with appropriate read access:
 
 **Step 1:** Navigate to IAM → Users and click on Add Users
 

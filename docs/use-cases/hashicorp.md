@@ -100,7 +100,7 @@ Before Applying the kubeArmor Policy any ransomware attacker who gains access to
 
 **Applying the KubeArmorPolicy:**
 
-**Step 1:** To create the policy Navigate to _Runtime Protection→Policies_. Then select _Create Policy_ option from the screen.
+**Step 1:** To create the policy Navigate to **Runtime Protection → Policies**. Then select _Create Policy_ option from the screen.
 
 ![hashicorp-vaullt-hardening-accuknox](images/vault-9.png)
 

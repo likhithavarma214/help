@@ -1,3 +1,8 @@
+---
+title: Cloud Regions Support
+description: Complete list of supported cloud regions for AccuKnox across AWS, Azure, GCP, and OCI.
+---
+
 # Support Matrix for Cloud Regions
 
 This page provides the complete list of supported regions across AWS, OCI, Azure, and GCP.

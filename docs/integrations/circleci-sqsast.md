@@ -1,3 +1,8 @@
+---
+title: SonarQube SAST (SQ-SAST) with AccuKnox CircleCI Plugin
+description: Integrate SonarQube-based SAST into CircleCI with AccuKnox for centralized vulnerability visibility, analysis, and triage.
+---
+
 # SonarQube Static Application Security Testing (SQ-SAST) Integration using AccuKnox CircleCI Plugin
 
 This section details the integration of SonarQube-based Static Application Security Testing (SAST) into your CircleCI pipeline using the AccuKnox CircleCI plugin. This integration allows you to statically analyze your source code for vulnerabilities and automatically forward the results to AccuKnox for centralized visibility and triage.

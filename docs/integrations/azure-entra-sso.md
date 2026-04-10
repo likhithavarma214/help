@@ -1,3 +1,8 @@
+---
+title: Azure Entra SSO with AccuKnox
+description: Integrate Azure Entra (formerly Azure Active Directory) with AccuKnox using OIDC for Single Sign-On (SSO) authentication.
+---
+
 # Azure Entra SSO with AccuKnox
 
 This guide helps you integrate Azure Entra (formerly Azure Active Directory) with **AccuKnox** using **OpenID Connect (OIDC)** for Single Sign-On (SSO).

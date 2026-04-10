@@ -5,10 +5,10 @@ description: Guide on creating secure access keys in AccuKnox SaaS to authentica
 
 # How to Create Access Keys
 
-This guide on how to create an access key in the AccuKnox SaaS platform helps you to authenticate and authorize your resources securely. Access Keys are used to authenticate and authorize the users to access the AccuKnox SaaS platform. You can create access keys for different users and manage them effectively.
+Access Keys authenticate and authorize users to access the AccuKnox SaaS platform. You can create access keys for different users and manage them effectively.
 
-!!!warning
-    Access Keys are authentication credentials used to securely interact with various services and systems. They are crucial for operations such as querying information on CSPM, CWPP, and ASPM, Automating workflows from CLI, and Managing bundle operations from CLI.
+!!! warning
+    Access Keys are authentication credentials used to securely interact with various services and systems. They are crucial for operations such as querying information on CSPM, CWPP, and ASPM, automating workflows from the CLI, and managing bundle operations from the CLI.
 
 Access keys are created for users and carry the same permissions as the user who created them. If an administrator creates an access key, they can perform nearly any operation in the CNAPP directly from the CLI, which can be critical. Users must ensure that these access keys are kept private and secure and should never share them to avoid potential damage.
 

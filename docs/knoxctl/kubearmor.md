@@ -1,5 +1,6 @@
 ---
 title: "KubeArmor"
+description: "Use knoxctl with KubeArmor to enforce runtime security policies and monitor logs for cloud-native workloads using eBPF and Linux Security Modules."
 weight: 4
 summary: "KubeArmor uses eBPF and Linux Security Modules (LSM) to provide a policy-based system to restrict any unwanted, malicious behavior of cloud-native workloads at runtime."
 ---

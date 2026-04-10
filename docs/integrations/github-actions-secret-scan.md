@@ -1,3 +1,8 @@
+---
+title: Secret Scanning with GitHub Actions
+description: Integrate AccuKnox Secret Scanning into your GitHub Actions CI/CD workflow to detect hardcoded secrets and sensitive credentials before they reach production.
+---
+
 # GitHub Actions: Integrating AccuKnox Secret Scanning
 
 This guide explains how to integrate **AccuKnox Secret Scanning** into your **GitHub Actions CI/CD** workflow. The integration detects hardcoded secrets and sensitive data in your codebase, forwarding findings to the **AccuKnox** platform for centralized analysis and remediation.
@@ -12,7 +17,7 @@ This guide explains how to integrate **AccuKnox Secret Scanning** into your **Gi
 
 ### Step 1: Generate AccuKnox API Token
 
-Log in to AccuKnox. Navigate to Settings and select Tokens to create an AccuKnox token to forward scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
+Log in to AccuKnox. Navigate to **Settings → Tokens** to create an AccuKnox token to forward scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
 
 ### Step 2: Configure GitHub Secrets
 
@@ -51,10 +56,10 @@ jobs:
           with:
           branch: "main"                             # Optional
           results: " "                               # Optional
-          exclude_paths: "tests/,docs/"              # Optional        
+          exclude_paths: "tests/,docs/"              # Optional
           additional_arguments: ""                   # Optional
           base_command: ""                           # Optional
-          output_format: json                        # Optional  
+          output_format: json                        # Optional
           output_file_path: "./secret_results.json"  # Optional
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
           accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}

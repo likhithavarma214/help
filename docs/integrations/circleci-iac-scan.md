@@ -1,3 +1,8 @@
+---
+title: IaC Scanning with AccuKnox CircleCI Plugin
+description: Identify misconfigurations in Terraform, Kubernetes YAML, and Helm charts using AccuKnox IaC scanning integrated into CircleCI pipelines.
+---
+
 # IaC Scanning Integration using AccuKnox CircleCI Plugin
 
 This guide outlines how to integrate Infrastructure as Code (IaC) scanning into your CircleCI pipeline using the AccuKnox plugin. IaC scanning helps identify misconfigurations and security issues in infrastructure code such as Terraform, Kubernetes YAML, or Helm charts before they are deployed to production.

@@ -1,3 +1,8 @@
+---
+title: SAST Integration with AccuKnox in GitHub Actions
+description: Integrate Opengrep SAST scanning into a GitHub Actions workflow and forward results to AccuKnox for security analysis and mitigation.
+---
+
 # Integrating SAST with AccuKnox in GitHub Actions
 
 This guide outlines integrating SAST scanning into a GitHub Actions workflow and forwarding the results to AccuKnox for analysis and mitigation.
@@ -12,7 +17,7 @@ This guide outlines integrating SAST scanning into a GitHub Actions workflow and
 
 #### Step 1: Generate AccuKnox API Token
 
-Log in to AccuKnox. Navigate to Settings and select Tokens to create an AccuKnox token to forward scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
+Log in to AccuKnox. Navigate to **Settings → Tokens** to create an AccuKnox token to forward scan results to SaaS. For details on generating tokens, refer to [How to Create Tokens](https://help.accuknox.com/how-to/how-to-create-tokens/?h=token "https://help.accuknox.com/how-to/how-to-create-tokens/?h=token").
 
 #### Step 2: Configure GitHub Secrets
 

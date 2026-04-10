@@ -17,7 +17,7 @@ This guide walks you through configuring input/output policies in AccuKnox for p
     * Monitoring and auditing AI interactions for Create/Apply Policiescompliance
     * Customizing security policies to fit your organization's needs
 
-    ![alt text](image-1.png)
+    ![AccuKnox Prompt Firewall policy capabilities overview](image-1.png)
 
 !!! warning "Pre-requisite"
     Add the **AccuKnox Prompt Firewall Proxy** to your app first.
@@ -68,7 +68,7 @@ This guide walks you through configuring input/output policies in AccuKnox for p
 | Secrets          | User pastes an API key: sk-12345abcde...                              | Prevent credentials or secrets from being processed or logged by the LLM.         |
 | Token Limit      | User pastes a 50-page document into the prompt.                       | Ensure prompts do not exceed token limits to prevent DoS or high costs.           |
 
-![alt text](image.png)
+![Prompt firewall policy types and categories](image.png)
 
 !!! info "Need Custom Policies Tailored to Your Use Case?"
     AccuKnox can configure custom prompt firewall policies built around your specific business requirements — regex-based pattern matching, domain-specific block lists, response filtering rules, or any other criteria your use case demands. This goes beyond the default policy templates available out of the box. See default policy types or reach out to your AccuKnox representative to discuss a custom setup.

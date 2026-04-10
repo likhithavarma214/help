@@ -1,5 +1,6 @@
 ---
 title: "Miscellaneous"
+description: "Additional knoxctl commands including VM management with kvmservice for onboarding, offboarding, and managing virtual machines in the kvms control plane."
 weight: 6
 summary: "The Miscellaneous section encompasses various additional and assorted commands or functionalities in knoxctl, providing supplementary tools and options for specialized or less common tasks in Kubernetes management."
 ---

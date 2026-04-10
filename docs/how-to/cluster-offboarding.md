@@ -1,6 +1,6 @@
 ---
 title: Cluster Offboarding
-description: Instructions for offboarding a cluster from AccuKnox SaaS, ensuring a clean and secure removal process.. Follow this step by step guide.
+description: Instructions for offboarding a cluster from AccuKnox SaaS, ensuring a clean and secure removal process. Follow this step-by-step guide.
 ---
 
 # Cluster Offboarding
@@ -41,7 +41,7 @@ namespace "agents" deleted
 
 ## Cluster Deletion
 
-**Step 1**: Login to AccuKnox SaaS and Go to Manage Cluster under Settings
+**Step 1**: Log in to AccuKnox SaaS and navigate to **Manage Cluster** under Settings.
 
 ![Cluster Offboarding](images/cluster-offboarding/image2.png)
 

@@ -1,3 +1,8 @@
+---
+title: SonarQube and Jenkins Integration
+description: Integrate SonarQube with Jenkins and AccuKnox for static application security testing (SAST) with centralized findings and analysis.
+---
+
 # SonarQube and Jenkins Integration
 
 This document provides instructions for integrating SonarQube with Jenkins and AccuKnox. Refer to [this documentation](https://docs.sonarsource.com/sonarqube-server/10.6/analyzing-source-code/ci-integration/jenkins-integration/global-setup/) for SonarQube <> Jenkins integration.

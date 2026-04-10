@@ -31,17 +31,17 @@ This guide outlines how to onboard and use SBOMs in AccuKnox:
 - **SBOM Generation:** Generate and upload SBOMs for container images to support supply chain security and compliance requirements.
 - **Severity-Based Enforcement:** Fail pipelines or block deployments based on configurable severity thresholds (e.g., HIGH, CRITICAL).
 
-![alt text](1.png)
+![GitHub Actions SBOM workflow overview](1.png)
 
 ## Step-by-Step Guide
 
 ### Step 1: Create SBOM Project in AccuKnox UI
 
 1. Navigate to **SBOM → Projects**.
-![alt text](2.png)
+![Navigate to SBOM Projects in AccuKnox UI](2.png)
 
 2. Click on **Add Project**.
-![alt text](3.png)
+![Add Project button in SBOM Projects page](3.png)
 
 3. Enter the project name (must match the `project_name` in your workflow file), set the classifier (e.g., Container), add a description and tags, then click **CREATE**.
 
@@ -86,7 +86,7 @@ jobs:
 ```
 {% endraw %}
 
-![alt text](4.png)
+![GitHub Actions workflow YAML configuration](4.png)
 
 > **Note:** The `project_name` in the workflow file must match the SBOM project name in AccuKnox Console to automatically map findings from container scan results to SBOM.
 
@@ -94,15 +94,15 @@ jobs:
 
 Push changes or create a pull request to run the workflow.
 
-![alt text](5.png)
+![GitHub Actions workflow triggered on push](5.png)
 
 ### Step 4: Review Results in AccuKnox UI
 
 1. Navigate to **Findings → Issues Page** for container image findings.
-![alt text](6.png)
+![Findings Issues page showing container scan results](6.png)
 
 2. Go to **SBOM → Projects → [Your Project Name]** to view SBOM results and comparisons.
-![alt text](7.png)
+![SBOM Projects page showing scan results and comparisons](7.png)
 
 ---
 

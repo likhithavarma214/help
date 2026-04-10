@@ -114,5 +114,5 @@ While Kubernetes RBAC provides powerful access management capabilities, it can b
 By leveraging these features, administrators can effectively manage relationships between key entities, monitor configuration changes, and ensure a more secure Kubernetes environment, all while reducing the complexity typically associated with RBAC management.
 
 
-!!!info
+!!! info
     **For more details, refer [AccuKnox KIEM Blog](https://www.accuknox.com/blog/kubernetes-identity-entitlement-management)**

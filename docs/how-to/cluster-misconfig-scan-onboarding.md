@@ -6,7 +6,7 @@ description: AccuKnox helps detect and fix security misconfigurations in Kuberne
 # Onboard Cluster for Misconfiguration Scanning
 This guide outlines the steps for onboarding a cluster to AccuKnox SaaS for scanning cluster misconfigurations.
 
-**Step 1:** For onboarding a cluster and for scanning for misconfigurations you need to create a token first. For creating follow these steps:
+**Step 1:** To onboard a cluster and scan for misconfigurations, you first need to create a token. Follow these steps:
 
 Go to `Settings > Tokens` and click on the create button.
 Give your token a name and click on generate button.
@@ -19,11 +19,11 @@ Give your token a name and click on generate button.
 
 **Step 3:** Now go to `Settings > Manage Clusters`, click on onboard now button or select an existing cluster.
 
-![alt text](./images/cluster-onboarding/image-1.png)
+![Navigate to Manage Clusters in AccuKnox Settings](./images/cluster-onboarding/image-1.png)
 
 **Step 4:** Give your cluster a name. Under the Jobs section **select Cluster Misconfiguration**. Select a label and paste your token. You can also change the schedule as per your requirement. Then next scan will happen based on the schedule. Scroll down and copy the helm command and run it inside a terminal. Then click on Finish button.
 
-![alt text](./images/cluster-onboarding/image-2.png)
+![AccuKnox agent installation toggles and generated onboarding command](./images/cluster-onboarding/image-2.png)
 
 **Step 5:** Here's an example of how the command might look after selecting the Cluster Misconfiguration job. **Note that this is just an example; your actual command may vary based on your selections and join tokens so please copy it directly from the UI**:
 

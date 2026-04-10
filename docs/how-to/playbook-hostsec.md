@@ -1,4 +1,5 @@
 ---
+title: Host Security Playbook
 description: Host security playbook outlining how to secure host environments and enforce policies using AccuKnox’s zero trust CNAPP capabilities.
 hide:
   - toc

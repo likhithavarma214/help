@@ -1,3 +1,8 @@
+---
+title: Deploying API Security Proxy in Kubernetes
+description: Deploy the AccuKnox API Security proxy in Kubernetes using SentryFlow to monitor API traffic for observability and security insights.
+---
+
 # Deploying API Security Proxy in K8s
 
 <!-- {{ external_markdown('https://raw.githubusercontent.com/5GSEC/SentryFlow/refs/heads/main/docs/getting_started.md') }} -->

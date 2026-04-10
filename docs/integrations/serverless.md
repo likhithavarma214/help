@@ -39,4 +39,4 @@ To enable Serverless scanning integrations in the AccuKnox dashboard:
 
 **Settings > Integrations > IaC Configurations > Set Framework Type to Serverless**
 
-![alt text](./images/serverless-ui.png)
+![Serverless IaC configuration setting in AccuKnox dashboard](./images/serverless-ui.png)

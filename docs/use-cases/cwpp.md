@@ -133,5 +133,5 @@ CWPP is a Workload-centric security solution protecting server workloads across 
 - Zero-day attack mitigation
 
 
-!!!info
+!!! info
     For more information on our **CWPP** offerings, visit the [**AccuKnox CWPP Page**](https://www.accuknox.com/products/cwpp "https://www.accuknox.com/products/cwpp").

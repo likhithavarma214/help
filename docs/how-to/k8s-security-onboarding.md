@@ -1,4 +1,43 @@
+---
+title: Kubernetes Security Onboarding
+description: Overview of Kubernetes security onboarding with AccuKnox, covering supported cluster types, runtime security requirements, and available security features.
+hide:
+  - toc
+---
+
+<style>
+.nt-card .nt-card-image{ color: #005BFF; }
+.nt-card-title { text-align: -webkit-center; }
+</style>
+
 # Kubernetes Security Onboarding
+
+AccuKnox supports Kubernetes security across managed and on-prem clusters. Select a guide below to get started.
+
+::cards:: cols=3
+
+- title: Runtime Security Onboarding
+  url: /how-to/cluster-onboarding/
+  image: ./icons/workload.svg
+- title: Onboarding with Access Keys
+  url: /how-to/cluster-onboarding-access-keys/
+  image: ./icons/access-keys.svg
+- title: Misconfiguration Scan
+  url: /how-to/cluster-misconfig-scan-onboarding/
+  image: ./icons/cloud-account.svg
+- title: CIS Benchmarking
+  url: /how-to/cis-benchmarking/
+  image: ./icons/compliance.svg
+- title: Runtime Prerequisites
+  url: /getting-started/cwpp-prereq/
+  image: ./icons/CWPP.svg
+- title: Cluster Offboarding
+  url: /how-to/cluster-offboarding/
+  image: ./icons/devsecops.svg
+
+::/cards::
+
+---
 
 ## Features Supported for Kubernetes
 

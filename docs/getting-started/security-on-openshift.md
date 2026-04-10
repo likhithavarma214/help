@@ -1,6 +1,6 @@
 ---
 title: Runtime Security Deployment for Openshift
-description: Guide to securing PHP MySQL web applications using AccuKnox CWPP security capabilities to prevent vulnerabilities and attacks.
+description: Guide to deploying KubeArmor runtime security enforcement on OpenShift clusters, including operator installation and Elasticsearch integration.
 ---
 
 # Runtime Security Deployment for Openshift

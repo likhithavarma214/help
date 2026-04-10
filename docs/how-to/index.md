@@ -1,8 +1,11 @@
 ---
+title: Getting Started
 description: Introduction to the AccuKnox zero trust CNAPP framework, providing an overview of core security features and architecture.
 hide:
   - toc
 ---
+
+# Getting Started
 
 <style>
     .nt-card-title {

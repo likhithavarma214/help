@@ -30,7 +30,7 @@ Users can view the real-time alerts in form of logs and telemetries.
 
 *2. An active Splunk Deployment and Access to the same.*
 
-> *To depoy Splunk on Kubernetes Cluster follow <https://splunk.github.io/splunk-operator/>*  *and for Linux follow <https://docs.splunk.com/Documentation/Splunk/9.0.1/Installation/InstallonLinux>*
+> *To deploy Splunk on a Kubernetes Cluster, follow <https://splunk.github.io/splunk-operator/>*  *and for Linux follow <https://docs.splunk.com/Documentation/Splunk/9.0.1/Installation/InstallonLinux>*
 
 ### Where to install it?
 
@@ -73,7 +73,7 @@ Splunk App can be installed on Splunk Enterprise Deployment done on K8s or VM.
 
 1. *If Dashboards shows no data, you need to configure the HEC on Splunk and Forward the data first, check below how to configure and [create HEC](https://docs.splunk.com/Documentation/Splunk/9.0.1/Data/UsetheHTTPEventCollector) and [forward the data]().*
 
-2. *If data is not being pushed, Login to Splunk > Setting > Data Input > Select HTTP Event Collector > Global Settings > Disable SSL if Enabled by unchecking the box.*
+2. *If data is not being pushed, log in to Splunk > Setting > Data Input > Select HTTP Event Collector > Global Settings > Disable SSL if Enabled by unchecking the box.*
 
 ## Option 2: Install the App from SplunkBase
 
@@ -83,7 +83,7 @@ Install the AccuKnox App by downloading it from the App homepage.
 
 ## Option 3: Install from GitHub
 
-This App is available on [SplunkBase](https://apps.splunk.com/apps/id/SplunkforAccuKnox "https://apps.splunk.com/apps/id/SplunkforAccuKnox") and [Github](https://github.com/accuknox/splunk "https://github.com/accuknox/splunk"). Optionally, you can clone the GitHub repository to install the App. Please feel free to submit contributions to the App using pull requests on GitHub.
+This App is available on [SplunkBase](https://apps.splunk.com/apps/id/SplunkforAccuKnox "https://apps.splunk.com/apps/id/SplunkforAccuKnox") and [GitHub](https://github.com/accuknox/splunk "https://github.com/accuknox/splunk"). Optionally, you can clone the GitHub repository to install the App. Feel free to submit contributions to the App using pull requests on GitHub.
 
 1. Locate the Splunk Deployment done in your environment.
 
@@ -109,7 +109,7 @@ git clone https://github.com/accuknox/splunk.git AccuKnox
 AccuKnox can forward the data to Splunk in two ways:
 
 1. From feeder service running on client cluster
-2. From SAAS platform
+2. From SaaS platform
 
 ## **Forwarding Events to Splunk from Feeder**
 
@@ -177,7 +177,7 @@ kubectl set env deploy/feeder-service SPLUNK_FEEDER_ENABLED="true" -n accuknox-a
 
 ***Note***: *Likewise other configuration parameters can be updated in Runtime.*
 
-## From SAAS, Channel Integration
+## From SaaS, Channel Integration
 
 ### Integration of Splunk
 
@@ -221,7 +221,7 @@ Set up Splunk HTTP Event Collector (HEC) to view alert notifications from AccuKn
 
 ## **Managing what type of data can be sent to Splunk?**
 
-From AccuKnox we can manage the type of data forwardered to integration using triggers.
+From AccuKnox we can manage the type of data forwarded to integration using triggers.
 
 ### **How to create a new trigger?**
 
@@ -241,7 +241,7 @@ From AccuKnox we can manage the type of data forwardered to integration using tr
 
 - **Notification channel:** Choose the notification channel that should receive the alerts.
 
-   Note: Before selecting the notification channel, you should complete the  channel integration for this channel. Review the Channel Integration for more context.        [Channel Integration Guide](/saas/slack/)
+   Note: Before selecting the notification channel, you should complete the channel integration for this channel. Review the Channel Integration for more context.        [Channel Integration Guide](/saas/slack/)
 
 3. Click `Save` button to store the trigger in database.
 

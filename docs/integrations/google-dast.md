@@ -126,7 +126,7 @@ To fix the Cross-Domain Misconfiguration, follow the instructions in the Solutio
 
 **Step 6**: Review the Updated Results
 
-- After fixing the vulnerability, please rerun the cloud build workflow.
+- After fixing the vulnerability, rerun the cloud build workflow.
 
 - Once the workflow completes, navigate to the AccuKnox SaaS dashboard.
 

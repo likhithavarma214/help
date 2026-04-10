@@ -9,23 +9,7 @@ AccuKnox's Cloud-Native Application Protection Platform (CNAPP) offers a unified
 
 ## Core Components
 
-### Control Plane Architecture
-
-- **Microservices**:
-    - _Divy_: Handles API requests.
-    - _Celery_: Manages asynchronous tasks.
-    - _Kueue_: Schedules Kubernetes-native jobs.
-- **Parser Jobs**: Process asset and findings data, updating databases accordingly.
-- **Alerts & Telemetry**: Ingested via RabbitMQ, processed for real-time insights.
-- **Secure Onboarding**: Utilizes SPIFFE-based control plane for cluster onboarding.
-- **Storage/Databases**:
-    - _RDS_: Stores CSPM, KSPM, and ASPM data.
-    - _MongoDB_: Handles streaming telemetry.
-    - _Neo4j_: Manages metadata for KIEM.
-- **Integrations**: Interfaces with SIEM tools (e.g., Splunk, Rsyslog) and ticketing systems (e.g., JIRA, Slack).
-
-
-## Control Plane Architecture
+### Control Plane
 
 ![](./images/deep-arch/control-plane-arch.png)
 
@@ -65,7 +49,7 @@ AccuKnox's Cloud-Native Application Protection Platform (CNAPP) offers a unified
 - No reliance on AWS managed services
 - Designed for high-security & compliance environments
 
-[Deployment Details →](./images/deep-arch/https://help.accuknox.com/getting-started/deployment-models/)
+[Deployment Models →](/getting-started/deployment-models/)
 
 ## Scaling Considerations
 
@@ -146,7 +130,7 @@ Supports over 30 regulatory standards, including:
 - [Telemetry Logs](https://help.accuknox.com/integrations/telemetry-logs/)
 - [On-Prem Installation Guide](https://help.accuknox.com/getting-started/on-prem-installation-guide/)
 
-!!!info NOTE
+!!! info "Note"
     AccuKnox offers rapid protection for Kubernetes and other cloud workloads using Kernel Native Primitives like AppArmor, SELinux, and eBPF. For assistance in planning your cloud security strategy, feel free to reach out.
 
 [SCHEDULE DEMO](https://www.accuknox.com/contact-us){ .md-button .md-button--primary }

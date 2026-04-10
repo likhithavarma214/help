@@ -63,7 +63,7 @@ Select the infrastructure to run the scan and click on **continue**
 
 ![image-20241115-132027.png](./images/harness-dast/9.png)
 
-**Step 3:** Setup the scanner
+**Step 3:** Set up the scanner
 
 Switch to YAML view and paste the below snippet at the end:
 

@@ -37,22 +37,22 @@ The first layer of isolation manages how users access the platform. AccuKnox sol
 !!! example "Use Case: MSSP Operations"
     An MSSP administrator can manage hundreds of customer tenants from a single pane of glass, switching contexts seamlessly while maintaining strict permission boundaries between customer data.
 
-![alt text](image-3.png)
+![MSSP tenant isolation showing user access and permission boundaries](image-3.png)
 
-![alt text](image-4.png)
+![Multi-tenant user permission architecture in AccuKnox](image-4.png)
 
 ### Cross-Tenant & Cross-Group Access
 
 * **One User, Multiple Tenants:** A single user (e.g., an MSSP Admin or a CISO) can be part of multiple tenants. Permissions are context-aware, meaning a user can be an `Admin` in *Tenant A* but only a `Viewer` in *Tenant B*.
 * **Granular RBAC:** Access can be restricted not just by tenant, but by specific resource groups (e.g., "DevOps Team" only sees assets related to their specific repo).
 
-![alt text](image.png)
+![Cross-tenant and granular RBAC configuration in AccuKnox](image.png)
 
 !!! info "FAQ"
     Q: Can MSSP users access end customer tenant accounts?
     A: Yes. AccuKnox fully supports MSSP users having viewer/editor access to end customer tenants, with customer permission. This is a critical requirement for MSSP models, and our platform is designed to accommodate it securely and seamlessly.
 
-![alt text](image-1.png)
+![MSSP user accessing end customer tenant with context-aware permissions](image-1.png)
 
 ## Layer 2: Compute Isolation & Job Execution
 
@@ -91,7 +91,7 @@ Not every tenant needs every feature. For example, a customer using AccuKnox sol
 !!! example "Use Case: Runtime Security Only"
     For a customer utilizing AccuKnox exclusively for Runtime Security, the dashboard is stripped of all non-relevant widgets, and the navigation bar is streamlined, providing a clean, purpose-built experience.
 
-![alt text](image-2.png)
+![Dynamic navigation and dashboard for a Runtime Security-only tenant](image-2.png)
 
 ## Benefits & Deployment Flexibility
 

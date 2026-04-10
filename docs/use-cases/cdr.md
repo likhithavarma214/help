@@ -25,18 +25,13 @@ Cloud infrastructure is dynamic. Despite rigorous provisioning checks, assets of
 
 **AccuKnox CDR** provides an automated, closed-loop security system. It ingests cloud logs (CloudTrail, Audit Logs), detects policy violations in real-time, and triggers immediate automated remediation workflows (via CI/CD or Webhooks) to revert the infrastructure to a secure state.
 
-![alt text](image-3.png)
-
-### High-Level Architecture
+![AccuKnox CDR architecture and data flow](image-3.png)
 
 The solution operates on an event-driven architecture connecting your Cloud Environment, the AccuKnox SIEM/CNAPP Control Plane, and your Remediation Pipelines.
 
 !!! info "Architecture Overview"
     The architecture captures cloud events, analyzes them against security policies, and triggers remediation actions.
-    ![alt text](image-4.png)
-
-
-## Integration Workflow
+    ![CDR architecture overview diagram](image-4.png)
 
 | Stage                | Description                                                                                   | Example/Method                |
 |----------------------|----------------------------------------------------------------------------------------------|-------------------------------|
@@ -59,9 +54,7 @@ Below are the three standard implementation scenarios for CDR.
 3. **Action:** The system triggers the **CDR-Remediation Workflow**
 4. **Remediation:** The workflow executes `remove-bucket-public-access`, reverting the bucket permissions to private
 
-![alt text](image-5.png)
-
-### Restricting Public IPs on VMs
+![Automated remediation of public S3 bucket access](image-5.png)
 
 !!! example "Goal"
     Ensure no Compute Engine/EC2 instance is reachable via a public IP address.
@@ -71,9 +64,7 @@ Below are the three standard implementation scenarios for CDR.
 3. **Action:** The **CDR-Remediation Workflow** is invoked
 4. **Remediation:** The workflow executes the `remove-public-ip` action, detaching the public network interface while keeping the instance running
 
-![alt text](image-12.png)
-
-### Geo-Fencing Access
+![Automated removal of public IP from VM](image-12.png)
 
 !!! example "Goal"
     Detect and notify if cloud resources are accessed from an unapproved region.
@@ -83,9 +74,7 @@ Below are the three standard implementation scenarios for CDR.
 3. **Action:** Unlike remediation, this triggers a **Notification Workflow**
 4. **Outcome:** The Security Team receives an immediate high-priority email/Slack alert to investigate potential credential compromise
 
-![alt text](image-13.png)
-
-## Prerequisites for Remediation
+![Geo-fencing access violation alert notification](image-13.png)
 
 To enable the "Response" component of CDR, ensure your remediation pipeline (CI/CD) has the necessary permissions.
 
@@ -122,4 +111,4 @@ Track the effectiveness of your policies in the **Alerts Dashboard**.
 3. Locate the specific alert, you can search the alerts for matching string (e.g., "GCP Storage Bucket Open to Public")
 4. Check the status to confirm if the **Auto-Remediation** action was successfully triggered and the issue is resolved.
 
-![alt text](image-19.png)
+![AccuKnox CDR alert status for auto-remediation](image-19.png)

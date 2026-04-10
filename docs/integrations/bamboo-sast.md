@@ -129,13 +129,13 @@ In your Bamboo build plan, add a new **Script Task**. You can use the shell scri
 
 2. Navigate to **AccuKnox → Issues → Findings**, and select **OpenGrep Findings**.
 
-    ![alt text](image-25.png)
+    ![SAST OpenGrep findings dashboard in AccuKnox](image-25.png)
 
     *SAST OpenGrep findings dashboard - Filtered by Label 'SPOC'*
 
 3. Click any finding to view more details.
 
-    ![alt text](image-26.png)
+    ![SAST finding detail view in AccuKnox](image-26.png)
 
 4. Use the **Create Ticket** button to raise a ticket directly from the finding.
 

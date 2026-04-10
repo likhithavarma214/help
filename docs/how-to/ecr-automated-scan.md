@@ -147,7 +147,7 @@ Navigate to **Repository Settings → Secrets and Variables → Actions** and ad
 !!! tip "Getting your AccuKnox credentials"
     Generate `ACCUKNOX_TOKEN` from your AccuKnox dashboard under **Settings → Access Tokens**. The `ACCUKNOX_LABEL_ID` is the ID of a label you have already created in AccuKnox.
 
-![alt text](image-28.png)
+![AccuKnox Settings showing Access Tokens and Labels for ECR pipeline configuration](image-28.png)
 
 ## Test the Setup
 
@@ -176,4 +176,4 @@ The GitHub Actions workflow triggers automatically on push. Once the run complet
 !!! note
     The `--softfail` flag allows the workflow to finish with a success status even when vulnerabilities are found. Remove it if you want the pipeline to fail hard on any scan findings.
 
-![alt text](image-30.png)
+![ECR automated scan results displayed in AccuKnox dashboard](image-30.png)

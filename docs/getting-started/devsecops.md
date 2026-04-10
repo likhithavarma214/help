@@ -3,6 +3,8 @@ title: DevSecOps
 description: Integrate AccuKnox with CI pipeline and perform the scans and show the reports in the SaaS Dashboard.
 ---
 
+# DevSecOps
+
 ## Overview
 
 AccuKnox integrates seamlessly into your CI/CD pipeline to provide robust, agentless scanning capabilities, supporting a **Shift-Left Security** approach. By embedding security checks early in the software development lifecycle, AccuKnox enables developers to identify and remediate vulnerabilities, misconfigurations, and other security issues directly within their development tools and pipelines. The agentless scans run efficiently without requiring additional installations and can be configured to break pipelines when critical vulnerabilities are detected, ensuring that insecure code does not progress further. This proactive approach reduces the risks and costs associated with addressing issues late in the process while fostering secure, agile development.

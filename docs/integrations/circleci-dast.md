@@ -1,6 +1,6 @@
 ---
-title:
-description:
+title: DAST Scanning with AccuKnox CircleCI Plugin
+description: Integrate Dynamic Application Security Testing (DAST) into your CircleCI pipeline using the AccuKnox plugin to identify application-layer vulnerabilities before production.
 ---
 
 # DAST Scanning Integration using AccuKnox CircleCI Plugin

@@ -1,4 +1,5 @@
 ---
+title: Azure Marketplace Installation Guide
 description: Step-by-step guide to installing AccuKnox from Azure Marketplace to enable zero trust CNAPP and strengthen cloud security with automated protection.
 ---
 
@@ -69,7 +70,7 @@ The following steps cater to users who:
 
 **Step 11:** At this juncture, we strongly recommend scheduling a [DEMO](https://www.accuknox.com/demo) with AccuKnox to assist the customer with the onboarding steps and gain a deeper understanding of our features.
 
-**Step 12:** Shortly after we configure a tenant, you will recieve an invitation to access the SaaS platform and leverage its security features.
+**Step 12:** Shortly after we configure a tenant, you will receive an invitation to access the SaaS platform and leverage its security features.
 
 !!! info "NOTE"
     The marketplace offers a free trial subscription for a month, which will be revoked after a month. Users can choose to continue using the platform with a paid subscription or schedule a demo before the end of the month.

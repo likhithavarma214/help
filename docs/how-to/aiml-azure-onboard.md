@@ -5,14 +5,14 @@ description: Step-by-step instructions for onboarding an Azure cloud account and
 
 # Azure AI/ML Cloud Onboarding
 
-In this section we can find the steps to onboard an Azure cloud account to the AccuKnox SaaS platform
+In this section we can find the steps to onboard an Azure cloud account to the AccuKnox SaaS platform.
 
 !!! info "AI/ML Prerequisites for Azure Cloud Accounts"
     **Please review the [AI/ML Prerequisites for Azure](https://help.accuknox.com/how-to/cspm-prereq-azure/#aiml-security-prerequisites-for-azure-cloud-accounts) before proceeding with the onboarding process.**
 
 ## **Rapid Onboarding (via Azure)**
 
-For Azure Onboarding it is required to register an App and giving Security read access to that App from the Azure portal.
+For Azure Onboarding it is required to register an App and grant Security read access to that App from the Azure portal.
 
 **Step 1:** Go to your Azure Portal and search for *App registrations* and open it
 
@@ -26,7 +26,7 @@ For Azure Onboarding it is required to register an App and giving Security read 
 
 ![image](images/azure3.png)
 
-**Step 4:** Now your application is created,  save *Application ID* and *Directory ID* as they will be needed to for onboarding on AccuKnox Saas and then click on ‘Add a certificate or secret’
+**Step 4:** Now your application is created. Save the *Application ID* and *Directory ID* as they will be needed for onboarding on AccuKnox SaaS, then click on 'Add a certificate or secret'
 
 ![image](images/azure4.png)
 
@@ -34,7 +34,7 @@ For Azure Onboarding it is required to register an App and giving Security read 
 
 ![image](images/azure5.png)
 
-**Step 6:** Next, go to *API permissions* tab and click on 'Add  permission'
+**Step 6:** Next, go to *API permissions* tab and click on 'Add permission'
 
 ![image](images/azure5-0.png)
 
@@ -69,7 +69,7 @@ Create a custom role with the following actions:
 `Microsoft.MachineLearningServices/workspaces/batchEndpoints/score/action`
 
 It will look similar to this (use the above listed permissions):
-![alt text](https://learn.microsoft.com/en-us/azure/role-based-access-control/media/custom-roles-portal/json.png)
+![Azure custom role JSON editor view in Azure Portal](https://learn.microsoft.com/en-us/azure/role-based-access-control/media/custom-roles-portal/json.png)
 
 **Step 13:** Next, we need to apply the Reader role.
 ![image](https://i.ibb.co/bwNv5H2/image.png)
@@ -82,9 +82,9 @@ It will look similar to this (use the above listed permissions):
 
 ## **From AccuKnox SaaS UI**
 
-Configuring your Azure cloud account is complete, now we need to onboard the cloud account onto AccuKnox Saas Platform.
+Configuring your Azure cloud account is complete. Now we need to onboard the cloud account onto the AccuKnox SaaS Platform.
 
-**Step 1:** Go to settings→ Cloud Account and click on Add Account
+**Step 1:** Go to **Settings → Cloud Accounts** and click on **Add Account**
 
 ![image](images/azure12.png)
 

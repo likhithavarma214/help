@@ -1,4 +1,5 @@
 ---
+title: CWPP Playbook
 description: CWPP playbook covering how to secure containerized applications and cloud workloads using AccuKnox’s zero trust CNAPP framework.
 hide:
   - toc

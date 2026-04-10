@@ -1,3 +1,8 @@
+---
+title: Opengrep SAST Integration with Azure DevOps
+description: Integrate Opengrep SAST scanning into an Azure DevOps Pipeline and automatically forward results to AccuKnox for analysis and mitigation.
+---
+
 # Integrating Opengrep SAST with AccuKnox in Azure DevOps
 
 This guide shows how to integrate **Opengrep SAST scanning** into an **Azure DevOps Pipeline** and automatically forward results to **AccuKnox** for analysis and mitigation.

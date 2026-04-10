@@ -5,7 +5,7 @@ description: Generate summarized custom reports with details on risks and vulner
 
 # Summarized Custom Report
 
-AccuKnox's latest feature update provides new custom reporting feature capabilities that can help users get the reports customized as per their requirements.
+AccuKnox provides custom reporting capabilities that can help users get reports tailored to their requirements.
 
 !!! note
     For this feature to be enabled the customers need to inform the Support team(<support@accuknox.com>) regarding their requirements for custom reporting. Then the AccuKnox Support team can configure the report template from the backend. After which the users can generate an on-demand report or configure a scheduled report.
@@ -14,15 +14,15 @@ You can also read documentation on How to [Configure Custom Reports](https://hel
 
 ## Summary Report
 
-AccuKnox Summary report can give an overview of the findings across various aspects like the code,cloud, cluster,container related findings. It can give a summarized view of the findings and actionable items that the users need to give more attention to improve their security posture. Here are some of the widgets that can be present in the summary report.
+AccuKnox Summary report can give an overview of findings across code, cloud, cluster, and container-related findings. It can give a summarized view of the findings and actionable items that the users need to give more attention to improve their security posture. Here are some of the widgets that can be present in the summary report.
 
 ### New Assets Discovered
 
-This widget provides the no. of New assets discovered across your code repos, cloud accounts, clusters/vms and container images that are onboarded into the AccuKnox SaaS in the defined period.
+This widget provides the number of new assets discovered across your code repos, cloud accounts, clusters/VMs, and container images onboarded into AccuKnox SaaS in the defined period.
 
 ### New Critical Findings
 
-This widget provides the no. of New critical findings across all the assets that are onboarded into the AccuKnox SaaS. This will be very helpful to identify the new critical findings that has been discovered in the latest scans. This can also be an immediate actionable items for the users.
+This widget provides the number of new critical findings across all assets onboarded into AccuKnox SaaS. It helps identify new critical findings discovered in the latest scans — an immediate action item for users.
 
 ### New Findings Discovered
 
@@ -30,19 +30,19 @@ This widget will provide the new findings that were discovered across all the la
 
 ![custom-report-summary-step](./images/summarized-custom-reports/1.png)
 
-### No. Of Findings Fixed
+### Number of Findings Fixed
 
-This widget will give a good impact for the security posture as it will showcase the no. of findings that were fixed by the team in the pre defined report period. This widget will help to improve the customer's security score.
+This widget shows the number of findings fixed by the team in the predefined report period, helping to showcase security posture improvement.
 
-### No. of Critical Findings unticketed
+### Number of Critical Findings Unticketed
 
-This widget will provide the information regarding the Critical findings that are not ticketed.This has to be looked upon by the users to create a ticket and assign it for remediation as these critical findings might affect their security posture.
+This widget shows critical findings that have not yet been ticketed. These should be prioritized for ticket creation and remediation, as they may affect your security posture.
 
 ### Trend Analysis
 
 #### New Assets discovered Weekly Trend
 
-This widget will provide the trend analysis across the no. of Assets that are getting discovered on a weekly basis from the onboarded cloud accounts,clusters, containers. This can give a clear picture of the growing asset count.
+This widget shows the weekly trend of new assets discovered from onboarded cloud accounts, clusters, and containers — providing a clear picture of growing asset count.
 
 ![custom-report-summary-step](./images/summarized-custom-reports/2.png)
 

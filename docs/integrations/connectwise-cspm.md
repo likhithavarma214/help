@@ -14,7 +14,7 @@ To set up this integration, you need to coordinate with your Connectwise adminis
 #### **a. Prerequisites**
 
 - You need a Service Desk URL , Company Id, Public key ,Private key & Client Id for this integration.
-- Go to this link :https://developer.connectwise.com/ClientID and fill the form to recieve your client id.
+- Go to this link :https://developer.connectwise.com/ClientID and fill the form to receive your client id.
 - To get public and private keys go to your Connectwise manage page → system → members → API keys and create new API keys , here you will receive a public and private key.
 
 #### **b. Steps to Integrate:**

@@ -14,13 +14,13 @@ AccuKnox provides a flexible way to selectively onboard your Azure environment. 
 ### 1. Onboarding Steps from AccuKnox Control Plane
 
 **Step 1:** Select Microsoft Azure and choose Organization Account, then click Next to begin onboarding the Azure org.
-![alt text](image-38.png)
+![Azure org onboarding - select cloud provider and account type](image-38.png)
 
 **Step 2:** Set the connection method (Terraform recommended), add a label and tag for the Azure organization, then proceed.
-![alt text](image-39.png)
+![Azure org onboarding - connection method and label configuration](image-39.png)
 
 **Step 3:** Enter Tenant ID, Management Group, and Subscription scope details to define what the Azure org connection will monitor.
-![alt text](image-40.png)
+![Azure org onboarding - tenant ID and subscription scope configuration](image-40.png)
 
 Choose the mode that best fits your organizational structure:
 
@@ -45,7 +45,7 @@ Choose the mode that best fits your organizational structure:
         Specify individual Subscription IDs that you want to **skip**, even if their Management Group is being onboarded.
 
 **Step 4:** Run the provided Terraform script to establish secure connectivity and complete Azure organization onboarding in the Control Plane.
-![alt text](image-41.png)
+![Azure org onboarding - generate and run Terraform script](image-41.png)
 
 ### 2. Generate & Run Terraform Script
 
@@ -77,7 +77,7 @@ After a successful run, the user will be able to authorize and view their accoun
 ---
 ## 2. Auto-fetch New Subscriptions
 
-Whenever a user creates a new subscription in their account, and comes under the onboarded management group, then Accuknox automatically fetches and scans that subscription. To ensure this works correctly, please follow the steps below:
+Whenever a user creates a new subscription in their account that falls under the onboarded management group, AccuKnox automatically fetches and scans that subscription. To ensure this works correctly, please follow the steps below:
 
 1.  Go to the Subscription in the Azure Portal and search for **Resource providers**.
    ![Resource Providers](image-35.png)

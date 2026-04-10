@@ -1,5 +1,6 @@
 ---
 title: "Container Image Scanner"
+description: "Scan container images running on a VM using knoxctl and submit vulnerability results directly to the AccuKnox SaaS platform."
 weight: 4
 summary: "Knoxctl can scan container images running on a perticular VM and submit the results to SaaS"
 hide:

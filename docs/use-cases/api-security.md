@@ -23,9 +23,7 @@ As soon as logs reach the control plane:
 
 Inventory updates continuously as logs arrive.
 
-![alt text](image-6.png)
-
-!!! info "Auto-Creation of Collections"
+![API endpoint inventory in AccuKnox control plane](image-6.png)
     A collection is automatically created based on the **Host endpoint** once the API agent receives logs. This provides immediate organization of your API endpoints without manual intervention.
 
 ## 3. Create API Collections
@@ -43,9 +41,7 @@ While collections are automatically created based on host endpoints, you can als
 
 Collections help organize endpoints before scanning and provide logical groupings for security analysis.
 
-![alt text](image-7.png)
-
-## 4. Upload Your OpenAPI Specification
+![API collections view in AccuKnox](image-7.png)
 
 API Specifications (OpenAPI/Swagger format) can be uploaded to define the expected API structure for comparison during scans.
 
@@ -56,9 +52,7 @@ API Specifications (OpenAPI/Swagger format) can be uploaded to define the expect
 3. Select your OpenAPI specification file (YAML or JSON).
 4. Upload the file.
 
-![alt text](image-8.png)
-
-### Method 2: During Scan Configuration
+![Upload OpenAPI specification in AccuKnox](image-8.png)
 
 1. Navigate to **API Security → Scans → New Scan**.
 2. During the scan setup, you'll have the option to upload your specification.
@@ -75,15 +69,11 @@ API Specifications (OpenAPI/Swagger format) can be uploaded to define the expect
 3. Choose the inventory or a collection.
 4. Run the scan.
 
-![alt text](image-9.png)
-
-The scan compares runtime traffic with your specification.
+![Configure and run API scan in AccuKnox](image-9.png) with your specification.
 
 ## 6. Review Findings
 
-![alt text](image-10.png)
-
-AccuKnox displays four types of findings:
+![API scan findings overview in AccuKnox](image-10.png)
 
 | Finding Type   | Description                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------|
@@ -94,9 +84,7 @@ AccuKnox displays four types of findings:
 
 Each finding includes request, response, and occurrence details.
 
-![alt text](image-11.png)
-
-## 7. Rate Limiting Granularity
+![Detailed API finding with request and response data](image-11.png)
 
 ??? note "Supported Rate Limiting Scopes"
     AccuKnox enforces limits via the `RateLimitPolicy` custom resource, offering three levels of granularity:

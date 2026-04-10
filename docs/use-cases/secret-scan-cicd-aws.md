@@ -1,3 +1,8 @@
+---
+title: Preventing AWS Key Leaks with Secret Scanning in CI/CD
+description: Integrate AccuKnox Secret Scanning into GitHub Actions to proactively catch AWS credentials and secrets before they leak in your CI/CD pipeline.
+---
+
 # How to Prevent AWS Key Leaks: Secret Scanning in CI/CD Pipeline
 
 Exposing credentials in public repositories is not a theoretical risk --- it causes real financial damage.

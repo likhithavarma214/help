@@ -30,7 +30,7 @@ Follow these steps to configure a scan for your LLM models.
 3. Select **LLM-Static-Scan** from the available options.
 4. Choose your platform: **Custom Model**, **Ollama Model**, or **OpenAI Model** depending on LLM type.
 
-![alt text](image-11.png)
+![Select LLM Static Scan and platform](image-11.png)
 
 ### Step 2: Configure Repository Details
 
@@ -61,7 +61,7 @@ Enter the required credentials and repository information.
                 ...
             ]
             ```
-        ![alt text](image-12.png)
+        ![LLM scan configuration for Anthropic models with scan categories and prompts](image-12.png)
 
     === "Ollama Models"
 
@@ -71,7 +71,7 @@ Enter the required credentials and repository information.
         | **Scan Category**         | Select the list of categories to scan on the model. This is based on predefined categories. |
         | **Pre-defined Prompts**| Choose **Scan with Default Prompts** or **Upload Custom Prompts File**. |
 
-        ![alt text](image-13.png)
+        ![LLM scan configuration for Ollama models](image-13.png)
 
     === "OpenAI Models"
 
@@ -82,13 +82,13 @@ Enter the required credentials and repository information.
         | **Model ID**           | Enter the ID of the model to be scanned. Example: `model-12345` |
         | **Pre-defined Prompts**| Choose **Scan with Default Prompts** or **Upload Custom Prompts File**. |
 
-        ![alt text](image-14.png)
+        ![LLM scan configuration for OpenAI models](image-14.png)
 
 ### Step 3: Add Identifiers
 
 Add **Labels** and **Tags** to categorize your LLM models. This helps in filtering and managing assets within the AccuKnox platform.
 
-![alt text](image-15.png)
+![Adding labels and tags to categorize LLM models in AccuKnox](image-15.png)
 
 ### Step 4: Validate Connection
 
@@ -105,9 +105,9 @@ Configure the **Schedule and Notification** settings:
 
 Click **Save** to create the LLM collector.
 
-![alt text](image-16.png)
+![LLM collector saved with schedule configuration in AccuKnox](image-16.png)
 
-![alt text](image-17.png)
+![LLM static scan collector created and listed in AccuKnox](image-17.png)
 
 ## Viewing Scan Results
 
@@ -116,7 +116,7 @@ Once the scan is triggered (either manually or via the schedule), AccuKnox will 
 1. Go to **Issues** or the **Collectors** page.
 2. Click on the **Findings** count for your LLM Static Scan collector.
 
-![alt text](image-18.png)
+![LLM scan findings count displayed on the Collectors page](image-18.png)
 
 You will be redirected to the **LLM Findings** page, which lists details such as:
 `Scan Category`, `Probe`, `Detector`, `Goal`, `Prompt`, `Output Description`, `Risk Factor`, `Detector Safety Score`, `Category Safety Score`, `Compliance Name`, `AVID`
@@ -127,12 +127,12 @@ You will be redirected to the **LLM Findings** page, which lists details such as
 
 You can group findings by different parameters such as `Asset Type`, `Label`, `Vulnerability Name`, `Location`, etc. Use the **Group By** dropdown to select your preferred grouping. This helps in organizing and prioritizing vulnerabilities effectively. The grouped view provides a consolidated look at similar issues, making it easier to assess the overall security posture of your LLM assets and can easily be exported for reporting purposes.
 
-![alt text](image-23.png)
+![LLM scan findings grouped by vulnerability parameter](image-23.png)
 
 ### Ask AI for Remediation
 
 Click on the **Ask AI** button in the detailed pane to get AI-generated remediation steps for the identified issue. This feature leverages advanced LLM capabilities to provide actionable insights based on the specific vulnerability detected.
-![alt text](image-22.png)
+![AI-generated remediation steps for an LLM scan finding](image-22.png)
 
 ### Detailed View of LLM Scan Findings
 
@@ -143,10 +143,10 @@ Click on any finding to open the **Detailed Pane**. Here you can:
 * **Create Ticket**: Integrate with your ticketing system (e.g., Jira) to track remediation.
 * **Ask AI**: Use the "Ask AI" button for assisted remediation advice.
 
-![alt text](image-19.png)
+![Detailed pane showing LLM scan finding description and ticket creation option](image-19.png)
 
 See the recommended **Solution**.
-![alt text](image-20.png)
+![Recommended solution for the LLM scan finding](image-20.png)
 
 Access **Output** to see what the LLM returned for the given prompt and the **Prompt** shows the exact input used for scanning along with Goal and AVID details.
-![alt text](image-21.png)
+![LLM scan finding output, prompt, and AVID details view](image-21.png)

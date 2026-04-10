@@ -80,4 +80,4 @@ The **API Security** module provides deep visibility and continuous risk assessm
 !!! tip "**Use Cases**"
     Proceed to the [API Security Use Case](../use-cases/api-security.md) to learn how to view your API inventory, create collections, upload OpenAPI specifications, and scan for security findings.
 
-![alt text](image-17.png)
+![AccuKnox API Security integration overview](image-17.png)

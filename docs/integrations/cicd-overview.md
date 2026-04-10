@@ -54,7 +54,8 @@ The CI/CD Support Matrix summarizes integration capabilities and security featur
 - title: CircleCI
   image: ./cicd-icons/circleci.png
   url: /integrations/circleci-overview/
-  ::/cards::
+
+::/cards::
 
 ![image](https://i.ibb.co/cSX9f6VR/image.png)
 

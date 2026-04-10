@@ -1,5 +1,7 @@
+---
 title: Asset Inventory
 description: AccuKnox CSPM scans cloud accounts to track assets like hosts, apps, and clusters, ensuring accurate and up-to-date inventory management.
+---
 
 # Asset Inventory Guide
 
