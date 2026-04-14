@@ -13,3 +13,4 @@ description: This guide provides technical support for the Accuknox CNAPP SaaS d
 </div>
 
 [DOWNLOAD TECHNICAL GUIDE](images/technical_support_guide.pdf){ .md-button .md-button--primary }
+[DOWNLOAD SLA & ESCALATION MATRIX](/resources/assets/SLA%20%26%20Escalation%20Matrix.pdf){ .md-button download }

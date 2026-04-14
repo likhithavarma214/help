@@ -30,3 +30,5 @@ AccuKnox has an expanded offering to cater to diverse deployment needs and prefe
 | **What Features are Supported?** | All | Except AI CoPilot (AskADA), everything else. |
 
 By offering these diverse deployment options, you can choose the model that best fits your operational needs and security requirements.
+
+[DOWNLOAD CONTROL PLANE ARCHITECTURE](/resources/assets/AccuKnox%20Control%20Plane%20Architecture%20Technical%20v3.4.pdf){ .md-button .md-button--primary download }

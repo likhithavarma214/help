@@ -45,6 +45,12 @@ hide:
 - title: Technical Guide
   image: ./icons/technical-guide.svg
   url: /resources/technical-support-guide/
+- title: SLA & Escalation Matrix
+  image: ./icons/technical-guide.svg
+  url: /resources/sla-escalation-matrix/
+- title: Control Plane Architecture
+  image: ./icons/user-guide.svg
+  url: /resources/control-plane-architecture/
 - title: Release Notes
   image: ./icons/release-notes.svg
   url: /getting-started/2.1-2.2-release/

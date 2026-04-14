@@ -5,6 +5,9 @@ description: Follow these steps to raise a Jira ITSM support ticket for resolvin
 
 By following these steps, you can quickly and effectively raise a Jira ITSM support ticket for major platform issues, ensuring that your problem is addressed promptly and efficiently.
 
+!!! info "SLA & Escalation Matrix"
+    Refer to the [SLA & Escalation Matrix](/resources/sla-escalation-matrix/) to understand response time commitments and escalation paths before raising a ticket.
+
 ## How to raise an AccuKnox support ticket?
 
 **Step 1:** Please click the following URL for raising the ticket: <https://accu-knox.atlassian.net/servicedesk/customer/portal/1>

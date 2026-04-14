@@ -119,3 +119,5 @@ The onboarding process for AccuKnox's on-prem security solution consists of four
 	* **Time:** ~1 hour.
 
 AccuKnox onprem deployment is based on Kubernetes native architecture.
+
+[DOWNLOAD CONTROL PLANE ARCHITECTURE](/resources/assets/AccuKnox%20Control%20Plane%20Architecture%20Technical%20v3.4.pdf){ .md-button .md-button--primary download }

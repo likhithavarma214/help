@@ -7,6 +7,9 @@ description: A concise and detailed overview of AccuKnox's CNAPP architecture, c
 
 AccuKnox's Cloud-Native Application Protection Platform (CNAPP) offers a unified **AppSec + CloudSec** solution, integrating modules like ASPM, CSPM, CWPP, KIEM, and GRC. This architecture ensures comprehensive security across the software development lifecycle.
 
+[DOWNLOAD CONTROL PLANE ARCHITECTURE](/resources/assets/AccuKnox%20Control%20Plane%20Architecture%20Technical%20v3.4.pdf){ .md-button .md-button--primary download }
+
+
 ## Core Components
 
 ### Control Plane
@@ -51,22 +54,26 @@ AccuKnox's Cloud-Native Application Protection Platform (CNAPP) offers a unified
 
 [Deployment Models →](/getting-started/deployment-models/)
 
-## Scaling Considerations
+## Scaling & High Availability
 
 ![](./images/deep-arch/scan-alert-flow.png)
 
-### Key Choke Points
+AccuKnox scales horizontally using native Kubernetes constructs — new nodes are added dynamically based on CPU, memory, and queue-depth thresholds. Most services are stateless, meaning any instance can serve any request and pods can be restarted without data loss.
 
-1. **Playbook Jobs**: One AWS account = 272 jobs across regions
-      - Kueue ensures tenant-aware resource allocation
-2. **Parser Jobs**: Celery tasks parse reports & update DB
-3. **Telemetry Overload**: Managed via thresholds & redirection to SIEM
+**Noisy Neighbor Isolation**
 
-### Noisy Neighbor Mitigation
+- Per-tenant Kubernetes namespaces with resource quotas prevent a single tenant from consuming disproportionate resources
+- [Kueue](https://kueue.sigs.k8s.io/) provides fair scheduling for batch workloads (playbooks, scans, parsing) across tenants
+- RabbitMQ telemetry overload is managed via thresholds with offload to SIEM
 
-- Celery replicated per tenant (currently manual)
-- Kueue isolates playbook jobs per tenant
-- RMQ overload handled by telemetry offload
+**High Availability**
+
+The AccuKnox control plane is deployed across multiple Availability Zones (AZs):
+
+- Kubernetes control plane nodes are spread across AZs (odd-number quorum for etcd)
+- Stateful services (databases, object storage, message bus) use multi-AZ replication
+- Pod anti-affinity rules and topology spread constraints prevent co-location failures
+- In case of an AZ failure, ingress shifts traffic automatically and pods are rescheduled in remaining AZs
 
 ## Log & Data Storage
 
@@ -78,13 +85,7 @@ AccuKnox's Cloud-Native Application Protection Platform (CNAPP) offers a unified
 
 ![](./images/deep-arch/customer-data-flow.png)
 
-1. Playbook execution (on-prem or SaaS)
-2. Report generated (assets/findings JSON)
-3. Sent to control plane via Artifact API (token-based)
-4. Saved in S3 + Celery task triggered
-5. Celery pulls from S3 and parses
-6. DB + Graph updated
-7. UI fetches via Divy APIs
+Asset and findings data flows from customer environments to the AccuKnox control plane via token-authenticated APIs. Playbooks execute in the control plane (or customer environment for CDR), generate reports, and store results in S3 — where Celery tasks parse and update RDS, MongoDB, and Neo4j. The UI fetches all data via AccuKnox APIs. All data in transit is encrypted; no direct DB access is exposed externally.
 
 ## Rules Engine Architecture
 
@@ -122,6 +123,17 @@ Supports over 30 regulatory standards, including:
 
 - **General**: ISO 27001, PCI DSS, SOC2.
 - **Industry-Specific**: HIPAA, GDPR.
+
+## SLA Commitments
+
+| Objective | Commitment |
+|---|---|
+| **RTO** (Recovery Time Objective) | 6 hours — core platform restored after a major incident |
+| **RPO** (Recovery Point Objective) | 24 hours — maximum data loss in a catastrophic failure scenario |
+
+> Runtime enforcement on customer clusters continues to operate independently during any control plane recovery.
+
+[View full SLA & Escalation Matrix →](/resources/sla-escalation-matrix/)
 
 ## Additional Resources
 
