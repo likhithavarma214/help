@@ -93,3 +93,6 @@ The `Policy Enforcement Agent` applies runtime policies locally. The `Discovery 
 - [Container Security tooling comparison](https://accuknox.com/wp-content/uploads/Container_Runtime_Security_Tooling.pdf)
 - [AccuKnox Runtime Security Use-cases](https://help.accuknox.com/use-cases/cwpp/#cwpp-use-cases)
 - [AccuKnox Enterprise Guide](https://help.accuknox.com/how-to/administrators-guide/)
+- [AccuKnox Control Plane Architecture (PDF)](/resources/control-plane-architecture/)
+
+[DOWNLOAD CONTROL PLANE ARCHITECTURE](/resources/assets/AccuKnox%20Control%20Plane%20Architecture%20Technical%20v3.4.pdf){ .md-button .md-button--primary download }
