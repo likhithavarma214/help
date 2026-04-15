@@ -7,7 +7,7 @@ description: Guide to setting up and using the MCP Server for AccuKnox with AI t
 
 ![alt text](image-68.png)
 
-Query your cloud security data directly from AI tools (VS Code Copilot, Cursor, Claude Code, Gemini CLI) instead of logging into the dashboard. Get live answers about assets, findings, and compliance.
+Query your cloud security data directly from AI tools (VS Code Copilot, Cursor, Claude Code, Claude Desktop, Gemini CLI) instead of logging into the dashboard. Get live answers about assets, findings, and compliance.
 
 Hosted at **`mcp-server.accuknox.com/mcp`**. Read-only, no installation needed, token-authenticated. Each token is scoped to one tenant.
 
@@ -100,16 +100,43 @@ Select your AI tool below:
 
     In your project folder, create `.claude.json`:
 
-        ```
+    **Windows**
+
+        ```json
         {
           "mcpServers": {
             "accuknox": {
-              "type": "http",
-              "url": "https://mcp-server.accuknox.com/mcp",
-              "headers": {
-                "base_url": "https://cspm.demo.accuknox.com/",
-                "token": "your_token_here"
-              }
+              "command": "C:\\Program Files\\nodejs\\npx",
+              "args": [
+                "-y",
+                "mcp-remote",
+                "https://mcp-server.accuknox.com/mcp",
+                "--header",
+                "base_url: https://cspm.demo.accuknox.com/",
+                "--header",
+                "token: your_token_here"
+              ]
+            }
+          }
+        }
+        ```
+
+    **macOS / Linux**
+
+        ```json
+        {
+          "mcpServers": {
+            "accuknox": {
+              "command": "/usr/local/bin/npx",
+              "args": [
+                "-y",
+                "mcp-remote",
+                "https://mcp-server.accuknox.com/mcp",
+                "--header",
+                "base_url: https://cspm.demo.accuknox.com/",
+                "--header",
+                "token: your_token_here"
+              ]
             }
           }
         }
@@ -122,20 +149,50 @@ Select your AI tool below:
 === "Claude Desktop"
 
     Edit your Claude Desktop config file:
-        - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-        - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+
+    - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+    - **Linux:** `~/.config/Claude/claude_desktop_config.json`
+    - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
     Add the AccuKnox entry:
 
-        ```
+    **Windows**
+
+        ```json
         {
           "mcpServers": {
             "accuknox": {
-              "url": "https://mcp-server.accuknox.com/mcp",
-              "headers": {
-                "base_url": "https://cspm.demo.accuknox.com/",
-                "token": "your_token_here"
-              }
+              "command": "C:\\Program Files\\nodejs\\npx",
+              "args": [
+                "-y",
+                "mcp-remote",
+                "https://mcp-server.accuknox.com/mcp",
+                "--header",
+                "base_url: https://cspm.demo.accuknox.com/",
+                "--header",
+                "token: your_token_here"
+              ]
+            }
+          }
+        }
+        ```
+
+    **macOS / Linux**
+
+        ```json
+        {
+          "mcpServers": {
+            "accuknox": {
+              "command": "/usr/local/bin/npx",
+              "args": [
+                "-y",
+                "mcp-remote",
+                "https://mcp-server.accuknox.com/mcp",
+                "--header",
+                "base_url: https://cspm.demo.accuknox.com/",
+                "--header",
+                "token: your_token_here"
+              ]
             }
           }
         }
