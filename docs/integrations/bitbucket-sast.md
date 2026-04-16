@@ -62,7 +62,7 @@ pipelines:
     - step:
         name: AccuKnox SAST Scan
         script:
-          - pipe: accu-knox/scan:2.1.0
+          - pipe: accu-knox/scan:2.1.1
             variables:
               SCAN_TYPE: SQ_SAST
               SKIP_SONAR_SCAN: "false"

@@ -63,7 +63,7 @@ pipelines:
           - export IMAGE_NAME="bitbucket"
           - export TAG="test"
           - docker build -t $IMAGE_NAME:$TAG .
-          - pipe: accu-knox/scan:2.1.0
+          - pipe: accu-knox/scan:2.1.1
             variables:
               SCAN_TYPE: CONTAINER
               SOFT_FAIL: "true"
