@@ -57,7 +57,7 @@ pipelines:
     - step:
         name: AccuKnox Secret Scan
         script:
-          - pipe: accu-knox/scan:2.1.0
+          - pipe: accu-knox/scan:2.1.1
             variables:
               SCAN_TYPE: SECRET
               SOFT_FAIL: "true"

@@ -49,7 +49,7 @@ pipelines:
     - step:
         name: AccuKnox DAST Scan
         script:
-          - pipe: accu-knox/scan:2.1.0
+          - pipe: accu-knox/scan:2.1.1
             variables:
               SCAN_TYPE: DAST
               TARGET_URL: "http://testaspnet.vulnweb.com/login.aspx"
