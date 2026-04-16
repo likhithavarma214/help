@@ -605,4 +605,18 @@ nav:
     - "Glossary": "resources/glossary.md"
 
 
-  - "FAQs": "faqs.md"
+  - "FAQs":
+    - "Overview": "faqs.md"
+    - "General AccuKnox & CNAPP": "faqs/general.md"
+    - "CSPM": "faqs/cspm.md"
+    - "ASPM": "faqs/aspm.md"
+    - "Runtime Security (CWPP)": "faqs/runtime-security.md"
+    - "AI Security": "faqs/ai-security.md"
+    - "CDR": "faqs/cdr.md"
+    - "KSPM": "faqs/kspm.md"
+    - "Policy Management & Enforcement": "faqs/policy-management.md"
+    - "Compliance & Auditing": "faqs/compliance.md"
+    - "Deployment & Architecture": "faqs/deployment.md"
+    - "Pricing & Billing": "faqs/pricing.md"
+    - "Partnerships & Marketplace": "faqs/partnerships.md"
+    - "Roadmap": "faqs/roadmap.md"
