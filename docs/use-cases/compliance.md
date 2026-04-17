@@ -16,7 +16,7 @@ This is where AccuKnox’s CSPM shines. There are over 30 new compliance program
 
 ## View your compliance posture
 
-View a high-level overview of your compliance posture for each framework on the Cloud Asset Summary page.
+View a high-level overview of your compliance posture for each framework on the Compliance Summary page.
 
 As soon as user onboards the cloud account and scan is done, User can navigate to the Compliance Section in Nav Bar and see the list of all compliance programs against which scan were done.
 Each Compliance Program are divided into there Sub Controls and for each sub control user can see the percentage of compliance.

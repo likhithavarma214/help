@@ -21,7 +21,7 @@ hide:
 
 - title: SAST
   image: ./cicd-icons/opengrep-sast.svg
-  url: /integrations/bitbucket-opengrep-sast/
+  url: /integrations/opengrep-sast-bitbucket/
 - title: SAST (SonarQube)
   image: ./cicd-icons/sast.svg
   url: /integrations/bitbucket-sast/
