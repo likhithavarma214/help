@@ -336,7 +336,8 @@ nav:
           - "DAST" : "integrations/harness-dast.md"
         - "Jenkins":
           - "Overview": "integrations/jenkins-overview.md"
-          - "SAST": "integrations/jenkins-sast.md"
+          - "SAST SonarQube": "integrations/jenkins-sast.md"
+          - "SAST": "integrations/jenkins-sast-opengrep.md"
           - "Container Scan": "integrations/jenkins-container-scan.md"
           - "IaC Scan": "integrations/jenkins-iac-scan.md"
           - "DAST": "integrations/jenkins-dast.md"
