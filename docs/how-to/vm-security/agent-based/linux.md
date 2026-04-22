@@ -21,7 +21,7 @@ This guide provides step-by-step instructions to onboard Linux Virtual Machines 
 Run the following command to download and install the agent. Replace `<REDACTED>` with your actual Artifact API Token and `CHANGEME` with your desired label.
 
 ```bash
-curl https://accuknox-omni.s3.us-east-1.amazonaws.com/v0.1.2/agent-install.sh | \
+curl https://accuknox-omni.s3.us-east-1.amazonaws.com/latest/agent-install.sh | \
     OMNI_ARTIFACT_API_TOKEN="<REDACTED>" \
     bash -s - \
         --artifact-endpoint=https://cspm.accuknox.com/api/v1/artifact/ \
