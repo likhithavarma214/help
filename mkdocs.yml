@@ -230,7 +230,7 @@ nav:
         - "Azure Cloud VM Scan": "how-to/vm-security/agentless/azure-cloud-vm.md"
     - "Application Security (ASPM)":
       - "Overview": "how-to/aspm-overview.md"
-      - "Baseline vs Full Scan": "how-to/dast-baseline-vs-full.md"
+      - "DAST Scan Types": "how-to/dast-baseline-vs-full.md"
       - "DAST Unauthenticated Scan": "how-to/dast-scan-no-auth.md"
       - "DAST Authenticated Scan": "how-to/dast-authenticated-scans.md"
       - "DevSecOps" : "getting-started/devsecops.md"
@@ -590,6 +590,7 @@ nav:
     - "Release Notes":
           - "AccuKnox" :
             - "Overview": "getting-started/accuknox-release-notes.md"
+            - "v3.5": "getting-started/3.5-release.md"
             - "v3.4": "getting-started/3.4-release.md"
             - "v3.3": "getting-started/3.3-release.md"
             - "v3.2" : "getting-started/3.2-release.md"

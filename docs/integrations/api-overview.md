@@ -48,7 +48,7 @@ The **API Security** module provides deep visibility and continuous risk assessm
   description: Protect APIs exposed via Nginx Ingress Controller
 
 - title: F5
-  image: https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/F5_Networks_logo.svg/1200px-F5_Networks_logo.svg.png
+  image: https://logowik.com/content/uploads/images/f5-networks7669.jpg
   url: ../integrations/f5.md
   description: Secure APIs exposed via F5
 
