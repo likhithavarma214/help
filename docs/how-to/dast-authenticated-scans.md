@@ -104,7 +104,7 @@ Example: `https://ctflearn.com/dashboard`
 
 **Tags** *(Optional)* — Add any relevant tags.
 
-See the difference between Baseline and Full scan modes here: [Baseline vs Full Scan](https://help.accuknox.com/how-to/dast-baseline-vs-full/)
+See the difference between Baseline and Full scan modes here: [Baseline vs Full Scan](https://help.accuknox.com/how-to/dast-scan-types/)
 
 Here is an example of how it looks after you have added everything:
 
