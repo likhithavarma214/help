@@ -1,24 +1,41 @@
 ---
-title: DAST Baseline vs. Full Scan
-description: Understand the difference between AccuKnox DAST Baseline and Full scans — when to use passive-only health checks versus comprehensive active security audits.
+title: DAST Scan Types
+description: Understand all AccuKnox DAST scan types — Baseline, Standard, Extended, and Comprehensive — and when to use each for passive health checks, CI/CD gates, or full security audits.
 ---
 
-# DAST Baseline vs. Full Scan
+# DAST Scan Types
 
-AccuKnox provides two distinct modes for Dynamic Application Security Testing (DAST) to balance the need for speed with the depth of security coverage. Below is a breakdown of how these scans differ and when to use them.
+AccuKnox DAST uses an automation-driven scanning framework to perform dynamic application security testing. Four scan types are available, each controlling three core components: the Traditional Spider, the AJAX Spider, and the Active Scanner. Choose a scan type based on your development stage and the coverage depth you need.
+
+![DAST scan categories preview](image-42.png)
 
 ---
 
-## Overview of Differences
+## How Scanning Works
 
-| Feature             | Baseline Scan                           | Full Scan                                    |
-| ------------------- | --------------------------------------- | -------------------------------------------- |
-| **Primary Goal**    | Quick security "health check"           | Comprehensive security audit                 |
-| **Scan Mode**       | **Passive only** (Safe & non-intrusive) | **Active & Passive** (Thorough & aggressive) |
-| **Spider Duration** | Limited (Fixed time window)             | Unlimited (Comprehensive crawling)           |
-| **Estimated Time**  | **5 – 10 Minutes**                      | **30 – 60+ Minutes**                         |
-| **Risk to App**     | **None.** Safe for live production      | **High.** May impact data or stability       |
-| **Usage**           | Every build or daily CI/CD gates        | Weekly or pre-release deep-dives             |
+DAST scanning runs in three sequential phases:
+
+![alt text](./images/3e25f324-9f7c-49f8-b47b-0ab00a6c532c.png)
+
+!!! info ""
+    **Baseline** skips Phase 3 entirely. All other scan types run all three phases.
+
+---
+
+## Scan Type Comparison
+
+| Parameter | Baseline | Standard | Extended | Comprehensive |
+| --------- | -------- | -------- | -------- | ------------- |
+| **Spider maxDuration** | 10 min | 10 min | 10 min | 20 min |
+| **Spider maxChildren** | 50 | 30 | 50 | 50 |
+| **Spider maxDepth** | 5 | 5 | 5 | 5 |
+| **AJAX maxCrawlDepth** | 10 | 5 | 10 | 10 |
+| **AJAX maxDuration** | 10 min | 10 min | 10 min | 20 min |
+| **AJAX browsers** | 4 | 4 | 4 | 4 |
+| **Active Scan** | ❌ No | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Scan Duration** | N/A | 20 min | 60 min | 100 min |
+| **Policy** | N/A | Dev CICD | Dev Standard | Dev Full |
+| **Rule Duration** | N/A | Unlimited | Unlimited | Unlimited |
 
 ![Baseline vs Full Scan comparison](image-43.png)
 
@@ -26,85 +43,125 @@ AccuKnox provides two distinct modes for Dynamic Application Security Testing (D
 
 ## Baseline Scan
 
-The **Baseline Scan** is designed for high-frequency testing where speed and safety are paramount. It is a non-invasive, time-limited passive scan.
+The **Baseline Scan** is designed for high-frequency testing where speed and safety are paramount. It is a non-invasive, passive-only scan — both spiders run, but no attack payloads are ever sent.
 
-- **Mechanism:** It crawls the application using a spider for a fixed duration. It only analyzes the existing traffic and responses without sending malicious payloads.
-- **Vulnerability Focus:** Identifies "low-hanging fruit" and misconfigurations, such as missing security headers (CSP, X-Frame-Options), cookie security issues, and anti-CSRF token absence.
+- **Mechanism:** Crawls with both the Traditional Spider and AJAX Spider, then performs passive analysis only. No active attack payloads are sent.
+- **Vulnerability Focus:** Misconfigurations, missing security headers, information disclosure, and cookie security issues.
+- **Estimated Duration:** 2 – 5 minutes.
 
 !!! tip "Best Used For"
-    Frequent, fast checks within a CI/CD pipeline to ensure new builds don't introduce basic security regressions.
+    Every commit/PR in CI/CD, production scanning, and the first scan on a new target — anywhere speed and zero application risk are required.
 
 ??? abstract "Passive Security Baseline Audit Details"
-    This scan is designed to provide a rapid, non-intrusive security assessment of a web application. It identifies common security misconfigurations and missing best practices without performing active "attacks" or injecting payloads into the target system.
+    A rapid, non-intrusive scan that crawls the application with both spiders and performs passive analysis only — no attack payloads are sent. It checks for missing security headers (`Content-Security-Policy`, `X-Frame-Options`, `X-Content-Type-Options`), insecure cookie flags (`Secure`, `HttpOnly`, `SameSite`), information disclosure in headers or error messages, insecure form fields, and exposed stack traces. Rules are categorized by severity so warnings can be promoted to failures or suppressed as needed. Safe for production and optimized for CI/CD pipelines.
 
-    ### Key Scanning Phases
-    * **Link Discovery (Crawling)**
-      The engine explores the target application for a specified duration (defaulting to 1 minute) to map out all accessible URLs, scripts, and resources.
-    * **Passive Analysis**
-      While crawling, the engine monitors every request and response. it analyzes the headers, cookies, and HTML body to identify vulnerabilities.
-    * **Reporting Levels**
-      Rules are categorized by severity, allowing for the promotion of warnings to failures or the suppression of specific non-applicable alerts.
+## Standard Scan
 
-    ### What is Audited?
-    The scan exhaustively checks for "low-hanging fruit" and configuration issues.
+The **Standard Scan** runs both spiders with conservative limits, then performs an active scan using the **Dev CICD** policy.
 
-    1. **Security Headers** including `Content-Security-Policy`, `X-Frame-Options` (Clickjacking protection), and `X-Content-Type-Options`.
-    2. **Cookie Security** detection of missing `Secure`, `HttpOnly`, or `SameSite` flags on session cookies.
-    3. **Information Disclosure** of private IP addresses, sensitive file paths, or server version strings leaked in headers or error messages.
-    4. **Form Security** identification of insecure password fields or auto-complete settings on sensitive inputs.
-    5. **Application Errors** via detection of raw stack traces or internal server error details that could aid an attacker.
-
-    ### Characteristics
-    * **Non-Invasive** - Safe to run against production environments as it does not attempt to modify data or exploit flaws.
-    * **High Speed** - Optimized for CI/CD pipelines to provide immediate feedback on the security posture of new builds.
-
-## Full Scan
-
-The **Full Scan** is a deep-dive assessment meant for thorough testing in environments where performance impact is acceptable.
-
-- **Mechanism:** It runs a spider with no time limit to map the entire application, followed by a complete **Active Scan**. This actively "attacks" the target by sending harmful requests to probe for deep vulnerabilities.
-- **Vulnerability Focus:** Finds a much wider range of complex issues that require active payloads, such as **SQL Injection**, **Cross-Site Scripting (XSS)**, and Broken Access Control.
+- **Mechanism:** Both spiders run with tighter crawl limits to keep duration predictable, followed by a targeted active scan.
+- **Vulnerability Focus:** SQL injection, reflected XSS, path traversal, CSRF, plus all passive findings.
+- **Estimated Duration:** 15 – 30 minutes.
 
 !!! tip "Best Used For"
-    Scheduled deep audits (e.g., weekly) in staging or development environments before a major release.
+    Nightly/weekly CI/CD pipelines, pre-release gates in staging, and dev branch validation.
+
+---
+
+## Extended Scan
+
+The **Extended Scan** increases crawl depth for better endpoint coverage, then runs the **Dev Standard** policy for a 60-minute active scan.
+
+- **Mechanism:** Higher `maxChildren` (50) and AJAX `maxCrawlDepth` (10) ensure deeper discovery before the active scan begins.
+- **Vulnerability Focus:** Same vulnerability classes as Standard, but with significantly better endpoint coverage on complex applications.
+- **Estimated Duration:** 60 – 90 minutes.
+
+!!! tip "Best Used For"
+    Single-page applications (SPAs), complex JavaScript apps, deep admin panels, and biweekly assessments.
+
+---
+
+## Comprehensive Scan
+
+The **Comprehensive Scan** provides maximum coverage. The spider runs for 20 minutes and the active scan uses the **Dev Full** policy for up to 100 minutes.
+
+- **Mechanism:** Maximum spider duration and crawl depth, followed by the most thorough active scan policy available.
+- **Vulnerability Focus:** Edge-case vulnerabilities, timing-based attacks, and rarely accessed paths — in addition to all Standard/Extended findings.
+- **Estimated Duration:** 2 – 3 hours.
+
+!!! tip "Best Used For"
+    Quarterly audits, SOC 2/PCI compliance prep, pen test supplementation, and new application onboarding.
 
 ??? abstract "Advanced Active Penetration Testing Rules Details"
-    This scan represents a deep-dive security assessment. Unlike passive auditing, this engine actively interacts with the application by sending malicious payloads to discover exploitable vulnerabilities. It mimics the behavior of a real-world attacker to identify flaws in the application logic and backend.
+    A deep-dive assessment that actively sends malicious payloads to mimic a real-world attacker. It tests for injection flaws (SQL/NoSQL, OS Command, SSTI, XXE), client-side attacks (reflected and stored XSS, CSRF), broken access control (Path Traversal, RFI, SSRF), and infrastructure issues (Buffer Overflows, Insecure File Uploads, Cloud Metadata Leakage). Each input is tested with hundreds of payload variations to bypass WAF filters, and attack patterns are adapted to the detected technology stack (Java, PHP, .NET, etc.). Findings are ranked by severity to prioritize remediation. Sends active attack traffic — recommended for staging or development environments only.
 
-    ### Core Attack Categories
-    The engine utilizes a comprehensive library of rules to test for several vulnerability classes.
+---
 
-    #### 1. Injection Vulnerabilities
-    * **SQL/NoSQL Injection** - Probing input fields to see if backend database queries can be manipulated.
-    * **OS Command Injection** - Attempting to execute unauthorized commands on the host operating system.
-    * **Server-Side Template Injection (SSTI)** - Testing if web templates can be exploited to gain remote code execution.
-    * **XML External Entity (XXE)** - Identifying flaws in XML parsers that allow for file retrieval or SSRF.
+## YAML Configuration Reference
 
-    #### 2. Client-Side Attacks
-    * **Cross-Site Scripting (XSS)** - Injecting scripts into both Reflected (URL parameters) and Stored (Database-backed) inputs to compromise user sessions.
-    * **Cross-Site Request Forgery (CSRF)** - Checking if sensitive actions can be performed without proper token validation.
+AccuKnox DAST scans are driven by a single YAML configuration file. Below is a complete example using the **Standard** scan type. Adjust the `maxDuration`, `maxChildren`, `maxCrawlDepth`, `maxScanDurationInMins`, and `policy` values to match your chosen scan type from the comparison table above.
 
-    #### 3. Broken Access Control & Logic
-    * **Path Traversal** - Attempting to access restricted files on the server (e.g., `/etc/passwd`).
-    * **Remote File Inclusion (RFI)** - Testing if the application can be forced to load malicious code from an external server.
-    * **Server-Side Request Forgery (SSRF)** - Exploiting the server to make unauthorized requests to internal infrastructure.
+### Example YAML
 
-    #### 4. Infrastructure & Server Configuration
-    * **Buffer Overflows** - Sending excessively large data strings to identify memory corruption vulnerabilities.
-    * **Insecure File Uploads** - Testing if the server accepts executable files in place of standard documents/images.
-    * **Cloud Metadata Leakage** - Attempting to extract sensitive credentials from cloud instance metadata services (AWS/Azure/GCP).
+```yaml
+---
+env:
+  contexts:
+  - name: "accuknox-dast"
+    urls:
+    - "https://your-app.example.com"
+    includePaths:
+    - "https://your-app.example.com.*"
+    excludePaths:
+    - ".*\\.css"
+    - ".*\\.js"
+    - ".*\\.png"
+    - ".*\\.jpg"
+    - ".*\\.woff2"
 
-    ### Scanning Sophistication
-    * **Payload Variation** - Each input is tested with hundreds of variations to bypass basic WAF filters.
-    * **Context Awareness** - The engine adapts its attack patterns based on the technology stack detected (e.g., tailoring attacks specifically for Java, PHP, or .NET environments).
-    * **Severity Rating** - Vulnerabilities are ranked by impact, providing a clear roadmap for remediation based on the risk to the business.
+jobs:
+- type: spider
+  parameters:
+    maxDuration: 10
+    maxChildren: 30
+    maxDepth: 5
 
-    ### Characteristics
-    * **Active Interaction** - This scan sends "attack" traffic; it is recommended for use in staging or development environments.
-    * **Thoroughness** - Provides the highest level of assurance regarding the exploitability of a web application.
+- type: spiderAjax
+  parameters:
+    maxCrawlDepth: 5
+    maxDuration: 10
+    numberOfBrowsers: 4
 
-## New Scan Categories Coming Soon
+- type: passiveScan-wait
+  parameters:
+    maxDuration: 5
 
-In the near future, we will be introducing additional scan categories to provide even more tailored security assessments:
+- type: activeScan
+  parameters:
+    maxScanDurationInMins: 20
+    policy: "Dev CICD"
+    maxRuleDurationInMins: 0
 
-![Upcoming DAST scan categories preview](image-42.png)
+- type: report
+  parameters:
+    template: "traditional-json"
+    reportDir: "/dast/wrk"
+    reportFile: "scanreport.json"
+```
+
+### Configuration Block Reference
+
+| Block | What It Does |
+| ----- | ------------ |
+| `env.contexts.urls` | The target URL to scan. Replace with your application URL. |
+| `includePaths` | Regex patterns for URLs that should be tested. Typically your app domain with a wildcard. |
+| `excludePaths` | Regex patterns for URLs to skip. Always exclude static assets (`.css`, `.js`, `.png`, `.woff2`) to reduce scan noise and time. |
+| `failOnError` | When `true`, exits with an error code if any job fails. Enable in CI/CD pipelines so failed scans block the build. |
+| `spider` | Crawls your app by following HTML links. `maxDuration` caps run time; `maxChildren` limits links per page; `maxDepth` controls how deep it goes. |
+| `spiderAjax` | Opens real headless browsers to navigate JavaScript-rendered pages, SPAs, and dynamic routes the HTML spider cannot see. |
+| `passiveScan-wait` | Waits for passive analysis of collected traffic without sending attack payloads. |
+| `activeScan` | Sends attack payloads to every discovered endpoint. The `policy` field controls which vulnerability rules run. **Remove this block entirely for a Baseline scan.** |
+| `report` | Generates the JSON output file that gets uploaded to AccuKnox. |
+
+---
+
