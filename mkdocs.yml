@@ -230,7 +230,7 @@ nav:
         - "Azure Cloud VM Scan": "how-to/vm-security/agentless/azure-cloud-vm.md"
     - "Application Security (ASPM)":
       - "Overview": "how-to/aspm-overview.md"
-      - "DAST Scan Types": "how-to/dast-baseline-vs-full.md"
+      - "DAST Scan Types": "how-to/dast-scan-types.md"
       - "DAST Unauthenticated Scan": "how-to/dast-scan-no-auth.md"
       - "DAST Authenticated Scan": "how-to/dast-authenticated-scans.md"
       - "DevSecOps" : "getting-started/devsecops.md"
