@@ -20,7 +20,7 @@ This guide provides step-by-step instructions to onboard Windows Virtual Machine
 Open a PowerShell terminal as Administrator and run the following command to download the agent installation script:
 
 ```powershell
-Invoke-WebRequest -Uri 'https://accuknox-omni.s3.us-east-1.amazonaws.com/v0.1.2/agent-install.ps1' -OutFile .\agent-install.ps1
+Invoke-WebRequest -Uri 'https://accuknox-omni.s3.us-east-1.amazonaws.com/latest/agent-install.ps1' -OutFile .\agent-install.ps1
 ```
 
 ### 2. Run the Installation Script
