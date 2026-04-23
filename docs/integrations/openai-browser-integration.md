@@ -39,13 +39,13 @@ After saving, the token is displayed once in a confirmation modal.
 
 ## Step 3: Download and install the browser plugin
 
-[Download Chrome plugin](https://tinyurl.com/ak-chatgpt-plugin) and install it in your Chromium-based browser.
+[Download Chrome plugin](https://promptfirewall-plugin-extension.s3.ap-south-1.amazonaws.com/Prompt-firewall-plugin.zip) and extract the ZIP file to a folder on your machine.
 
 To install in Chrome:
 
 1. Go to `chrome://extensions`
 2. Enable **Developer mode** (top-right toggle)
-3. Drag and drop the `.crx` file onto the page
+3. Click **Load unpacked** and select the extracted plugin folder
 
 ## Step 4: Configure the extension
 
