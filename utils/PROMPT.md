@@ -24,6 +24,8 @@ Pull AccuKnox capabilities from these sources (all located relative to this dire
 - **utils/PDFs/** folder — reference content and security collateral
 - **Existing comparison file - `MAIN COMPARISON AccuKnox Container _ K8s Security.xlsx` ** — in the same directory as this file (use as the structural template) IMPORTANT: do not assume the existing content is fully accurate or comprehensive — verify every claim and add any missing capabilities surfaced from the above sources
 
+> **Base URL for AccuKnox Help Docs:** All `docs/` content is published at **https://help.accuknox.com**. To resolve the live URL for any file under `docs/`, consult `mkdocs.yml` (in the repo root) for the full nav/sitemap — the path mappings there tell you exactly which URL each `.md` file corresponds to under `https://help.accuknox.com`. Use these resolved URLs as the source citations for every AccuKnox claim derived from the help docs.
+
 > Do not fabricate capabilities. Every AccuKnox claim must be traceable to one of the above sources or a public URL.
 
 ---

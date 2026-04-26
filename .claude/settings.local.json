@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.redhat.com)",
+      "WebFetch(domain:docs.openshift.com)",
+      "WebSearch",
+      "Bash(python3)",
+      "WebFetch(domain:docs.redhat.com)"
+    ]
+  }
+}
