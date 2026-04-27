@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run AccuKnox DAST Scan
-        uses: accuknox/dast-scan-action@v1.0.1
+        uses: accuknox/dast-scan-action@latest
         with:
           target_url: "http://testphp.vulnweb.com"
           accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}

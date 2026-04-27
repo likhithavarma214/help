@@ -35,30 +35,32 @@ Create a new GitHub Actions workflow file `.github/workflows/accuknox-opengrep.y
 
 {% raw %}
 ```yaml
-name: AccuKnox Opengrep SAST
+name: Accuknox SAST
 
 on:
   push:
     branches:
-      - opengrep
+      - main
   pull_request:
     branches:
-      - opengrep
+      - main
 
 jobs:
   accuknox-cicd:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: "Run AccuKnox SAST: Opengrep"
-        uses: accuknox/sast-scan-opengrep-action@v1.0.1
+      - name: "Run Accuknox SAST: Opengrep"
+        uses: accuknox/sast-scan-opengrep-action@latest
         with:
-          accuknox_endpoint: "${{ secrets.ACCUKNOX_ENDPOINT }}"
-          accuknox_token: "${{ secrets.ACCUKNOX_TOKEN }}"
-          accuknox_label: "${{ secrets.ACCUKNOX_LABEL }}"
-          soft_fail: true
+          accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+          accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
+          accuknox_label: ${{ secrets.ACCUKNOX_LABEL }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY}}
+          accuknox_ai_analysis: "false"
+          soft_fail: "true"
 ```
 {% endraw %}
 
@@ -70,7 +72,8 @@ jobs:
 | **job_url**           | GitHub Job URL                  | No           | `Github Run URL`         |
 | **accuknox_endpoint** | CSPM panel URL                  | Yes          | `cspm.demo.accuknox.com` |                        |
 | **accuknox_token**    | AccuKnox API Token              | Yes          |   None                       |
-| **accuknox_label**    | Label for scan results          | Yes          |      None                    |
+| **accuknox_label**    | Label for scan results          | Yes          |      
+None                    |
 | **soft_fail**   | Continue even if scan fails     | No           | `false`                  |
 
 

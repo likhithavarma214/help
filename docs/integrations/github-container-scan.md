@@ -39,7 +39,7 @@ Create a workflow YAML file in your repository `.github/workflows/accuknox-scan.
 
 {% raw %}
 ```yaml
-name: AccuKnox Container Scan Workflow
+name: AccuKnox Container Scan
 
 on:
   push:
@@ -50,22 +50,27 @@ on:
       - main
 
 jobs:
-  accuknox-cicd:
+  container-scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run AccuKnox CSPM Scan
-        uses: accuknox/container-scan-action@v1.0.1
+      - name: Run AccuKnox Container Scanner
+        uses: accuknox/container-scan-action@latest
+      
         with:
-          soft_fail: false
-          accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
-          accuknox_label: ${{ secrets.ACCUKNOX_LABEL }}
           accuknox_token: ${{ secrets.ACCUKNOX_TOKEN }}
-          image: "your-image-name"
+          accuknox_label: ${{ secrets.ACCUKNOX_LABEL }}
+          accuknox_endpoint: ${{ secrets.ACCUKNOX_ENDPOINT }}
+          image_name: "your-image"
           tag: "latest"
-          severity: "LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN"
+          severity: "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"
+          soft_fail: true
+          upload_results: true  # (Optional) set true if you want to upload result to Github artefact
+          generate_sbom: true   # (Optional) set true to generate SBOM
+          project_name: ""      # (Optional) must match the project name created in the dashboard
+          dockerfile_context: Dockerfile  # Path to Dockerfile for building image before scan 
 ```
 {% endraw %}
 
