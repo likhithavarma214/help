@@ -55,7 +55,6 @@ Create an **inline policy** with the following permissions:
     ```json
     [
         "bedrock:InvokeModel",
-        "bedrock:ListTagsForResource",
         "bedrock:InvokeAgent"
     ]
     ```
@@ -73,16 +72,7 @@ Create an **inline policy** with the following permissions:
 
     ```json
     [
-        "bedrock-agentcore:GetEvaluator",
         "bedrock-agentcore:InvokeAgentRuntime",
-        "bedrock-agentcore:ListPolicies",
-        "bedrock-agentcore:ListOnlineEvaluationConfigs",
-        "bedrock-agentcore:ListPolicyEngines",
-        "bedrock-agentcore:GetPolicyEngine",
-        "bedrock-agentcore:ListTagsForResource",
-        "bedrock-agentcore:GetOnlineEvaluationConfig",
-        "bedrock-agentcore:ListEvaluators",
-        "bedrock-agentcore:GetPolicy",
         "bedrock-agentcore:StopRuntimeSession"
     ]
     ```
