@@ -54,10 +54,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
 
       - name: Run IaC scan
-        uses: accuknox/iac-scan-action@v1.0.1
+        uses: accuknox/iac-scan-action@latest
         with:
           soft_fail: true # Optional: Will continue after found vulnerability
           directory: "."  # Optional: Directory to scan

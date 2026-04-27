@@ -48,10 +48,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: AccuKnox Secret Scan TEST
-        uses: accuknox/secret-scan-action@v1.0.3
+        uses: accuknox/secret-scan-action@latest
         with:
           with:
           branch: "main"                             # Optional
