@@ -55,6 +55,15 @@ h2 {
 - title: Pricing & Billing
   image: ./use-cases/icons/access-keys.svg
   url: /faqs/pricing/
+- title: Secrets Management
+  image: ./use-cases/icons/secret-scan.svg
+  url: /faqs/secrets-manager/
+- title: SBOM
+  image: ./use-cases/icons/supply-chain-attacks.svg
+  url: /faqs/sbom/
+- title: API Security
+  image: ./assets/icons/api.svg
+  url: /faqs/api-sec/
 - title: Partnerships & Marketplace
   image: ./use-cases/icons/network-micro-segmentation.svg
   url: /faqs/partnerships/
