@@ -98,7 +98,7 @@ This guide walks you through configuring input/output policies in AccuKnox for p
     - **Violation Score**
     - **Triggered Policy**
 
-![Prompt Firewall](https://accuknox.com/wp-content/uploads/detailed-trace-view-1024x487.png)
+![alt](./images/image2.png)
 
 ## Example: Conversation Blocking
 
@@ -106,8 +106,7 @@ This guide walks you through configuring input/output policies in AccuKnox for p
 - **Flag & Block:** Unsafe content triggers block (e.g., "BanCode" for code execution).
 - **Log:** Dashboard records **Policy Name**, **Type**, **Action**, **Status**.
 
-![Conversation Blocking Example](https://accuknox.com/wp-content/uploads/Conversation-Blocking-Example-1024x943.png)
-![query details](https://accuknox.com/wp-content/uploads/query-details-1024x705.png)
+![alt](./images/image1.png)
 
 **Result:** Unauthorized code execution is blocked, keeping your AI secure.
 
