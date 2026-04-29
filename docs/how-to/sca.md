@@ -21,7 +21,7 @@ AccuKnox Software Composition Analysis (SCA) enables you to scan application dep
 
 ![Add Collector](./images/dast-auth/image15.png)
 
-**Step 4:** Click ****.
+**Step 4:** Click **SCA**.
 
 ![SCA](./images/sca/image1.png)
 
