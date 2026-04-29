@@ -59,8 +59,6 @@ Fill in the two fields:
 |---|---|
 | API Key | Paste the token from Step 2 |
 
-**ENV examples:** `dev`, `stage`, `demo`, or your tenant name (e.g. `acme`).
-
 Click **Save Settings**, then **Test Connection**.
 
 ## Step 5: Verify the connection
