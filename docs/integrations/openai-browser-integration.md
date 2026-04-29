@@ -49,7 +49,7 @@ To install in Chrome:
 
 ## Step 4: Configure the extension
 
-![AccuKnox Prompt Firewall Settings panel](image-67.png){ align=right width="400" }
+![AccuKnox Prompt Firewall Settings panel](image-69.png){ align=right width="400" }
 
 Click the AccuKnox icon in your browser toolbar and open **Settings**.
 
@@ -57,7 +57,6 @@ Fill in the two fields:
 
 | Field | Value |
 |---|---|
-| Firewall URL | `https://cwpp.<ENV>.accuknox.com` |
 | API Key | Paste the token from Step 2 |
 
 **ENV examples:** `dev`, `stage`, `demo`, or your tenant name (e.g. `acme`).
