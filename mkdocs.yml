@@ -236,6 +236,7 @@ nav:
       - "DevSecOps" : "getting-started/devsecops.md"
       - "Github IaC Scan": "how-to/github-iac-scan.md"
       - "AWS CDK IaC Scan": "how-to/aws-cdk-iac-scan.md"
+      - "SCA": "how-to/sca.md"
     - "Container Registry":
       - "Overview": "how-to/registry-overview.md"
       - "ACR": "how-to/acr.md"
