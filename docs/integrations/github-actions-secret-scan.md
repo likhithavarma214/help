@@ -53,7 +53,6 @@ jobs:
       - name: AccuKnox Secret Scan TEST
         uses: accuknox/secret-scan-action@latest
         with:
-          with:
           branch: "main"                             # Optional
           results: " "                               # Optional
           exclude_paths: "tests/,docs/"              # Optional

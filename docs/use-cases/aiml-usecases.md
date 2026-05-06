@@ -25,7 +25,7 @@ hide:
 
 - title: Prompt Firewall
   image: ./icons/AIML.svg
-  url: https://help.accuknox.com/use-cases/prompt-firewall/
+  url: https://help.accuknox.com/use-cases/prompt-firewall-overview/
 
 - title: AI-DR (AI Detection and Response)
   image: ./icons/aidr.svg
@@ -33,7 +33,7 @@ hide:
 
 - title: AI Red Teaming (ML/LLMs)
   image: ./icons/model-safety.svg
-  url: https://help.accuknox.com/how-to/llm-static-scan/
+  url: https://help.accuknox.com/use-cases/red-teaming/
 
 - title: Jupyter Notebook Security
   image: ./icons/jupyter.svg
